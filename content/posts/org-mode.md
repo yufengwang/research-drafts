@@ -8,14 +8,15 @@ draft = false
 
 ### table {#table}
 
-| asdf                      | sdf |
-|---------------------------|-----|
-| hy hi , ni hao , I'm very |     |
-| hello, hi, bfay           |     |
-| hey                       |     |
-| hello, you , boy,         | hey |
-| hell                      |     |
-| when I'm your man         |     |
+| asdf                                           | sdf |
+|------------------------------------------------|-----|
+| hy hi , ni hao , I'm very                      |     |
+| hello, hi, bfay , These is a huge table column |     |
+| hey                                            |     |
+| hello, you , boy,                              | hey |
+| hell                                           |     |
+|                                                |     |
+| when I'm your man                              |     |
 
 
 ### Math {#math}
