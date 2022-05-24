@@ -6,17 +6,16 @@ draft = false
 ## 测试 org mode 的功能 {#测试-org-mode-的功能}
 
 
-### table {#table}
+### Table {#table}
 
-| asdf                                           | sdf |
-|------------------------------------------------|-----|
-| hy hi , ni hao , I'm very                      |     |
-| hello, hi, bfay , These is a huge table column |     |
-| hey                                            |     |
-| hello, you , boy,                              | hey |
-| hell                                           |     |
-|                                                |     |
-| when I'm your man                              |     |
+| foo           | bar      |
+|---------------|----------|
+| 图文咨询      | 标注     |
+| 我是前端，图文自诩你的贵 | 华为的弹 |
+| 东西哈哈哈，仪表板，你说了 | 窗卡顿， |
+| ，非医生      | oh ,     |
+|               | bullshit |
+| 入组触发，选择器，前端 | 发布yes  |
 
 
 ### Math {#math}
