@@ -2,7 +2,6 @@
 title = "网络安全"
 author = ["wenhu"]
 tags = ["network", "security"]
-categories = ["network"]
 draft = false
 +++
 
