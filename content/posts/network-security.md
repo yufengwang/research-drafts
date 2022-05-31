@@ -1,6 +1,8 @@
 +++
 title = "网络安全"
 author = ["wenhu"]
+tags = ["network", "security"]
+categories = ["network"]
 draft = false
 +++
 
@@ -12,17 +14,17 @@ draft = false
 攻击者把以前发过的消息又发了一遍
 
 
-#### Suppress-replay attack {#suppress-replay-attack}
+### Suppress-replay attack {#suppress-replay-attack}
 
 抑制-重放攻击
 
 
-### Confidentiality {#confidentiality}
+## Confidentiality {#confidentiality}
 
 数据的机密性
 
 
-### Integrity {#integrity}
+## Integrity {#integrity}
 
 完整性
 
@@ -36,11 +38,11 @@ draft = false
 #### timeliness {#timeliness}
 
 
-### Authentication {#authentication}
+## Authentication {#authentication}
 
-端的身份认证
+通信侧的身份认证
 
-网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证，即证明我是我
+网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证
 
 
 ## Cryptography {#cryptography}
@@ -79,12 +81,17 @@ symmetric key， 只有通讯双方知道的单一 key，必须保持私密
 
 #### longerlived predistributed keys. {#longerlived-predistributed-keys-dot}
 
-持久的预分配秘钥
+长生命周期的预分配秘钥
 
 
 #### 公钥分发 {#公钥分发}
 
 如何确认公钥属于 Alice ?
+
+
+### Diffie-Hellman key Agreement {#diffie-hellman-key-agreement}
+
+DH 秘钥协商
 
 
 ### Key Distribution Center {#key-distribution-center}
@@ -165,7 +172,7 @@ hashed message authentication code
 
 ### SSL {#ssl}
 
-Secure Sockets Layer，安全套接字层
+Secure Sockets Layer，安全套接字层，最早是 netscape 研发
 
 
 ### TLS {#tls}
@@ -176,3 +183,14 @@ SSL 3 的微小修订版，被 IETF 标准化
 
 
 ### HTTPS {#https}
+
+http + ssl/tls
+
+
+#### 握手协议 {#握手协议}
+
+握手阶段，协商以下三个部分：
+
+1.  数据完整性 hash 算法（MD5，SHA-1，etc.），用于 HMAC
+2.  对称秘钥算法（des, aes）
+3.  **session key** 交换方法
