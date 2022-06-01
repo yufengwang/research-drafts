@@ -1,5 +1,8 @@
 +++
+title = "如何证明"
 author = ["wenhu"]
+date = 2022-06-01T00:06:00+08:00
+tags = ["math", "proof"]
 draft = false
 +++
 
