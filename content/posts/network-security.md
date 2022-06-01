@@ -10,7 +10,7 @@ draft = false
 
 ### Playback attack {#playback-attack}
 
-攻击者把以前发过的消息又发了一遍
+1攻击者把以前发过的消息又发了一遍
 
 
 ### Suppress-replay attack {#suppress-replay-attack}
