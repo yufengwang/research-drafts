@@ -5,12 +5,55 @@ tags = ["network", "security"]
 draft = false
 +++
 
+## 什么是安全通信 {#什么是安全通信}
+
+假定 Alice, Bob 为两个通讯实体，Trudy 为中间攻击人，如何保证 Alice 和 Bob 能进行安全通信 ？
+
+
+### Confidentiality {#confidentiality}
+
+数据的机密性，即只有通信双方可以知道通信内容
+
+
+### Integrity {#integrity}
+
+消息完整性
+
+
+#### Data integrity {#data-integrity}
+
+Alice 发的消息没有被篡改
+
+
+#### Originality {#originality}
+
+Bob 收到的消息确实是 Alice 发的
+
+
+#### timeliness {#timeliness}
+
+
+### Authentication {#authentication}
+
+通信侧的身份认证
+
+网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证，Alice 证明她就是 Alice
+
+
 ## Thread Model {#thread-model}
+
+攻击者如何破坏通信安全
+
+
+### 窃听 {#窃听}
+
+-   嗅探，记录信道通信报文
+-   修改，插入，删除通信报文
 
 
 ### Playback attack {#playback-attack}
 
-1攻击者把以前发过的消息又发了一遍
+攻击者把以前发过的消息又发了一遍
 
 
 ### Suppress-replay attack {#suppress-replay-attack}
@@ -18,54 +61,48 @@ draft = false
 抑制-重放攻击
 
 
-## Confidentiality {#confidentiality}
-
-数据的机密性
-
-
-## Integrity {#integrity}
-
-完整性
-
-
-#### Data integrity {#data-integrity}
-
-
-#### Originality {#originality}
-
-
-#### timeliness {#timeliness}
-
-
-## Authentication {#authentication}
-
-通信侧的身份认证
-
-网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证
-
-
 ## Cryptography {#cryptography}
 
-cryptography，密码学
-
-Alice, Bob，两个通讯实体
+cryptography，密码学，网络安全的基石
 
 
-### Symmetric-key Cipher {#symmetric-key-cipher}
+### 加密算法 {#加密算法}
 
-对称秘钥密文（一个秘钥），比非对称秘钥更快
+加密算法是已知的，公开的，秘钥是私密的
+
+
+### Symmetric-Key Cipher {#symmetric-key-cipher}
+
+对称秘钥加密（一个秘钥），比非对称秘钥更快
+
+
+#### stream cipher {#stream-cipher}
+
+流加密
+
+
+#### block cipher {#block-cipher}
+
+块加密
+
+-   DES: Data Encryption Standard
+-   AES: Advanced Encryption Standard
+-   CBC: Cipher Block Chaining
 
 
 ### Public-key Cipher {#public-key-cipher}
 
-非对称秘钥密文
+非对称秘钥加密
 
 特点：
 
 -   两个秘钥
 -   公钥加密，私钥解密
--   私钥\*私有\*，公钥公开
+-   私钥 `私有` ，公钥公开
 -   速度较慢
+
+
+#### RSA {#rsa}
 
 
 ### 秘钥分发 {#秘钥分发}
@@ -155,6 +192,10 @@ ca 机构维护 certificate revocation list
 
 message authentication code，消息校验码
 
+m: 消息,  s: 共享秘钥，H: 单向散列函数
+
+MAC = H(m + s)
+
 
 #### HMAC {#hmac}
 
@@ -193,3 +234,16 @@ http + ssl/tls
 1.  数据完整性 hash 算法（MD5，SHA-1，etc.），用于 HMAC
 2.  对称秘钥算法（des, aes）
 3.  **session key** 交换方法
+
+
+#### Master Secret {#master-secret}
+
+主密钥，用于生成以下四个秘钥
+
+1.  Eb：session 加密秘钥，用于加密从 Bob 发给 Alice 的消息
+2.  Mb：session MAC 秘钥，校验 Bob 发给 Alice 的消息的完整性
+3.  Ea：与上反之
+4.  Ma：与上反之
+
+
+#### Encrypted Master Secret {#encrypted-master-secret}
