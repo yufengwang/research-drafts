@@ -2,7 +2,7 @@
 title = "链表"
 author = ["wenhu"]
 date = 2022-05-28T21:43:00+08:00
-tags = ["linked-lists", "data-structure"]
+tags = ["linked-lists"]
 draft = false
 +++
 
