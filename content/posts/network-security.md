@@ -221,14 +221,14 @@ SSL 3 的微小修订版，被 IETF 标准化
 
 ### HTTPS {#https}
 
-http + SSL/TLS
+HTTP + SSL/TLS
 
 
 #### 握手协议 {#握手协议}
 
 握手阶段，协商以下三个部分：
 
-1.  数据完整性 hash 算法（MD5，SHA-1，etc.），用于 HMAC
+1.  数据完整性 Hash 算法（MD5，SHA-1，etc.），用于 HMAC
 2.  对称秘钥算法（DES, AES）
 3.  **session key** 交换方法
 

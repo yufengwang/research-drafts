@@ -11,7 +11,7 @@ draft = false
 
 ### 三次握手 {#三次握手}
 
-1.  client 发送 syn（Synchronize Sequence Number)到 server，表示想要建立 tcp 连接
+1.  client 发送 syn（Synchronize Sequence Number）到 server，表示想要建立 tcp 连接
 2.  Server 发送(syn+ ack)
 3.  client 发送 ack 给 server，连接建立
 
@@ -27,7 +27,7 @@ draft = false
 ### 网络分层 {#网络分层}
 
 
-#### tcp/ip 模型 {#tcp-ip-模型}
+#### TCP/IP 模型 {#tcp-ip-模型}
 
 1.  应用层
 2.  传输层
