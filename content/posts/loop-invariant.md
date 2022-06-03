@@ -2,7 +2,7 @@
 title = "循环不变式"
 author = ["wenhu"]
 date = 2022-06-03T23:26:00+08:00
-tags = ["algo-correctness"]
+tags = ["algo-analysis"]
 draft = false
 +++
 
