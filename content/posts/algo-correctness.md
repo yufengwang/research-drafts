@@ -2,7 +2,7 @@
 title = "算法正确性"
 author = ["wenhu"]
 date = 2022-05-28T21:31:00+08:00
-tags = ["algorithm"]
+tags = ["algo-analysis"]
 categories = ["math"]
 draft = false
 +++
