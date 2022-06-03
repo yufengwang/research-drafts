@@ -2,7 +2,8 @@
 title = "归纳和递归"
 author = ["wenhu"]
 date = 2022-06-01T23:38:00+08:00
-tags = ["math", "induction", "recursion"]
+tags = ["induction", "recursion"]
+categories = ["math"]
 draft = false
 +++
 

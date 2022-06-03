@@ -2,7 +2,8 @@
 title = "数论"
 author = ["wenhu"]
 date = 2022-05-28T20:36:00+08:00
-tags = ["math", "number-theory"]
+tags = ["number-theory"]
+categories = ["math"]
 draft = false
 +++
 
