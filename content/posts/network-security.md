@@ -20,7 +20,7 @@ draft = false
 消息完整性
 
 
-#### Data integrity {#data-integrity}
+#### Data Integrity {#data-integrity}
 
 Alice 发的消息没有被篡改
 
@@ -209,7 +209,7 @@ hashed message authentication code
 
 ### SSL {#ssl}
 
-Secure Sockets Layer，安全套接字层，最早是 netscape 研发
+Secure Sockets Layer，安全套接字层，最早是 Netscape 研发
 
 
 ### TLS {#tls}
