@@ -2,7 +2,8 @@
 title = "js 原型"
 author = ["wenhu"]
 date = 2022-06-03T15:50:00+08:00
-tags = ["prototype", "js"]
+tags = ["prototype"]
+categories = ["js"]
 draft = false
 +++
 
