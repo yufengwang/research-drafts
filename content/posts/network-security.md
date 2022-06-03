@@ -189,14 +189,28 @@ ca 机构维护 certificate revocation list
 
 message authentication code，消息校验码
 
-m: 消息,  s: 共享秘钥，H: 单向散列函数
+m: 消息，s: 共享秘钥，Mac: MAC 算法
 
-MAC = H(m + s)
+MAC = Mac(m + s)，固定长度的认证标签，与输入的长度无关
+
+只有知道 key 的通信双方才能计算出一致的 MAC，避免消息被篡改
+
+
+#### MAC 的属性 {#mac-的属性}
+
+1.  使用对称性秘钥
+2.  可对计算任意长度的消息进行计算
+3.  固定长度的输出值，与输入的长度无关
+4.  可证明消息的完整性
+5.  可证明消息的可靠性
+6.  无法证明消息的不可否认性（Alice 和 Bob 都能计算出一致的 MAC 值）
 
 
 #### HMAC {#hmac}
 
-hashed message authentication code
+hash-based message authentication code
+
+MAC 的一种实现方式，基于 Hash 算法
 
 
 ### Digital Signature {#digital-signature}
