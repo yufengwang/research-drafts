@@ -1,3 +1,7 @@
-# My notes
+* My notes
 
-My personal notes or wiki, see https://yfw.ink
+ My personal notes or wiki, see https://yfw.ink
+
+* Credits
+
+With my huge thanks to hugo and hugo-book theme, also ox-hugo.
