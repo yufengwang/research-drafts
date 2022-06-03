@@ -2,6 +2,8 @@
 
  My personal notes or wiki, see https://yfw.ink
 
+ Note: This site content is generated from https://github.com/yufengwang/notes and hosted by Cloudflare Pages
+
 * Credits
 
 With my huge thanks to hugo and hugo-book theme, also ox-hugo.
