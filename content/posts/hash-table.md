@@ -2,7 +2,7 @@
 title = "哈希表"
 author = ["wenhu"]
 date = 2022-05-28T21:47:00+08:00
-tags = ["data-structure"]
+tags = ["hash-table"]
 draft = false
 +++
 
@@ -17,4 +17,4 @@ draft = false
 ### Chaining {#chaining}
 
 
-### Open addressing {#open-addressing}
+### Open Addressing {#open-addressing}
