@@ -148,7 +148,7 @@ PKI 体系运作的前提为 CA 机构可信
 
 ### Public Key Certificate {#public-key-certificate}
 
-公钥证书，简称证书，其中一个主要的证书标准，\*X.509\*
+公钥证书，简称证书，其中一个主要的证书标准为 **X.509**
 
 证书内容：
 
