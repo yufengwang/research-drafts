@@ -15,20 +15,20 @@ draft = false
 ### Worst Case {#worst-case}
 
 
-### Time complexity {#time-complexity}
+### Time Complexity {#time-complexity}
 
 时间复杂度
 
 
-### Space complexity {#space-complexity}
+### Space Complexity {#space-complexity}
 
 空间: 内存
 
 空间复杂度：算法输入所占据的内存  + 辅助内存
 
-Space Complexity = Auxiliary space + space used by input values
+Space Complexity = Auxiliary space + Space used by input values
 
-recursive call stack，递归调用栈也算空间占用
+Recursive call stack，递归调用栈也算空间占用
 
 
 #### Auxiliary Space {#auxiliary-space}
