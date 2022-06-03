@@ -30,7 +30,7 @@ Alice 发的消息没有被篡改
 Bob 收到的消息确实是 Alice 发的
 
 
-#### timeliness {#timeliness}
+#### Timeliness {#timeliness}
 
 
 ### Authentication {#authentication}
@@ -48,15 +48,15 @@ Bob 收到的消息确实是 Alice 发的
 ### 窃听 {#窃听}
 
 -   嗅探，记录信道通信报文
--   修改，插入，删除通信报文
+-   篡改，插入，删除通信报文
 
 
-### Playback attack {#playback-attack}
+### Playback Attack {#playback-attack}
 
 攻击者把以前发过的消息又发了一遍
 
 
-### Suppress-replay attack {#suppress-replay-attack}
+### Suppress-replay Attack {#suppress-replay-attack}
 
 抑制-重放攻击
 
@@ -64,9 +64,6 @@ Bob 收到的消息确实是 Alice 发的
 ## Cryptography {#cryptography}
 
 cryptography，密码学，网络安全的基石
-
-
-### 加密算法 {#加密算法}
 
 加密算法是已知的，公开的，秘钥是私密的
 
@@ -76,12 +73,12 @@ cryptography，密码学，网络安全的基石
 对称秘钥加密（一个秘钥），比非对称秘钥更快
 
 
-#### stream cipher {#stream-cipher}
+#### Stream Cipher {#stream-cipher}
 
 流加密
 
 
-#### block cipher {#block-cipher}
+#### Block Cipher {#block-cipher}
 
 块加密
 
@@ -90,9 +87,9 @@ cryptography，密码学，网络安全的基石
 -   CBC: Cipher Block Chaining
 
 
-### Public-key Cipher {#public-key-cipher}
+### Public Key Cipher {#public-key-cipher}
 
-非对称秘钥加密
+非对称秘钥加密，公钥加密
 
 特点：
 
@@ -115,17 +112,17 @@ symmetric key， 只有通讯双方知道的单一 key，必须保持私密
 仅在单次会话期有效
 
 
-#### longerlived predistributed keys. {#longerlived-predistributed-keys-dot}
+#### longerlived Predistributed Keys. {#longerlived-predistributed-keys-dot}
 
 长生命周期的预分配秘钥
 
 
-#### 公钥分发 {#公钥分发}
+#### 公钥分发，校验 {#公钥分发-校验}
 
 如何确认公钥属于 Alice ?
 
 
-### Diffie-Hellman key Agreement {#diffie-hellman-key-agreement}
+### Diffie-Hellman Key Agreement {#diffie-hellman-key-agreement}
 
 DH 秘钥协商
 
@@ -149,7 +146,7 @@ PKI 体系运作的前提为 CA 机构可信
 -   浏览器预装了 CA 机构的证书
 
 
-### Public key certificate {#public-key-certificate}
+### Public Key Certificate {#public-key-certificate}
 
 公钥证书，简称证书，其中一个主要的证书标准，\*X.509\*
 
@@ -224,7 +221,7 @@ SSL 3 的微小修订版，被 IETF 标准化
 
 ### HTTPS {#https}
 
-http + ssl/tls
+http + SSL/TLS
 
 
 #### 握手协议 {#握手协议}
@@ -232,7 +229,7 @@ http + ssl/tls
 握手阶段，协商以下三个部分：
 
 1.  数据完整性 hash 算法（MD5，SHA-1，etc.），用于 HMAC
-2.  对称秘钥算法（des, aes）
+2.  对称秘钥算法（DES, AES）
 3.  **session key** 交换方法
 
 
