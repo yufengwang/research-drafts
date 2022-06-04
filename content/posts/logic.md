@@ -12,7 +12,7 @@ draft = false
 
 ### Proposition {#proposition}
 
-命题： 可真可假的声明式语句
+命题： 描述性语句，要么真，要么假
 
 
 ### Conditional Statements {#conditional-statements}
