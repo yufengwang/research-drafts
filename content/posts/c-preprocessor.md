@@ -14,6 +14,8 @@ C: C 或 C++
 
 preprocessor 不理解 C 的语法
 
+指令在编译前被解析
+
 [参考](https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/)
 
 
@@ -23,11 +25,12 @@ preprocessor 不理解 C 的语法
 
 常用指令
 
-| 指令                           | 含义   |
-|------------------------------|------|
+| 指令                           | 含义     |
+|------------------------------|--------|
 | `#include`                     | 引入头文件 |
-| `#define`                      | 宏定义 |
+| `#define`                      | 宏定义   |
 | `#ifdef`, `#ifndef`, `#endif`. | 条件编译指令 |
+| `#if 0`                        | 不编译某些代码块 |
 
 
 ### Object-like Macros {#object-like-macros}
