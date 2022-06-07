@@ -34,7 +34,7 @@ draft = false
 
 ## Width {#width}
 
-数在深度d的宽度： 树在深度 d 的节点数量
+树在深度 d 的宽度： 树在深度 d 的节点数量
 
 树的宽度： 所有深度的最大宽
 
@@ -61,15 +61,32 @@ draft = false
 
 ### Complete {#complete}
 
+完整二叉树，除最后一层外，每一层都是完整填满的，最后一层的节点尽可能 `靠左`
+
 
 ### Full {#full}
+
+满二叉树，每一个节点都有 `0` 或 `2` 个子节点
+
+
+### Perfect {#perfect}
+
+完美二叉树，所有叶节点都在同一层的 **满二叉树** 或 每一层都填满的 **完整二叉树**
 
 
 ### BST {#bst}
 
 Binary Search Tree，二叉搜索树
 
-新增或删除节点时，需保持平衡，比较低效
+新增或删除节点时，需 **保持平衡** ，比较低效
+
+特点：
+
+1.  每个节点都有值
+2.  每个节点的左子树的所有节点值都比当前节点的值要小
+3.  每个节点的右子树的所有节点值都比当前节点的值要大
+
+BST 不能包含重复值
 
 
 ### AVL {#avl}
@@ -82,3 +99,12 @@ Binary Search Tree，二叉搜索树
 
 
 ### Red-Black {#red-black}
+
+
+### In Order {#in-order}
+
+
+### Pre Order {#pre-order}
+
+
+### Post Order {#post-order}
