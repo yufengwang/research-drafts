@@ -68,9 +68,22 @@ cryptography，密码学，网络安全的基石
 加密算法是已知的，公开的，秘钥是私密的
 
 
+### Caesar Cipher {#caesar-cipher}
+
+凯撒加密法
+
+enc: \\(f(p) = (p + k) \mod 26\\)
+
+dec: \\(f(p) = (p - k) \mod 26\\)
+
+破解： 概率学分析
+
+
 ### Symmetric-Key Cipher {#symmetric-key-cipher}
 
 对称秘钥加密（一个秘钥），比非对称秘钥更快
+
+难点：如何安全的交换和保存秘钥
 
 
 #### Stream Cipher {#stream-cipher}
@@ -87,6 +100,11 @@ cryptography，密码学，网络安全的基石
 -   CBC: Cipher Block Chaining
 
 
+#### 破解 {#破解}
+
+需要知道秘钥和加密方法
+
+
 ### Public Key Cipher {#public-key-cipher}
 
 非对称秘钥加密，公钥加密
@@ -100,6 +118,11 @@ cryptography，密码学，网络安全的基石
 
 
 #### RSA {#rsa}
+
+
+#### 破解 {#破解}
+
+需要知道私钥和加密算法
 
 
 ### 秘钥分发 {#秘钥分发}
