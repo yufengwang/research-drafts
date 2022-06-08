@@ -32,6 +32,18 @@ q =  a **div** d ， r = a **mod** d
 定理：a，b 同余时，\\( \exists k \in \mathbb{Z}， a = b + km \\)
 
 
+### Arithmetic Modulo {#arithmetic-modulo}
+
+算术模运算
+
+\\(a \cdot \_m b = (a \cdot b)\mod m\\)
+
+\\(a + \_m b = (a + b)\mod m\\)
+
+
+### Fast Modulo Exponentiation {#fast-modulo-exponentiation}
+
+
 ## 质数 {#质数}
 
 质数又称之为素数
@@ -41,6 +53,14 @@ q =  a **div** d ， r = a **mod** d
 定理1： 任何一个大于 1 的整数，可以唯一的表示为一个质数或多个（ \\([2, +\infty)\\) ）质数的积，质因数按增序书写
 
 
+### Relatively Prime {#relatively-prime}
+
+
 ## Greatest Common Divisor {#greatest-common-divisor}
 
 最大公约数：能 **整除** 两个整数的 **最大** 整数，表示为 \\(gcd(a,b)\\)
+
+
+## Least Common Multiple {#least-common-multiple}
+
+最小公倍数
