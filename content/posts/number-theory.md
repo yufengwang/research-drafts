@@ -50,17 +50,35 @@ q =  a **div** d ， r = a **mod** d
 
 只能被 **1** 和 **其自身** **整除的** **大于 1** 的整数，反之称为 **合数**
 
-定理1： 任何一个大于 1 的整数，可以唯一的表示为一个质数或多个（ \\([2, +\infty)\\) ）质数的积，质因数按增序书写
+定理： 任何一个大于 1 的整数，可以唯一的表示为一个质数或多个（ \\([2, +\infty)\\) ）质数的积，质因数按增序书写
 
 
 ### Relatively Prime {#relatively-prime}
 
+互质：整数 a 和 b 的最大公约数为 1， 则 a 与 b 互质，即 \\(gcd(a,b) = 1\\)
+
+
+### Pairwise Relatively Prime {#pairwise-relatively-prime}
+
+成对互质，两两互质
+
 
 ## Greatest Common Divisor {#greatest-common-divisor}
 
-最大公约数：能 **整除** 两个整数的 **最大** 整数，表示为 \\(gcd(a,b)\\)
+最大公因数：能 **整除** 两个整数的 **最大** 整数，表示为 \\(gcd(a,b)\\)
 
 
 ## Least Common Multiple {#least-common-multiple}
 
 最小公倍数
+
+\\(a, b \in  \mathbb{Z^+}, a \cdot b=gcd(a,b) \cdot lcm(a,b)  \\)
+
+
+## Linear Congruence {#linear-congruence}
+
+线性同余，\\(a \cdot x \equiv b \pmod m\\)，x 为变量
+
+模的逆：\\(\exists \bar a \in \mathbb{Z} , \bar a \cdot a \equiv 1 \pmod m  \\)，\\( \bar a \\) 为 \\(  a \mod m\\) 的逆，用来求解线性同余里的 x
+
+应用：给计算机文件分配内存地址，伪随机数的生成，位校验
