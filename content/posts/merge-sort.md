@@ -6,7 +6,7 @@ tags = ["sort"]
 draft = false
 +++
 
-## Merge Sort {#merge-sort}
+## 实现 {#实现}
 
 归并排序，采用分治法，时间复杂度为 \\(O(nlog n)\\)
 
@@ -76,3 +76,6 @@ console.log("merge", mergeSort(arr, 0, arr.length - 1));
 
 
 ```
+
+
+## 分析 {#分析}
