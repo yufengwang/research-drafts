@@ -101,10 +101,10 @@ BST 不能包含重复值
 ### Red-Black {#red-black}
 
 
-### In Order {#in-order}
+### In order {#in-order}
 
 
-### Pre Order {#pre-order}
+### Pre order {#pre-order}
 
 
-### Post Order {#post-order}
+### Post order {#post-order}
