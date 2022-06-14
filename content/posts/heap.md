@@ -27,3 +27,7 @@ right(i) = 2i  + 1
 ### Min heap {#min-heap}
 
 最小堆
+
+除了根节点，A[i] &gt;= A[parent(i)]
+
+通常用来实现优先队列
