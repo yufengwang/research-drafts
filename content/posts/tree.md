@@ -108,8 +108,26 @@ BST 不能包含重复值
 
 ### In order {#in-order}
 
+中序遍历：
+
+1.  左子树 (in order)
+2.  根节点
+3.  右子树 (in order)
+
 
 ### Pre order {#pre-order}
 
+前序遍历：
+
+1.  根节点
+2.  左子树 (pre order)
+3.  右子树 (pre order)
+
 
 ### Post order {#post-order}
+
+后序遍历：
+
+1.  左子树 (post order)
+2.  右子树 (post order)
+3.  根节点
