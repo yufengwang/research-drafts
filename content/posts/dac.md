@@ -6,9 +6,23 @@ tags = ["dac"]
 draft = false
 +++
 
-草稿，待完善
-
-
-## Divide and Conquer {#divide-and-conquer}
+## 定义 {#定义}
 
 分治：将 **大问题** 拆为 **不相交** 的 **规模更小** 的 **子问题** ， 根据子问题的解求出原始问题的解
+
+分：大问题拆为小问题
+
+治：解决小问题
+
+合：由小问题的解合为大问题的解
+
+
+## Substitution method {#substitution-method}
+
+
+## Recursion-tree method {#recursion-tree-method}
+
+递归树方法
+
+
+## Master method {#master-method}
