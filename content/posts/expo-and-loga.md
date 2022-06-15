@@ -8,7 +8,7 @@ draft = false
 
 ## 指数 {#指数}
 
-定义： \\( b \in \mathbb{R^+}, n \in \mathbb{R^+} \\), \\(f\_b(n) = b^n = b \cdot b \cdot b \cdot ... \cdot b\\)
+定义： \\( b \in \mathbb{R^+}, n \in \mathbb{R^+} \\), \\(f\_b(n) = b^n = b \cdot b \cdot b \cdot ... \cdot b\\)，n 个 b 相乘
 
 定理：
 
