@@ -7,4 +7,4 @@ draft = false
 
 ## Algorithm analysis {#algorithm-analysis}
 
-算法分析方法
+算法分析方法1
