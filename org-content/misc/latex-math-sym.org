@@ -1,0 +1,3 @@
+#+TITLE: Latex Math Symbol
+#+DATA:<2022-06-08 Wed 14:07>
+#+FILETAGS: latex symbol

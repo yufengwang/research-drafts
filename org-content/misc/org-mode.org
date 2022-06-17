@@ -1,0 +1,23 @@
+#+LATEX_COMPILER: xelatex
+#+LATEX_HEADER: \usepackage[UTF8]{ctex}
+#+LATEX_HEADER: \setmainfont{Helvetica}
+#+LATEX_HEADER: \usepackage[a4paper, margin=1cm]{geometry}
+
+
+* 测试 org mode 的
+
+** Table
+
+| 我们  你谁asdfsadfdas          | 你们你说 |
+| 当 你好我hi是hello,you boty 你 |          |
+
+
+
+** Math
+
+If $a^2=b$ and \( b=2 \), then the solution must be
+either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2} \].
+
+\begin{equation}
+x=\sqrt{b}
+\end{equation}

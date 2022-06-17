@@ -1,0 +1,19 @@
+#+TITLE: 归纳和递归
+#+DATE: <2022-06-01 Wed 23:38>
+#+FILETAGS: induction recursion @math
+
+* 数学归纳和递归
+
+** 数学归纳
+
+证明：当 \( n \in \mathbb{Z^+} \) 时，\(P(n)\) 成立。
+
+基础条件： 证明 \(P(1)\) 成立
+
+归纳条件： 证明对 \(\forall k \in \mathbb{Z^+}  \)， \(P(k) \rightarrow P(k+1) \) 成立
+
+即可证原命题成立
+
+推理公式： \( (P(1) \land \forall k (P(k) \rightarrow P(k+1))) \rightarrow \forall n P(n)  \)，\(n,k \in \mathbb{Z^+}\)
+
+** 递归

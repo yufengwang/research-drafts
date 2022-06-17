@@ -1,0 +1,241 @@
+#+TITLE: 网络安全
+#+DATA: <2022-05-30 Mon 14:43>
+#+FILETAGS: network security
+
+* 什么是安全通信
+
+假定 Alice, Bob 为两个通讯实体，Trudy 为中间攻击人，如何保证 Alice 和 Bob 能进行安全通信 ？
+
+** Confidentiality
+
+数据的机密性，即只有通信双方可以知道通信内容
+
+** Integrity
+
+消息完整性
+
+*** Data Integrity
+
+Alice 发的消息没有被篡改
+
+*** Originality
+
+Bob 收到的消息确实是 Alice 发的
+
+*** Timeliness
+
+**  Authentication
+
+通信侧的身份认证
+
+网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证，Alice 证明她就是 Alice
+
+* Thread Model
+
+攻击者如何破坏通信安全
+
+** 窃听
+
+- 嗅探，记录信道通信报文
+- 篡改，插入，删除通信报文
+
+** Playback Attack
+
+攻击者把以前发过的消息又发了一遍
+
+** Suppress-replay Attack
+
+抑制-重放攻击
+
+* Cryptography
+
+cryptography，密码学，网络安全的基石
+
+加密算法是已知的，公开的，秘钥是私密的
+
+** Caesar Cipher
+
+凯撒加密法
+
+enc: \(f(p) = (p + k) \mod 26\)
+
+dec: \(f(p) = (p - k) \mod 26\)
+
+破解： 概率学分析
+
+** Symmetric-Key Cipher
+
+对称秘钥加密（一个秘钥），比非对称秘钥更快
+
+难点：如何安全的交换和保存秘钥
+
+*** Stream Cipher
+
+流加密
+
+*** Block Cipher
+
+块加密
+
+- DES: Data Encryption Standard
+- AES: Advanced Encryption Standard
+- CBC: Cipher Block Chaining
+
+*** 破解
+
+需要知道秘钥和加密方法
+
+
+** Public Key Cipher
+
+非对称秘钥加密，公钥加密
+
+特点：
+
+- 两个秘钥
+- 公钥加密，私钥解密
+- 私钥 =私有= ，公钥公开
+- 速度较慢
+
+*** RSA
+
+*** 破解
+
+需要知道私钥和加密算法
+
+
+** 秘钥分发
+
+*** Session Key
+
+symmetric key， 只有通讯双方知道的单一 key，必须保持私密
+
+仅在单次会话期有效
+
+*** longerlived Predistributed Keys.
+
+长生命周期的预分配秘钥
+
+*** 公钥分发，校验
+
+如何确认公钥属于 Alice ?
+
+** Diffie-Hellman Key Agreement
+
+DH 秘钥协商
+
+** Key Distribution Center
+
+秘钥分发中心
+
+** Public Key Infrastructure
+
+公钥体系，维护公钥和实体的关系；
+
+PKI 体系运作的前提为 CA 机构可信
+
+信任链
+
+原理：
+
+- 基于信任的传递
+- 浏览器预装了 CA 机构的证书
+
+** Public Key Certificate
+
+公钥证书，简称证书，其中一个主要的证书标准为 *X.509*
+
+证书内容：
+
+1. 待认证的实体的身份（email 或 域名）
+2. 待认证的实体的公钥
+3. 签名者的身份
+4. 数字签名
+5. 数字签名算法的标识
+6. 证书过期时间（可选）
+
+
+** Certificate Authority
+
+证书颁发机构，简称 CA
+
+** 信任模型
+
+*** 基于 CA
+
+绝对可信或绝对不可信，依赖第三方
+
+*** 基于 web of trust (信任网)，例如 PGP
+
+在这个模型里，信任是一定程度的信任，让用户自己去决定信任与否
+
+** 证书撤销
+
+当私钥泄露时，证书应该被撤销
+
+ca 机构维护 certificate revocation list
+
+** MAC
+
+message authentication code，消息校验码
+
+m: 消息，s: 共享秘钥，Mac: MAC 算法
+
+MAC = Mac(m + s)，固定长度的认证标签，与输入的长度无关
+
+只有知道 key 的通信双方才能计算出一致的 MAC，避免消息被篡改
+
+*** MAC 的属性
+
+1. 使用对称性秘钥
+2. 可对计算任意长度的消息进行计算
+3. 固定长度的输出值，与输入的长度无关
+4. 可证明消息的完整性
+5. 可证明消息的可靠性
+6. 无法证明消息的不可否认性（Alice 和 Bob 都能计算出一致的 MAC 值）
+
+*** HMAC
+
+hash-based message authentication code
+
+MAC 的一种实现方式，基于 Hash 算法
+
+** Digital Signature
+
+私钥签名，公钥验签
+
+* SSL/TLS
+
+** SSL
+
+Secure Sockets Layer，安全套接字层，最早是 Netscape 研发
+
+** TLS
+
+Transport Layer Security，传输层安全
+
+SSL 3 的微小修订版，被 IETF 标准化
+
+** HTTPS
+
+HTTP + SSL/TLS
+
+*** 握手协议
+
+握手阶段，协商以下三个部分：
+
+1. 数据完整性 Hash 算法（MD5，SHA-1，etc.），用于 HMAC
+2. 对称秘钥算法（DES, AES）
+3. *session key* 交换方法
+
+*** Master Secret
+
+主密钥，用于生成以下四个秘钥
+
+1. Eb：session 加密秘钥，用于加密从 Bob 发给 Alice 的消息
+2. Mb：session MAC 秘钥，校验 Bob 发给 Alice 的消息的完整性
+3. Ea：与上反之
+4. Ma：与上反之
+
+
+*** Encrypted Master Secret

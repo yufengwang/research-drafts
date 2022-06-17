@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>index</h1>
+    <button id="btn">click me</button>
+    <!-- <button id="forward">forward</button> -->
+    <a href="./demo.html">go demo</a>
+    <script>
+        const ele = document.getElementById('btn')
+        // const forward = document.getElementById('forward')
+
+        ele.addEventListener('click', handleClick)
+        // forward.addEventListener('click', () => {
+
+        // })
+
+        function handleClick() {
+            window.history.pushState({ page: "demo", justPush: true },'');
+        }
+        window.addEventListener('popstate', (e) => {
+            // console.log(e)
+            console.log(history)
+        })
+    </script>
+  </body>
+</html>

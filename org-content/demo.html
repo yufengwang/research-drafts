@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>demo</h1>
+    <button id="btn">click me</button>
+    <!-- <button id="back">back</button> -->
+    <a href="./index.html">go index</a>
+    <script>
+        const ele = document.getElementById('btn')
+        // const back = document.getElementById('back')
+        // back.addEventListener('click', () => {
+        //     history.back()
+        // })
+        ele.addEventListener('click', handleClick)
+        function handleClick() {
+            window.history.pushState({ page: "index" }, "", "index.html");
+        }
+    </script>
+    
+</body>
+</html>

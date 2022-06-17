@@ -1,0 +1,15 @@
+.relative {
+    position: relative;
+    height: 200px;
+    /* top: 20px; */
+    /* border: 1px solid red; */
+    background: red;
+
+}
+.relative-next {
+    /* position: relative; */
+    /* z-index: 2; */
+    /* border: 1px solid green; */
+    height: 200px;
+    background: green;
+}

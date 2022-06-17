@@ -1,0 +1,69 @@
+#+TITLE: 数论
+#+DATE: <2022-05-28 Sat 20:36>
+#+FILETAGS: number-theory @math
+
+* 整除
+
+\(a \ | \  b\)： 即如果  \(a, b, c \in \mathbb{Z}, a \neq 0, \exists c(ac = b)\) ，则说明 a 能整除 b，a 为 b 的因子或除数;
+
+反之，若 \(\nexists c\)，则 \( a \nmid b\)，即 a 不能整除 b
+
+* Division Algorithm
+
+假设 \(a \in \mathbb{Z}, d \in \mathbb{Z^+}\) ， 存在唯一的 \( q, r \in \mathbb{Z} ,  0 \leq r < d \)， 使 \( a = dq + r\)
+
+d 为除数，a 为被除数，q 为商，r 为余数
+
+q =  a *div* d ， r = a *mod* d
+
+* 模运算
+
+定理：如果 \(a, b \in \mathbb{Z}, m \in \mathbb{Z^+}，m \mid (a - b)  \)，则 a, b 对 m 同余，简写为 \( a \equiv b \pmod m \)
+
+即 a *mod* m = b *mod* m ，m 为模数
+
+定理：a，b 同余时，\( \exists k \in \mathbb{Z}， a = b + km \)
+
+** Arithmetic Modulo
+
+算术模运算
+
+\(a \cdot _m b = (a \cdot b)\mod m\)
+
+\(a + _m b = (a + b)\mod m\)
+
+** Fast Modulo Exponentiation
+
+* 质数
+
+质数又称之为素数
+
+只能被 *1* 和 *其自身* *整除的* *大于 1* 的整数，反之称为 *合数*
+
+定理： 任何一个大于 1 的整数，可以唯一的表示为一个质数或多个（ \([2, +\infty)\) ）质数的积，质因数按增序书写
+
+** Relatively Prime
+
+互质：整数 a 和 b 的最大公约数为 1， 则 a 与 b 互质，即 \(gcd(a,b) = 1\)
+
+** Pairwise Relatively Prime
+
+成对互质，两两互质
+
+* Greatest Common Divisor
+
+最大公因数：能 *整除* 两个整数的 *最大* 整数，表示为 \(gcd(a,b)\)
+
+* Least Common Multiple
+
+最小公倍数
+
+\(a, b \in  \mathbb{Z^+}, a \cdot b=gcd(a,b) \cdot lcm(a,b)  \)
+
+* Linear Congruence
+
+线性同余，\(a \cdot x \equiv b \pmod m\)，x 为变量
+
+模的逆：\(\exists \bar a \in \mathbb{Z} , \bar a \cdot a \equiv 1 \pmod m  \)，\( \bar a \) 为 \(  a \mod m\) 的逆，用来求解线性同余里的 x
+
+应用：给计算机文件分配内存地址，伪随机数的生成，位校验

@@ -1,0 +1,162 @@
+class LRUCache {
+  /**@param {number} capacity */
+  constructor(capacity) {
+    this.capacity = capacity;
+    this.cache = new Map();
+  }
+  get(key) {
+    if (!this.cache.has(key)) {
+      return -1;
+    }
+    const temp = this.cache.get(key);
+    this.cache.delete(key);
+    this.cache.set(key, temp);
+    return temp;
+  }
+  put(key, value) {
+    if (this.cache.has(key)) {
+      this.cache.delete(key);
+    } else if (this.cache.size >= this.capacity) {
+      // 删掉最旧的元素
+      this.cache.delete(this.cache.keys().next().value);
+    }
+    this.cache.set(key, value);
+  }
+}
+
+/**
+ * Least Recently Used cache
+ * Get: O(1), hash 表
+ * Put: O(1)，需要维持顺序，最近最少使用的节点要删掉
+ *
+ * 双向链表
+ */
+class LRUCache1 {
+  constructor(capacity) {
+    // 当前元素数量
+    // 容量上限
+    this.capacity = capacity;
+    /** @type {{[index: number]: LinkedListNode}} */
+    this.cache = {};
+    // 当前容量
+    this.size = 0;
+
+    // 伪头结点
+    this.head = new LinkedListNode(0, 0);
+    // 伪尾节点
+    this.tail = new LinkedListNode(0, 0);
+
+    // 调整指针指向
+    this.head.next = this.tail;
+    this.tail.prev = this.head;
+  }
+
+  /**
+   * @param {number} key
+   */
+  keyExits(key) {
+    return this.cache[key] !== undefined;
+  }
+
+  /**
+   * @param {number} key
+   */
+  get(key) {
+    if (!this.keyExits(key)) {
+      return -1;
+    }
+
+    const node = this.cache[key];
+
+    this.moveToHead(node);
+
+    return node.val;
+  }
+
+  /**
+   * @param {number} key
+   * @param {number} value
+   */
+  put(key, value) {
+    // key 存在，更新值
+    if (this.keyExits(key)) {
+      const node = this.cache[key];
+      // 更新值
+      node.val = value;
+      // 调整位置，移动到头节点
+      this.moveToHead(node);
+    } else {
+      const node = new LinkedListNode(key, value);
+
+      if (this.size === this.capacity) {
+        // 如果 cache 满了, 移除尾节点
+        const node = this.removeTail();
+        delete this.cache[node.key];
+        this.size--;
+      }
+
+      this.addToHead(node);
+
+      this.cache[key] = node;
+
+      this.size++;
+    }
+  }
+
+  /**
+   * 移除尾节点
+   */
+  removeTail() {
+    /** @type {LinkedListNode}  */
+    const node = this.tail.prev;
+    this.removeNode(node);
+    // 返回当前真实尾节点的引用
+    return node;
+  }
+
+  /**
+   * 移动当前节点到头结点
+   * @param {LinkedListNode} node
+   */
+  moveToHead(node) {
+    this.removeNode(node);
+    this.addToHead(node);
+  }
+
+  /**
+   * 调整节点的指针指向，使其从双链表中删除
+   * @param {LinkedListNode} node
+   */
+  removeNode(node) {
+    node.prev.next = node.next;
+    node.next.prev = node.prev;
+  }
+
+  /**
+   * 将节点添加到头结点
+   * @param {LinkedListNode} node
+   */
+  addToHead(node) {
+    // 先调整当前节点的指针
+    node.prev = this.head;
+    node.next = this.head.next;
+
+    this.head.next.prev = node;
+    this.head.next = node;
+  }
+}
+
+class LinkedListNode {
+  /**
+   * @param { number } key
+   * @param { number } val
+   **/
+  constructor(key, val) {
+    this.key = key;
+    this.val = val;
+    this.next = null;
+    this.prev = null;
+  }
+}
+
+export {};

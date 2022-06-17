@@ -1,0 +1,13 @@
+#+TITLE: 哈希表
+#+DATE: <2022-05-28 Sat 21:47>
+#+FILETAGS: hash-table
+
+** Collision
+
+冲突： H(k1) === H(k2)
+
+** 冲突解决方案
+
+*** Chaining
+
+*** Open Addressing

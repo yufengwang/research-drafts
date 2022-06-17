@@ -1,0 +1,37 @@
+#+TITLE: 如何证明
+#+DATE: <2022-06-01 Wed 00:06>
+#+FILETAGS: proof @math
+
+* Proof method
+
+证明方法
+
+** Theorem
+
+定理： 可证明为真的语句 （事实，真相）
+
+** Axioms
+
+公理： 假定为 true 的语句 (statements)
+
+** Lemma
+
+引理，辅助定理
+
+** Proof
+
+证明 p true，  q  为 true
+
+*** Direct proof
+
+直接证明
+
+if p true, p -> q true, q true
+
+*** Contraposition
+
+~q -> ~p
+
+*** Contradiction
+
+矛盾法

@@ -1,0 +1,7 @@
+#+TITLE: 编程语言语法
+#+DATE:<2022-06-04 Sat 16:48>
+#+FILETAGS: plt
+
+* BNF
+
+Backus-Naur form (BNF)，用于描述计算机编程语言的语法规则

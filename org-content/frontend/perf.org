@@ -1,0 +1,10 @@
+* 性能优化
+
+** webpack 性能优化
+
+** react 性能优化
+
+1. shouldComponentUpdate，不需要更新时，return false，避免 re-render
+2. 使用 React.PureComponent，自动比较 props 和 state
+
+** 其他层面性能优化

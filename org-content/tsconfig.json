@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2016"],
+    "jsx": "react",
+    "noEmit": true,
+    "target": "es6",
+    "allowJs": true,
+    "checkJs": true,
+    "module": "commonjs",
+    "noUnusedParameters": false,
+    "resolveJsonModule": true,
+  },
+  "include": ["**/*.js"],
+  "exclude": ["node_modules", "out"]
+}

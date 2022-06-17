@@ -1,0 +1,21 @@
+#+TITLE: 分治
+#+DATE: <2022-06-03 Fri 23:43>
+#+FILETAGS: dac
+
+* 定义
+
+分治：将 *大问题* 拆为 *不相交* 的 *规模更小* 的 *子问题* ， 根据子问题的解求出原始问题的解
+
+分：大问题拆为小问题
+
+治：解决小问题
+
+合：由小问题的解合为大问题的解
+
+* Substitution method
+
+* Recursion-tree method
+
+递归树方法
+
+* Master method

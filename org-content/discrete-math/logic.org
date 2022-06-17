@@ -1,0 +1,13 @@
+#+TITLE: 命题逻辑
+#+DATE: <2022-06-01 Wed 00:05>
+#+FILETAGS: logic @math
+
+* Proposition logic
+
+** Proposition
+
+命题： 描述性语句，要么真，要么假
+
+** Conditional Statements
+
+if p, then q, i.e. p -> q

@@ -1,0 +1,52 @@
+#+TITLE: leetcode-77
+#+DATE: <2022-05-31 Tue 16:30>
+#+FILETAGS: leetcode
+
+* 组合
+
+给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。
+
+你可以按 任何顺序 返回答案。
+
+1 <= n <= 20
+
+1 <= k <= n
+
+** 题解
+
+#+begin_src  js
+
+/**
+ ,* n 选 k 共有多少个组合情况
+ ,* @param {number} n
+ ,* @param {number} k
+ ,*/
+const combine = (n, k) => {
+  const ans = [];
+
+  /**
+   ,* @param {number} k 子集的元素数
+   ,* @param {number} start 从第几个开始选
+   ,* @param {number} list 子集数组
+   ,*/
+  const getCombine = (k, start, list) => {
+    if (k === 0) {
+      // 选满了
+      ans.push(list.slice());
+      return;
+    }
+
+    for (let i = start; i <= n; i++) {
+      list.push(i);
+      getCombine(k - 1, i + 1, list);
+      list.pop(list[list.length  -1])
+    }
+
+  };
+
+  getCombine(k, 1, []);
+
+  return ans;
+
+};
+#+end_src

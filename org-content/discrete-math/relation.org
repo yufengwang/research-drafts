@@ -1,0 +1,6 @@
+#+TITLE: 关系
+
+
+* Binary Relation
+
+二元 关系

@@ -1,0 +1,8 @@
+#+TITLE: Org mode
+
+#+LATEX_COMPILER: xelatex
+#+LATEX_HEADER: \usepackage[UTF8]{ctex}
+#+LATEX_HEADER: \setmainfont{Helvetica}
+#+LATEX_HEADER: \usepackage[a4paper, margin=1cm]{geometry}
+
+** org mode

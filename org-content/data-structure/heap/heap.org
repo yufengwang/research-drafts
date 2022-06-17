@@ -1,0 +1,33 @@
+#+TITLE: 堆
+#+DATE: <2022-06-14 二 23:06>
+#+FILETAGS: heap
+
+* 定义
+
+可以用完整二叉树表示的数组，树的每一个节点为数组中的元素
+
+parent(i) = Math.floor(i/2)
+
+left(i) = 2i
+
+right(i) = 2i  + 1
+
+** Max heap
+
+最大堆
+
+除了根节点 A[i] <= A[parent(i)]
+
+** Min heap
+
+最小堆
+
+除了根节点，A[i] >= A[parent(i)]
+
+通常用来实现优先队列
+
+* 维持堆属性
+
+* 构造最大堆
+
+* 堆排序

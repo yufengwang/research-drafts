@@ -1,0 +1,15 @@
+#+TITLE: js 原型
+#+DATE: <2022-06-03 Fri 15:50>
+#+FILETAGS: prototype @js
+
+草稿，待完善
+
+* [ [Prototype] ]
+
+隐藏属性，决定继承关系
+
+* __proto__
+
+历史遗留的 getter/setter ，不建议使用
+
+建议使用这俩： Object.getPrototypeOf/Object.setPrototypeOf

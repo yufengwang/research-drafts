@@ -1,0 +1,21 @@
+#+TITLE: 动态规划
+#+DATE: <2022-06-03 Fri 23:42>
+#+FILETAGS:  dp
+
+* Dynamic Programming
+
+动态规划: 由子问题的解推出最终问题的解，子问题重叠，即子问题共享子子问题
+
+避免重复计算子问题
+
+** Elements
+
+动态规划的基本元素
+
+*** Optimal Substructure
+
+最优子结构，通过子问题的最优解，求出最终的最优解
+
+*** Overlapping Subproblem
+
+重叠子问题

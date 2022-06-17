@@ -1,0 +1,4 @@
+* 常用的 npm 包
+
+** husky
+** lint staged

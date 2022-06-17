@@ -1,0 +1,30 @@
+#+TITLE: 指数和对数
+#+DATE:<2022-06-04 Sat 15:00>
+#+FILETAGS: @math
+
+* 指数
+
+定义： \( b \in \mathbb{R^+}, n \in \mathbb{R^+} \), \(f_b(n) = b^n = b \cdot b \cdot b \cdot ... \cdot b\)，n 个 b 相乘
+
+定理：
+
+1. \(b^{x+y} = b^x \cdot b^y\)
+2.  \((b^x)^y=b^{x \cdot y}\)
+
+* 对数
+
+
+定义： \(f = \log_b x \)，以 b 为底的 x 的对数值
+
+ \(b^x = a, x = \log_b a\)
+
+ \(b^{\log_b a} = a\)
+
+定理：
+
+1. \(\log_b (x \cdot y)=\log_b x + \log_b y\)
+2. \(\log_b (x^y)=y \cdot \log_b x\)
+3. \(\log_a x = \frac{\log_b x}{\log_b a}=\frac{1}{ \log_b a} \cdot \log_b x\)，（换底，常量值乘以 b 为底的对数）
+
+
+在计算机领域，\(\log x\)，底省略时，通常指以 2 为底的对数

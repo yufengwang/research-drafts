@@ -1,0 +1,48 @@
+#+TITLE: 图
+#+DATE: <2022-05-28 Sat 21:47>
+#+FILETAGS: graph
+
+** 定义
+
+G = (V, E)， V 为非空顶点集，E 为边的集合
+
+*** Directed Graph
+
+有向图
+
+边 （u, v), u -> v ， v 跟 u 相邻
+
+没有自循环的有向图是 *简单有向图*
+
+*** Undirected Graph
+
+无向图
+
+无向图不允许自循环
+
+** Degree
+
+度
+
+** Path
+
+<v0, v1, ... , vk> v0 -> vk 的顶点的一个序列
+
+长度： 路径中边的数量
+
+*** Simple Path
+
+路径中所有的顶点都是不同的
+
+*** Cycle
+
+
+** Edge
+
+(u, v), 有向图中 (u, v) , (v, u) 是不一致的
+
+** Vertex
+
+** Connected
+
+每一个顶点都能从其他顶点触达到 reachable

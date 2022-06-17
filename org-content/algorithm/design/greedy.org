@@ -1,0 +1,11 @@
+#+TITLE: 贪心算法
+#+DATE: <2022-06-03 Fri 23:42>
+#+FILETAGS: greedy-algo
+
+草稿，待完善
+
+* Greedy
+
+贪心
+
+每一步都求最优解

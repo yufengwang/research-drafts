@@ -1,0 +1,20 @@
+#+TITLE: 头文件
+#+DATE:<2022-06-06 Mon 21:32>
+#+FILETAGS: c/cpp
+
+* 头文件
+
+用于将函数，变量声明放在同一个文件里，便于被其他文件引用
+
+仅包含声明，不包含定义，定义在 linker 阶段链接到程序里
+
+如下图
+
+[[file:pic.png]]
+
+
+
+ #+begin_src c
+ #include "something.h" /*当前目录下找*/
+ #include <iostream> /*在系统环境里找, include directory*/
+ #+end_src

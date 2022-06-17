@@ -1,0 +1,40 @@
+#+TITLE: C 预处理器
+#+DATE: <2022-06-05 Sun 20:34>
+#+FILETAGS: c/cpp
+
+
+* 预处理
+
+C: C 或 C++
+
+程序编译前的转换过程，不修改源文件，仅在内存中完成转换
+
+preprocessor 不理解 C 的语法
+
+指令在编译前被解析
+
+[[https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/][参考]]
+
+* 预处理指令
+
+以 =#symbol= 开头（symbol为指令字符），以换行符结尾;
+
+常用指令
+
+| 指令                           | 含义             |
+|--------------------------------+------------------|
+| =#include=                     | 引入头文件       |
+| =#define=                      | 宏定义           |
+| =#ifdef=, =#ifndef=, =#endif=. | 条件编译指令     |
+| =#if 0=                        | 不编译某些代码块 |
+
+
+** Object-like Macros
+
+类对象宏
+
+#+begin_src  c
+#define PRINT_JOE /* 用于条件编译 */
+#define MY_NAME "Alex" /* 用于常量定义, 老代码里用到 */
+#+end_src
+

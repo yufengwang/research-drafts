@@ -1,0 +1,40 @@
+#+TITLE: 插入排序
+#+DATE:<2022-06-10 Fri 12:28>
+#+FILETAGS: sort
+
+* 实现
+
+时间复杂度 \( O(n^2 \)
+
+#+begin_src js
+
+const insertSort = (arr) => {
+  const len = arr.length
+
+  // 从第二个元素开始遍历
+  for  (let i = 1; i < len; i ++ ) {
+
+    const ele = arr[i]
+
+    // 索引i位置的值依次跟前面的元素比
+    for (let j = i - 1; j >= 0; j --) {
+
+      const  cur =  arr[j]
+      const  next = arr[j + 1]
+
+      if(cur < ele) {
+        break
+      }
+
+      arr[j] =  next
+      arr[j+1] = cur
+    }
+
+  }
+
+  return arr
+}
+
+#+end_src
+
+* 分析

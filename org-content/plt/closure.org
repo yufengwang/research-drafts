@@ -1,0 +1,5 @@
+#+TITLE: 闭包
+#+DATE: <2022-06-04 Sat 16:58>
+#+FILETAGS: closure
+
+* 闭包是什么
