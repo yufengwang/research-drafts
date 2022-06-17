@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="定义 #  有序元素集，整数子集到另一个集合的映射
+例: \( \{a_{n}\} \)， \(a_n = \frac {1}{n}\)，\(n \in \mathbb{Z^&#43;} \)
+等比级数 #  \(a, ar, ar^2,&hellip;,ar^n\), (\(a,r \in R\))，r 为公比
+等差数列 #  \(a, a&#43;d, a&#43;2d, &hellip; ,a&#43;nd, &hellip;\), d 为公差
+Fibonacci sequence #  斐波那契数列
+\(f_0 = 0, f_1 = 1, f_n = f_{n-1} &#43; f_{n-2}, ( n \geq 2, n \in \mathbb{Z^&#43;} ) \)">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="数列" />
+<meta property="og:description" content="定义 #  有序元素集，整数子集到另一个集合的映射
+例: \( \{a_{n}\} \)， \(a_n = \frac {1}{n}\)，\(n \in \mathbb{Z^&#43;} \)
+等比级数 #  \(a, ar, ar^2,&hellip;,ar^n\), (\(a,r \in R\))，r 为公比
+等差数列 #  \(a, a&#43;d, a&#43;2d, &hellip; ,a&#43;nd, &hellip;\), d 为公差
+Fibonacci sequence #  斐波那契数列
+\(f_0 = 0, f_1 = 1, f_n = f_{n-1} &#43; f_{n-2}, ( n \geq 2, n \in \mathbb{Z^&#43;} ) \)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yfw.ink/posts/sequence/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-16T23:12:00+08:00" />
+<meta property="article:modified_time" content="2022-06-16T23:36:49+08:00" />
+
+<title>数列 | Notes and Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.739aba619a33cb3cbd6a28d33906989a40f1c147c47f755270eef9d82c1fe8c5.js" integrity="sha256-c5q6YZozyzy9aijTOQaYmkDxwUfEf3VScO752Cwf6MU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script src="https://yfw.ink/js/mathjax-config.js"></script>
+<script src="https://yfw.ink/js/tex-chtml.js"></script>
+
+
+
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Notes and Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>数列</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#等比级数">等比级数</a></li>
+        <li><a href="#等差数列">等差数列</a></li>
+        <li><a href="#fibonacci-sequence">Fibonacci sequence</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/sequence/">数列</a>
+  </h1>
+  
+  <h5>June 16, 2022</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/math/">math</a>
+  </div>
+  
+
+  
+
+
+
+<h2 id="定义">
+  定义
+  <a class="anchor" href="#%e5%ae%9a%e4%b9%89">#</a>
+</h2>
+<p>有序元素集，整数子集到另一个集合的映射</p>
+<p>例: \( \{a_{n}\} \)， \(a_n = \frac {1}{n}\)，\(n \in \mathbb{Z^+} \)</p>
+<h2 id="等比级数">
+  等比级数
+  <a class="anchor" href="#%e7%ad%89%e6%af%94%e7%ba%a7%e6%95%b0">#</a>
+</h2>
+<p>\(a, ar, ar^2,&hellip;,ar^n\), (\(a,r \in R\))，r 为公比</p>
+<h2 id="等差数列">
+  等差数列
+  <a class="anchor" href="#%e7%ad%89%e5%b7%ae%e6%95%b0%e5%88%97">#</a>
+</h2>
+<p>\(a, a+d, a+2d, &hellip; ,a+nd, &hellip;\), d 为公差</p>
+<h2 id="fibonacci-sequence">
+  Fibonacci sequence
+  <a class="anchor" href="#fibonacci-sequence">#</a>
+</h2>
+<p>斐波那契数列</p>
+<p>\(f_0 = 0, f_1 = 1, f_n = f_{n-1} + f_{n-2}, ( n \geq 2, n \in \mathbb{Z^+} ) \)</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/commit/00d96be063f90ea7b0f4f9e9d5091ca94d782eb5" title='最后修改者 richard | June 16, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>June 16, 2022</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#等比级数">等比级数</a></li>
+        <li><a href="#等差数列">等差数列</a></li>
+        <li><a href="#fibonacci-sequence">Fibonacci sequence</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sort on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/sort/</link>
+    <description>Recent content in sort on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Jun 2022 14:00:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/sort/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速排序</title>
+      <link>https://yfw.ink/posts/quick-sort/</link>
+      <pubDate>Tue, 14 Jun 2022 14:00:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/quick-sort/</guid>
+      <description>实现 #   /** *数组分割 * */ const partition = (arr, p, r) =&amp;gt; {  // 去数组最后一个元素为分割点  const pivot = arr[r];  let i = p - 1;   // 遍历，将比分割点小的元素都挪到左边  for (let j = p; j &amp;lt; r; j++) {  if (arr[j] &amp;lt;= pivot) {  i++;  let tmp = arr[i];  arr[i] = arr[j];  arr[j] = tmp;  }  }  // 将分割点的元素挪到左右数组中间  const tmp = arr[i + 1];  arr[i + 1] = pivot;  arr[r] = tmp;   // 返回分割点的索引  return i + 1; };  /** * 快速排序 */ const quickSort = (arr, p, r) =&amp;gt; {  // p &amp;lt; r 时，数组中不止一个元素，需要排序，否则无需排序  if (p &amp;lt; r) {  // 数组分割，找出分割点索引，分割点左侧的值都不大于分割点，右侧的值都大于分割点  const pivotIdx = partition(arr, p, r);  console.</description>
+    </item>
+    
+    <item>
+      <title>插入排序</title>
+      <link>https://yfw.ink/posts/insert-sort/</link>
+      <pubDate>Fri, 10 Jun 2022 12:28:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/insert-sort/</guid>
+      <description>实现 #  时间复杂度 \( O(n^2 \)
+ const insertSort = (arr) =&amp;gt; {  const len = arr.length   // 从第二个元素开始遍历  for (let i = 1; i &amp;lt; len; i ++ ) {   const ele = arr[i]   // 索引i位置的值依次跟前面的元素比  for (let j = i - 1; j &amp;gt;= 0; j --) {   const cur = arr[j]  const next = arr[j + 1]   if(cur &amp;lt; ele) {  break  }   arr[j] = next  arr[j+1] = cur  }   }   return arr } 分析 #  </description>
+    </item>
+    
+    <item>
+      <title>归并排序</title>
+      <link>https://yfw.ink/posts/merge-sort/</link>
+      <pubDate>Fri, 03 Jun 2022 23:46:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/merge-sort/</guid>
+      <description>实现 #  归并排序，采用分治法，时间复杂度为 \(O(nlog n)\)
+ /** * @param {number[]} arr 待合并原始数组 * @param {number} p 左索引，第一个元素的索引 * @param {number} q 中位索引 * @param {number} r 右索引，最后一个元素的索引 * * [p, q), [q, r] 均为已排序好的子数组 * * 将 [p,q), [q, r] 合并为一个排序好的数组 * */ const merge = (arr, p, q, r) =&amp;gt; {  // concat 的为哨兵节点  const arrLeft = arr.slice(p, q + 1).concat(Number.POSITIVE_INFINITY);  const arrRight = arr.slice(q + 1, r + 1).</description>
+    </item>
+    
+  </channel>
+</rss>

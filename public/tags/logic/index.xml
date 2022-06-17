@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logic on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/logic/</link>
+    <description>Recent content in logic on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 Jun 2022 00:05:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/logic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>命题逻辑</title>
+      <link>https://yfw.ink/posts/logic/</link>
+      <pubDate>Wed, 01 Jun 2022 00:05:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/logic/</guid>
+      <description>Proposition logic #  Proposition #  命题： 描述性语句，要么真，要么假
+Conditional Statements #  if p, then q, i.e. p -&amp;gt; q</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="定义 #  G = (V, E)， V 为非空顶点集，E 为边的集合
+Directed Graph #  有向图
+边 （u, v), u -&gt; v ， v 跟 u 相邻
+没有自循环的有向图是 简单有向图
+Undirected Graph #  无向图
+无向图不允许自循环
+Degree #  度
+Path #  &lt;v0, v1, &hellip; , vk&gt; v0 -&gt; vk 的顶点的一个序列
+长度： 路径中边的数量
+Simple Path #  路径中所有的顶点都是不同的
+Cycle #  Edge #  (u, v), 有向图中 (u, v) , (v, u) 是不一致的">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="图" />
+<meta property="og:description" content="定义 #  G = (V, E)， V 为非空顶点集，E 为边的集合
+Directed Graph #  有向图
+边 （u, v), u -&gt; v ， v 跟 u 相邻
+没有自循环的有向图是 简单有向图
+Undirected Graph #  无向图
+无向图不允许自循环
+Degree #  度
+Path #  &lt;v0, v1, &hellip; , vk&gt; v0 -&gt; vk 的顶点的一个序列
+长度： 路径中边的数量
+Simple Path #  路径中所有的顶点都是不同的
+Cycle #  Edge #  (u, v), 有向图中 (u, v) , (v, u) 是不一致的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yfw.ink/posts/graph/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-28T21:47:00+08:00" />
+<meta property="article:modified_time" content="2022-06-03T23:54:33+08:00" />
+
+<title>图 | Notes and Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.739aba619a33cb3cbd6a28d33906989a40f1c147c47f755270eef9d82c1fe8c5.js" integrity="sha256-c5q6YZozyzy9aijTOQaYmkDxwUfEf3VScO752Cwf6MU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script src="https://yfw.ink/js/mathjax-config.js"></script>
+<script src="https://yfw.ink/js/tex-chtml.js"></script>
+
+
+
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Notes and Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>图</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义">定义</a>
+          <ul>
+            <li><a href="#directed-graph">Directed Graph</a></li>
+            <li><a href="#undirected-graph">Undirected Graph</a></li>
+          </ul>
+        </li>
+        <li><a href="#degree">Degree</a></li>
+        <li><a href="#path">Path</a>
+          <ul>
+            <li><a href="#simple-path">Simple Path</a></li>
+            <li><a href="#cycle">Cycle</a></li>
+          </ul>
+        </li>
+        <li><a href="#edge">Edge</a></li>
+        <li><a href="#vertex">Vertex</a></li>
+        <li><a href="#connected">Connected</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/graph/">图</a>
+  </h1>
+  
+  <h5>May 28, 2022</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/graph/">graph</a>
+  </div>
+  
+
+
+
+<h2 id="定义">
+  定义
+  <a class="anchor" href="#%e5%ae%9a%e4%b9%89">#</a>
+</h2>
+<p>G = (V, E)， V 为非空顶点集，E 为边的集合</p>
+<h3 id="directed-graph">
+  Directed Graph
+  <a class="anchor" href="#directed-graph">#</a>
+</h3>
+<p>有向图</p>
+<p>边 （u, v), u -&gt; v ， v 跟 u 相邻</p>
+<p>没有自循环的有向图是 <strong>简单有向图</strong></p>
+<h3 id="undirected-graph">
+  Undirected Graph
+  <a class="anchor" href="#undirected-graph">#</a>
+</h3>
+<p>无向图</p>
+<p>无向图不允许自循环</p>
+<h2 id="degree">
+  Degree
+  <a class="anchor" href="#degree">#</a>
+</h2>
+<p>度</p>
+<h2 id="path">
+  Path
+  <a class="anchor" href="#path">#</a>
+</h2>
+<p>&lt;v0, v1, &hellip; , vk&gt; v0 -&gt; vk 的顶点的一个序列</p>
+<p>长度： 路径中边的数量</p>
+<h3 id="simple-path">
+  Simple Path
+  <a class="anchor" href="#simple-path">#</a>
+</h3>
+<p>路径中所有的顶点都是不同的</p>
+<h3 id="cycle">
+  Cycle
+  <a class="anchor" href="#cycle">#</a>
+</h3>
+<h2 id="edge">
+  Edge
+  <a class="anchor" href="#edge">#</a>
+</h2>
+<p>(u, v), 有向图中 (u, v) , (v, u) 是不一致的</p>
+<h2 id="vertex">
+  Vertex
+  <a class="anchor" href="#vertex">#</a>
+</h2>
+<h2 id="connected">
+  Connected
+  <a class="anchor" href="#connected">#</a>
+</h2>
+<p>每一个顶点都能从其他顶点触达到 reachable</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/commit/51e23ad5388484e1fd932c7a4b9a23e14f10b22a" title='最后修改者 richard | June 3, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>June 3, 2022</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#定义">定义</a>
+          <ul>
+            <li><a href="#directed-graph">Directed Graph</a></li>
+            <li><a href="#undirected-graph">Undirected Graph</a></li>
+          </ul>
+        </li>
+        <li><a href="#degree">Degree</a></li>
+        <li><a href="#path">Path</a>
+          <ul>
+            <li><a href="#simple-path">Simple Path</a></li>
+            <li><a href="#cycle">Cycle</a></li>
+          </ul>
+        </li>
+        <li><a href="#edge">Edge</a></li>
+        <li><a href="#vertex">Vertex</a></li>
+        <li><a href="#connected">Connected</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

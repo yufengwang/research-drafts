@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dynamic Programming #  动态规划: 由子问题的解推出最终问题的解，子问题重叠，即子问题共享子子问题
+避免重复计算子问题
+Elements #  动态规划的基本元素
+Optimal Substructure #  最优子结构，通过子问题的最优解，求出最终的最优解
+Overlapping Subproblem #  重叠子问题">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="动态规划" />
+<meta property="og:description" content="Dynamic Programming #  动态规划: 由子问题的解推出最终问题的解，子问题重叠，即子问题共享子子问题
+避免重复计算子问题
+Elements #  动态规划的基本元素
+Optimal Substructure #  最优子结构，通过子问题的最优解，求出最终的最优解
+Overlapping Subproblem #  重叠子问题" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yfw.ink/posts/dp/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-03T23:42:00+08:00" />
+<meta property="article:modified_time" content="2022-06-03T23:45:11+08:00" />
+
+<title>动态规划 | Notes and Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.739aba619a33cb3cbd6a28d33906989a40f1c147c47f755270eef9d82c1fe8c5.js" integrity="sha256-c5q6YZozyzy9aijTOQaYmkDxwUfEf3VScO752Cwf6MU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script src="https://yfw.ink/js/mathjax-config.js"></script>
+<script src="https://yfw.ink/js/tex-chtml.js"></script>
+
+
+
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Notes and Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>动态规划</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#dynamic-programming">Dynamic Programming</a>
+          <ul>
+            <li><a href="#elements">Elements</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/dp/">动态规划</a>
+  </h1>
+  
+  <h5>June 3, 2022</h5>
+
+
+
+  
+
+  
+  <div>
+    
+      <a href="/tags/dp/">dp</a>
+  </div>
+  
+
+
+
+<h2 id="dynamic-programming">
+  Dynamic Programming
+  <a class="anchor" href="#dynamic-programming">#</a>
+</h2>
+<p>动态规划: 由子问题的解推出最终问题的解，子问题重叠，即子问题共享子子问题</p>
+<p>避免重复计算子问题</p>
+<h3 id="elements">
+  Elements
+  <a class="anchor" href="#elements">#</a>
+</h3>
+<p>动态规划的基本元素</p>
+<h4 id="optimal-substructure">
+  Optimal Substructure
+  <a class="anchor" href="#optimal-substructure">#</a>
+</h4>
+<p>最优子结构，通过子问题的最优解，求出最终的最优解</p>
+<h4 id="overlapping-subproblem">
+  Overlapping Subproblem
+  <a class="anchor" href="#overlapping-subproblem">#</a>
+</h4>
+<p>重叠子问题</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/commit/bc5b7204cbd2fd2ffba3d7356695252ddf1f6819" title='最后修改者 richard | June 3, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>June 3, 2022</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#dynamic-programming">Dynamic Programming</a>
+          <ul>
+            <li><a href="#elements">Elements</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

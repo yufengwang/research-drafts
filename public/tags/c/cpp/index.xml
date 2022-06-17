@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c/cpp on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/c/cpp/</link>
+    <description>Recent content in c/cpp on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yfw.ink/tags/c/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>头文件</title>
+      <link>https://yfw.ink/posts/header-files/</link>
+      <pubDate>Mon, 06 Jun 2022 21:32:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/header-files/</guid>
+      <description>头文件 #  用于将函数，变量声明放在同一个文件里，便于被其他文件引用
+仅包含声明，不包含定义，定义在 linker 阶段链接到程序里
+如下图
+  #include &amp;#34;something.h&amp;#34; /*当前目录下找*/ #include &amp;lt;iostream&amp;gt; /*在系统环境里找, include directory*/</description>
+    </item>
+    
+    <item>
+      <title>C 预处理器</title>
+      <link>https://yfw.ink/posts/c-preprocessor/</link>
+      <pubDate>Sun, 05 Jun 2022 20:34:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/c-preprocessor/</guid>
+      <description>预处理 #  C: C 或 C++
+程序编译前的转换过程，不修改源文件，仅在内存中完成转换
+preprocessor 不理解 C 的语法
+指令在编译前被解析
+ 参考
+预处理指令 #  以 #symbol 开头（symbol为指令字符），以换行符结尾;
+常用指令
+   指令 含义     #include 引入头文件   #define 宏定义   #ifdef, #ifndef, #endif. 条件编译指令   #if 0 不编译某些代码块    Object-like Macros #  类对象宏
+#define PRINT_JOE /* 用于条件编译 */#define MY_NAME &amp;#34;Alex&amp;#34; /* 用于常量定义, 老代码里用到 */</description>
+    </item>
+    
+  </channel>
+</rss>

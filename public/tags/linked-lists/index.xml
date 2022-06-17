@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linked-lists on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/linked-lists/</link>
+    <description>Recent content in linked-lists on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 28 May 2022 21:43:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/linked-lists/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>链表</title>
+      <link>https://yfw.ink/posts/linked-list/</link>
+      <pubDate>Sat, 28 May 2022 21:43:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/linked-list/</guid>
+      <description>Singly linked list #  单链表
+时间复杂度 #     Access Search Insertion Deletion     O(n) O(n) O(1) O(n)    注： 插入操作仅为在给定节点 Node 的指针 P 的前提下，在其后面插入一个节点，此时复杂度为 O(1)，若在 P 前面插入一个节点，则复杂度为 O(n), 因为需要遍历
+Doubly linked list #  双链表
+优点： #   可以双向遍历 删除操作更高效(O(1))，在已知给定节点的指针的前提下 插入操作 (O(1))  缺点： #   额外的空间开销，用来存指针 所有操作需要维持两个指针的指向  时间复杂度 #     Access Search Insertion Deletion     O(n) O(n) O(1) O(n) / O(1)    注：如果需要遍历节点，则删除的时间复杂度为 O(n)</description>
+    </item>
+    
+  </channel>
+</rss>

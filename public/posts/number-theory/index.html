@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="整除 #  \(a \ | \ b\)： 即如果 \(a, b, c \in \mathbb{Z}, a \neq 0, \exists c(ac = b)\) ，则说明 a 能整除 b，a 为 b 的因子或除数;
+反之，若 \(\nexists c\)，则 \( a \nmid b\)，即 a 不能整除 b
+Division Algorithm #  假设 \(a \in \mathbb{Z}, d \in \mathbb{Z^&#43;}\) ， 存在唯一的 \( q, r \in \mathbb{Z} , 0 \leq r &lt; d \)， 使 \( a = dq &#43; r\)">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="数论" />
+<meta property="og:description" content="整除 #  \(a \ | \ b\)： 即如果 \(a, b, c \in \mathbb{Z}, a \neq 0, \exists c(ac = b)\) ，则说明 a 能整除 b，a 为 b 的因子或除数;
+反之，若 \(\nexists c\)，则 \( a \nmid b\)，即 a 不能整除 b
+Division Algorithm #  假设 \(a \in \mathbb{Z}, d \in \mathbb{Z^&#43;}\) ， 存在唯一的 \( q, r \in \mathbb{Z} , 0 \leq r &lt; d \)， 使 \( a = dq &#43; r\)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yfw.ink/posts/number-theory/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-28T20:36:00+08:00" />
+<meta property="article:modified_time" content="2022-06-09T16:48:14+08:00" />
+
+<title>数论 | Notes and Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.739aba619a33cb3cbd6a28d33906989a40f1c147c47f755270eef9d82c1fe8c5.js" integrity="sha256-c5q6YZozyzy9aijTOQaYmkDxwUfEf3VScO752Cwf6MU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script src="https://yfw.ink/js/mathjax-config.js"></script>
+<script src="https://yfw.ink/js/tex-chtml.js"></script>
+
+
+
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Notes and Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>数论</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#整除">整除</a></li>
+        <li><a href="#division-algorithm">Division Algorithm</a></li>
+        <li><a href="#模运算">模运算</a>
+          <ul>
+            <li><a href="#arithmetic-modulo">Arithmetic Modulo</a></li>
+            <li><a href="#fast-modulo-exponentiation">Fast Modulo Exponentiation</a></li>
+          </ul>
+        </li>
+        <li><a href="#质数">质数</a>
+          <ul>
+            <li><a href="#relatively-prime">Relatively Prime</a></li>
+            <li><a href="#pairwise-relatively-prime">Pairwise Relatively Prime</a></li>
+          </ul>
+        </li>
+        <li><a href="#greatest-common-divisor">Greatest Common Divisor</a></li>
+        <li><a href="#least-common-multiple">Least Common Multiple</a></li>
+        <li><a href="#linear-congruence">Linear Congruence</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/number-theory/">数论</a>
+  </h1>
+  
+  <h5>May 28, 2022</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/math/">math</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/number-theory/">number-theory</a>
+  </div>
+  
+
+
+
+<h2 id="整除">
+  整除
+  <a class="anchor" href="#%e6%95%b4%e9%99%a4">#</a>
+</h2>
+<p>\(a \ | \  b\)： 即如果  \(a, b, c \in \mathbb{Z}, a \neq 0, \exists c(ac = b)\) ，则说明 a 能整除 b，a 为 b 的因子或除数;</p>
+<p>反之，若 \(\nexists c\)，则 \( a \nmid b\)，即 a 不能整除 b</p>
+<h2 id="division-algorithm">
+  Division Algorithm
+  <a class="anchor" href="#division-algorithm">#</a>
+</h2>
+<p>假设 \(a \in \mathbb{Z}, d \in \mathbb{Z^+}\) ， 存在唯一的 \( q, r \in \mathbb{Z} ,  0 \leq r &lt; d \)， 使 \( a = dq + r\)</p>
+<p>d 为除数，a 为被除数，q 为商，r 为余数</p>
+<p>q =  a <strong>div</strong> d ， r = a <strong>mod</strong> d</p>
+<h2 id="模运算">
+  模运算
+  <a class="anchor" href="#%e6%a8%a1%e8%bf%90%e7%ae%97">#</a>
+</h2>
+<p>定理：如果 \(a, b \in \mathbb{Z}, m \in \mathbb{Z^+}，m \mid (a - b)  \)，则 a, b 对 m 同余，简写为 \( a \equiv b \pmod m \)</p>
+<p>即 a <strong>mod</strong> m = b <strong>mod</strong> m ，m 为模数</p>
+<p>定理：a，b 同余时，\( \exists k \in \mathbb{Z}， a = b + km \)</p>
+<h3 id="arithmetic-modulo">
+  Arithmetic Modulo
+  <a class="anchor" href="#arithmetic-modulo">#</a>
+</h3>
+<p>算术模运算</p>
+<p>\(a \cdot _m b = (a \cdot b)\mod m\)</p>
+<p>\(a + _m b = (a + b)\mod m\)</p>
+<h3 id="fast-modulo-exponentiation">
+  Fast Modulo Exponentiation
+  <a class="anchor" href="#fast-modulo-exponentiation">#</a>
+</h3>
+<h2 id="质数">
+  质数
+  <a class="anchor" href="#%e8%b4%a8%e6%95%b0">#</a>
+</h2>
+<p>质数又称之为素数</p>
+<p>只能被 <strong>1</strong> 和 <strong>其自身</strong> <strong>整除的</strong> <strong>大于 1</strong> 的整数，反之称为 <strong>合数</strong></p>
+<p>定理： 任何一个大于 1 的整数，可以唯一的表示为一个质数或多个（ \([2, +\infty)\) ）质数的积，质因数按增序书写</p>
+<h3 id="relatively-prime">
+  Relatively Prime
+  <a class="anchor" href="#relatively-prime">#</a>
+</h3>
+<p>互质：整数 a 和 b 的最大公约数为 1， 则 a 与 b 互质，即 \(gcd(a,b) = 1\)</p>
+<h3 id="pairwise-relatively-prime">
+  Pairwise Relatively Prime
+  <a class="anchor" href="#pairwise-relatively-prime">#</a>
+</h3>
+<p>成对互质，两两互质</p>
+<h2 id="greatest-common-divisor">
+  Greatest Common Divisor
+  <a class="anchor" href="#greatest-common-divisor">#</a>
+</h2>
+<p>最大公因数：能 <strong>整除</strong> 两个整数的 <strong>最大</strong> 整数，表示为 \(gcd(a,b)\)</p>
+<h2 id="least-common-multiple">
+  Least Common Multiple
+  <a class="anchor" href="#least-common-multiple">#</a>
+</h2>
+<p>最小公倍数</p>
+<p>\(a, b \in  \mathbb{Z^+}, a \cdot b=gcd(a,b) \cdot lcm(a,b)  \)</p>
+<h2 id="linear-congruence">
+  Linear Congruence
+  <a class="anchor" href="#linear-congruence">#</a>
+</h2>
+<p>线性同余，\(a \cdot x \equiv b \pmod m\)，x 为变量</p>
+<p>模的逆：\(\exists \bar a \in \mathbb{Z} , \bar a \cdot a \equiv 1 \pmod m  \)，\( \bar a \) 为 \(  a \mod m\) 的逆，用来求解线性同余里的 x</p>
+<p>应用：给计算机文件分配内存地址，伪随机数的生成，位校验</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/commit/e5f09a3b477efddd76456fe213373b7dc7854e80" title='最后修改者 wenhu | June 9, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>June 9, 2022</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#整除">整除</a></li>
+        <li><a href="#division-algorithm">Division Algorithm</a></li>
+        <li><a href="#模运算">模运算</a>
+          <ul>
+            <li><a href="#arithmetic-modulo">Arithmetic Modulo</a></li>
+            <li><a href="#fast-modulo-exponentiation">Fast Modulo Exponentiation</a></li>
+          </ul>
+        </li>
+        <li><a href="#质数">质数</a>
+          <ul>
+            <li><a href="#relatively-prime">Relatively Prime</a></li>
+            <li><a href="#pairwise-relatively-prime">Pairwise Relatively Prime</a></li>
+          </ul>
+        </li>
+        <li><a href="#greatest-common-divisor">Greatest Common Divisor</a></li>
+        <li><a href="#least-common-multiple">Least Common Multiple</a></li>
+        <li><a href="#linear-congruence">Linear Congruence</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

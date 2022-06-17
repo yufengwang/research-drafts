@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>prototype on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/prototype/</link>
+    <description>Recent content in prototype on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Jun 2022 15:50:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/prototype/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>js 原型</title>
+      <link>https://yfw.ink/posts/prototype/</link>
+      <pubDate>Fri, 03 Jun 2022 15:50:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/prototype/</guid>
+      <description>草稿，待完善
+[ [Prototype] ] #  隐藏属性，决定继承关系
+__proto__ #  历史遗留的 getter/setter ，不建议使用
+建议使用这俩： Object.getPrototypeOf/Object.setPrototypeOf</description>
+    </item>
+    
+  </channel>
+</rss>

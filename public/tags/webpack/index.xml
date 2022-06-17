@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webpack on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/webpack/</link>
+    <description>Recent content in webpack on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 28 May 2022 21:52:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webpack 原理</title>
+      <link>https://yfw.ink/posts/webpack/</link>
+      <pubDate>Sat, 28 May 2022 21:52:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/webpack/</guid>
+      <description>工作过程 #   根据入口文件构建依赖图 处理依赖图里的所有资源 生成 js bundle，清单文件  代码分割 #  基于入口的代码分割</description>
+    </item>
+    
+  </channel>
+</rss>

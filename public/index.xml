@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes and Wiki</title>
+    <link>https://yfw.ink/</link>
+    <description>Recent content on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 16 Jun 2022 23:12:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数列</title>
+      <link>https://yfw.ink/posts/sequence/</link>
+      <pubDate>Thu, 16 Jun 2022 23:12:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/sequence/</guid>
+      <description>定义 #  有序元素集，整数子集到另一个集合的映射
+例: \( \{a_{n}\} \)， \(a_n = \frac {1}{n}\)，\(n \in \mathbb{Z^+} \)
+等比级数 #  \(a, ar, ar^2,&amp;hellip;,ar^n\), (\(a,r \in R\))，r 为公比
+等差数列 #  \(a, a+d, a+2d, &amp;hellip; ,a+nd, &amp;hellip;\), d 为公差
+Fibonacci sequence #  斐波那契数列
+\(f_0 = 0, f_1 = 1, f_n = f_{n-1} + f_{n-2}, ( n \geq 2, n \in \mathbb{Z^+} ) \)</description>
+    </item>
+    
+    <item>
+      <title>优先队列</title>
+      <link>https://yfw.ink/posts/priority-queue/</link>
+      <pubDate>Tue, 14 Jun 2022 23:55:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/priority-queue/</guid>
+      <description>定义 #  </description>
+    </item>
+    
+    <item>
+      <title>堆</title>
+      <link>https://yfw.ink/posts/heap/</link>
+      <pubDate>Tue, 14 Jun 2022 23:06:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/heap/</guid>
+      <description>定义 #  可以用完整二叉树表示的数组，树的每一个节点为数组中的元素
+parent(i) = Math.floor(i/2)
+left(i) = 2i
+right(i) = 2i + 1
+Max heap #  最大堆
+除了根节点 A[i] &amp;lt;= A[parent(i)]
+Min heap #  最小堆
+除了根节点，A[i] &amp;gt;= A[parent(i)]
+通常用来实现优先队列</description>
+    </item>
+    
+    <item>
+      <title>快速排序</title>
+      <link>https://yfw.ink/posts/quick-sort/</link>
+      <pubDate>Tue, 14 Jun 2022 14:00:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/quick-sort/</guid>
+      <description>实现 #   /** *数组分割 * */ const partition = (arr, p, r) =&amp;gt; {  // 去数组最后一个元素为分割点  const pivot = arr[r];  let i = p - 1;   // 遍历，将比分割点小的元素都挪到左边  for (let j = p; j &amp;lt; r; j++) {  if (arr[j] &amp;lt;= pivot) {  i++;  let tmp = arr[i];  arr[i] = arr[j];  arr[j] = tmp;  }  }  // 将分割点的元素挪到左右数组中间  const tmp = arr[i + 1];  arr[i + 1] = pivot;  arr[r] = tmp;   // 返回分割点的索引  return i + 1; };  /** * 快速排序 */ const quickSort = (arr, p, r) =&amp;gt; {  // p &amp;lt; r 时，数组中不止一个元素，需要排序，否则无需排序  if (p &amp;lt; r) {  // 数组分割，找出分割点索引，分割点左侧的值都不大于分割点，右侧的值都大于分割点  const pivotIdx = partition(arr, p, r);  console.</description>
+    </item>
+    
+    <item>
+      <title>集合</title>
+      <link>https://yfw.ink/posts/set/</link>
+      <pubDate>Mon, 13 Jun 2022 14:28:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/set/</guid>
+      <description>定义 #  不同 对象的 无序 集合
+表示 #  Roster method #  花名册法，枚举集合里的每个元素
+Set builder notation #  集合构造器表示法
+例如： \( O = \{x \mid x 为奇数 \} \) 或 \( O = \{x: x 为奇数 \} \)</description>
+    </item>
+    
+    <item>
+      <title>插入排序</title>
+      <link>https://yfw.ink/posts/insert-sort/</link>
+      <pubDate>Fri, 10 Jun 2022 12:28:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/insert-sort/</guid>
+      <description>实现 #  时间复杂度 \( O(n^2 \)
+ const insertSort = (arr) =&amp;gt; {  const len = arr.length   // 从第二个元素开始遍历  for (let i = 1; i &amp;lt; len; i ++ ) {   const ele = arr[i]   // 索引i位置的值依次跟前面的元素比  for (let j = i - 1; j &amp;gt;= 0; j --) {   const cur = arr[j]  const next = arr[j + 1]   if(cur &amp;lt; ele) {  break  }   arr[j] = next  arr[j+1] = cur  }   }   return arr } 分析 #  </description>
+    </item>
+    
+    <item>
+      <title>头文件</title>
+      <link>https://yfw.ink/posts/header-files/</link>
+      <pubDate>Mon, 06 Jun 2022 21:32:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/header-files/</guid>
+      <description>头文件 #  用于将函数，变量声明放在同一个文件里，便于被其他文件引用
+仅包含声明，不包含定义，定义在 linker 阶段链接到程序里
+如下图
+  #include &amp;#34;something.h&amp;#34; /*当前目录下找*/ #include &amp;lt;iostream&amp;gt; /*在系统环境里找, include directory*/</description>
+    </item>
+    
+    <item>
+      <title>C 预处理器</title>
+      <link>https://yfw.ink/posts/c-preprocessor/</link>
+      <pubDate>Sun, 05 Jun 2022 20:34:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/c-preprocessor/</guid>
+      <description>预处理 #  C: C 或 C++
+程序编译前的转换过程，不修改源文件，仅在内存中完成转换
+preprocessor 不理解 C 的语法
+指令在编译前被解析
+ 参考
+预处理指令 #  以 #symbol 开头（symbol为指令字符），以换行符结尾;
+常用指令
+   指令 含义     #include 引入头文件   #define 宏定义   #ifdef, #ifndef, #endif. 条件编译指令   #if 0 不编译某些代码块    Object-like Macros #  类对象宏
+#define PRINT_JOE /* 用于条件编译 */#define MY_NAME &amp;#34;Alex&amp;#34; /* 用于常量定义, 老代码里用到 */</description>
+    </item>
+    
+    <item>
+      <title>离散概率</title>
+      <link>https://yfw.ink/posts/probability/</link>
+      <pubDate>Sun, 05 Jun 2022 13:56:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/probability/</guid>
+      <description>概率 #  抽样实验 #  从可能的结果集里取值的过程
+取样空间 #  可能的结果集
+抽样事件 #  取样空间的子集
+定义 #  如果 \( S \) 为有限的非空的等概率的取样空间，\(E\) 为抽样事件，那么 \(E\) 的概率为 \(p(E) = \frac{\vert E \vert}{\vert S \vert}\)
+定理 #  抽样事件 \(E\) 的补集 \(\bar E\) 的概率为 \(p(\bar E)= 1 - p(E)\)</description>
+    </item>
+    
+    <item>
+      <title>计数问题</title>
+      <link>https://yfw.ink/posts/counting/</link>
+      <pubDate>Sun, 05 Jun 2022 13:38:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/counting/</guid>
+      <description>计数法则 #  积法则 #  假定任务 Task 可以分两步去解决，第一步有 \(n_1\) 种解决方法，第二步有 \(n_2\) 种解决方法，那么解决任务 Task 总共有 \(n_1 \times n_2\) 种方法
+和法则 #  如果任务 Task 在条件一下有 \(n_1\) 种方法解决，在条件二下有 \(n_2\) 种方法解决，那么在两种条件都考虑的情况下，任务 Task 共有 \(n_1 + n_2\) 种解决方法
+Permutations and Combinations #  排列组合
+排列 #  有序
+n 元集里的 r 排列：
+\[ n, r \in \mathbb{Z^{+}}, 1 \leq r \leq n ，P(n,r)=n(n-1)(n-2)&amp;hellip;(n-r+1)= \frac{n!}{(n-r)!} \]
+组合 #  无序
+n 元集里的 r 组合，表示为 \(C(n,r)\)，或 \(\binom n r\)</description>
+    </item>
+    
+    <item>
+      <title>编程语言语法</title>
+      <link>https://yfw.ink/posts/bnf/</link>
+      <pubDate>Sat, 04 Jun 2022 16:48:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/bnf/</guid>
+      <description>BNF #  Backus-Naur form (BNF)，用于描述计算机编程语言的语法规则</description>
+    </item>
+    
+    <item>
+      <title>指数和对数</title>
+      <link>https://yfw.ink/posts/expo-and-loga/</link>
+      <pubDate>Sat, 04 Jun 2022 15:00:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/expo-and-loga/</guid>
+      <description>指数 #  定义： \( b \in \mathbb{R^+}, n \in \mathbb{R^+} \), \(f_b(n) = b^n = b \cdot b \cdot b \cdot &amp;hellip; \cdot b\)，n 个 b 相乘
+定理：
+ \(b^{x+y} = b^x \cdot b^y\) \((b^x)^y=b^{x \cdot y}\)  对数 #  定义： \(f = \log_b x \)，以 b 为底的 x 的对数值
+\(b^x = a, x = \log_b a\)
+\(b^{\log_b a} = a\)
+定理：
+ \(\log_b (x \cdot y)=\log_b x + \log_b y\) \(\log_b (x^y)=y \cdot \log_b x\) \(\log_a x = \frac{\log_b x}{\log_b a}=\frac{1}{ \log_b a} \cdot \log_b x\)，（换底，常量值乘以 b 为底的对数）  在计算机领域，\(\log x\)，底省略时，通常指以 2 为底的对数</description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://yfw.ink/posts/mysql/</link>
+      <pubDate>Fri, 03 Jun 2022 23:58:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/mysql/</guid>
+      <description>KEY, INDEX #  KEY, INDEX，是同义词，避免全表扫描，提高数据检索速度
+PRIMARY, UNIQUE #  用来确保数据的唯一性（插入或更新时），即不能有两行一样的数据（某一列或几列一致），即列或组合列的值要唯一
+primary key: 主键，一个表最多只有一个主键，是唯一索引的特殊形式，用于唯一标识表里的某一行数据，只能用在非空列上
+unique index: 唯一索引， 可以有多个唯一索引, 可以用在空(NULL)列上</description>
+    </item>
+    
+    <item>
+      <title>归并排序</title>
+      <link>https://yfw.ink/posts/merge-sort/</link>
+      <pubDate>Fri, 03 Jun 2022 23:46:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/merge-sort/</guid>
+      <description>实现 #  归并排序，采用分治法，时间复杂度为 \(O(nlog n)\)
+ /** * @param {number[]} arr 待合并原始数组 * @param {number} p 左索引，第一个元素的索引 * @param {number} q 中位索引 * @param {number} r 右索引，最后一个元素的索引 * * [p, q), [q, r] 均为已排序好的子数组 * * 将 [p,q), [q, r] 合并为一个排序好的数组 * */ const merge = (arr, p, q, r) =&amp;gt; {  // concat 的为哨兵节点  const arrLeft = arr.slice(p, q + 1).concat(Number.POSITIVE_INFINITY);  const arrRight = arr.slice(q + 1, r + 1).</description>
+    </item>
+    
+    <item>
+      <title>分治</title>
+      <link>https://yfw.ink/posts/dac/</link>
+      <pubDate>Fri, 03 Jun 2022 23:43:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/dac/</guid>
+      <description>定义 #  分治：将 大问题 拆为 不相交 的 规模更小 的 子问题 ， 根据子问题的解求出原始问题的解
+分：大问题拆为小问题
+治：解决小问题
+合：由小问题的解合为大问题的解
+Substitution method #  Recursion-tree method #  递归树方法
+Master method #  </description>
+    </item>
+    
+    <item>
+      <title>动态规划</title>
+      <link>https://yfw.ink/posts/dp/</link>
+      <pubDate>Fri, 03 Jun 2022 23:42:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/dp/</guid>
+      <description>Dynamic Programming #  动态规划: 由子问题的解推出最终问题的解，子问题重叠，即子问题共享子子问题
+避免重复计算子问题
+Elements #  动态规划的基本元素
+Optimal Substructure #  最优子结构，通过子问题的最优解，求出最终的最优解
+Overlapping Subproblem #  重叠子问题</description>
+    </item>
+    
+    <item>
+      <title>切钢条问题</title>
+      <link>https://yfw.ink/posts/rod-cutting/</link>
+      <pubDate>Fri, 03 Jun 2022 23:38:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/rod-cutting/</guid>
+      <description>草稿，待完善
+Rod-Cutting #  切钢条问题
+钢条长度 i 和售价 P(i) 的对照表
+   Length i 1 2 3 4 5 6 7 8 9 10     Price P(i) 1 5 8 9 10 17 17 20 24 30   cut ways 1 2 4 8          求给定长度 n 的钢条的最大销售额 R(n) ?
+解： 设 长度为n 的钢条的最大销售额为 R(n)
+R(n) = Max {P(n), R(1) + R(n -1), R(2) + R(n - 2)}</description>
+    </item>
+    
+    <item>
+      <title>循环不变式</title>
+      <link>https://yfw.ink/posts/loop-invariant/</link>
+      <pubDate>Fri, 03 Jun 2022 23:26:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/loop-invariant/</guid>
+      <description>Loop Invariant #  循环不变式： 循环的每次迭代中，始终为 true 的断言
+\( (P \land condition) \{ S \} P \)，即 \(P\) 为循环不变式
+证明循环语句正确的步骤 #   猜测 \(P\) 为循环不变式 证明 \(P\) 为循环不变式 证明程序会终止 证明程序终止时 \(P \land \neg condition \) 为 \( T \)  </description>
+    </item>
+    
+    <item>
+      <title>算法复杂度</title>
+      <link>https://yfw.ink/posts/complexity/</link>
+      <pubDate>Fri, 03 Jun 2022 16:57:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/complexity/</guid>
+      <description>Time complexity #  时间复杂度
+算法执行所需的操作数，而不是实际的运行时间
+当输入 n 足够大时，低阶项可以被舍弃
+RAM #  Random Access Machine
+ 单处理器 指令按序处理，无并发操作 仅包含常用指令，每个指令的执行占用常量操作时间  Average case #  对 size n 的 平均 输入，算法执行所需的操作数，（平均运行时间）
+通常要用到概率分析的方法
+Worst case #  对 size n 的任意输入，算法执行所需的最大操作数，即运行时间的 上界 (上限)
+使算法执行时间最长的输入，例如对插入排序而言，待排序数组是已经反向排序好的
+最常用
+Best case #  使算法执行时间最短的输入，例如对插入排序而言，待排序数组是已经正向排序好的
+\( \Theta \) notation #  \( \Theta(g(n)) = \{f(n): \exists c_1, c_{2}, n_{0} \in \mathbb{R^{+}} , \forall n_{0} \leq n, 0 \leq c_{1}g(n) \leq f(n) \leq c_{2}g(n) \} \)</description>
+    </item>
+    
+    <item>
+      <title>js 正则表达式</title>
+      <link>https://yfw.ink/posts/regexp/</link>
+      <pubDate>Fri, 03 Jun 2022 16:23:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/regexp/</guid>
+      <description>Character Class #  字符类
+   字符 含义     \d 数字   \D 非数字   \s 空格，换行符，制表符   \S 非 \s   \w 拉丁字母，数字，下划线 _   \W 非 \w   . 除 \n 外的任意字符; 如果有 s flag，则为任意字符    Quantifiers #  量词，用于针对其前面的字符的数量的修饰
+   字符 含义     {n} n个   + 1或多，[1, +\(\infty\) )   * 0或多，[0, +\(\infty\) )   ?</description>
+    </item>
+    
+    <item>
+      <title>js 原型</title>
+      <link>https://yfw.ink/posts/prototype/</link>
+      <pubDate>Fri, 03 Jun 2022 15:50:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/prototype/</guid>
+      <description>草稿，待完善
+[ [Prototype] ] #  隐藏属性，决定继承关系
+__proto__ #  历史遗留的 getter/setter ，不建议使用
+建议使用这俩： Object.getPrototypeOf/Object.setPrototypeOf</description>
+    </item>
+    
+    <item>
+      <title>异步</title>
+      <link>https://yfw.ink/posts/async/</link>
+      <pubDate>Fri, 03 Jun 2022 15:45:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/async/</guid>
+      <description>草稿，待完善
+同步 #  run to completion
+异步 #  Reactor Pattern #  异步的底层原理 #  操作系统的 api
+Callback #  Generator #  Promise #  Async/Await #  Observable #  IO #  网络请求，文件读写
+同步io：应用初始化的时候读配置文件用，否则不建议使用同步 io，阻塞 eventloop，影响性能
+queueMicrotask #  ecma-262 标准方法，用于注册微任务
+process.nextTick #  任务队列，被 node 管理，仅在 node 环境支持
+优先级高于微任务
+并发 #  并行 #  Worker Threads #  setImmediate #  非标准方法，不推荐使用，仅在 node 环境支持</description>
+    </item>
+    
+    <item>
+      <title>常用数学符号</title>
+      <link>https://yfw.ink/posts/symbol/</link>
+      <pubDate>Fri, 03 Jun 2022 15:24:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/symbol/</guid>
+      <description>SETS #     符号 含义     \(\mathbb{N}\) 自然数   \(\mathbb{Z}\) 整数   \(\mathbb{Z^+}\) 正整数   \(\mathbb{Q}\) 有理数   \(\mathbb{R}\) 实数    </description>
+    </item>
+    
+    <item>
+      <title>归纳和递归</title>
+      <link>https://yfw.ink/posts/induction/</link>
+      <pubDate>Wed, 01 Jun 2022 23:38:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/induction/</guid>
+      <description>数学归纳和递归 #  数学归纳 #  证明：当 \( n \in \mathbb{Z^+} \) 时，\(P(n)\) 成立。
+基础条件： 证明 \(P(1)\) 成立
+归纳条件： 证明对 \(\forall k \in \mathbb{Z^+} \)， \(P(k) \rightarrow P(k+1) \) 成立
+即可证原命题成立
+推理公式： \( (P(1) \land \forall k (P(k) \rightarrow P(k+1))) \rightarrow \forall n P(n) \)，\(n,k \in \mathbb{Z^+}\)
+递归 #  </description>
+    </item>
+    
+    <item>
+      <title>React Fiber</title>
+      <link>https://yfw.ink/posts/fiber/</link>
+      <pubDate>Wed, 01 Jun 2022 00:09:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/fiber/</guid>
+      <description>fiber 基本工作原理 #  每一 react element 构造一个 fiber 节点，每个 fiber 节点是一个工作单元，一系列 fiber 节点构成一个 fiber 特殊的链表。该数据结构的优点是便于找到下次的工作单元
+ 针对每个 fiber 节点要做三件事：
+ 将元素添加到 dom 上 创建该元素 children 的 fiber 节点 选择下次的工作单元  工作单元执行顺序： 执行完所有的 children，如果没有 children，则执行其兄弟节点，如果没有 children 也没有兄弟节点执行其 uncle，没有 uncle 则到 root
+fiberNode 的简单结构:
+const newFiber = {  type: element.type, // 当前fiber的类型  props: element.props, // 当前fiber的props  parent: fiber, // 指向父级fiber节点  dom: null, // 该fiber节点对应的dom对象  alternate: null, // 指向上次commit的fiberNode  effectTag: &amp;#39;PLACEMENT&amp;#39;, // commit阶段用到  hooks: [], }; 每个 fiber 节点的工作完成之后，commit 整个 fiber tree 到 dom 上</description>
+    </item>
+    
+    <item>
+      <title>树</title>
+      <link>https://yfw.ink/posts/tree/</link>
+      <pubDate>Wed, 01 Jun 2022 00:08:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/tree/</guid>
+      <description>定义 #  树： 连接的 无向 *无环图 *
+Path #  路径： 节点和边的序列
+路径长度； 路径里边的数量
+Depth #  节点深度： 从根节点到当前节点的 路径 长度
+Level #  节点层级：节点 depth + 1， （很少用）
+树的层级：节点层级的最大值
+Height #  节点高度： 从当前节点到 叶节点 的 最长 路径 长度
+树的高度： 根节点的高度
+Width #  树在深度 d 的宽度： 树在深度 d 的节点数量
+树的宽度： 所有深度的最大宽
+Binary Tree #  二叉树
+Balanced #  平衡树的高度为 \(O(log n)\)
+Height-Balanced #  高度平衡，对任意节点而言，其子树的高度差 最多 为 1，空子树的高度为 -1</description>
+    </item>
+    
+    <item>
+      <title>如何证明</title>
+      <link>https://yfw.ink/posts/proof/</link>
+      <pubDate>Wed, 01 Jun 2022 00:06:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/proof/</guid>
+      <description>Proof method #  证明方法
+Theorem #  定理： 可证明为真的语句 （事实，真相）
+Axioms #  公理： 假定为 true 的语句 (statements)
+lemma #  引理，辅助定理
+Proof #  证明 p true， q 为 true
+Direct proof #  直接证明
+if p true, p -&amp;gt; q true, q true
+Contraposition #  ~q -&amp;gt; ~p
+Contradiction #  矛盾法</description>
+    </item>
+    
+    <item>
+      <title>命题逻辑</title>
+      <link>https://yfw.ink/posts/logic/</link>
+      <pubDate>Wed, 01 Jun 2022 00:05:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/logic/</guid>
+      <description>Proposition logic #  Proposition #  命题： 描述性语句，要么真，要么假
+Conditional Statements #  if p, then q, i.e. p -&amp;gt; q</description>
+    </item>
+    
+    <item>
+      <title>计算机网络</title>
+      <link>https://yfw.ink/posts/network/</link>
+      <pubDate>Wed, 01 Jun 2022 00:04:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/network/</guid>
+      <description>计算机网络基础 #  三次握手 #   client 发送 syn（Synchronize Sequence Number）到 server，表示想要建立 tcp 连接 Server 发送(syn+ ack) client 发送 ack 给 server，连接建立  四次挥手 #   client 发送 FIN server 接收到 FIN，发送 ack server 发送 FIN client 发送 ack  网络分层 #  TCP/IP 模型 #   应用层 传输层 网络层 链路层  OSI 模型 #   应用层 展示层 会话层 传输层 网络层 链接层 物理层  </description>
+    </item>
+    
+    <item>
+      <title>缓存</title>
+      <link>https://yfw.ink/posts/cache/</link>
+      <pubDate>Wed, 01 Jun 2022 00:03:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/cache/</guid>
+      <description>缓存 #  为什么需要缓存 #   减少不必要的网络请求，提升页面访问速度 减少服务器负载 节省网络开销(流量)  缓存工作机制 #  通过 http 请求头及 http 响应头来控制
+缓存相关 http header #  Expires #  Fri, 30 Oct 1998 14:19:41 GMT，优先级较低
+服务端返回 ，GMT 时间戳。告诉浏览器在指定的时间戳之后重新获取新的资源。限制：服务器跟浏览器的时间必须保持同步
+Cache-Control #  Max-age = 3153000 单位秒
+   属性 含义     private 仅允许浏览器缓存   public 可被任意节点缓存   no-cache 每次都需要验证缓存的有效性   no-store 不允许被缓存    服务端返回</description>
+    </item>
+    
+    <item>
+      <title>lc-146</title>
+      <link>https://yfw.ink/posts/146-lru/</link>
+      <pubDate>Tue, 31 May 2022 23:50:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/146-lru/</guid>
+      <description>Least recently used cache #  最近 最少 使用的缓存
+解法： 双链表 + hash 表
+ /** * Least Recently Used cache * Get: O(1), hash 表 * Put: O(1)，需要维持顺序，最近最少使用的节点要删掉 * * 双向链表 */ class LRUCache {  constructor(capacity) {  // 当前元素数量  // 容量上限  this.capacity = capacity;  /** @type {{[index: number]: LinkedListNode}} */  this.cache = {};  // 当前容量  this.size = 0;   // 伪头结点  this.</description>
+    </item>
+    
+    <item>
+      <title>leetcode-77</title>
+      <link>https://yfw.ink/posts/lc-77/</link>
+      <pubDate>Tue, 31 May 2022 16:30:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/lc-77/</guid>
+      <description>组合 #  给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。
+你可以按 任何顺序 返回答案。
+1 &amp;lt;= n &amp;lt;= 20
+1 &amp;lt;= k &amp;lt;= n
+题解 #   /** * n 选 k 共有多少个组合情况 * @param {number} n * @param {number} k */ const combine = (n, k) =&amp;gt; {  const ans = [];   /** * @param {number} k 子集的元素数 * @param {number} start 从第几个开始选 * @param {number} list 子集数组 */  const getCombine = (k, start, list) =&amp;gt; {  if (k === 0) {  // 选满了  ans.</description>
+    </item>
+    
+    <item>
+      <title>软件工程基本原则</title>
+      <link>https://yfw.ink/posts/software-eng/</link>
+      <pubDate>Sat, 28 May 2022 21:56:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/software-eng/</guid>
+      <description>SOLID 原则 #  S #  Single Responsibility Principle， 单一职责原则
+O #  Open-Closed Principle，对拓展开放，对修改关闭
+L #  Liskov Substitution，里氏替换原则
+I #  Interface Segregation，接口隔离
+D #  Dependency Inversion Principle，依赖倒置原则
+依赖抽象的接口，而不是具体的实现
+DRY 原则 #  </description>
+    </item>
+    
+    <item>
+      <title>Webpack 原理</title>
+      <link>https://yfw.ink/posts/webpack/</link>
+      <pubDate>Sat, 28 May 2022 21:52:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/webpack/</guid>
+      <description>工作过程 #   根据入口文件构建依赖图 处理依赖图里的所有资源 生成 js bundle，清单文件  代码分割 #  基于入口的代码分割</description>
+    </item>
+    
+    <item>
+      <title>哈希表</title>
+      <link>https://yfw.ink/posts/hash-table/</link>
+      <pubDate>Sat, 28 May 2022 21:47:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/hash-table/</guid>
+      <description>Collision #  冲突： H(k1) = H(k2)
+冲突解决方案 #  Chaining #  Open Addressing #  </description>
+    </item>
+    
+    <item>
+      <title>图</title>
+      <link>https://yfw.ink/posts/graph/</link>
+      <pubDate>Sat, 28 May 2022 21:47:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/graph/</guid>
+      <description>定义 #  G = (V, E)， V 为非空顶点集，E 为边的集合
+Directed Graph #  有向图
+边 （u, v), u -&amp;gt; v ， v 跟 u 相邻
+没有自循环的有向图是 简单有向图
+Undirected Graph #  无向图
+无向图不允许自循环
+Degree #  度
+Path #  &amp;lt;v0, v1, &amp;hellip; , vk&amp;gt; v0 -&amp;gt; vk 的顶点的一个序列
+长度： 路径中边的数量
+Simple Path #  路径中所有的顶点都是不同的
+Cycle #  Edge #  (u, v), 有向图中 (u, v) , (v, u) 是不一致的</description>
+    </item>
+    
+    <item>
+      <title>链表</title>
+      <link>https://yfw.ink/posts/linked-list/</link>
+      <pubDate>Sat, 28 May 2022 21:43:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/linked-list/</guid>
+      <description>Singly linked list #  单链表
+时间复杂度 #     Access Search Insertion Deletion     O(n) O(n) O(1) O(n)    注： 插入操作仅为在给定节点 Node 的指针 P 的前提下，在其后面插入一个节点，此时复杂度为 O(1)，若在 P 前面插入一个节点，则复杂度为 O(n), 因为需要遍历
+Doubly linked list #  双链表
+优点： #   可以双向遍历 删除操作更高效(O(1))，在已知给定节点的指针的前提下 插入操作 (O(1))  缺点： #   额外的空间开销，用来存指针 所有操作需要维持两个指针的指向  时间复杂度 #     Access Search Insertion Deletion     O(n) O(n) O(1) O(n) / O(1)    注：如果需要遍历节点，则删除的时间复杂度为 O(n)</description>
+    </item>
+    
+    <item>
+      <title>算法正确性</title>
+      <link>https://yfw.ink/posts/algo-correctness/</link>
+      <pubDate>Sat, 28 May 2022 21:31:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/algo-correctness/</guid>
+      <description>算法正确性证明 #  算法正确：对每一个正确输入，都能得到正确的解
+证明步骤 #   证明程序终止时，能获得正确的解，(部分正确） 证明程序始终会终止  初始断言： 程序输入值具有的属性；结果断言： 程序输出值具有的属性
+Hoare triple: p{S}q
+if p true and S terminates, q true, then S is partially correct</description>
+    </item>
+    
+    <item>
+      <title>在浏览器地址栏输入 url 会发生什么</title>
+      <link>https://yfw.ink/posts/events-after-input-a-url/</link>
+      <pubDate>Sat, 28 May 2022 21:26:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/events-after-input-a-url/</guid>
+      <description>浏览器通过 DNS 查询域名对应的 ip 地址 #    检查浏览器 cache
+  检查操作系统 cache
+  检查路由 cache
+  检查 isp cache
+  如果前面四步都没找到，ISP 的 DNS 服务器会向其他 DNS 服务器请求该域名对应的 ip 地址
+  浏览器跟该 ip 地址的 server 建立 tcp 连接 #  3 次握手
+浏览器向该 ip 地址的 server 发起 http 请求 #  server 处理请求并返回 http 响应 #  1**，information
+2**，ok
+3**, 重定向
+4**，客户端错误
+5**，服务器错误
+浏览器开始渲染 html #  构建 dom 树 #  js 的加载会阻塞 dom 树的构建, css, images 不会。css 会阻塞页面渲染</description>
+    </item>
+    
+    <item>
+      <title>数论</title>
+      <link>https://yfw.ink/posts/number-theory/</link>
+      <pubDate>Sat, 28 May 2022 20:36:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/number-theory/</guid>
+      <description>整除 #  \(a \ | \ b\)： 即如果 \(a, b, c \in \mathbb{Z}, a \neq 0, \exists c(ac = b)\) ，则说明 a 能整除 b，a 为 b 的因子或除数;
+反之，若 \(\nexists c\)，则 \( a \nmid b\)，即 a 不能整除 b
+Division Algorithm #  假设 \(a \in \mathbb{Z}, d \in \mathbb{Z^+}\) ， 存在唯一的 \( q, r \in \mathbb{Z} , 0 \leq r &amp;lt; d \)， 使 \( a = dq + r\)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yfw.ink/posts/cryptography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/cryptography/</guid>
+      <description>Cryptography #  密码学
+数据私密性，数据的完整性，端的身份认证
+End-Point authentication #  端的身份认证，网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证
+Thread Model #  Playback attack #  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yfw.ink/posts/https/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/https/</guid>
+      <description>SSL/TSL #  SSL #  Secure Sockets Layer
+TLS #  Transport Layer Security
+SSL 3 的微小修订版，被 IETF 标准化
+HTTPS #  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yfw.ink/posts/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/map/</guid>
+      <description>Map #   key 的顺序不会自动排序，始终保留其插入时的相对顺序 key 可以是任意数据类型  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yfw.ink/posts/math/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/math/</guid>
+      <description>中文标题 #  中文内容 #   我是内容1 我是内容2  LaTeX formatted equation: \( E = -J \sum_{i=1}^N s_i s_{i+1} \)
+If \(a^2=b\) and \( b=2 \), then the solution must be either \[ a=+\sqrt{2} \] or \[ a=-\sqrt{2} \]
+test math</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yfw.ink/posts/org-mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/org-mode/</guid>
+      <description>测试 org mode 的功能 #  Table #     foo bar     图文咨询 标注   我是前端，图文自诩你的贵 华为的弹   东西哈哈哈，仪表板，你说了 窗卡顿，   ，非医生 oh ,    bullshit   入组触发，选择器，前端 发布yes    Math #  If \(a^2=b\) and \( b=2 \), then the solution must be either \[ a=+\sqrt{2} \] or \[ a=-\sqrt{2} \].
+\begin{equation} x=\sqrt{b} \end{equation}</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yfw.ink/posts/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/security/</guid>
+      <description>Security #  Thread Model #  Playback attack #  Confidentiality #  数据的机密性
+Integrity #  完整性
+Data integrity #  Originality #  timeliness #  Authentication #  端的身份认证
+网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://yfw.ink/posts/task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/task/</guid>
+      <description>任务队列 #  requestIdleCallback 和 requestAnimationFrame 的区别
+ric #  在每一帧的空闲期执行，可能不执行
+raf #   通过事件监听器注册的回调将会在同一帧中执行 通过 raf 注册的回调将在下一帧中执行  </description>
+    </item>
+    
+    <item>
+      <title>RSA 加密算法</title>
+      <link>https://yfw.ink/posts/rsa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/rsa/</guid>
+      <description>图解 #   </description>
+    </item>
+    
+    <item>
+      <title>网络安全</title>
+      <link>https://yfw.ink/posts/network-security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/network-security/</guid>
+      <description>什么是安全通信 #  假定 Alice, Bob 为两个通讯实体，Trudy 为中间攻击人，如何保证 Alice 和 Bob 能进行安全通信 ？
+Confidentiality #  数据的机密性，即只有通信双方可以知道通信内容
+Integrity #  消息完整性
+Data Integrity #  Alice 发的消息没有被篡改
+Originality #  Bob 收到的消息确实是 Alice 发的
+Timeliness #  Authentication #  通信侧的身份认证
+网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证，Alice 证明她就是 Alice
+Thread Model #  攻击者如何破坏通信安全
+窃听 #   嗅探，记录信道通信报文 篡改，插入，删除通信报文  Playback Attack #  攻击者把以前发过的消息又发了一遍
+Suppress-replay Attack #  抑制-重放攻击
+Cryptography #  cryptography，密码学，网络安全的基石</description>
+    </item>
+    
+  </channel>
+</rss>

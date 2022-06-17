@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="草稿，待完善
+同步 #  run to completion
+异步 #  Reactor Pattern #  异步的底层原理 #  操作系统的 api
+Callback #  Generator #  Promise #  Async/Await #  Observable #  IO #  网络请求，文件读写
+同步io：应用初始化的时候读配置文件用，否则不建议使用同步 io，阻塞 eventloop，影响性能
+queueMicrotask #  ecma-262 标准方法，用于注册微任务
+process.nextTick #  任务队列，被 node 管理，仅在 node 环境支持
+优先级高于微任务
+并发 #  并行 #  Worker Threads #  setImmediate #  非标准方法，不推荐使用，仅在 node 环境支持">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="异步" />
+<meta property="og:description" content="草稿，待完善
+同步 #  run to completion
+异步 #  Reactor Pattern #  异步的底层原理 #  操作系统的 api
+Callback #  Generator #  Promise #  Async/Await #  Observable #  IO #  网络请求，文件读写
+同步io：应用初始化的时候读配置文件用，否则不建议使用同步 io，阻塞 eventloop，影响性能
+queueMicrotask #  ecma-262 标准方法，用于注册微任务
+process.nextTick #  任务队列，被 node 管理，仅在 node 环境支持
+优先级高于微任务
+并发 #  并行 #  Worker Threads #  setImmediate #  非标准方法，不推荐使用，仅在 node 环境支持" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yfw.ink/posts/async/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-03T15:45:00+08:00" />
+<meta property="article:modified_time" content="2022-06-03T16:49:56+08:00" />
+
+<title>异步 | Notes and Wiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/zh.search.min.739aba619a33cb3cbd6a28d33906989a40f1c147c47f755270eef9d82c1fe8c5.js" integrity="sha256-c5q6YZozyzy9aijTOQaYmkDxwUfEf3VScO752Cwf6MU=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+<script src="https://yfw.ink/js/mathjax-config.js"></script>
+<script src="https://yfw.ink/js/tex-chtml.js"></script>
+
+
+
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Notes and Wiki</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>异步</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#同步">同步</a></li>
+        <li><a href="#异步">异步</a>
+          <ul>
+            <li><a href="#reactor-pattern">Reactor Pattern</a></li>
+            <li><a href="#异步的底层原理">异步的底层原理</a></li>
+            <li><a href="#callback">Callback</a></li>
+            <li><a href="#generator">Generator</a></li>
+            <li><a href="#promise">Promise</a></li>
+            <li><a href="#async-await">Async/Await</a></li>
+            <li><a href="#observable">Observable</a></li>
+            <li><a href="#io">IO</a></li>
+            <li><a href="#queuemicrotask">queueMicrotask</a></li>
+            <li><a href="#process-dot-nexttick">process.nextTick</a></li>
+            <li><a href="#并发">并发</a></li>
+            <li><a href="#并行">并行</a></li>
+            <li><a href="#worker-threads">Worker Threads</a></li>
+            <li><a href="#setimmediate">setImmediate</a></li>
+            <li><a href="#event-loop">Event Loop</a></li>
+            <li><a href="#libuv">libuv</a></li>
+            <li><a href="#libuv-线程池">libuv 线程池</a></li>
+            <li><a href="#微任务">微任务</a></li>
+            <li><a href="#宏任务">宏任务</a></li>
+            <li><a href="#node架构">Node架构</a></li>
+            <li><a href="#参考">参考</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/async/">异步</a>
+  </h1>
+  
+  <h5>June 3, 2022</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/js/">js</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/async/">async</a>
+  </div>
+  
+
+
+
+<p><strong>草稿，待完善</strong></p>
+<h2 id="同步">
+  同步
+  <a class="anchor" href="#%e5%90%8c%e6%ad%a5">#</a>
+</h2>
+<p>run to completion</p>
+<h2 id="异步">
+  异步
+  <a class="anchor" href="#%e5%bc%82%e6%ad%a5">#</a>
+</h2>
+<h3 id="reactor-pattern">
+  Reactor Pattern
+  <a class="anchor" href="#reactor-pattern">#</a>
+</h3>
+<h3 id="异步的底层原理">
+  异步的底层原理
+  <a class="anchor" href="#%e5%bc%82%e6%ad%a5%e7%9a%84%e5%ba%95%e5%b1%82%e5%8e%9f%e7%90%86">#</a>
+</h3>
+<p>操作系统的 api</p>
+<h3 id="callback">
+  Callback
+  <a class="anchor" href="#callback">#</a>
+</h3>
+<h3 id="generator">
+  Generator
+  <a class="anchor" href="#generator">#</a>
+</h3>
+<h3 id="promise">
+  Promise
+  <a class="anchor" href="#promise">#</a>
+</h3>
+<h3 id="async-await">
+  Async/Await
+  <a class="anchor" href="#async-await">#</a>
+</h3>
+<h3 id="observable">
+  Observable
+  <a class="anchor" href="#observable">#</a>
+</h3>
+<h3 id="io">
+  IO
+  <a class="anchor" href="#io">#</a>
+</h3>
+<p>网络请求，文件读写</p>
+<p>同步io：应用初始化的时候读配置文件用，否则不建议使用同步 io，阻塞 eventloop，影响性能</p>
+<h3 id="queuemicrotask">
+  queueMicrotask
+  <a class="anchor" href="#queuemicrotask">#</a>
+</h3>
+<p>ecma-262 标准方法，用于注册微任务</p>
+<h3 id="process-dot-nexttick">
+  process.nextTick
+  <a class="anchor" href="#process-dot-nexttick">#</a>
+</h3>
+<p>任务队列，被 node 管理，仅在 node 环境支持</p>
+<p>优先级高于微任务</p>
+<h3 id="并发">
+  并发
+  <a class="anchor" href="#%e5%b9%b6%e5%8f%91">#</a>
+</h3>
+<h3 id="并行">
+  并行
+  <a class="anchor" href="#%e5%b9%b6%e8%a1%8c">#</a>
+</h3>
+<h3 id="worker-threads">
+  Worker Threads
+  <a class="anchor" href="#worker-threads">#</a>
+</h3>
+<h3 id="setimmediate">
+  setImmediate
+  <a class="anchor" href="#setimmediate">#</a>
+</h3>
+<p>非标准方法，不推荐使用，仅在 node 环境支持</p>
+<p>宏任务，在 poll phase 阶段后执行</p>
+<h3 id="event-loop">
+  Event Loop
+  <a class="anchor" href="#event-loop">#</a>
+</h3>
+<p>等待任务，执行任务，继续等待任务（等待期基本不消耗 cpu 资源）</p>
+<p>node 环境跟 browser 环境的 event loop 表现不一致</p>
+<h4 id="browser-event-loop">
+  Browser event loop
+  <a class="anchor" href="#browser-event-loop">#</a>
+</h4>
+<p>使用 libevent 来实现，单队列</p>
+<figure><img src="/ox-hugo/eventloop.svg"/>
+</figure>
+
+<h4 id="node-event-loop">
+  Node event loop
+  <a class="anchor" href="#node-event-loop">#</a>
+</h4>
+<p>多阶段，每阶段一个队列使用 libuv 来实现分不同的阶段 phase，每个阶段可以理解成一个队列
+Node 11.0.0 修复了微任务的 bug
+四个 phase (队列）
+expired timer callbacks
+i/o events
+immediate queues
+close handler
+中间队列
+process.nextTick/promise 微任务</p>
+<figure><img src="/ox-hugo/eventloop-node.png"/>
+</figure>
+
+<h4 id="event-loop-最佳实践">
+  Event Loop 最佳实践
+  <a class="anchor" href="#event-loop-%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5">#</a>
+</h4>
+<h4 id="事件的区别">
+  事件的区别
+  <a class="anchor" href="#%e4%ba%8b%e4%bb%b6%e7%9a%84%e5%8c%ba%e5%88%ab">#</a>
+</h4>
+<p>浏览器事件：用户交互，脚本加载等，服务端事件：文件 i/o，网络 i/o，</p>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>browser</th>
+<th>node</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>实现库</td>
+<td>libevent</td>
+<td>libuv</td>
+</tr>
+</tbody>
+</table>
+<h3 id="libuv">
+  libuv
+  <a class="anchor" href="#libuv">#</a>
+</h3>
+<p>Network I/O is not performed on the libuv thread pool</p>
+<p>File I/O在 libuv thread pool 里执行</p>
+<p>dns.lookup() 在 libuv 线程池里执行</p>
+<figure><img src="/ox-hugo/libuv.png"/>
+</figure>
+
+<h3 id="libuv-线程池">
+  libuv 线程池
+  <a class="anchor" href="#libuv-%e7%ba%bf%e7%a8%8b%e6%b1%a0">#</a>
+</h3>
+<h3 id="微任务">
+  微任务
+  <a class="anchor" href="#%e5%be%ae%e4%bb%bb%e5%8a%a1">#</a>
+</h3>
+<p>v8 术语，由引擎管理的任务队列</p>
+<p>.then/.catch/.finally  queueMicrotask 注册的均为微任务</p>
+<p>当前宏任务执行完后，引擎会执行微任务，优先级高于宏任务</p>
+<h3 id="宏任务">
+  宏任务
+  <a class="anchor" href="#%e5%ae%8f%e4%bb%bb%e5%8a%a1">#</a>
+</h3>
+<p>v8 术语</p>
+<p>例如：脚本加载事件，页面交互事件</p>
+<p>执行宏任务时，浏览器不会渲染</p>
+<h3 id="node架构">
+  Node架构
+  <a class="anchor" href="#node%e6%9e%b6%e6%9e%84">#</a>
+</h3>
+<figure><img src="/ox-hugo/node-arch.png"/>
+</figure>
+
+<h3 id="参考">
+  参考
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h3>
+<ol>
+<li>
+  <a href="https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask">https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask</a></li>
+<li>
+  <a href="https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810">https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810</a></li>
+<li>
+  <a href="https://gist.github.com/deepal?page=1">https://gist.github.com/deepal?page=1</a></li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/alex-shpak/hugo-book/commit/e0b301a30ddbe49df19429dc6173900f9813c9a7" title='最后修改者 richard | June 3, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>June 3, 2022</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#同步">同步</a></li>
+        <li><a href="#异步">异步</a>
+          <ul>
+            <li><a href="#reactor-pattern">Reactor Pattern</a></li>
+            <li><a href="#异步的底层原理">异步的底层原理</a></li>
+            <li><a href="#callback">Callback</a></li>
+            <li><a href="#generator">Generator</a></li>
+            <li><a href="#promise">Promise</a></li>
+            <li><a href="#async-await">Async/Await</a></li>
+            <li><a href="#observable">Observable</a></li>
+            <li><a href="#io">IO</a></li>
+            <li><a href="#queuemicrotask">queueMicrotask</a></li>
+            <li><a href="#process-dot-nexttick">process.nextTick</a></li>
+            <li><a href="#并发">并发</a></li>
+            <li><a href="#并行">并行</a></li>
+            <li><a href="#worker-threads">Worker Threads</a></li>
+            <li><a href="#setimmediate">setImmediate</a></li>
+            <li><a href="#event-loop">Event Loop</a></li>
+            <li><a href="#libuv">libuv</a></li>
+            <li><a href="#libuv-线程池">libuv 线程池</a></li>
+            <li><a href="#微任务">微任务</a></li>
+            <li><a href="#宏任务">宏任务</a></li>
+            <li><a href="#node架构">Node架构</a></li>
+            <li><a href="#参考">参考</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,12 +15,12 @@ draft = false
 
 ## 等比级数 {#等比级数}
 
-\\(a, ar, ar^2,...,ar^n\\), (\\(a,r \in R\\))，r 为公比
+\\(a, ar, ar^2,...,ar^n\\), (\\(a,r \in R\\))，r 为 **公比**
 
 
 ## 等差数列 {#等差数列}
 
-\\(a, a+d, a+2d, ... ,a+nd, ...\\), d 为公差
+\\(a, a+d, a+2d, ... ,a+nd, ...\\), d 为 **公差**
 
 
 ## Fibonacci sequence {#fibonacci-sequence}

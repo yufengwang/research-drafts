@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hash-table on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/hash-table/</link>
+    <description>Recent content in hash-table on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 28 May 2022 21:47:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/hash-table/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>哈希表</title>
+      <link>https://yfw.ink/posts/hash-table/</link>
+      <pubDate>Sat, 28 May 2022 21:47:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/hash-table/</guid>
+      <description>Collision #  冲突： H(k1) = H(k2)
+冲突解决方案 #  Chaining #  Open Addressing #  </description>
+    </item>
+    
+  </channel>
+</rss>

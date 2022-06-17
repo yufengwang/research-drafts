@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dp on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/dp/</link>
+    <description>Recent content in dp on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Jun 2022 23:42:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>动态规划</title>
+      <link>https://yfw.ink/posts/dp/</link>
+      <pubDate>Fri, 03 Jun 2022 23:42:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/dp/</guid>
+      <description>Dynamic Programming #  动态规划: 由子问题的解推出最终问题的解，子问题重叠，即子问题共享子子问题
+避免重复计算子问题
+Elements #  动态规划的基本元素
+Optimal Substructure #  最优子结构，通过子问题的最优解，求出最终的最优解
+Overlapping Subproblem #  重叠子问题</description>
+    </item>
+    
+    <item>
+      <title>切钢条问题</title>
+      <link>https://yfw.ink/posts/rod-cutting/</link>
+      <pubDate>Fri, 03 Jun 2022 23:38:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/rod-cutting/</guid>
+      <description>草稿，待完善
+Rod-Cutting #  切钢条问题
+钢条长度 i 和售价 P(i) 的对照表
+   Length i 1 2 3 4 5 6 7 8 9 10     Price P(i) 1 5 8 9 10 17 17 20 24 30   cut ways 1 2 4 8          求给定长度 n 的钢条的最大销售额 R(n) ?
+解： 设 长度为n 的钢条的最大销售额为 R(n)
+R(n) = Max {P(n), R(1) + R(n -1), R(2) + R(n - 2)}</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/network/</link>
+    <description>Recent content in network on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 Jun 2022 00:04:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机网络</title>
+      <link>https://yfw.ink/posts/network/</link>
+      <pubDate>Wed, 01 Jun 2022 00:04:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/network/</guid>
+      <description>计算机网络基础 #  三次握手 #   client 发送 syn（Synchronize Sequence Number）到 server，表示想要建立 tcp 连接 Server 发送(syn+ ack) client 发送 ack 给 server，连接建立  四次挥手 #   client 发送 FIN server 接收到 FIN，发送 ack server 发送 FIN client 发送 ack  网络分层 #  TCP/IP 模型 #   应用层 传输层 网络层 链路层  OSI 模型 #   应用层 展示层 会话层 传输层 网络层 链接层 物理层  </description>
+    </item>
+    
+    <item>
+      <title>缓存</title>
+      <link>https://yfw.ink/posts/cache/</link>
+      <pubDate>Wed, 01 Jun 2022 00:03:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/cache/</guid>
+      <description>缓存 #  为什么需要缓存 #   减少不必要的网络请求，提升页面访问速度 减少服务器负载 节省网络开销(流量)  缓存工作机制 #  通过 http 请求头及 http 响应头来控制
+缓存相关 http header #  Expires #  Fri, 30 Oct 1998 14:19:41 GMT，优先级较低
+服务端返回 ，GMT 时间戳。告诉浏览器在指定的时间戳之后重新获取新的资源。限制：服务器跟浏览器的时间必须保持同步
+Cache-Control #  Max-age = 3153000 单位秒
+   属性 含义     private 仅允许浏览器缓存   public 可被任意节点缓存   no-cache 每次都需要验证缓存的有效性   no-store 不允许被缓存    服务端返回</description>
+    </item>
+    
+    <item>
+      <title>网络安全</title>
+      <link>https://yfw.ink/posts/network-security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://yfw.ink/posts/network-security/</guid>
+      <description>什么是安全通信 #  假定 Alice, Bob 为两个通讯实体，Trudy 为中间攻击人，如何保证 Alice 和 Bob 能进行安全通信 ？
+Confidentiality #  数据的机密性，即只有通信双方可以知道通信内容
+Integrity #  消息完整性
+Data Integrity #  Alice 发的消息没有被篡改
+Originality #  Bob 收到的消息确实是 Alice 发的
+Timeliness #  Authentication #  通信侧的身份认证
+网络中一个实体向另一个实体证明他的身份，服务端的身份认证，客户端的身份认证，Alice 证明她就是 Alice
+Thread Model #  攻击者如何破坏通信安全
+窃听 #   嗅探，记录信道通信报文 篡改，插入，删除通信报文  Playback Attack #  攻击者把以前发过的消息又发了一遍
+Suppress-replay Attack #  抑制-重放攻击
+Cryptography #  cryptography，密码学，网络安全的基石</description>
+    </item>
+    
+  </channel>
+</rss>

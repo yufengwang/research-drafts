@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algo-analysis on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/algo-analysis/</link>
+    <description>Recent content in algo-analysis on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Jun 2022 23:26:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/algo-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>循环不变式</title>
+      <link>https://yfw.ink/posts/loop-invariant/</link>
+      <pubDate>Fri, 03 Jun 2022 23:26:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/loop-invariant/</guid>
+      <description>Loop Invariant #  循环不变式： 循环的每次迭代中，始终为 true 的断言
+\( (P \land condition) \{ S \} P \)，即 \(P\) 为循环不变式
+证明循环语句正确的步骤 #   猜测 \(P\) 为循环不变式 证明 \(P\) 为循环不变式 证明程序会终止 证明程序终止时 \(P \land \neg condition \) 为 \( T \)  </description>
+    </item>
+    
+    <item>
+      <title>算法复杂度</title>
+      <link>https://yfw.ink/posts/complexity/</link>
+      <pubDate>Fri, 03 Jun 2022 16:57:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/complexity/</guid>
+      <description>Time complexity #  时间复杂度
+算法执行所需的操作数，而不是实际的运行时间
+当输入 n 足够大时，低阶项可以被舍弃
+RAM #  Random Access Machine
+ 单处理器 指令按序处理，无并发操作 仅包含常用指令，每个指令的执行占用常量操作时间  Average case #  对 size n 的 平均 输入，算法执行所需的操作数，（平均运行时间）
+通常要用到概率分析的方法
+Worst case #  对 size n 的任意输入，算法执行所需的最大操作数，即运行时间的 上界 (上限)
+使算法执行时间最长的输入，例如对插入排序而言，待排序数组是已经反向排序好的
+最常用
+Best case #  使算法执行时间最短的输入，例如对插入排序而言，待排序数组是已经正向排序好的
+\( \Theta \) notation #  \( \Theta(g(n)) = \{f(n): \exists c_1, c_{2}, n_{0} \in \mathbb{R^{+}} , \forall n_{0} \leq n, 0 \leq c_{1}g(n) \leq f(n) \leq c_{2}g(n) \} \)</description>
+    </item>
+    
+    <item>
+      <title>算法正确性</title>
+      <link>https://yfw.ink/posts/algo-correctness/</link>
+      <pubDate>Sat, 28 May 2022 21:31:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/algo-correctness/</guid>
+      <description>算法正确性证明 #  算法正确：对每一个正确输入，都能得到正确的解
+证明步骤 #   证明程序终止时，能获得正确的解，(部分正确） 证明程序始终会终止  初始断言： 程序输入值具有的属性；结果断言： 程序输出值具有的属性
+Hoare triple: p{S}q
+if p true and S terminates, q true, then S is partially correct</description>
+    </item>
+    
+  </channel>
+</rss>

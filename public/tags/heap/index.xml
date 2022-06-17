@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>heap on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/heap/</link>
+    <description>Recent content in heap on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Jun 2022 23:06:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/heap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>堆</title>
+      <link>https://yfw.ink/posts/heap/</link>
+      <pubDate>Tue, 14 Jun 2022 23:06:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/heap/</guid>
+      <description>定义 #  可以用完整二叉树表示的数组，树的每一个节点为数组中的元素
+parent(i) = Math.floor(i/2)
+left(i) = 2i
+right(i) = 2i + 1
+Max heap #  最大堆
+除了根节点 A[i] &amp;lt;= A[parent(i)]
+Min heap #  最小堆
+除了根节点，A[i] &amp;gt;= A[parent(i)]
+通常用来实现优先队列</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>graph on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/graph/</link>
+    <description>Recent content in graph on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 28 May 2022 21:47:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/graph/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图</title>
+      <link>https://yfw.ink/posts/graph/</link>
+      <pubDate>Sat, 28 May 2022 21:47:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/graph/</guid>
+      <description>定义 #  G = (V, E)， V 为非空顶点集，E 为边的集合
+Directed Graph #  有向图
+边 （u, v), u -&amp;gt; v ， v 跟 u 相邻
+没有自循环的有向图是 简单有向图
+Undirected Graph #  无向图
+无向图不允许自循环
+Degree #  度
+Path #  &amp;lt;v0, v1, &amp;hellip; , vk&amp;gt; v0 -&amp;gt; vk 的顶点的一个序列
+长度： 路径中边的数量
+Simple Path #  路径中所有的顶点都是不同的
+Cycle #  Edge #  (u, v), 有向图中 (u, v) , (v, u) 是不一致的</description>
+    </item>
+    
+  </channel>
+</rss>

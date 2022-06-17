@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>async on Notes and Wiki</title>
+    <link>https://yfw.ink/tags/async/</link>
+    <description>Recent content in async on Notes and Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Jun 2022 15:45:00 +0800</lastBuildDate><atom:link href="https://yfw.ink/tags/async/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>异步</title>
+      <link>https://yfw.ink/posts/async/</link>
+      <pubDate>Fri, 03 Jun 2022 15:45:00 +0800</pubDate>
+      
+      <guid>https://yfw.ink/posts/async/</guid>
+      <description>草稿，待完善
+同步 #  run to completion
+异步 #  Reactor Pattern #  异步的底层原理 #  操作系统的 api
+Callback #  Generator #  Promise #  Async/Await #  Observable #  IO #  网络请求，文件读写
+同步io：应用初始化的时候读配置文件用，否则不建议使用同步 io，阻塞 eventloop，影响性能
+queueMicrotask #  ecma-262 标准方法，用于注册微任务
+process.nextTick #  任务队列，被 node 管理，仅在 node 环境支持
+优先级高于微任务
+并发 #  并行 #  Worker Threads #  setImmediate #  非标准方法，不推荐使用，仅在 node 环境支持</description>
+    </item>
+    
+  </channel>
+</rss>
