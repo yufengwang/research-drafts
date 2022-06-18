@@ -1,0 +1,19 @@
+#+TITLE: 矩阵
+#+DATE: <2022-06-18 Sat 19:56>
+#+FILETAGS: @math
+
+* 定义
+
+m 行 n 列的矩阵称为 \(m \times n\) 矩阵，\(m = n\) 时，称为方阵
+
+在离散数学里，常用来表示集合里元素的关系
+
+* 矩阵加法
+若 \(A = [a_{ij}]，B = [b_{ij}]\) 均为 \(m \times n\) 矩阵，则 \(A + B = [a_{ij} + b_{ij}]\)
+
+
+* 矩阵乘法
+
+设 \(\textbf A = [a_{ij}]\) 为 \(m \times n\) 矩阵，\( \textbf B = [b_{ij}]\) 为 \( n \times k\) 矩阵，则 \(AB = C = [c_{ij}]\) 为 \(m \times k\) 矩阵
+
+\[c_{ij}=a_{i1} \cdot b_{1j} + a_{i2} \cdot b_{2j} + ... + a_{ik} \cdot b_{kj} \]
