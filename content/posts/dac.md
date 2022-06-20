@@ -17,12 +17,19 @@ draft = false
 合：由小问题的解合为大问题的解
 
 
-## Substitution method {#substitution-method}
+## 分治的复杂度分析 {#分治的复杂度分析}
 
 
-## Recursion-tree method {#recursion-tree-method}
+### Substitution method {#substitution-method}
+
+替换法
+
+
+### Recursion-tree method {#recursion-tree-method}
 
 递归树方法
 
 
-## Master method {#master-method}
+### Master method {#master-method}
+
+主定理

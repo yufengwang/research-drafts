@@ -12,10 +12,16 @@
 
 合：由小问题的解合为大问题的解
 
-* Substitution method
+* 分治的复杂度分析
 
-* Recursion-tree method
+** Substitution method
+
+替换法
+
+** Recursion-tree method
 
 递归树方法
 
-* Master method
+** Master method
+
+主定理
