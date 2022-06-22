@@ -86,6 +86,8 @@ document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT; dom
 
 #### `samesite=lax` {#samesite-lax}
 
+更 relax 的限制，不是那么严格
+
 发送场景：
 
 1.  安全的 http 请求，例如 GET

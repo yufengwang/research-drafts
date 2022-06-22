@@ -72,6 +72,8 @@ document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT; dom
 
 *** =samesite=lax=
 
+更 relax 的限制，不是那么严格
+
 发送场景：
 1. 安全的 http 请求，例如 GET
 2. 顶级跳转（更改浏览器地址栏里的 url），iframe 里的跳转不行
