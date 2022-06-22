@@ -1,0 +1,35 @@
++++
+title = "csrf"
+author = ["wenhu"]
+date = 2022-06-22T15:47:00+08:00
+tags = ["security"]
+draft = false
++++
+
+## 含义 {#含义}
+
+csrf: 跨站请求伪造 (cross site request forgery)，又称为 xsrf
+
+
+## 攻击原理 {#攻击原理}
+
+表单提交场景下，在 **evil.com** 向 **bank.com** 提交表单，浏览器会携带 bank.com 的 cookie 过去
+
+如果用户在 bank.com 已登录过且会话有效，则会提交成功
+
+攻击者通常通过钓鱼邮件的方式攻击
+
+{{< figure src="/ox-hugo/cookie-xsrf.svg" >}}
+
+
+## 如何预防 {#如何预防}
+
+
+### xsrf token {#xsrf-token}
+
+bank.com 的页面里预埋 xsrf token，仅在当前页提交表单时会携带 token，从其他站点提交表单时，没有 token，则服务不信任
+
+
+### samesite cookie {#samesite-cookie}
+
+设置同站 cookie
