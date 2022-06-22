@@ -4,3 +4,10 @@ ltximg
 .orgids
 public
 *.html
+*.pdf
+*.tex
+node_modules
+.log
+*.out.js
+*.lock
+

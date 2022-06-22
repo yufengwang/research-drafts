@@ -1,3 +1,7 @@
+#+LATEX_COMPILER: xelatex
+#+LATEX_HEADER: \usepackage[UTF8]{ctex}
+#+LATEX_HEADER: \setmainfont{Helvetica}
+
 #+TITLE: 网络安全
 #+DATA: <2022-05-30 Mon 14:43>
 #+FILETAGS: network security
