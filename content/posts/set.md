@@ -30,3 +30,24 @@ draft = false
 
 
 ## 子集 {#子集}
+## Cardinality {#cardinality}
+
+集的势 (size)，集合里元素的数量,表示为 |S|
+
+
+## Power Set {#power-set}
+
+势集
+
+集合 S 的所有子集，包括空集和他自己，为 \\(2^{S}\\)
+
+有限集的势集的势为 \\(2^{|S|}\\)
+
+
+## Cartesian Product {#cartesian-product}
+
+笛卡尔的积  A x B
+
+集合 A,B 里所有有序对的集合，第一个元素为 A 里的元素，第二个元素为 B 里的元素
+
+A x B = { (a, b): \\(a \in A\\) and \\(b \in B\\) }
