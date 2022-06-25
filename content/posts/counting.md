@@ -2,6 +2,7 @@
 title = "计数问题"
 author = ["wenhu"]
 date = 2022-06-05T13:38:00+08:00
+tags = ["counting"]
 categories = ["math"]
 draft = false
 +++
@@ -31,6 +32,8 @@ draft = false
 n 元集里的 r 排列：
 
 \\[ n, r \in \mathbb{Z^{+}},  1 \leq r \leq n ，P(n,r)=n(n-1)(n-2)...(n-r+1)= \frac{n!}{(n-r)!} \\]
+
+0 的阶乘为 1
 
 
 ### 组合 {#组合}
