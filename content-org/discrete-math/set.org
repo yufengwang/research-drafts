@@ -1,10 +1,12 @@
 #+TITLE: 集合
 #+DATE:<2022-06-13 Mon 14:28>
-#+FILETAGS: @math
+#+FILETAGS: set @math
 
 * 定义
 
-*不同* 对象的 *无序* 集合
+*不同* 对象（元素）的 *无序* 集合
+
+允许包含相同元素的集合称为 multiset（多集）
 
 * 表示
 
@@ -28,6 +30,7 @@ A - B = {x: \(x \in A \) and \( x \not\in B \) }
 
 ** 并集
 
+* 子集
 * Cardinality
 
 集的势 (size)，集合里元素的数量,表示为 |S|

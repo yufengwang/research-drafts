@@ -2,13 +2,16 @@
 title = "集合"
 author = ["wenhu"]
 date = 2022-06-13T14:28:00+08:00
+tags = ["set"]
 categories = ["math"]
 draft = false
 +++
 
 ## 定义 {#定义}
 
-**不同** 对象的 **无序** 集合
+**不同** 对象（元素）的 **无序** 集合
+
+允许包含相同元素的集合称为 multiset（多集）
 
 
 ## 表示 {#表示}
@@ -40,6 +43,7 @@ A - B = {x: \\(x \in A \\) and \\( x \not\in B \\) }
 ### 并集 {#并集}
 
 
+## 子集 {#子集}
 ## Cardinality {#cardinality}
 
 集的势 (size)，集合里元素的数量,表示为 |S|
