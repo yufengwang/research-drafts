@@ -8,13 +8,13 @@ draft = false
 
 ## 定义 {#定义}
 
-可以用完整二叉树表示的数组，树的每一个节点为数组中的元素
+可以用 [完整二叉树](./tree/#complete) 表示的数组，树的每一个节点为数组中的元素
 
-parent(i) = Math.floor(i/2)
+Parent(i) = Math.floor(i/2)
 
-left(i) = 2i
+Left(i) = 2\*i
 
-right(i) = 2i  + 1
+Right(i) = 2\*i + 1
 
 
 ### Max heap {#max-heap}
@@ -31,3 +31,12 @@ right(i) = 2i  + 1
 除了根节点，A[i] &gt;= A[parent(i)]
 
 通常用来实现优先队列
+
+
+## 维持堆属性 {#维持堆属性}
+
+
+## 构造最大堆 {#构造最大堆}
+
+
+## 堆排序 {#堆排序}
