@@ -1,0 +1,23 @@
+#+TITLE: 渲染
+#+DATE:<2022-06-29 Wed 15:54>
+#+FILETAGS: browser
+
+* CSR
+
+Client Side Render
+
+* SSR
+
+Server Side Render
+
+* ISR
+
+[[https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration][Incremental Static Regeneration]]
+
+增量静态重构建[fn:1]
+
+仅针对变动的 page 进行构建，而不是全量构建
+
+next.js 提出的
+
+[fn:1] this is a footnote
