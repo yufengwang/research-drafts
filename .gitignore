@@ -3,7 +3,7 @@ ltximg
 .hugo_build.lock
 .orgids
 public
-*.html
+content-org/**/*.html
 *.pdf
 *.tex
 node_modules
