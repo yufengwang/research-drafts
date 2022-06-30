@@ -8,7 +8,7 @@ draft = false
 
 ## 什么是 cookie {#什么是-cookie}
 
-浏览器管理的一小段特殊字符串, http 协议的一部分，在 RFC 6265 里有说明
+浏览器管理的一小段特殊字符串, http 协议的一部分，在  [RFC 6265](https://datatracker.ietf.org/doc/html/rfc6265)  里有说明
 
 
 ## 设置 {#设置}
@@ -74,9 +74,9 @@ document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT; dom
 
 ### Samesite {#samesite}
 
-用来防止 xsrf (cross-site request forgery)
+用来防止 [xsrf](./csrf) (cross-site request forgery)
 
-老的浏览器不支持 (2017年及以前的)，等老浏览器都被淘汰了，xsrf 也就不需要了
+老的浏览器不支持 (2017年及以前的），等老浏览器都被淘汰了，xsrf 也就不需要了
 
 
 #### `samesite=strict` {#samesite-strict}
