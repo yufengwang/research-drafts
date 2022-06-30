@@ -1,8 +1,8 @@
 * My notes
 
- My personal notes and wiki, please see [[https://yfw.ink][yfw.ink]]
+ My personal notes and wiki, please see [[https://yfw.wiki][yfw.wiki]]
 
- Note: This site content is generated from [[https://github.com/yufengwang/notes][notes]] and hosted by Cloudflare Pages.
+ Note: This site content is generated from content-org folder and hosted by Cloudflare Pages.
 
 * Credits
 
