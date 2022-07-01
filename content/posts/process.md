@@ -11,11 +11,11 @@ draft = false
 进程：操作系统对运行态的程序的抽象
 
 
-### Machine state {#machine-state}
+### Machine State {#machine-state}
 
 进程的机器状态
 
-包括：内存地址空间，寄存器，program counter, stack pointer, frame pointer, i/o 文件描述符
+包括：内存地址空间，寄存器，program counter, stack pointer, frame pointer, i/o 文件描述符等
 
 
 #### 地址空间 {#地址空间}

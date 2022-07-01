@@ -13,7 +13,7 @@ draft = false
 
 ## 设置 {#设置}
 
-1.  http **Set-Cookie** 响应头
+1.  服务端通过 http **Set-Cookie** 响应头
 2.  js 通过 **document.cookie** 设置（非 **httpOnly** 的）
 
 
