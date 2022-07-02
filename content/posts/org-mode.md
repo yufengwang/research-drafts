@@ -11,14 +11,15 @@ draft = false
 
 ## Table {#table}
 
-| 表头       | 表头 |
-|----------|----|
-| 内容 english | 内容 |
+| 表头             | 表头              |
+|----------------|-----------------|
+| 内容 e nglish    | 内容              |
+| 你 cool 好了 end 我是 | happy ending 我是中文 |
 
 
 ## Math {#math}
 
-If \\(a^2=b\\) and \\( b=2 \\), then the solution must be
+If \\(a^2=b\\) and $ b=2 $, then the solution must be
 either \\[ a=+\sqrt{2} \\] or \\[ a=-\sqrt{2} \\].
 
 \begin{equation}
