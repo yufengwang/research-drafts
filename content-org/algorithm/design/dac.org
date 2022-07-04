@@ -1,6 +1,6 @@
 #+TITLE: 分治
 #+DATE: <2022-06-03 Fri 23:43>
-#+FILETAGS: dac
+#+FILETAGS: algo-design
 
 * 定义
 

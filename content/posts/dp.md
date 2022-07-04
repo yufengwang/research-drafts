@@ -1,8 +1,8 @@
 +++
-title = "动态规划"
+title = "动态编程"
 author = ["wenhu"]
 date = 2022-06-03T23:42:00+08:00
-tags = ["dp"]
+tags = ["algo-design"]
 draft = false
 +++
 

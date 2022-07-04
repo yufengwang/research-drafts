@@ -1,6 +1,6 @@
-#+TITLE: 动态规划
+#+TITLE: 动态编程
 #+DATE: <2022-06-03 Fri 23:42>
-#+FILETAGS:  dp
+#+FILETAGS: algo-design
 
 * Dynamic Programming
 

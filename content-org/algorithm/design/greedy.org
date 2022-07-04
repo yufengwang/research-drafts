@@ -1,6 +1,6 @@
 #+TITLE: 贪心算法
 #+DATE: <2022-06-03 Fri 23:42>
-#+FILETAGS: greedy-algo
+#+FILETAGS: algo-design
 
 草稿，待完善
 

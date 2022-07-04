@@ -2,7 +2,7 @@
 title = "分治"
 author = ["wenhu"]
 date = 2022-06-03T23:43:00+08:00
-tags = ["dac"]
+tags = ["algo-design"]
 draft = false
 +++
 
