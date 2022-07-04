@@ -2,7 +2,7 @@
 #+DATE: <2022-06-01 Wed 00:05>
 #+FILETAGS: logic @math
 
-* Proposition logic
+* Proposition Logic
 
 ** Proposition
 
@@ -10,4 +10,29 @@
 
 ** Conditional Statements
 
-if p, then q, i.e. p -> q
+条件语句
+
+if p, then q, i.e. $p \rightarrow q$
+
+
+* 推理规则
+
+例如：
+
+假设 p 为 true 时 p 能推出 q，那么 q 为 true
+
+即: $(p\land(p \rightarrow q)) \rightarrow q$
+
+p
+
+$p \rightarrow q$ (条件语句)
+------
+$\therefore q$
+
+**  Argument Form
+
+ 推理方式，论证方式
+
+
+
+[[file:rule-of-infer.png]]
