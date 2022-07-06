@@ -32,6 +32,16 @@ G = (V, E)， V 为非空顶点集，E 为边的集合
 度
 
 
+### In Degree {#in-degree}
+
+入度
+
+
+### Out Degree {#out-degree}
+
+出度:
+
+
 ## Path {#path}
 
 &lt;v0, v1, ... , vk&gt; v0 -&gt; vk 的顶点的一个序列
