@@ -1,0 +1,11 @@
+#+TITLE: 编程语言术语
+#+DATE:<2022-07-12 二 22:39>
+#+FILETAGS: plt
+
+* Binding
+
+值和标识符的关联
+
+* Identifier
+
+标识符
