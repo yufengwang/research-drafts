@@ -4,10 +4,10 @@
 
 #+LATEX_COMPILER: xelatex
 #+LATEX_HEADER: \usepackage[UTF8]{ctex}
-#+LATEX_HEADER: \setmainfont{Helvetica}
+# #+LATEX_HEADER: \setmainfont{Helvetica}
 #+LATEX_HEADER: \usepackage[a4paper, margin=1cm]{geometry}
 
-用来测试 orgmode 转 markdown 经 hugo 渲染后的效果
+用来测试 orgmode 转 markdown 经 hugo 渲染后的效果111
 
 * Table
 
