@@ -1,0 +1,7 @@
+#+TITLE: 文件系统
+#+DATE:<2022-07-17 日 21:50>
+#+FILETAGS: linux
+
+* Symlink
+
+符号链接
