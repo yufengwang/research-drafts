@@ -13,64 +13,104 @@
 
 通过 http 请求头及 http 响应头来控制
 
-* Private cache
+* 缓存类型
+
+[[file:./type-of-cache.png]]
+
+** Private cache
 
 私有缓存：特定端的缓存，例如用户的浏览器
 
-* Shared cache
+** Shared cache
 
 可被共享的缓存
 
-** Proxy cache
+*** Proxy cache
 
 代理缓存
 
-** Managed cache
+*** Managed cache
 
 reverse proxy, cdn
+
+* Heuristic cache
+
+启发式缓存
+
+http 的设计是能缓存尽量缓存，http 客户端根据 http 响应头自行决定缓存行为
+
 
 * 缓存相关 http header
 
 ** Cache-Control
 
-Max-age = 3153000 单位秒
+缓存控制响应头, HTTP/1.1 引入
 
-| 属性      | 含义                               |
-|----------+-----------------------------------|
-| private  | 仅允许端(浏览器)缓存，私有缓存        |
-| public   | 可被任意节点缓存                     |
-| no-cache | 每次都需要验证缓存的有效性            |
-| no-store | 不允许被缓存                        |
+| 属性       | 含义                                            |
+|-----------+------------------------------------------------|
+| max-age   | 能存活多久(单位秒), 例： max-age=3153000          |
+| private   | 仅允许端(浏览器)缓存，私有缓存                     |
+| public    | 可被任意节点缓存, 当 Authorization 头存在时需要设置 |
+| no-cache  | 每次都需要验证缓存的有效性，强制校验，端仍可以缓存     |
+| no-store  | 不允许被缓存，不推荐使用                           |
+| immutable | 内容永远不会变，浏览器刷新时，不会去校验缓存有效性     |
 
 *服务端返回*
 
+HTTP/1.0 没法处理 no-cache 指令，用 max-age=0, must-revalidate 代替
+
+推荐使用 no-cache，private
+
+既可以当请求头(e.g. 浏览器 reload, force reload)，也可以当响应头
+
+用于请求头时，表示跳过缓存的响应，直接请求源站
+
 ** Expires
+
+http 1.0 引入，不好 parse，不同端的实现有 bug，调整系统时钟会有 bug
 
 Fri, 30 Oct 1998 14:19:41 GMT，优先级较低
 
-=服务端返回= ，GMT 时间戳。告诉浏览器在指定的时间戳之后重新获取新的资源。限制：服务器跟浏览器的时间必须保持同步
-
+*服务端返回* ，GMT 时间戳。告诉浏览器在指定的时间戳之后重新获取新的资源。限制：服务器跟浏览器的时间必须保持同步
 
 ** Last-Modified
 
 Mon, 03 Jan 2011 17:45:57 GMT
 
-=服务端返回= ，用来重新校验缓存是否有效, GMT 时间戳
+*服务端返回* ，用来重新校验缓存是否有效, GMT 时间戳
+
+不仅仅用于缓存，亦可用于在 cms 系统中表示上次修改时间，或告诉爬虫内容应被爬取的频率 等用途
+
+因此 etag 和 last-modified 应都被使用
 
 ** ETag
 
 e.g. ETag: x234dff
 
-=服务端返回= ，当浏览器端某个缓存过期，浏览器会发送一段 token（通常是文件的 hash 值）来请求服务器判断该文件是否过期。如果 ETag 不变，则继续使用缓存
+*服务端返回* ，当浏览器端某个缓存过期，浏览器会发送一段 token（通常是文件的 hash 值）来请求服务器判断该文件是否过期。如果 ETag 不变，则继续使用缓存
 
-** If-None-Match
+比 last-modified 优先级更高
 
-If-None-Match: x234dff
+** Vary
 
-=浏览器端发送= ，检查此值是否跟 server 端的 ETag 值匹配
+根据不同的响应头缓存文件
+
+e.g. Vary: Accept-Language
+
+* 缓存校验
+
+过期的缓存不会立马被丢弃，端可通过跟源站沟通，判断缓存是否可以继续使用
+
 
 ** If-Modified-Since
 
 Mon, 03 Jan 2011 17:45:57 GMT
 
-=浏览器端发送=
+*浏览器端发送* ，在分布式系统中，时间同步，时间戳的解析比较复杂，容易出 bug，因此 etag/if-none-match 更常用
+
+
+** If-None-Match
+
+If-None-Match: x234dff
+
+*浏览器端发送* ，检查此值是否跟 server 端的 ETag 值匹配
