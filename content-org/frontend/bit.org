@@ -6,7 +6,7 @@
 
 任何可被共享的函数，库，ui 等，都可称之为组件
 
-思路打开: 中间件，service，controller，module，hook 等都可统称为组件，不仅仅局限于前端
+一切皆组件: 中间件，service，controller，module，hook 等都可统称为组件，不仅仅局限于前端
 
 * Why
 
