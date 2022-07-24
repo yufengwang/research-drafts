@@ -1,0 +1,20 @@
+#+TITLE: 递归
+#+DATE: <2022-07-24 Sun 15:57>
+#+FILETAGS: plt
+
+* 递归
+#+begin_src racket
+(define (sum n)
+  (if (zero? n)
+      0
+      (+ n (sum (- n 1))))) ; not tail recursive
+#+end_src
+
+#+begin_src racket
+(define (tail-sum n [acc 0])
+  (if (zero? n)
+      acc
+      (tail-sum (- n 1) (+ n acc)))) ; tail recursive
+#+end_src
+
+* 尾递归
