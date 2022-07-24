@@ -15,12 +15,12 @@ draft = false
       (+ n (sum (- n 1))))) ; not tail recursive
 ```
 
+
+## 尾递归 {#尾递归}
+
 ```racket
 (define (tail-sum n [acc 0])
   (if (zero? n)
       acc
       (tail-sum (- n 1) (+ n acc)))) ; tail recursive
 ```
-
-
-## 尾递归 {#尾递归}

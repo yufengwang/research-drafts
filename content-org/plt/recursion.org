@@ -10,11 +10,11 @@
       (+ n (sum (- n 1))))) ; not tail recursive
 #+end_src
 
+
+* 尾递归
 #+begin_src racket
 (define (tail-sum n [acc 0])
   (if (zero? n)
       acc
       (tail-sum (- n 1) (+ n acc)))) ; tail recursive
 #+end_src
-
-* 尾递归
