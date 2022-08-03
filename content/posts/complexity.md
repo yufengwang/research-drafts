@@ -49,7 +49,7 @@ Random Access Machine
 
 \\( \Theta(g(n)) = \\{f(n): \exists c\_1, c\_{2}, n\_{0} \in \mathbb{R^{+}} , \forall n\_{0} \leq n,  0  \leq c\_{1}g(n) \leq f(n) \leq c\_{2}g(n) \\} \\)
 
-\\(f(n) = \Theta(g(n))\\)，即 \\(f(n) \in \Theta(g(n))\\)，\\(f(n)\\) 为集合 \\(O(g(n))\\) 中的一员
+\\(f(n) = \Theta(g(n))\\)，即 \\(f(n) \in \Theta(g(n))\\)，\\(f(n)\\) 为集合 \\(\Theta(g(n))\\) 中的一员
 
 \\(\Theta(g(n)) \subseteq O(g(n)) \\)
 
