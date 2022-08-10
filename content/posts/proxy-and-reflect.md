@@ -10,7 +10,7 @@ draft = false
 
 proxy 是一个特殊的对象，自身上不挂属性，操作转发给 target
 
-用于修改已有对象的属性和行为
+用于拦截对已有对象的访问和操作
 
 
 ### internal method {#internal-method}
