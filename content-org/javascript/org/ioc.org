@@ -1,0 +1,11 @@
+#+TITLE: 控制反转
+#+DATE:<2022-08-10 Wed 10:44>
+#+FILETAGS: @js
+
+* IOC
+
+inversion of control，控制反转
+
+* DI
+
+dependency injection，依赖注入

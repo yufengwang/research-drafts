@@ -6,16 +6,16 @@ categories = ["js"]
 draft = false
 +++
 
-## for in {#for-in}
+## for..in {#for-dot-dot-in}
 
 可枚举属性，包括原型链上的继承属性
 
 
-## for of {#for-of}
+## for..of {#for-dot-dot-of}
 
 枚举 iterable
 
 
-## Object.keys() {#object-dot-keys}
+## Object.keys {#object-dot-keys}
 
 自有可枚举属性

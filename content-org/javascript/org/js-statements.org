@@ -2,14 +2,14 @@
 #+DATE:<2022-08-09 Tue 22:59>
 #+FILETAGS: @js
 
-* for in
+* for..in
 
 可枚举属性，包括原型链上的继承属性
 
-* for of
+* for..of
 
 枚举 iterable
 
-* Object.keys()
+* Object.keys
 
 自有可枚举属性
