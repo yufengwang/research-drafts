@@ -61,7 +61,7 @@ minimal wrappers around internal methods
 
 每一个被 proxy 代理的内部方法，都有一个对应的 Reflect 方法，跟 proxy trap 一样的名字和参数
 
-用于简化转发操作，简化 proxy handler 的写法
+用于简化转发操作，简化 proxy handler 的写法，跟 Proxy 配合使用
 
 
 ### example {#example}
@@ -97,7 +97,9 @@ console.log(admin.name); // Admin
 
 ## 限制 {#限制}
 
-Proxy 不能代理其没有的 slot，例如 Map 的 [ [ MapData ] ]
+Proxy 不能代理其没有的 slot，例如 Map 的 [ [ MapData ] ], private class fields, \\(===\\) 操作符等
+
+e.g.
 
 ```js
 let map = new Map();
@@ -124,4 +126,4 @@ alert(proxy.get('test')); // 1 (works!)
 
 ```
 
-Array has no internal slots, historical reasons
+Array has no internal slots, for historical reasons

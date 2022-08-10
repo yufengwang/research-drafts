@@ -53,3 +53,8 @@ alert( id === idAgain ); // true
 ### System Symbol {#system-symbol}
 
 例如: **Symbol.iterator**
+
+
+## WeakMap {#weakmap}
+
+相比较Map 而言， WeakMap 不会阻塞垃圾收集，对内存友好
