@@ -6,9 +6,9 @@ categories = ["js"]
 draft = false
 +++
 
-## Proxy {#proxy}
+## Proxy [^fn:1] {#proxy}
 
-proxy 是一个特殊的对象，自身上不挂属性，操作转发给 target
+proxy 是一个特殊的对象，(a transparent wrapper around target)
 
 用于拦截对已有对象的访问和操作
 
@@ -127,3 +127,5 @@ alert(proxy.get('test')); // 1 (works!)
 ```
 
 Array has no internal slots, for historical reasons
+
+[^fn:1]: [proxy](https://javascript.info/proxy)
