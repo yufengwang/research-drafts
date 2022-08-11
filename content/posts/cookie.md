@@ -11,7 +11,7 @@ draft = false
 浏览器管理的一小段特殊字符串, http 协议的一部分，在  [RFC 6265](https://datatracker.ietf.org/doc/html/rfc6265)  里有说明
 
 
-## 设置 {#设置}
+## 设置 Cookie {#设置-cookie}
 
 1.  服务端通过 http **Set-Cookie** 响应头
 2.  js 通过 **document.cookie** 设置（非 **httpOnly** 的）
@@ -24,6 +24,11 @@ draft = false
 写的操作非全量覆盖，仅修改对应的字段，写的时候需要 **encodeURIComponent** ，(name, value 都要)
 
 读的操作不展示 **domain** , **path** 等信息
+
+
+### xhr 跨域 [^fn:1] {#xhr-跨域}
+
+跨域的 xhr 请求只有带上 withCredentials:true 时，xhr 响应才能写 cookie ，否则会被忽略
 
 
 ## Cookie 参数 {#cookie-参数}
@@ -178,3 +183,5 @@ function deleteCookie(name) {
   })
 }
 ```
+
+[^fn:1]: [xhr](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials)
