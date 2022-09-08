@@ -1,1 +1,35 @@
-* Rxjs
+#+TITLE: RxJs
+#+DATE:<2022-09-08 Thu 23:10>
+#+FILETAGS: js
+
+* rxjs
+
+流式编程库
+
+流：时序，多值
+
+**  使用场景
+
+1. 时序，多值
+2. 异步，事件，组合
+
+
+** Observable
+
+可观察量，流
+
+lazy Push collections of multiple values
+
+ 懒推送的时序的多值的集合
+
+** Observer
+
+观察者
+
+消费 Observable
+
+** Operators
+
+操作符
+
+针对流的转换
