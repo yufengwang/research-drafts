@@ -1,0 +1,28 @@
+#+TITLE: Git
+#+DATA:<2022-09-13 Tue 13:08>
+#+FILETAGS: git
+
+* Git 原理
+
+git 是一个内容可寻址文件系统，核心是一个简单的 key-value 存储
+
+* .git 目录解读
+
+** HEAD
+当前指针
+
+** objects/
+
+当前 repo 的所有对象存储
+
+SHA-1 checksum of the content and its header
+
+** refs/
+所有指针
+
+** index
+暂存区
+
+* Object 类型
+** Tree
+** Blob
