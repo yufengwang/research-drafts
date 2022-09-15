@@ -1,3 +1,0 @@
-#+TITLE:  Git
-#+DATE:<2022-09-04 Sun 23:00>
-#+FILETAGS: git
