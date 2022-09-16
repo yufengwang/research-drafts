@@ -114,3 +114,7 @@ when you try to merge one commit with a commit that can be reached by following 
 ### rebase {#rebase}
 
 比 merge 的 history 更清晰
+
+git rebase &lt;baseBranch&gt;
+
+Do not rebase commits that exist outside your repository and that people may have based work on.
