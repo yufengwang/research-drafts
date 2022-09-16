@@ -75,4 +75,14 @@ Creating a branch is nothing more than just writing 40 characters to a file.
 从远端拉取本地没有的 refs 和 objects，远端默认叫 origin，也可以任意命名，可以有多个远端
 
 
+** merge
+
+fast forward:
+
+the commit on the branch you’re on is a direct ancestor of the branch you’re merging in
+
+when you try to merge one commit with a commit that can be reached by following the first commit’s history
+
+
 ** rebase
+比 merge 的 history 更清晰
