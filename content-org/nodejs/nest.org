@@ -1,1 +1,19 @@
 #+TITLE: Nest.js
+#+DATE:<2022-09-20 Tue 13:22>
+#+FILETAGS: node
+
+* Providers
+
+提供者，生产者，用 @Injectable() 装饰
+
+** 注册
+
+在 @Module 里注册，由 nest IOC runtime 去解析并做依赖注入 (DI)
+
+* Services
+
+可做为 provider，实现并提供具体的功能
+
+* Controller
+
+ 消费者，使用 provider 提供的 service
