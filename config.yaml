@@ -1,7 +1,7 @@
 # hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
 baseURL: https://yfw.wiki/
-title: 秘笈
+title: 手稿
 theme: hugo-book
 defaultContentLanguage: zh
 
