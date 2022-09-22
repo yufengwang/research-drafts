@@ -1,0 +1,5 @@
+#+TITLE: SWR
+#+DATE:<2022-09-22 Thu 14:21>
+#+FILETAGS: fe
+
+* SWR
