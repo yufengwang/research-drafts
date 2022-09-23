@@ -40,3 +40,20 @@ lazy Push collections of multiple values
 操作符
 
 针对流的转换
+
+
+### Subject {#subject}
+
+特殊形式的 Observable，值允许多播给多个观察者
+
+
+#### BehaviorSubject {#behaviorsubject}
+
+
+#### ReplaySubject {#replaysubject}
+
+
+#### AsyncSubject {#asyncsubject}
+
+
+#### VoidSubject {#voidsubject}
