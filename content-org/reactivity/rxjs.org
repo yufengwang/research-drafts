@@ -39,6 +39,7 @@ lazy Push collections of multiple values
 特殊形式的 Observable，值允许多播给多个观察者
 
 *** BehaviorSubject
+保存最新的值，新订阅的 Observer 可拿到
 *** ReplaySubject
 *** AsyncSubject
 *** VoidSubject

@@ -49,6 +49,8 @@ lazy Push collections of multiple values
 
 #### BehaviorSubject {#behaviorsubject}
 
+保存最新的值，新订阅的 Observer 可拿到
+
 
 #### ReplaySubject {#replaysubject}
 
