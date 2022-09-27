@@ -2,34 +2,49 @@
 #+DATE:<2022-09-08 Thu 23:10>
 #+FILETAGS: js
 
-* rxjs
+* RxJs
 
 流式编程库
-
-流：时序，多值
-
-**  使用场景
 
 1. 时序，多值
 2. 异步，事件，组合
 
-
-** Observable
+* Observable
 
 可观察量，流
 
 lazy Push collections of multiple values
 
- 懒推送的时序的多值的集合
-
-** Observer
+懒推送的时序的多值的集合
+** Higher-Order Observables
+* Observer
 
 观察者
 
 消费 Observable
 
-** Operators
+* Operators
 
 操作符
 
 针对流的转换
+** switchMap
+map + switch
+订阅切换，新订阅来值时，取消老订阅
+** mergeMap
+map + merge
+** concatMap
+map + concat
+** exhaustMap
+map + exhaust
+
+
+* Subject
+
+特殊形式的 Observable，值允许多播给多个观察者
+
+** BehaviorSubject
+保存最新的值，新订阅的 Observer 可拿到
+** ReplaySubject
+** AsyncSubject
+** VoidSubject
