@@ -78,3 +78,27 @@ map + exhaust
 
 
 ### VoidSubject {#voidsubject}
+
+
+## 异常处理 {#异常处理}
+
+流 要么异常，要么给值后完成
+
+
+### catchError {#catcherror}
+
+1.  catch and replace
+2.  catch and rethrow
+
+
+### finalize {#finalize}
+
+跟 js的 final 关键字类似，无论异常或非异常都会执行，用于释放资源
+
+
+### retry {#retry}
+
+
+#### notification observable {#notification-observable}
+
+仅当 notification observable emit 值时，input observable 会被重新订阅
