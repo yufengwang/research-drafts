@@ -48,3 +48,22 @@ map + exhaust
 ** ReplaySubject
 ** AsyncSubject
 ** VoidSubject
+
+* 异常处理
+
+流 要么异常，要么给值后完成
+
+** catchError
+
+1. catch and replace
+2. catch and rethrow
+
+** finalize
+
+跟 js的 final 关键字类似，无论异常或非异常都会执行，用于释放资源
+
+** retry
+
+*** notification observable
+
+仅当 notification observable emit 值时，input observable 会被重新订阅
