@@ -40,25 +40,47 @@ lazy Push collections of multiple values
 针对流的转换
 
 
+### concatAll {#concatall}
+
+串行，按序订阅
+
+
+### switchAll {#switchall}
+
+仅订阅最新
+
+
+### mergeAll {#mergeall}
+
+同时，并发订阅
+
+
+### exhaustAll {#exhaustall}
+
+仅订阅当前至其结束，期间丢弃新的
+
+
 ### switchMap {#switchmap}
 
-map + switch
+map + switchAll
+
 订阅切换，新订阅来值时，取消老订阅
 
 
 ### mergeMap {#mergemap}
 
-map + merge
+map + mergeAll
 
 
 ### concatMap {#concatmap}
 
-map + concat
+把每个值映射为 observable，然后使用 concatAll 扁平化所有内部 observable
+map + concatAll
 
 
 ### exhaustMap {#exhaustmap}
 
-map + exhaust
+map + exhaustAll
 
 
 ## Subject {#subject}
