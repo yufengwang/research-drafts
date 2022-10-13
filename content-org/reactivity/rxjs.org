@@ -32,13 +32,14 @@ lazy Push collections of multiple values
 按序订阅。串行
 
 ** switchAll
+
 仅订阅最新。 花心
 
 ** mergeAll
 同时，并发订阅。并发
 
 ** exhaustAll
-仅订阅当前至其结束，期间丢弃新的。 贪婪
+仅订阅当前至其结束，期间丢弃新的。 专一
 
 ** switchMap
 map + switchAll

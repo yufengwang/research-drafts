@@ -57,7 +57,7 @@ lazy Push collections of multiple values
 
 ### exhaustAll {#exhaustall}
 
-仅订阅当前至其结束，期间丢弃新的。 贪婪
+仅订阅当前至其结束，期间丢弃新的。 专一
 
 
 ### switchMap {#switchmap}
