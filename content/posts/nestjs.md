@@ -39,7 +39,9 @@ Data transfer object
 
 由 @Module 装饰的类，nest 利用 @Module 提供的元数据组织应用结构
 
-封装 providers，不属于当前 module 或 imports 里的 provider 无法被注入
+封装 providers，不属于当前 module 或 imports 里的 provider 无法被实例化
+
+module 不可作为 provider，（避免循环依赖）
 
 
 ### imports {#imports}
@@ -60,3 +62,8 @@ Data transfer object
 ### exports {#exports}
 
 providers 的子集，由当前 module 提供，导出给其他 module 使用
+
+
+### dynamic module {#dynamic-module}
+
+运行时创建的 module

@@ -42,29 +42,29 @@ lazy Push collections of multiple values
 
 ### concatAll {#concatall}
 
-串行，按序订阅
+按序订阅。串行
 
 
 ### switchAll {#switchall}
 
-仅订阅最新
+仅订阅最新。 花心
 
 
 ### mergeAll {#mergeall}
 
-同时，并发订阅
+同时，并发订阅。并发
 
 
 ### exhaustAll {#exhaustall}
 
-仅订阅当前至其结束，期间丢弃新的
+仅订阅当前至其结束，期间丢弃新的。 贪婪
 
 
 ### switchMap {#switchmap}
 
 map + switchAll
 
-订阅切换，新订阅来值时，取消老订阅
+订阅切换，新订阅来值时，取消老订阅。
 
 
 ### mergeMap {#mergemap}
@@ -80,7 +80,7 @@ map + concatAll
 
 ### exhaustMap {#exhaustmap}
 
-map + exhaustAll
+map + exhaustAll。
 
 
 ## Subject {#subject}
