@@ -67,3 +67,22 @@ providers 的子集，由当前 module 提供，导出给其他 module 使用
 ### dynamic module {#dynamic-module}
 
 运行时创建的 module
+
+
+## Interceptor {#interceptor}
+
+
+## Guards {#guards}
+
+单一职责：控制请求是否会被对应的 route handle 处理
+
+
+## Middleware {#middleware}
+
+缺点： 不知道执行 next() 后调用哪个 handler
+
+
+## Pipes {#pipes}
+
+
+## Exception filters {#exception-filters}
