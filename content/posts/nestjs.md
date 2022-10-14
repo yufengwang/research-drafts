@@ -8,7 +8,7 @@ draft = false
 
 ## Providers {#providers}
 
-提供者，生产者，用 @Injectable() 装饰
+提供者，生产者，由 @Injectable() 装饰的类即为 provider
 
 
 ### 注册 {#注册}
