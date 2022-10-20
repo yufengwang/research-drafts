@@ -91,3 +91,6 @@ alert( id === idAgain ); // true
 ### BigInt {#bigint}
 
 表示任意精度的整数，以 n 结尾，例如：123456789123456789n，0o777777777777n
+
+
+## Array like {#array-like}

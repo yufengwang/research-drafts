@@ -26,6 +26,16 @@ lazy Push collections of multiple values
 ### Higher-Order Observables {#higher-order-observables}
 
 
+### of {#of}
+
+将输入直接转为 Observable，不做任何转换
+
+
+### from {#from}
+
+将输入拍平转换为 Observable
+
+
 ## Observer {#observer}
 
 观察者

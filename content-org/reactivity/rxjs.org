@@ -16,7 +16,17 @@
 lazy Push collections of multiple values
 
 懒推送的时序的多值的集合
+
 ** Higher-Order Observables
+
+** of
+
+将输入直接转为 Observable，不做任何转换
+
+** from
+
+将输入拍平转换为 Observable
+
 * Observer
 
 观察者

@@ -1,2 +1,11 @@
-#+TITLE: CI/CD
-#+FILETAGS: ci
+#+TITLE: docker
+#+FILETAGS: docker
+#+DATE:<2022-10-20 Thu 10:47>
+
+* exec
+
+在 running 的 container 里执行命令
+
+* run
+
+把 image run 起来
