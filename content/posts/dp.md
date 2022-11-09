@@ -12,6 +12,8 @@ draft = false
 
 避免重复计算子问题
 
+通常用于解决最优问题（最小，最大），求最优解
+
 
 ### Elements {#elements}
 
