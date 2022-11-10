@@ -2,7 +2,6 @@
 #+DATE:<2022-06-03 Fri 23:38>
 #+FILETAGS: algo-design
 
-草稿，待完善
 
 * Rod-Cutting
 

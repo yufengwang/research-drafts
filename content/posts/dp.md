@@ -15,16 +15,14 @@ draft = false
 通常用于解决最优问题（最小，最大），求最优解
 
 
-### Elements {#elements}
-
-动态规划的基本元素
+## 动态规划的基本元素 {#动态规划的基本元素}
 
 
-#### Optimal Substructure {#optimal-substructure}
+### Optimal Substructure {#optimal-substructure}
 
 最优子结构，通过子问题的最优解，求出最终的最优解
 
 
-#### Overlapping Subproblem {#overlapping-subproblem}
+### Overlapping Subproblem {#overlapping-subproblem}
 
 重叠子问题

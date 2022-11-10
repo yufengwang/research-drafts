@@ -6,9 +6,6 @@ tags = ["algo-design"]
 draft = false
 +++
 
-草稿，待完善
-
-
 ## Rod-Cutting {#rod-cutting}
 
 切钢条问题
