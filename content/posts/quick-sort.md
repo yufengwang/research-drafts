@@ -6,6 +6,23 @@ tags = ["sort"]
 draft = false
 +++
 
+## 思想 {#思想}
+
+分治 + 递归
+
+
+## 步骤 {#步骤}
+
+1.  选定参考元素 p (例如最右侧元素)
+2.  遍历数组，将比参考元素小的元素都挪到左边，并记录元素数量
+3.  遍历结束，数组分为 &lt;= p | &gt;p | p
+4.  将 p 移到中间 &lt;=p | p | &gt;p
+5.  返回中间的索引
+6.  递归处理 &lt;=p 部分
+7.  递归处理 &gt;p 部分
+8.  排序结束
+
+
 ## 实现 {#实现}
 
 ```js
@@ -15,7 +32,7 @@ draft = false
  *
  */
 const partition = (arr, p, r) => {
-  // 去数组最后一个元素为分割点
+  // 选数组最后一个元素为分割点
   const pivot = arr[r];
   let i = p - 1;
 
@@ -45,7 +62,6 @@ const quickSort = (arr, p, r) => {
   if (p < r) {
     // 数组分割，找出分割点索引，分割点左侧的值都不大于分割点，右侧的值都大于分割点
     const pivotIdx = partition(arr, p, r);
-    console.log("pivotidx", pivotIdx);
     // 快排左右两侧的子数组，注意这俩子数组里均不包含 pivotIdx
     // 左数组快排
     quickSort(arr, p, pivotIdx - 1);
@@ -57,8 +73,6 @@ const quickSort = (arr, p, r) => {
 };
 
 const arr = [2, 8, 7, 1, 3, 5, 6, 4];
-
-console.log("quick", quickSort(arr, 0, arr.length - 1));
 
 export { quickSort };
 
