@@ -4,15 +4,19 @@
 
 * 大数相加
 
+** 思想
+
+** 代码实现
+
 #+begin_src js
 
 /**
- * js 大数相加
- * 字符串拼接，用加法法则计算
- * @param { string } a
- * @param { string } b
- * @returns string
- */
+ ,* js 大数相加
+ ,* 字符串拼接，用加法法则计算
+ ,* @param { string } a
+ ,* @param { string } b
+ ,* @returns string
+ ,*/
 function sumBigNumber(a, b) {
   let res = "",
     temp = 0;
@@ -29,6 +33,7 @@ function sumBigNumber(a, b) {
     temp = temp > 9 ? 1 : 0;
   }
 
+  // 删掉头部的 0
   return res.replace(/^0+/, "");
 }
 

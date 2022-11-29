@@ -9,6 +9,12 @@ draft = false
 
 ## 大数相加 {#大数相加}
 
+
+### 思想 {#思想}
+
+
+### 代码实现 {#代码实现}
+
 ```js
 
 /**
@@ -34,6 +40,7 @@ function sumBigNumber(a, b) {
     temp = temp > 9 ? 1 : 0;
   }
 
+  // 删掉头部的 0
   return res.replace(/^0+/, "");
 }
 
