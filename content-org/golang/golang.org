@@ -1,3 +1,7 @@
 #+TITLE: Golang
 #+DATE:<2022-06-03 Fri 15:45>
 #+FILETAGS:  go
+
+* Package
+
+* Module
