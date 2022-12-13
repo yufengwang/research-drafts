@@ -11,7 +11,7 @@ draft = false
 
 ### Concurrent {#concurrent}
 
-并发模式，底层的渲染细节变更，可被中断渲染，可在背后渲染
+并发模式，底层的渲染细节变更，可被中断渲染，可在后台渲染
 
 
 ### Suspense {#suspense}
