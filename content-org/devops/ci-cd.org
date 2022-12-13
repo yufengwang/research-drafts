@@ -1,0 +1,5 @@
+#+TITLE: Github Action
+#+DATE<2022-12-13 Tue 15:06>:
+#+FILETAGS: ci/cd
+
+* Github Action
