@@ -1,0 +1,15 @@
+#+TITLE: React
+#+DATE:<2022-12-13 Tue 11:32>
+#+FILETAGS: react
+
+* React 18
+
+** Concurrent
+
+并发模式，底层的渲染细节变更，可被中断渲染，可在背后渲染
+
+** Suspense
+
+** Automatic batching
+
+自动批处理
