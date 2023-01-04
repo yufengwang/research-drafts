@@ -1,11 +1,9 @@
 +++
 title = "Github Action"
 author = ["wenhu"]
+date = 2022-12-13T15:06:00+08:00
 tags = ["ci/cd"]
 draft = false
 +++
-
-\#+DATE<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-13 Tue 15:06&gt;</span></span>:
-
 
 ## Github Action {#github-action}

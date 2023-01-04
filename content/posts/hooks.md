@@ -86,5 +86,4 @@ App.click();
 App = MyReact.render(Counter);
 // effect 2 bar
 // render {count: 2, text: 'bar'}
-
 ```
