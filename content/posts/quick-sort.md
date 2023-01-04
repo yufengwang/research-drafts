@@ -28,8 +28,7 @@ draft = false
 ```js
 
 /**
- *数组分割
- *
+ * 数组分割
  */
 const partition = (arr, p, r) => {
   // 选数组最后一个元素为分割点
@@ -53,6 +52,7 @@ const partition = (arr, p, r) => {
   // 返回分割点的索引
   return i + 1;
 };
+
 
 /**
  * 快速排序
@@ -81,4 +81,4 @@ export { quickSort };
 
 ## 分析 {#分析}
 
-复杂度：
+时间复杂度： O(nlogn)

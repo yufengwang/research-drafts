@@ -1,12 +1,16 @@
-#+TITLE: React Hooks
-#+DATE: <2022-06-04 Sat 16:57>
-#+FILETAGS: react
++++
+title = "React Hooks"
+author = ["wenhu"]
+date = 2022-06-04T16:57:00+08:00
+tags = ["react"]
+draft = false
++++
 
-* React hooks
+## React hooks {#react-hooks}
 
 在 React 里，hook 的本质是闭包加数组
 
-#+begin_src js
+```js
 const MyReact = (function () {
   let hooks = [],
     currentHook = 0; // array of hooks, and an iterator!
@@ -83,4 +87,4 @@ App = MyReact.render(Counter);
 // effect 2 bar
 // render {count: 2, text: 'bar'}
 
-#+end_src
+```
