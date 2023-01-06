@@ -2,6 +2,7 @@
 title = "在浏览器地址栏输入 url 会发生什么"
 author = ["wenhu"]
 date = 2022-05-28T21:26:00+08:00
+tags = ["browser"]
 draft = false
 +++
 
@@ -52,20 +53,20 @@ js 的加载会阻塞 dom 树的构建, css, images 不会。css 会阻塞页面
 | DOMContentLoaded | dom 构建完毕，cssom 构建完毕 |
 
 
-## 构建 cssom {#构建-cssom}
+### 构建 cssom {#构建-cssom}
 
 
-### 构建 render 树 {#构建-render-树}
+#### 构建 render 树 {#构建-render-树}
 
 dom + cssom = render tree，移除不显示到屏幕上的节点
 
 
-### 布局 (layout) {#布局--layout}
+#### 布局 (layout) {#布局--layout}
 
 计算 render tree 里每一个节点的位置，尺寸等
 
 
-### 绘制 (paint) {#绘制--paint}
+#### 绘制 (paint) {#绘制--paint}
 
 
 ## 浏览器请求 html 里依赖的资源（images，css，javascript） {#浏览器请求-html-里依赖的资源-images-css-javascript}
