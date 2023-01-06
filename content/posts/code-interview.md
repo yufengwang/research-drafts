@@ -2,8 +2,7 @@
 title = "js 常见题"
 author = ["wenhu"]
 date = 2022-11-29T09:50:00+08:00
-tags = ["interview"]
-categories = ["js"]
+tags = ["coding-question"]
 draft = false
 +++
 
@@ -11,6 +10,8 @@ draft = false
 
 
 ### 思想 {#思想}
+
+从右到左循环去加
 
 
 ### 代码实现 {#代码实现}

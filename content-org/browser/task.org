@@ -1,3 +1,18 @@
+#+TITLE: Browser
+#+DATE:<2022-06-29 Wed 15:54>
+#+FILETAGS: browser
+
+* Render Pipeline
+JS -> style -> layout -> paint -> composite
+
+** Layout
+
+计算元素的尺寸，位置，更改 width, height, position 等属性会 relayout
+
+** Paint
+
+绘制像素，更改 box-shadow, background-color, text-color 等属性会 repaint
+
 * 任务队列
 
 requestIdleCallback 和 requestAnimationFrame 的区别

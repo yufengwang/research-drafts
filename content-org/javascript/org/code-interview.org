@@ -1,10 +1,12 @@
 #+TITLE: js 常见题
 #+DATE:<2022-11-29 Tue 09:50>
-#+FILETAGS: interview @js
+#+FILETAGS: coding-question
 
 * 大数相加
 
 ** 思想
+
+从右到左循环去加
 
 ** 代码实现
 
