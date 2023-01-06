@@ -49,10 +49,10 @@
       const channel = new MessageChannel();
       const port1 = channel.port1;
       const port2 = channel.port2;
-      port1.onmessage = function () {
-        console.log("Got message");
+      port1.onmessage = function (m) {
+        console.log("Got message", m);
       };
-      // port2.postMessage("send message");
+      port2.postMessage("send message");
     </script>
     <script>
       const btn = document.querySelector("#btn");
