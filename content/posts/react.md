@@ -124,6 +124,10 @@ Fiber 树遍历顺序:
 
 ## Events {#events}
 
+React 17 不再使用 Event pooling，之前的版本是为了性能考虑使用 Event pooling
+
+SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
+
 
 ## Ref {#ref}
 
