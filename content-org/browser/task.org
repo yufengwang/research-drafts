@@ -3,6 +3,7 @@
 #+FILETAGS: browser
 
 * Render Pipeline
+
 JS -> style -> layout -> paint -> composite
 
 ** Layout
@@ -13,15 +14,28 @@ JS -> style -> layout -> paint -> composite
 
 绘制像素，更改 box-shadow, background-color, text-color 等属性会 repaint
 
-* 任务队列
+* 任务调度
 
-requestIdleCallback 和 requestAnimationFrame 的区别
 
 ** requestAnimationFrame
+
  注册高优先级的任务
 1. 通过事件监听器注册的回调将会在同一帧中执行
 2. 通过 raf 注册的回调将在下一帧中执行
 
 ** requestIdleCallback
+
 注册低优先级的任务
 在每一帧的空闲期执行，可能不执行
+
+** setTimeout
+
+zero delay, setTimeout(func, 0), func 在当前正在执行的脚本执行完成后执行
+
+对浏览器而言，嵌套的定时器，出于历史原因:
+
+after five nested timers, the interval is forced to be at least 4 milliseconds
+
+** setInterval
+
+每次调用开始计时，而不是调用结束后计时，函数两次调用的间隔 (StartB - endA ) 并不是严格的 delay 时间

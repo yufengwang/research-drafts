@@ -56,6 +56,7 @@ ecma-262 标准方法，用于注册微任务
 node 环境跟 browser 环境的 event loop 表现不一致
 
 *** Browser event loop
+
 使用 libevent 来实现，单队列
 
 [[file:eventloop.svg]]
