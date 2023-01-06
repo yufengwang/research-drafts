@@ -12,7 +12,7 @@ draft = false
 
     An element is a plain object describing a component instance or DOM node and its desired properties
 
-    js对象，描述需要被渲染的元素，包括其类型及属性；比真实的 Dom element 更轻量
+    js 对象，描述需要被渲染的元素，包括其类型及属性；比真实的 Dom element 更轻量
 
 -   Dom Element
 
@@ -24,7 +24,11 @@ draft = false
 
 -   Component
 
-    封装 Element Tree，接收 props，返回 Element Tree
+    class or function, 接收 props，返回 Element Tree
+
+-   Element Tree
+
+    即所谓的 virtual dom
 
 
 ## Source Code {#source-code}
@@ -43,29 +47,56 @@ draft = false
 
 ### Stack Reconciler {#stack-reconciler}
 
-自顶向下的递归，容易阻塞主线程
+-   同步
+-   自顶向下的递归，容易阻塞主线程
+-   不可中断
 
 
 ### Fiber Reconciler {#fiber-reconciler}
 
+-   异步
 -   将任务拆为小块 chunk
--   任务有优先级，可中断，可恢复
+-   任务设置优先级，
+-   任务可中断，可恢复，可丢弃
+
+两个阶段
+
+1.  render phase
+
+    计算变更， 异步
+
+2.  commit phase
+
+    提交变动，同步
 
 
 ## Reconciliation {#reconciliation}
 
 调和
 
-render(): 每次 render 都生成一个 Element 树，对 Element 树的 diff 结果决定 ui 怎么更新
+首次渲染：全量的 element tree reader 到 dom 节点后续渲染：reconciliation 后更新（增，删，改）变更的 dom
+
+每次 rerender 都生成一个 new element tree，diff(old element tree, new element tree) 决定 ui 怎么更新
 
 1.  如果元素类型不一致，旧树被销毁(dom 元素被移除，维持的状态被移除)，重新构建新的树，旧树的所有子树一样被销毁
 2.  如果元素类型一致，保留 dom 节点，仅更新变动的 props
 3.  用 key 去标识某个 children 是否在元素数组里更换了位置
 
+复杂度: O(n)，n 为 element tree 的节点数
+
+基于两个假定的前提:
+
+-   不同的 element type, render 不同的树
+-   element 的 child 有唯一 key
+
 
 ## Fiber {#fiber}
 
-Fiber: js 对象，用于描述 React Component 上要进行的工作或已经完成的工作
+Fiber = unit of work
+
+Fiber: js 对象，用于描述 React Component 上要进行的工作或已经完成的工作, a unit of work
+
+1:1 relation (element, dom node, component. etc.)
 
 Fiber 树遍历顺序:
 
@@ -75,6 +106,12 @@ Fiber 树遍历顺序:
 4.  无 child, 无 sibling，找 uncle 节点(父节点的 sibling)
 5.  parent 无 sibing，一直往上找，直到找到有 sibling 节点的祖先节点，并处理其 sibling 节点
 6.  最后找到 root，所有 fiber 处理完毕，任务结束
+
+属性：
+
+1.  child，指向第一个子节点
+2.  sibling，
+3.  return
 
 
 ## Renderer {#renderer}

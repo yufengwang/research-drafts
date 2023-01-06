@@ -35,6 +35,8 @@ Object.assign() 会 copy string 和 symbol 属性
 
 ### Global Symbol {#global-symbol}
 
+用途：全局唯一标识符
+
 name 一样，即为同一个 Symbol
 
 ```js

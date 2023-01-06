@@ -26,12 +26,14 @@ JS -&gt; style -&gt; layout -&gt; paint -&gt; composite
 requestIdleCallback 和 requestAnimationFrame 的区别
 
 
-### requestIdleCallback {#requestidlecallback}
-
-在每一帧的空闲期执行，可能不执行
-
-
 ### requestAnimationFrame {#requestanimationframe}
+
+注册高优先级的任务
 
 1.  通过事件监听器注册的回调将会在同一帧中执行
 2.  通过 raf 注册的回调将在下一帧中执行
+
+
+### requestIdleCallback {#requestidlecallback}
+
+注册低优先级的任务在每一帧的空闲期执行，可能不执行
