@@ -1,6 +1,8 @@
 "use strict";
 
 const e = React.createElement;
+const createRoot =ReactDOM.createRoot
+
 
 class LikeButton extends React.PureComponent {
   constructor(props) {
@@ -29,7 +31,7 @@ class LikeButton extends React.PureComponent {
 }
 
 function Counter() {
-  const [state, setState] = React.useState(1);
+  const [state, setState] = React.useState(2);
 
   function handleClick() {
     setState(state + 1);
@@ -46,6 +48,9 @@ function Counter() {
 }
 
 // const domContainer = document.querySelector("#root");
-const root = document.getElementById("root");
-ReactDOM.hydrate(e(Counter), root);
+const container = document.getElementById("root");
+// const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(e(Counter));
+// ReactDOM.hydrate(e(Counter), root);
 // ReactDOM.render(e(Counter), root);

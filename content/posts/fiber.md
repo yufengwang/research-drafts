@@ -38,10 +38,3 @@ const newFiber = {
 每个 fiber 节点的工作完成之后，commit 整个 fiber tree 到 dom 上
 
 函数式组件没有对应的 dom 节点, 需要调用函数拿到其 children
-
-
-## diff 算法 {#diff-算法}
-
-1.  如果旧 fiber 跟新元素类型一致，保留 dom 节点，仅更新 props
-2.  如果旧 fiber 跟新元素类型不一致，需要创建新的节点，替换掉旧的节点
-3.  在这里用 key 去标识某个 children 是否在元素数组里更换了位置

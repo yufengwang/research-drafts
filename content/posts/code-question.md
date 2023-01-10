@@ -1,22 +1,24 @@
-#+TITLE: js 常见题
-#+DATE:<2022-11-29 Tue 09:50>
-#+FILETAGS: coding-question
++++
+title = "js 常见题"
+author = ["wenhu"]
+date = 2022-11-29T09:50:00+08:00
+tags = ["coding-question"]
+draft = false
++++
 
-* 大数相加
-
+## 大数相加 {#大数相加}
 
 从右到左循环去加
 
-
-#+begin_src js
+```js
 
 /**
- ,* js 大数相加
- ,* 字符串拼接，用加法法则计算
- ,* @param { string } a
- ,* @param { string } b
- ,* @returns string
- ,*/
+ * js 大数相加
+ * 字符串拼接，用加法法则计算
+ * @param { string } a
+ * @param { string } b
+ * @returns string
+ */
 function sumBigNumber(a, b) {
   let res = "",
     temp = 0;
@@ -37,14 +39,16 @@ function sumBigNumber(a, b) {
   return res.replace(/^0+/, "");
 }
 
-#+end_src
+```
 
-* Debounce
+
+## Debounce {#debounce}
+
 防抖
 
 例子：用户在 input 框输入，一段时间没有输入后，再发起网络请求
 
-#+begin_src js
+```js
 function debounce(fn, time) {
   let timeout;
   return function () {
@@ -53,14 +57,14 @@ function debounce(fn, time) {
     timeout = setTimeout(func, time);
   };
 }
-#+end_src
+```
 
-* Throttle
-节流
-每隔一段时间执行一次
-例子： 滚动条滚动使，没必要响应每次滚动事件，每隔500ms响应一次即可
 
-#+begin_src js
+## Throttle {#throttle}
+
+节流每隔一段时间执行一次例子： 滚动条滚动使，没必要响应每次滚动事件，每隔500ms响应一次即可
+
+```js
 function throttle(fn, time) {
   let timer;
   return function () {
@@ -74,4 +78,4 @@ function throttle(fn, time) {
     timer = setTimeout(func, time);
   };
 }
-#+end_src
+```

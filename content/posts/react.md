@@ -57,7 +57,7 @@ draft = false
 -   异步
 -   将任务拆为小块 chunk
 -   任务设置优先级，
--   任务可中断，可恢复，可丢弃
+-   任务可暂，可恢复，可丢弃，可重用
 
 两个阶段
 
@@ -100,6 +100,8 @@ Fiber: js 对象，用于描述 React Component 上要进行的工作或已经�
 
 Fiber 树遍历顺序:
 
+Fiber is re-implementation of the stack, specialized for React components. You can think of a single fiber as a virtual stack frame
+
 1.  处理当前 fiber
 2.  有 child，child 为下一个任务单元
 3.  无 child，sibling 为下一个任务单元
@@ -133,6 +135,9 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 
 ## Context {#context}
+
+
+## Lane {#lane}
 
 
 ## React 18 {#react-18}
