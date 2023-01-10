@@ -8,7 +8,7 @@ draft = false
 
 ## 大数相加 {#大数相加}
 
-从右到左循环去加
+思路：从右到左循环去加
 
 ```js
 
@@ -62,7 +62,9 @@ function debounce(fn, time) {
 
 ## Throttle {#throttle}
 
-节流每隔一段时间执行一次例子： 滚动条滚动使，没必要响应每次滚动事件，每隔500ms响应一次即可
+节流, 每隔一段时间执行一次
+
+例子： 滚动条滚动使，没必要响应每次滚动事件，每隔500ms响应一次即可
 
 ```js
 function throttle(fn, time) {

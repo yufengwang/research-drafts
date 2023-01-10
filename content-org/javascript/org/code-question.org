@@ -4,9 +4,7 @@
 
 * 大数相加
 
-
-从右到左循环去加
-
+思路：从右到左循环去加
 
 #+begin_src js
 
@@ -40,6 +38,7 @@ function sumBigNumber(a, b) {
 #+end_src
 
 * Debounce
+
 防抖
 
 例子：用户在 input 框输入，一段时间没有输入后，再发起网络请求
@@ -56,8 +55,9 @@ function debounce(fn, time) {
 #+end_src
 
 * Throttle
-节流
-每隔一段时间执行一次
+
+节流, 每隔一段时间执行一次
+
 例子： 滚动条滚动使，没必要响应每次滚动事件，每隔500ms响应一次即可
 
 #+begin_src js
