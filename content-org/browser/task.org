@@ -11,6 +11,7 @@
 * requestIdleCallback
 
 注册低优先级的任务
+
 在每一帧的空闲期执行，可能不执行
 
 * setTimeout

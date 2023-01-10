@@ -16,7 +16,9 @@ draft = false
 
 ## requestIdleCallback {#requestidlecallback}
 
-注册低优先级的任务在每一帧的空闲期执行，可能不执行
+注册低优先级的任务
+
+在每一帧的空闲期执行，可能不执行
 
 
 ## setTimeout {#settimeout}
