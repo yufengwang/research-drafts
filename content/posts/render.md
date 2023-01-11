@@ -18,6 +18,20 @@ draft = false
 计算元素的几何尺寸，坐标位置，更改 width, height, position 等属性会 relayout，比较耗时
 
 
+### Forced reflow[^fn:2] {#forced-reflow}
+
+invalidates the Render Tree and forces a reflow
+
+```js
+const element = document.getElementById('modal-container');
+
+element.classList.add('width-adjust'); // 1. invalidate Layout Tree
+element.getBoundingClientRect(); // 2. force a synchronous reflow. This can be SLOW!
+```
+
+尽量避免同步 reflow
+
+
 ### Paint {#paint}
 
 将 render tree 绘制到页面上
@@ -30,7 +44,7 @@ draft = false
 Each node typically references a DOM node and a Computed Style
 
 
-### Main thread[^fn:2] {#main-thread}
+### Main thread[^fn:3] {#main-thread}
 
 在主线程上执行的任务(Tasks)有
 
@@ -62,7 +76,7 @@ Server Side Render
 
 ## ISR {#isr}
 
-增量静态重构建[^fn:3]
+增量静态重构建[^fn:4]
 
 仅针对变动的 page 进行构建，而不是全量构建
 
@@ -70,5 +84,6 @@ Server Side Render
 ## 参考 {#参考}
 
 [^fn:1]: [browser render pipeline](https://www.webperf.tips/tip/browser-rendering-pipeline/)
-[^fn:2]: [ event loop](https://www.webperf.tips/tip/event-loop/)
-[^fn:3]: [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration)
+[^fn:2]: [ forced reflow](https://www.webperf.tips/tip/layout-thrashing/)
+[^fn:3]: [ event loop](https://www.webperf.tips/tip/event-loop/)
+[^fn:4]: [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration)

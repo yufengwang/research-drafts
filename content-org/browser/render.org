@@ -12,6 +12,17 @@
 
 计算元素的几何尺寸，坐标位置，更改 width, height, position 等属性会 relayout，比较耗时
 
+** Forced reflow[fn:4]
+invalidates the Render Tree and forces a reflow
+#+begin_src js
+const element = document.getElementById('modal-container');
+
+element.classList.add('width-adjust'); // 1. invalidate Layout Tree
+element.getBoundingClientRect(); // 2. force a synchronous reflow. This can be SLOW!
+#+end_src
+
+尽量避免同步 reflow
+
 ** Paint
 
 将 render tree 绘制到页面上
@@ -59,3 +70,4 @@ Server Side Render
 [fn:1] [[https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration][Incremental Static Regeneration]]
 [fn:2] [[https://www.webperf.tips/tip/browser-rendering-pipeline/][browser render pipeline]]
 [fn:3][[https://www.webperf.tips/tip/event-loop/][ event loop]]
+[fn:4][[https://www.webperf.tips/tip/layout-thrashing/][ forced reflow]]
