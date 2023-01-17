@@ -6,7 +6,7 @@ tags = ["react"]
 draft = false
 +++
 
-## fiber 基本工作原理 {#fiber-基本工作原理}
+## Fiber 基本工作原理 {#fiber-基本工作原理}
 
 每一 react element 构造一个 fiber 节点，每个 fiber 节点是一个工作单元，一系列 fiber 节点构成一个 fiber 特殊的链表。该数据结构的优点是便于找到下次的工作单元
 

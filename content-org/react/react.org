@@ -82,7 +82,23 @@
 
 * Fiber
 
-Fiber = unit of work
+** 背景
+
+在计算机科学里，Fiber 称之为纤程，即轻量级的执行线程[fn:1]
+
+Fiber 跟 Thread 共享地址空间，Fiber 使用协作式多任务( cooperative multitasking ), 而 Thread 使用抢占式多任务(preemptive multitasking)
+
+一个进程可以有多个线程同时执行，一个线程可以有多个纤程同时执行，目的都是为了实现并发
+
+对浏览器而言，用户的 js 执行只有一个主线程，那么为了实现并发，纤程是自然而然的方案
+
+** 浏览器架构
+
+浏览器里的并发任务
+
+** React 里的 Fiber
+
+在 React 里， Fiber = unit of work，最小任务单元
 
 Fiber: js 对象，用于描述 React Component 上要进行的工作或已经完成的工作, a unit of work
 
@@ -136,3 +152,5 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 ** Automatic batching
 
 自动批处理
+
+[fn:1][[https://en.wikipedia.org/wiki/Fiber_(computer_science)][Fiber]]
