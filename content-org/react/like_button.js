@@ -32,9 +32,12 @@ class LikeButton extends React.PureComponent {
 
 function Counter() {
   const [state, setState] = React.useState(2);
+  const [str, setString] = React.useState('foo');
+
 
   function handleClick() {
     setState(state + 1);
+    setString('bar')
   }
 
   return e(
@@ -42,8 +45,9 @@ function Counter() {
     {
       onClick: handleClick,
     },
-    "Count: ",
-    state
+    "Count is: ",
+    state,
+    " " + str
   );
 }
 
