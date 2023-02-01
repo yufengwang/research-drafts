@@ -99,7 +99,24 @@
 
 * 框架
 
-1. MVVM, MVC 的区别
+1. MVVM, MVC 的理解
+
+   两种编程(多为 GUI)的架构范式
+
+   MVVM: Model-View-ViewModel
+
+   以 React 为例, View 为 return 出来的 jsx，Model 为数据库里存的持久化数据，ViewModel 为中间层，包括 State、事件处理函数、状态更新逻辑等, View 上接收事件, 更新 ViewModel, ViewModel 更新 Model 做持久化
+
+   MVC: Model-View-Controller
+
+   Web 端以 BackBone 为例，服务端 Rails, Express 为例，View 接收请求到 Controller,  Controller 负责更新 Model 和 View
+
+   区别： MVVM 以 ViewModel 为中心，MVC 以 Controller 为中心
+
+   优点： 单一职责，逻辑解耦，利于单元测试
+
+   无标准答案, 靠自己结合实例理解，死抠概念无太大实际意义
+
 2. Redux， 状态管理,  React-Redux 的原理
 3. 前端路由
 
@@ -171,6 +188,7 @@
 5. HMR 原理
 6. 代码分割
 7. Webpack5 模块联邦
+8. 对 tree-shaking 的了解
 
 ** Babel
 
@@ -234,6 +252,11 @@
 18. 实现一个 EventMitter 类
 19. 手写数组扁平化
 20. 手写 reduce
+21. 洗牌算法
+22. 编辑距离
+23. 使用最小花费爬楼梯
+24. 路径总和
+25. LRU
 
 
 # Local Variables:
