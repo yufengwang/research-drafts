@@ -58,3 +58,7 @@ let a = function () {}
 ** 箭头函数
 
 this 为外层词法环境的 this，不能被 new，没有 arguments, 没有 super
+
+* Prototype
+
+* Class
