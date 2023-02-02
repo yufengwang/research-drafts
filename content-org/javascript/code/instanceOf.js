@@ -14,6 +14,7 @@ function myInstanceOf(obj, proto) {
 
 function A () {}
 function B () {}
+
 A.prototype  = new B
 const a = new A
 
