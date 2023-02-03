@@ -2,7 +2,6 @@
 #+DATE:<2023-02-02 Thu 13:58>
 #+FILETAGS: @js
 
-
 * Var
 
 only a variable's declaration is hoisted, not its initialization
@@ -16,7 +15,7 @@ var 没有块级作用域，只有函数和全局作用域
 without use strict, an assignment to a non-existing variable creates a new global variable
 
 
-* Lexical Environment [fn:1]
+* Lexical Environment[fn:1]
 
  运行中的函数，代码块，脚本全局都有与之对应的 LE
 
@@ -27,7 +26,6 @@ without use strict, an assignment to a non-existing variable creates a new globa
 
  A variable is a property of a special internal object, associated with the currently executing block/function/script
 
- [fn:1] [[https://javascript.info/closure][lexical-environment]]
 
  执行上下文分全局上下文、函数上下文和块级上下文
 
@@ -67,3 +65,8 @@ this 为外层词法环境的 this，不能被 new，没有 arguments, 没有 su
 * Prototype
 
 * Class
+
+
+
+
+[fn:1] [[https://javascript.info/closure][lexical-environment]]
