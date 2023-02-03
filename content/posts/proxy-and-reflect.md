@@ -27,7 +27,7 @@ proxy 是一个特殊的对象，(a transparent wrapper around target)
 
 | internal method         | handler        | triggers when          |
 |-------------------------|----------------|------------------------|
-| [ [Set] ]               | get            | 读属性                 |
+| [ [Get] ]               | get            | 读属性                 |
 | [ [DefineOwnProperty] ] | defineProperty | Object.defineProperty  |
 | [ [OwnPropertyKeys ] ]  | ownKeys        | for..in, Object.keys 等 |
 
