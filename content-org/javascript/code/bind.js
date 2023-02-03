@@ -16,3 +16,5 @@ function foo() {
 const bindFunction = customFunction(foo, obj);
 
 bindFunction();
+
+module.exports = {}

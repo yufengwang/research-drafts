@@ -9,3 +9,5 @@ const f = foo(1);
 const f1 = foo(2);
 f()
 f1()
+
+module.exports = {}
