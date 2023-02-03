@@ -2,4 +2,6 @@
 
 Hi, this is my personal notes or wiki source repo, mainly written in org-mode with doom-emacs.
 
-If you wish to the see the rendered site, please go https://yfw.ink, thanks !
+If you wish to the see the rendered site, please go [[https://yfw.wiki]], thanks !
+
+碎片化的笔记，知识收集整理等
