@@ -1,4 +1,4 @@
-#+TITLE: js 常见题
+#+TITLE: JavaScript 常见题
 #+DATE:<2022-11-29 Tue 09:50>
 #+FILETAGS: coding-question
 

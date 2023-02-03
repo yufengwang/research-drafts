@@ -1,5 +1,5 @@
 +++
-title = "js 正则表达式"
+title = "正则表达式"
 author = ["wenhu"]
 date = 2022-06-03T16:23:00+08:00
 tags = ["regexp"]

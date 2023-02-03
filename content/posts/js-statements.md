@@ -1,5 +1,5 @@
 +++
-title = "Js 语句"
+title = "JavaScript 语句"
 author = ["wenhu"]
 date = 2022-08-09T22:59:00+08:00
 categories = ["js"]

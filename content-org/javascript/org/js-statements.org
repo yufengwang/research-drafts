@@ -1,4 +1,4 @@
-#+TITLE: Js 语句
+#+TITLE: JavaScript 语句
 #+DATE:<2022-08-09 Tue 22:59>
 #+FILETAGS: @js
 

@@ -1,15 +1,18 @@
-#+TITLE: js 原型
+#+TITLE: JavaScript 原型
 #+DATE: <2022-06-03 Fri 15:50>
 #+FILETAGS: prototype @js
 
-草稿，待完善
-
 * [ [Prototype] ]
 
-隐藏属性，决定继承关系
+Js 引擎层面的隐藏属性，决定继承关系，用户侧代码不可直接访问这个属性
 
 * __proto__
 
-历史遗留的 getter/setter ，不建议使用
+历史遗留的 getter/setter ，不建议使用，用于设置原型关系
 
 建议使用这俩： Object.getPrototypeOf/Object.setPrototypeOf
+
+
+* Class
+
+[[file:animal-rabbit-static.svg]]
