@@ -15,7 +15,7 @@ function sumBigNumber(a, b) {
   const arrB = b.split("");
 
   while (arrA.length || arrB.length || temp) {
-    // ~~ 将操作数转换成 int
+    // ~~ 将操作数转换成 int, ~ bitwise not operator
     temp += ~~arrA.pop() + ~~arrB.pop();
     res = (temp % 10) + res;
     temp = temp > 9 ? 1 : 0;
