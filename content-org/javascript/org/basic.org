@@ -2,6 +2,7 @@
 #+DATE:<2023-02-02 Thu 13:58>
 #+FILETAGS: @js
 
+
 * Var
 
 only a variable's declaration is hoisted, not its initialization
@@ -27,6 +28,10 @@ without use strict, an assignment to a non-existing variable creates a new globa
  A variable is a property of a special internal object, associated with the currently executing block/function/script
 
  [fn:1] [[https://javascript.info/closure][lexical-environment]]
+
+ 执行上下文分全局上下文、函数上下文和块级上下文
+
+ 代码执行流每进入一个新上下文，都会创建一个作用域链，用于搜索变量和函数。
 
 * Function
 
