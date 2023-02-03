@@ -36,5 +36,5 @@ top, bottom 属性重叠，值为相对最大值，仅限垂直方向
 
 display: flex 容器内没有重叠
 
-[^fn:1]: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
+[^fn:1]: [Intro_to_formatting_contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
 [^fn:2]: [Mastering_margin_collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
