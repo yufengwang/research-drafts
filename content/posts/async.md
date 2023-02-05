@@ -7,90 +7,90 @@ categories = ["js"]
 draft = false
 +++
 
-**草稿，待完善**
+## Reactor Pattern {#reactor-pattern}
 
 
-## 同步 {#同步}
-
-run to completion
-
-
-## 异步 {#异步}
-
-
-### Reactor Pattern {#reactor-pattern}
-
-
-### 异步的底层原理 {#异步的底层原理}
+## 异步的底层原理 {#异步的底层原理}
 
 操作系统的 api
 
 
-### Callback {#callback}
+## Callback {#callback}
 
 
-### Generator {#generator}
+## Generator {#generator}
+
+被调用时返回一个 generator 对象，函数体不会立即执行, 通过 generator 对象控制函数体的执行
+
+```js
+function* f()
+function *g()
+function * h()
+
+// 三种声明方式都可以， 第一种比较好
+// as the star * denotes that it’s a generator function, it describes the kind, not the name, so it should stick with the function keyword
+```
 
 
-### Promise {#promise}
+## Promise {#promise}
 
 
-### Async/Await {#async-await}
+## Async/Await {#async-await}
 
 
-### Observable {#observable}
+## Observable {#observable}
 
 
-### IO {#io}
+## IO {#io}
 
 网络请求，文件读写
 
 同步io：应用初始化的时候读配置文件用，否则不建议使用同步 io，阻塞 eventloop，影响性能
 
 
-### queueMicrotask {#queuemicrotask}
+## queueMicrotask {#queuemicrotask}
 
 ecma-262 标准方法，用于注册微任务
 
 
-### process.nextTick {#process-dot-nexttick}
+## process.nextTick[^fn:1] {#process-dot-nexttick}
 
 任务队列，被 node 管理，仅在 node 环境支持
 
 优先级高于微任务
 
 
-### 并发 {#并发}
+## 并发 {#并发}
 
 
-### 并行 {#并行}
+## 并行 {#并行}
 
 
-### Worker Threads {#worker-threads}
+## Worker Threads {#worker-threads}
 
 
-### setImmediate {#setimmediate}
+## setImmediate {#setimmediate}
 
 非标准方法，不推荐使用，仅在 node 环境支持
 
 宏任务，在 poll phase 阶段后执行
 
 
-### Event Loop {#event-loop}
+## Event Loop {#event-loop}
 
 等待任务，执行任务，继续等待任务（等待期基本不消耗 cpu 资源）
 
 node 环境跟 browser 环境的 event loop 表现不一致
 
 
-#### Browser event loop {#browser-event-loop}
+### Browser event loop {#browser-event-loop}
 
 使用 libevent 来实现，单队列
 
 {{< figure src="/ox-hugo/eventloop.svg" >}}
 
 
-#### Node event loop {#node-event-loop}
+### Node event loop[^fn:2] {#node-event-loop}
 
 多阶段，每阶段一个队列使用 libuv 来实现分不同的阶段 phase，每个阶段可以理解成一个队列
 Node 11.0.0 修复了微任务的 bug
@@ -105,10 +105,10 @@ process.nextTick/promise 微任务
 {{< figure src="/ox-hugo/eventloop-node.png" >}}
 
 
-#### Event Loop 最佳实践 {#event-loop-最佳实践}
+### Event Loop 最佳实践 {#event-loop-最佳实践}
 
 
-#### 事件的区别 {#事件的区别}
+### 事件的区别 {#事件的区别}
 
 浏览器事件：用户交互，脚本加载等，服务端事件：文件 i/o，网络 i/o，
 
@@ -154,9 +154,5 @@ v8 术语
 
 {{< figure src="/ox-hugo/node-arch.png" >}}
 
-
-### 参考 {#参考}
-
-1.  <https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask>
-2.  <https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810>
-3.  <https://gist.github.com/deepal?page=1>
+[^fn:1]: [process-nexttick-and-queuemicrotask](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
+[^fn:2]: [nodejs-event-loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810)
