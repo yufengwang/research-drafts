@@ -37,6 +37,14 @@ function * h()
 
 ## Async/Await {#async-await}
 
+top level await 可以在 module 的顶层使用
+
+Any modules that include this will wait for the fetch to resolve before running any code
+
+Other microtasks can execute before the async function resumes
+
+await literally suspends the function execution until the promise settles, and then resumes it with the promise result. That doesn’t cost any CPU resources, because the JavaScript engine can do other jobs in the meantime: execute other scripts, handle events, etc
+
 
 ## Observable {#observable}
 
