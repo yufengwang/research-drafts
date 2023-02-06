@@ -76,16 +76,22 @@ node 环境跟 browser 环境的 event loop 表现不一致
 
 ** Node event loop[fn:2]
 多阶段，每阶段一个队列
+
 使用 libuv 来实现
+
 分不同的阶段 phase，每个阶段可以理解成一个队列
+
 Node 11.0.0 修复了微任务的 bug
-四个 phase (队列）
-expired timer callbacks
-i/o events
-immediate queues
-close handler
-中间队列
-process.nextTick/promise 微任务
+
+四个 phase (队列）:
+- expired timer callbacks
+- i/o events
+- immediate queues
+- close handler
+
+中间队列:
+- process.nextTick
+- promise 微任务
 
 [[file:eventloop-node.png]]
 
@@ -93,7 +99,9 @@ process.nextTick/promise 微任务
 
 
 ** 事件的区别
+
 浏览器事件：用户交互，脚本加载等，
+
 服务端事件：文件 i/o，网络 i/o，
 
 | 环境 | browser | node |
