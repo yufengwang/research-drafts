@@ -55,16 +55,6 @@ await literally suspends the function execution until the promise settles, and t
 
 同步io：应用初始化的时候读配置文件用，否则不建议使用同步 io，阻塞 eventloop，影响性能
 
-
-## queueMicrotask {#queuemicrotask}
-
-ecma-262 标准方法，用于注册微任务
-
-
-## process.nextTick[^fn:1] {#process-dot-nexttick}
-
-任务队列，被 node 管理，仅在 node 环境支持
-
 优先级高于微任务
 
 
@@ -98,7 +88,7 @@ node 环境跟 browser 环境的 event loop 表现不一致
 {{< figure src="/ox-hugo/eventloop.svg" >}}
 
 
-### Node event loop[^fn:2] {#node-event-loop}
+### Node event loop[^fn:1] {#node-event-loop}
 
 多阶段，每阶段一个队列
 
@@ -111,13 +101,16 @@ Node 11.0.0 修复了微任务的 bug
 四个 phase (队列）:
 
 -   expired timer callbacks
--   i/o events
+-   I/O events
 -   immediate queues
 -   close handler
 
-中间队列:
+中间的俩任务队列:
 
--   process.nextTick
+-   process.nextTick[^fn:2]
+
+    任务队列，被 node 管理，仅在 node 环境支持
+
 -   promise 微任务
 
 {{< figure src="/ox-hugo/eventloop-node.png" >}}
@@ -142,17 +135,14 @@ Node 11.0.0 修复了微任务的 bug
 
 Network I/O is not performed on the libuv thread pool
 
-File I/O在 libuv thread pool 里执行
+File I/O 在 libuv thread pool 里执行
 
 dns.lookup() 在 libuv 线程池里执行
 
 {{< figure src="/ox-hugo/libuv.png" >}}
 
 
-### libuv 线程池 {#libuv-线程池}
-
-
-### 微任务 {#微任务}
+## 微任务 {#微任务}
 
 v8 术语，由引擎管理的任务队列
 
@@ -161,7 +151,12 @@ v8 术语，由引擎管理的任务队列
 当前宏任务执行完后，引擎会清空微任务队列，再去执行下一个宏任务
 
 
-### 宏任务 {#宏任务}
+### queueMicrotask {#queuemicrotask}
+
+ecma-262 标准方法，用于注册微任务
+
+
+## 宏任务 {#宏任务}
 
 v8 术语
 
@@ -170,9 +165,9 @@ v8 术语
 执行宏任务时，浏览器不会渲染
 
 
-### Node架构 {#node架构}
+## Node架构 {#node架构}
 
 {{< figure src="/ox-hugo/node-arch.png" >}}
 
-[^fn:1]: [process-nexttick-and-queuemicrotask](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
-[^fn:2]: [nodejs-event-loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810)
+[^fn:1]: [nodejs-event-loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810)
+[^fn:2]: [process-nexttick-and-queuemicrotask](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
