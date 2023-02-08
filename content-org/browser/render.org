@@ -2,7 +2,80 @@
 #+DATE:<2022-06-29 Wed 15:54>
 #+FILETAGS: browser
 
-* Render Pipeline[fn:2]
+* Process Model
+
+浏览器的多进程模型
+
+进程：
+
+ - Browser Process
+
+      Controls "chrome" part of the application including address bar, bookmarks, back and forward buttons.
+      Also handles the invisible, privileged parts of a web browser such as network requests and file access.
+      浏览器 ui 部分，地址栏，书签等；网络请求，文件访问等
+
+ - Renderer Process
+     每个 tab 一个 renderer process，控制当前显示的 tab 内的一切
+
+     在沙盒中执行，避免安全隐患
+
+ - GPU Process
+      处理 GPU 绘制人物
+ - Plugin Process
+      控制当前页面使用的所有插件，例如 flash
+
+ - Utility Process
+
+ - Extension Process
+      控制当前页面使用的所有插件，例如 flash
+
+
+ 优点：
+  - 稳定性，一个 tab 失去响应不会影响另一个 tab
+  - 安全性，进程间资源隔离
+
+ 缺点：
+  消耗内存，进程间通信成本
+
+* Rendering [fn:2]
+
+Rendering: HTML -> pixels
+
+** Rendering engine[fn:5]
+
+用于渲染 web pages
+
+A rendering engine is a software that:
+
+- Implements the specs of the web platform
+
+  实现 web 平台的规范
+
+- Carries out the critical rendering path
+
+  执行关键渲染路径
+
+- Embeds the JavaScript engine
+
+常见的渲染引擎：Blink (Chrome), Gecko (Mozilla) and WebKit (Apple)
+
+** critical rendering path
+- Parses the HTML and starts building the Document Object Model (DOM)
+  构建 DOM 树
+- Requests external resources (stylesheets, scripts, images, etc.)
+  请求外部资源
+- Parses the styles and builds the CSS Object Model (CSSOM)
+  构建 CSSOM
+- Computes styles for the visible nodes in the DOM tree and creates a render tree that contains the computed styles
+  构建 Render Tree
+- Determines the visual geometry (width, height and position) of the elements based on the viewport size (and orientation for mobile devices)
+  计算宽高位置等
+- Paints the pixels on the screen
+  绘制
+
+处理首次渲染，后续用户交互下的更新
+
+** Render Pipeline
 
 [[file:BrowserRenderingPipeline01.png]]
 
@@ -45,8 +118,10 @@ Each node typically references a DOM node and a Computed Style
 
    render steps 结束后，得到一帧 Frame
 
-[[file:EventLoop06.png]]
+[[file:render.png]]
 
+** Worker thread
+用于分担 CPU 密集型的计算任务
 ** Task queue
 
 任务队列，主线程繁忙时，task 进入到这里
@@ -71,3 +146,4 @@ Server Side Render
 [fn:2] [[https://www.webperf.tips/tip/browser-rendering-pipeline/][browser render pipeline]]
 [fn:3][[https://www.webperf.tips/tip/event-loop/][ event loop]]
 [fn:4][[https://www.webperf.tips/tip/layout-thrashing/][ forced reflow]]
+[fn:5] [[https://www.telerik.com/blogs/angular-basics-introduction-processes-threads-web-ui-developers][basics-introduction-processes-threads-web-ui-developers]]
