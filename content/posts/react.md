@@ -62,6 +62,7 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
         $$typeof: Symbol(react.element),
         type: 'button',
         key: "1",
+        ref: null,
         props: {
             children: 'Update counter',
             onClick: () => { ... }
