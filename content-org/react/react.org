@@ -38,6 +38,12 @@
 #+end_src
 
 * Reconciler
+
+Stack 改成 Fiber 本质上是递归改循环, Stack 会占用 Call Stack，阻塞 Main Thread，从而使其他高优先级的任务得不到执行
+
+改成 Fiber 架构后，每次循环体的执行，只会占用有限的 Call Stack，不会过度增长，单次循环体执行完后，Call Stack 为空，在 Event Loop 的调度下，其他高优先级的任务从
+任务队列里出队，进入到 Call Stack 里执行
+
 ** Stack Reconciler
 
 - 同步
@@ -166,11 +172,15 @@ const newFiber = {
 
 * Hooks
 
+挂在 Fiber 节点上，链表结构
+
 * Events
 
 React 17 不再使用 Event pooling，之前的版本是为了性能考虑使用 Event pooling
 
 SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
+
+统一注册到顶层 Container
 
 * Ref
 
