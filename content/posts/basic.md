@@ -72,9 +72,51 @@ this 为外层词法环境的 this，不能被 new，没有 arguments, 没有 su
 ## Class {#class}
 
 
-## 常用 API {#常用-api}
+## 值比较 {#值比较}
 
+-   `=`
 
-### Object.is {#object-dot-is}
+    isStrictlyEqual 算法
+
+    不会做类型转换,
+
+-   ==
+    isLooselyEqual 算法
+
+    比较值时会做类型转换
+
+-   Object.is
+
+    SameValue 算法
+
+    判断两个值是否一样，跟 `=` 一致，除了(NaN, +0, -0) 的比较
+    ```js
+    console.log(Object.is('1', 1));
+    // Expected output: false
+
+    console.log(Object.is(NaN, NaN));
+    // Expected output: true
+
+    console.log(Object.is(-0, 0));
+    // Expected output: false
+
+    const obj = {};
+    console.log(Object.is(obj, {}));
+    // Expected output: false
+
+    ```
+
+    -   SameValueZero
+        ```js
+
+        function sameValueZero(x, y) {
+          if (typeof x === "number" && typeof y === "number") {
+            // x and y are equal (may be -0 and 0) or they are both NaN
+            return x === y || (x !== x && y !== y);
+          }
+          return x === y;
+        }
+
+        ```
 
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
