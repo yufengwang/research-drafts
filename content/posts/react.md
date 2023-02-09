@@ -258,6 +258,63 @@ This is because the work performed during this stage leads to changes visible to
 ### useEffect {#useeffect}
 
 
+### useImperativeHandle {#useimperativehandle}
+
+作用：
+
+暴露自定义的 ref handle 给父组件, 用于父组件调用子组件的方法，当通过 props 无法做到时，用这个，不要滥用
+
+例如：节点滚动，选择文本等
+
+第三个参数的比较采用的是 Object.is 比较算法
+
+```js
+// MyInput.js
+import { forwardRef, useRef, useImperativeHandle } from 'react';
+
+const MyInput = forwardRef(function MyInput(props, ref) {
+  const inputRef = useRef(null);
+
+  useImperativeHandle(ref, () => {
+    return {
+      focus() {
+        inputRef.current.focus();
+      },
+      scrollIntoView() {
+        inputRef.current.scrollIntoView();
+      },
+    };
+  }, []);
+
+  return <input {...props} ref={inputRef} />;
+});
+
+export default MyInput;
+
+import { useRef } from 'react';
+import MyInput from './MyInput.js';
+
+export default function Form() {
+  const ref = useRef(null);
+
+  function handleClick() {
+    ref.current.focus();
+    // This won't work because the DOM node isn't exposed:
+    // ref.current.style.opacity = 0.5;
+  }
+
+  return (
+    <form>
+      <MyInput label="Enter your name:" ref={ref} />
+      <button type="button" onClick={handleClick}>
+        Edit
+      </button>
+    </form>
+  );
+}
+```
+
+
 ## Events {#events}
 
 React 17 不再使用 Event pooling，之前的版本是为了性能考虑使用 Event pooling
@@ -268,6 +325,16 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 
 ## Ref {#ref}
+
+
+## React API {#react-api}
+
+
+### forwardRef {#forwardref}
+
+将子组件的 Dom 节点暴露给父组件
+
+尽量用 useImperativeHandle 暴露若干方法，而不是完整的暴露 Dom 元素给父组件
 
 
 ## Context {#context}

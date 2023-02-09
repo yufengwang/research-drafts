@@ -71,4 +71,10 @@ this 为外层词法环境的 this，不能被 new，没有 arguments, 没有 su
 
 ## Class {#class}
 
+
+## 常用 API {#常用-api}
+
+
+### Object.is {#object-dot-is}
+
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
