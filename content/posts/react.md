@@ -8,27 +8,66 @@ draft = false
 
 ## Concepts {#concepts}
 
--   React Element
+React Element:
 
-    An element is a plain object describing a component instance or DOM node and its desired properties
+An element is a plain object describing a component instance or DOM node and its desired properties
 
-    js 对象，描述需要被渲染的元素，包括其类型及属性；比真实的 Dom element 更轻量
+js 对象，描述需要被渲染的元素，包括其类型及属性；比真实的 Dom element 更轻量
 
--   Dom Element
+有 class and functional components, host components (DOM nodes), portals 这些类型
 
-    type 为 dom type string (e.g. 'h1') 的 React Element，用于描述 Dom 节点
+Dom Element:
 
--   Component Element
+type 为 dom type string (e.g. 'h1') 的 React Element，用于描述 Dom 节点
 
-    type 为 Function 或 Class 的 React Element，用于描述 React Component
+Component Element:
 
--   Component
+type 为 Function 或 Class 的 React Element，用于描述 React Component
 
-    class or function, 接收 props，返回 Element Tree
+Component:
 
--   Element Tree
+class or function, 接收 props，返回 Element Tree
 
-    即所谓的 virtual dom
+Element Tree:
+
+即所谓的 virtual dom
+
+JSX:
+
+UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
+
+例如:
+
+```js
+  <button key="1" onClick={this.onClick}>Update counter</button>
+```
+
+被转换为：
+
+```js
+  React.createElement(
+                'button',
+                {
+                    key: '1',
+                    onClick: this.onClick
+                },
+                'Update counter'
+            )
+```
+
+返回的 React Element：
+
+```js
+   {
+        $$typeof: Symbol(react.element),
+        type: 'button',
+        key: "1",
+        props: {
+            children: 'Update counter',
+            onClick: () => { ... }
+        }
+    }
+```
 
 
 ## Source Code {#source-code}
@@ -104,9 +143,6 @@ O(n)，n 为 element tree 的节点数
 
 ## Fiber {#fiber}
 
-
-### 背景 {#背景}
-
 在计算机科学里，Fiber 称之为纤程，即轻量级的执行线程[^fn:1]
 
 Fiber 跟 Thread 共享地址空间，Fiber 使用协作式多任务( cooperative multitasking ), 而 Thread 使用抢占式多任务(preemptive multitasking)
@@ -115,13 +151,7 @@ Fiber 跟 Thread 共享地址空间，Fiber 使用协作式多任务( cooperativ
 
 对浏览器而言，用户的 js 执行只有一个主线程，那么为了实现并发，纤程是自然而然的方案
 
-
-### 浏览器架构 {#浏览器架构}
-
-浏览器里的并发任务
-
-
-### React 里的 Fiber {#react-里的-fiber}
+React Fiber:
 
 在 React 里， Fiber = unit of work，最小任务单元
 
@@ -140,42 +170,78 @@ Fiber is re-implementation of the stack, specialized for React components. You c
 5.  parent 无 sibing，一直往上找，直到找到有 sibling 节点的祖先节点，并处理其 sibling 节点
 6.  最后找到 root，所有 fiber 处理完毕，任务结束
 
-属性：
-
-1.  child，指向第一个子节点
-2.  sibling，
-3.  return
-
 每一 react element 构造一个 fiber 节点，每个 fiber 节点是一个工作单元，一系列 fiber 节点构成一个 fiber 特殊的链表。该数据结构的优点是便于找到下次的工作单元
-
-{{< figure src="/ox-hugo/fiber.png" >}}
-
-针对每个 fiber 节点要做三件事：
-
-1.  将元素添加到 dom 上
-2.  创建该元素 children 的 fiber 节点
-3.  选择下次的工作单元
 
 工作单元执行顺序： 执行完所有的 children，如果没有 children，则执行其兄弟节点，如果没有 children 也没有兄弟节点执行其 uncle，没有 uncle 则到 root
 
-fiberNode 的简单结构:
+{{< figure src="/ox-hugo/fiber.png" >}}
+
+针对每个 Fiber 节点要做三件事：
+
+1.  将元素添加到 dom 上
+2.  创建该元素 children 的 Fiber 节点
+3.  选择下次的工作单元
+
+FiberNode 的简单结构:[^fn:2]
 
 ```js
 const newFiber = {
-  type: element.type, // 当前fiber的类型
+  stateNode: React Element,// 指向Fiber相关联的React Element, 例如类实例，Dom 元素
+  child: Fiber, // 子 Fiber
+  sibling: Fiber, // 相邻的兄弟 Fiber
+  return: Fiber, // 指向父级 Fiber 节点
+  type: element.type, // 当前fiber的类型，不同的类型有不同的工作要做
   props: element.props, // 当前fiber的props
-  parent: fiber, // 指向父级fiber节点
   dom: null, // 该fiber节点对应的dom对象
-  alternate: null, // 指向上次commit的fiberNode
-  effectTag: 'PLACEMENT', // commit阶段用到
+  alternate: null, // 指向其对应的节点 current -> workInProgress, current <- workInProgress,
+  effectTag: 'PLACEMENT', // commit阶段用到，当前节点的副作用标签
+  nextEffect: Fiber // 下一个副作用执行的Fiber
   hooks: [],
+  tag: '',
+  updateQueue: '',
+  memoizedState: ''// 当前屏幕上对应的状态
+  memoizedProps: '' //Props of the fiber that were used to create the output during the previous render
+  pendingProps: '' //Props that have been updated from new data in React elements and need to be applied to child components or DOM elements
+  // 调度器相关的属性
+  expirationTime: '',
+  childExpirationTime: '',
+  mode: '',
 };
-
 ```
 
-每个 fiber 节点的工作完成之后，commit 整个 fiber tree 到 dom 上
+首次渲染时，Fiber 节点根据 React Element Type 创建，后续更新时， Fiber 被复用，只更新 Fiber 对象上的属性
+
+每个 Fiber 节点的工作完成之后，commit 整个 Fiber tree 到 dom 上
 
 函数式组件没有对应的 dom 节点, 需要调用函数拿到其 children
+
+更新时，根据当前的 Fiber Tree，构建 workInProgress tree，遍历树，完成所有的工作，然后渲染到屏幕上
+
+副作用：
+
+不用的 Fiber 类型有不同的副作用，例如 Dom 节点的增删改，类组件的生命周期函数调用，Ref 的更新等
+
+React 内部维护了一个线性链表，将所有有副作用的 Fiber 节点串联起来，用于处理副作用
+
+
+## 渲染逻辑 {#渲染逻辑}
+
+
+### Render Phase {#render-phase}
+
+The result of the phase is a tree of fiber nodes marked with side-effects
+
+It’s important to understand that the work during the first render phase can be performed asynchronously
+
+
+### Commit Phase {#commit-phase}
+
+commit phase is always synchronous, React needs to do them in a single pass
+
+This is because the work performed during this stage leads to changes visible to the user, e.g. DOM updates.
+
+
+### Work Loop {#work-loop}
 
 
 ## Renderer {#renderer}
@@ -186,6 +252,9 @@ const newFiber = {
 ## Hooks {#hooks}
 
 挂在 Fiber 节点上，链表结构
+
+
+### useEffect {#useeffect}
 
 
 ## Events {#events}
@@ -222,3 +291,4 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 自动批处理
 
 [^fn:1]: [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
+[^fn:2]: [inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react)
