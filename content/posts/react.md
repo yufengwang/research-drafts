@@ -76,7 +76,7 @@ draft = false
 
 首次渲染：
 
-全量的 element tree reader 到 dom 节点
+全量的 element tree render 到 dom 节点
 
 后续渲染：
 
