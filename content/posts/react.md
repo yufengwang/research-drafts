@@ -74,7 +74,13 @@ draft = false
 
 调和
 
-首次渲染：全量的 element tree reader 到 dom 节点后续渲染：reconciliation 后更新（增，删，改）变更的 dom
+首次渲染：
+
+全量的 element tree reader 到 dom 节点
+
+后续渲染：
+
+reconciliation 后更新（增，删，改）变更的 dom
 
 每次 rerender 都生成一个 new element tree，diff(old element tree, new element tree) 决定 ui 怎么更新
 
@@ -82,7 +88,9 @@ draft = false
 2.  如果元素类型一致，保留 dom 节点，仅更新变动的 props
 3.  用 key 去标识某个 children 是否在元素数组里更换了位置
 
-复杂度: O(n)，n 为 element tree 的节点数
+复杂度:
+
+O(n)，n 为 element tree 的节点数
 
 基于两个假定的前提:
 
