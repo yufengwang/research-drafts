@@ -70,15 +70,17 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
     }
 ```
 
+什么是阻塞:
 
-## Source Code {#source-code}
+
+## React 源码 {#react-源码}
 
 ```bash
  --packages
-    |- react
-    |- react-dom (渲染器)
-    |- react-reconciler
-    |- scheduler
+    |- react // 核心
+    |- react-dom // (渲染器)
+    |- react-reconciler // 调和
+    |- scheduler // 调度器
 ```
 
 
