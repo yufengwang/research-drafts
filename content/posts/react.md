@@ -315,6 +315,56 @@ export default function Form() {
 ```
 
 
+### useDeferredValue {#usedeferredvalue}
+
+用于渲染优化
+
+```js
+
+export default function App() {
+  const [text, setText] = useState('');
+  const deferredText = useDeferredValue(text);
+  console.log('text',text, 'defer',deferredText)
+  return (
+    <>
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <SlowList text={deferredText} />
+    </>
+  );
+}
+
+```
+
+text 更新，deferredText 并不会立马更新,让浏览器能尽快的响应高优先级的事件，后处理其他渲染
+
+
+### useLayoutEffect {#uselayouteffect}
+
+
+### useTransition {#usetransition}
+
+用于标识某些状态的更新为非阻塞的 transition，让用户不觉得卡顿，也可以用于阻止显示 loading 态
+
+例如 tab 切换时，慢 tab 会被打断渲染，直接渲染新 tab
+
+建议将路由切换，page 切换设置为 transition
+
+```js
+function TabContainer() {
+  const [isPending, startTransition] = useTransition();
+  const [tab, setTab] = useState('about');
+
+  function selectTab(nextTab) {
+    startTransition(() => {
+      setTab(nextTab);
+    });
+  }
+  // ...
+}
+
+```
+
+
 ## Events {#events}
 
 React 17 不再使用 Event pooling，之前的版本是为了性能考虑使用 Event pooling
@@ -335,6 +385,13 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 将子组件的 Dom 节点暴露给父组件
 
 尽量用 useImperativeHandle 暴露若干方法，而不是完整的暴露 Dom 元素给父组件
+
+
+### startTransition {#starttransition}
+
+状态更新不阻塞 UI
+
+可在组件外部调用，例如数据请求库
 
 
 ## Context {#context}
