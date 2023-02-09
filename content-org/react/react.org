@@ -128,8 +128,6 @@ Fiber is re-implementation of the stack, specialized for React components. You c
 2. sibling，
 3. return
 
-
-
 * Renderer
 
 将 React Element Tree 渲染到对应的平台(browser, native)
