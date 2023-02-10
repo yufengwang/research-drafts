@@ -8,6 +8,9 @@ draft = false
 
 ## Concepts {#concepts}
 
+
+### Element {#element}
+
 React Element:
 
 An element is a plain object describing a component instance or DOM node and its desired properties
@@ -32,7 +35,8 @@ Element Tree:
 
 即所谓的 virtual dom
 
-JSX:
+
+### JSX {#jsx}
 
 UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
 
@@ -272,6 +276,16 @@ This is because the work performed during this stage leads to changes visible to
 
 
 ### useEffect {#useeffect}
+
+
+### useLayoutEffect {#uselayouteffect}
+
+在浏览器 repaint 前调用的 effect
+
+
+### useInsertionEffect {#useinsertioneffect}
+
+在 Dom 操作前动态注入 style
 
 
 ### useImperativeHandle {#useimperativehandle}

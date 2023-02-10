@@ -4,6 +4,8 @@
 
 * Concepts
 
+** Element
+
  React Element:
 
   An element is a plain object describing a component instance or DOM node and its desired properties
@@ -28,7 +30,8 @@
 
   即所谓的 virtual dom
 
-JSX:
+
+** JSX
 
 UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
 
@@ -251,6 +254,14 @@ This is because the work performed during this stage leads to changes visible to
 用来包裹函数，避免子组件重复渲染
 
 ** useEffect
+
+** useLayoutEffect
+
+在浏览器 repaint 前调用的 effect
+
+** useInsertionEffect
+
+在 Dom 操作前动态注入 style
 
 ** useImperativeHandle
 
