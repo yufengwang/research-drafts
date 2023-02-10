@@ -238,6 +238,18 @@ This is because the work performed during this stage leads to changes visible to
 
 挂在 Fiber 节点上，链表结构
 
+** useMemo
+
+缓存的是函数调用的结果
+
+缓存的是函数本身
+
+** useCallback
+
+当 react 组件渲染时，其所有子组件都会得到渲染
+
+用来包裹函数，避免子组件重复渲染
+
 ** useEffect
 
 ** useImperativeHandle
@@ -352,6 +364,12 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 * Ref
 
 * React API
+** memo
+
+仅当 props 变了时，才会重渲染，如果不用 memo 包一层的话，父组件 rerender 时，子组件也会渲染，通常结合 useMemo，useCallback 使用
+
+被 memo 的组件，当其内部 state 或外部的 context 变了时，其仍会重渲染
+
 
 ** forwardRef
 
@@ -365,10 +383,24 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 可在组件外部调用，例如数据请求库
 
+** Suspense
+
+当子组件的data和code都加载完时，子组件才会被渲染，否则渲染最近的 suspense fallback
+
+只有启用了 suspense 的数据源才会激活 suspense 组件
 
 * Context
 
 * Lane
+
+* 渲染优化
+
+1. 使用 children 接收 JSX，这样当父组件渲染时，children 不会被渲染
+2. 尽量使用 local state
+3. React.memo, useMemo, useCallback
+4. 组件接收的 props 要尽可能的精简，尽量接收独立的值，而不是一个大对象
+
+
 
 * React 18
 
@@ -376,7 +408,6 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 并发模式，底层的渲染细节变更，可被中断渲染，可在后台渲染
 
-** Suspense
 
 ** Automatic batching
 
