@@ -367,6 +367,10 @@ export default function App() {
 
 text 更新，deferredText 并不会立马更新,让浏览器能尽快的响应高优先级的事件，后处理其他渲染
 
+新值在后台渲染，可被打断，跟 Suspense 结合使用
+
+有更新时，先渲染旧值，旧值渲染完后，在后台渲染新值，后台渲染可被打断，从而让出主线程，让浏览器执行更高优先级的任务（例如用户输入事件）
+
 
 ### useLayoutEffect {#uselayouteffect}
 
