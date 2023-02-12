@@ -38,6 +38,7 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
  #+end_src
 
  被转换为：
+
  #+begin_src js
   React.createElement(
                 'button',
@@ -50,6 +51,7 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
  #+end_src
 
  返回的 React Element：
+
 #+begin_src js
    {
         $$typeof: Symbol(react.element),
