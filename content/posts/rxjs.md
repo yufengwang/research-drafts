@@ -2,7 +2,7 @@
 title = "RxJs"
 author = ["wenhu"]
 date = 2022-09-08T23:10:00+08:00
-tags = ["js"]
+categories = ["js"]
 draft = false
 +++
 
