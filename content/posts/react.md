@@ -324,7 +324,7 @@ export default MyInput;
 import { useRef } from 'react';
 import MyInput from './MyInput.js';
 
-export default function Form() {
+function Form() {
   const ref = useRef(null);
 
   function handleClick() {
