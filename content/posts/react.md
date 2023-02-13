@@ -261,9 +261,31 @@ This is because the work performed during this stage leads to changes visible to
 挂在 Fiber 节点上，链表结构
 
 
+### useDebugValue {#usedebugvalue}
+
+
+### useId {#useid}
+
+在组件内部生成唯一 id，注意不能用于 key 的生成
+
+
 ### useMemo {#usememo}
 
-缓存的是函数调用的结果
+缓存的是计算结果，首次渲染，返回 callback 返回的值，后续渲染，如过 deps 变了，则重新计算结果并返回，否则继续返回之前的值
+
+```js
+import { useMemo } from 'react';
+
+function TodoList({ todos, tab }) {
+  const visibleTodos = useMemo(
+    () => filterTodos(todos, tab),
+    [todos, tab]
+  );
+  // ...
+}
+```
+
+更通用
 
 
 ### useCallback {#usecallback}
@@ -281,6 +303,10 @@ This is because the work performed during this stage leads to changes visible to
 ### useLayoutEffect {#uselayouteffect}
 
 在浏览器 repaint 前调用的 effect，会影响性能，一般建议用 useEffect
+
+也就是在用户看到最终的视觉效果 (pixels) 前，例如在 repaint 前，计算元素的尺寸等信息
+
+如何阻塞浏览器的 repaint ？ workloop 里不要 yield，让用户代码继续占用主线程
 
 
 ### useInsertionEffect {#useinsertioneffect}
@@ -418,7 +444,9 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 ### memo {#memo}
 
-用 memo 把组件包一层后，当 props 变了时，组件才会重渲染。如果不用 memo 包一层的话，父组件 rerender，子组件接收到的 props 不变，子组件也会重渲染。通常结合 useMemo，useCallback 使用
+用 memo 把组件包一层后，当 props 变了时，组件才会重渲染。如果不用 memo 包一层的话，父组件 rerender，子组件接收到的 props 不变，子组件也会重渲染。
+
+通常结合 useMemo，useCallback 使用
 
 被 memo 的组件，当其内部 state 或外部的 context 变了时，其仍会重渲染
 
@@ -439,9 +467,18 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 ### Suspense {#suspense}
 
-当子组件的data和code都加载完时，子组件才会被渲染，否则渲染最近的 suspense fallback
+当子组件的 data 和 code 都加载完时，子组件才会被渲染，否则渲染最近的 suspense fallback
 
 只有启用了 suspense 的数据源才会激活 suspense 组件
+
+
+### StrictMode {#strictmode}
+
+给开发模式启用额外的行为和 warning ，仅用于其内部子树
+
+-   开发模式下会渲染两次，找到 impure 的渲染
+-   开发模式下会跑两次 effect
+-   对弃用的 api 使用做检测
 
 
 ## Context {#context}
