@@ -471,6 +471,8 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 只有启用了 suspense 的数据源才会激活 suspense 组件
 
+目前仅适用于跟 React.lazy 结合，实现组件懒加载
+
 
 ### StrictMode {#strictmode}
 
