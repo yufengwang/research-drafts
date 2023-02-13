@@ -280,7 +280,7 @@ This is because the work performed during this stage leads to changes visible to
 
 ### useLayoutEffect {#uselayouteffect}
 
-在浏览器 repaint 前调用的 effect
+在浏览器 repaint 前调用的 effect，会影响性能，一般建议用 useEffect
 
 
 ### useInsertionEffect {#useinsertioneffect}
