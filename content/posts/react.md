@@ -265,10 +265,10 @@ This is because the work performed during this stage leads to changes visible to
 
 缓存的是函数调用的结果
 
-缓存的是函数本身
-
 
 ### useCallback {#usecallback}
+
+缓存的是函数本身
 
 当 react 组件渲染时，其所有子组件都会得到渲染
 
