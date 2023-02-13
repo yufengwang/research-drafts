@@ -48,7 +48,7 @@ reverse proxy, cdn
 http 的设计是能缓存尽量缓存，http 客户端根据 http 响应头自行决定缓存行为
 
 
-## 缓存相关 http header {#缓存相关-http-header}
+## 缓存相关 header {#缓存相关-header}
 
 
 ### Cache-Control {#cache-control}
@@ -111,7 +111,7 @@ e.g. ETag: x234dff
 e.g. Vary: Accept-Language
 
 
-## 缓存校验 {#缓存校验}
+## 缓存校验 header {#缓存校验-header}
 
 过期的缓存不会立马被丢弃，端可通过跟源站沟通，判断缓存是否可以继续使用
 
