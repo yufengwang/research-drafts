@@ -304,4 +304,4 @@ const element = Didact.createElement(Counter, null);
 const container = document.getElementById('root');
 Didact.render(element, container);
 
-export default Didact;
+// export default Didact;
