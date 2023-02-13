@@ -25,11 +25,11 @@
 
 可被共享的缓存
 
-*** Proxy cache
+- Proxy cache
 
 代理缓存
 
-*** Managed cache
+- Managed cache
 
 reverse proxy, cdn
 

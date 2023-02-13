@@ -32,13 +32,11 @@ draft = false
 
 可被共享的缓存
 
-
-#### Proxy cache {#proxy-cache}
+-   Proxy cache
 
 代理缓存
 
-
-#### Managed cache {#managed-cache}
+-   Managed cache
 
 reverse proxy, cdn
 
