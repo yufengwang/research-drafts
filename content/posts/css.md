@@ -28,13 +28,28 @@ BFC 的表现：
 -   抑制外边距重叠
 
 
+## Stacking context {#stacking-context}
+
+层叠上下文[^fn:2]
+
+dom 元素在 z 方向的堆叠顺序问题
+
+如何构建层叠上下文：
+
+-   Root 元素 html
+-   position: absolute, relative，z-index 非 auto 元素
+-   position: fixed, sticky 元素
+-   其他...
+
+
 ## Margin collapse {#margin-collapse}
 
-外边距重叠[^fn:2]
+外边距重叠[^fn:3]
 
 top, bottom 属性重叠，值为相对最大值，仅限垂直方向
 
 display: flex 容器内没有重叠
 
 [^fn:1]: [Intro_to_formatting_contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
-[^fn:2]: [Mastering_margin_collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+[^fn:2]: [The_stacking_context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+[^fn:3]: [Mastering_margin_collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)

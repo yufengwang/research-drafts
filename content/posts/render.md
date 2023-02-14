@@ -156,6 +156,9 @@ Client Side Render
 Server Side Render
 
 
+### Hydration {#hydration}
+
+
 ## ISR {#isr}
 
 增量静态重构建[^fn:5]
