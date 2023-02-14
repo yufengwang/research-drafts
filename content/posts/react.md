@@ -97,6 +97,7 @@ Stack 改成 Fiber 本质上是递归改循环, Stack 会占用 Call Stack，阻
 
 ### Stack Reconciler {#stack-reconciler}
 
+-   利用系统栈
 -   同步
 -   自顶向下的递归，容易阻塞主线程
 -   不可中断
@@ -104,16 +105,43 @@ Stack 改成 Fiber 本质上是递归改循环, Stack 会占用 Call Stack，阻
 
 ### Fiber Reconciler {#fiber-reconciler}
 
+Render 阶段，处理完一个任务后，返回下个任务的指针，可被浏览器中断去执行其他任务后，再恢复执行下一个任务
+
 -   异步
 -   将任务拆为小块 chunk
 -   任务设置优先级，
 -   任务可暂停，可恢复，可丢弃，可重用
 
+遍历流程：[参考](https://github.com/facebook/react/issues/7942?source=post_page---------------------------#issue-182373497)
+
+```js
+let root = fiber;
+let node = fiber;
+while (true) {
+  // Do something with node
+  if (node.child) {
+    node = node.child;
+    continue;
+  }
+  if (node === root) {
+    return;
+  }
+  while (!node.sibling) {
+    if (!node.return || node.return === root) {
+      return;
+    }
+    node = node.return;
+  }
+  node = node.sibling;
+}
+
+```
+
 两个阶段
 
 1.  render phase
 
-    计算变更， 异步
+    reconciliation, 计算变更，异步
 
 2.  commit phase
 
@@ -205,7 +233,7 @@ const newFiber = {
   nextEffect: Fiber // 下一个副作用执行的Fiber
   hooks: [],
   tag: '',
-  updateQueue: '',
+  updateQueue: '', // 当前 Fiber 待更新的状态队列
   memoizedState: ''// 当前屏幕上对应的状态
   memoizedProps: '' //Props of the fiber that were used to create the output during the previous render
   pendingProps: '' //Props that have been updated from new data in React elements and need to be applied to child components or DOM elements
@@ -499,12 +527,25 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 4.  组件接收的 props 要尽可能的精简，尽量接收独立的值，而不是一个大对象
 
 
+## 运行机制 {#运行机制}
+
+状态更新：
+
+当有状态更新时，会将状态更新挂在 Fiber 节点的 updateQueue 属性上
+
+在 workLoop 的作用下，React 自 HostRoot 开始遍历所有 Fiber 节点
+
+
 ## React 18 {#react-18}
 
 
 ### Concurrent {#concurrent}
 
 并发模式，底层的渲染细节变更，可被中断渲染，可在后台渲染
+
+-   非阻塞式渲染
+-   基于优先级更新
+-   后台预渲染
 
 
 ### Automatic batching {#automatic-batching}

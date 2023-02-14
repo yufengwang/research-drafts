@@ -20,3 +20,26 @@ e.g. type C = A | B
 ## Intersection type {#intersection-type}
 
 用来组合对象类型(interface)， intersection 具有被组合 member 的所有属性，对已有的 interface 进行组合，生成新的类型
+
+
+## 其他类型 {#其他类型}
+
+
+### unknown {#unknown}
+
+unkown 类型值上不允许任何操作
+
+
+### any {#any}
+
+any 类型值上允许任何操作，为所欲为
+
+
+### never {#never}
+
+函数抛异常，或者终止程序的执行
+
+
+### void {#void}
+
+函数无明确返回值类型

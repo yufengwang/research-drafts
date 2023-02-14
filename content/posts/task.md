@@ -8,7 +8,7 @@ draft = false
 
 ## requestAnimationFrame {#requestanimationframe}
 
-注册高优先级的任务
+用于执行动画帧
 
 
 ## requestIdleCallback {#requestidlecallback}
@@ -16,6 +16,12 @@ draft = false
 注册低优先级的任务
 
 在每一帧的空闲期执行，可能不执行
+
+有兼容性问题
+
+不够贪婪，没法充分利用空闲时间，调用频率不够，每秒执行大概 20 次
+
+对于 UI 渲染任务来说，在不阻塞主线程的情况下，需要尽可能的利用浏览器的空闲时间，所以 React 重新实现了自己的调度器
 
 
 ## setTimeout {#settimeout}
