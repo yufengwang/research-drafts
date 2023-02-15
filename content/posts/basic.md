@@ -35,8 +35,7 @@ for in 遍历不会遍历 Symbol，Object.keys() 亦如是
 
 Object.assign() 会 copy string 和 symbol 属性
 
-
-#### Global Symbol {#global-symbol}
+Global Symbol
 
 用途：全局唯一标识符
 
@@ -54,8 +53,7 @@ alert( id === idAgain ); // true
 
 ```
 
-
-#### System Symbol {#system-symbol}
+System Symbol
 
 例如: **Symbol.iterator**
 
