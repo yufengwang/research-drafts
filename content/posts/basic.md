@@ -334,7 +334,7 @@ class Rabbit extends Animal {}
 
 -   Object.is
 
-    SameValue 算法
+-   SameValue 算法
 
     判断两个值是否一样，跟 `=` 一致，除了(NaN, +0, -0) 的比较
     ```js
@@ -353,18 +353,18 @@ class Rabbit extends Animal {}
 
     ```
 
-    -   SameValueZero
-        ```js
+-   SameValueZero
+    ```js
 
-        function sameValueZero(x, y) {
-          if (typeof x === "number" && typeof y === "number") {
-            // x and y are equal (may be -0 and 0) or they are both NaN
-            return x === y || (x !== x && y !== y);
-          }
-          return x === y;
-        }
+    function sameValueZero(x, y) {
+      if (typeof x === "number" && typeof y === "number") {
+        // x and y are equal (may be -0 and 0) or they are both NaN
+        return x === y || (x !== x && y !== y);
+      }
+      return x === y;
+    }
 
-        ```
+    ```
 
 
 ## JS 语句 {#js-语句}
