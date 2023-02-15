@@ -370,6 +370,29 @@ func.apply(this, ['eat', 'bananas']) vs. func.call(this, 'eat', 'bananas')
 
 #+end_src
 
+* 垃圾收集[fn:2]
 
+** 标记清除
+
+Reachability:
+
+当对象有指向其的引用，当前对象是不是能垃圾回收的
+
+roots:
+- 当前正在执行的函数，其局部变量和参数
+- 当前调用链上的其他函数
+- 全局变量
+
+ #+begin_quote
+Any other value is considered reachable if it’s reachable from a root by a reference or by a chain of references.
+ #+end_quote
+
+
+从 roots 开始打标记，沿 root 的引用链继续打标记，没有被打上标记的对象会被 GC 掉
+
+引擎层面的优化
+
+** 引用计数
 
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
+[fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]
