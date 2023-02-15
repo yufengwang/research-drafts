@@ -125,7 +125,7 @@ proxy 是一个特殊的对象，(a transparent wrapper around target)
 
 internal method
 
-引擎层面的实现，仅在 specification 中使用，无法在 js 中直接调用
+引擎层面的实现，仅在 specification 中使用，无法在 js 中直接调用的方法
 
 proxy trap
 

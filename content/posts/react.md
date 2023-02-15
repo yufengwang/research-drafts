@@ -546,6 +546,16 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 -   非阻塞式渲染
 -   基于优先级更新
 -   后台预渲染
+-   &lt;Offscreen /&gt;
+
+
+### Suspense {#suspense}
+
+在某些(Next.js, Remix)框架中，可以用 suspense 做数据获取
+
+React18 之前，Suspense 仅可以跟 React.lazy 配合使用做代码分割
+
+> the goal is to extend support for Suspense so that eventually, the same declarative Suspense fallback can handle any asynchronous operation (loading code, data, images, etc)
 
 
 ### Automatic batching {#automatic-batching}
