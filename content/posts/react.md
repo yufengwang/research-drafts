@@ -536,6 +536,9 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 在 workLoop 的作用下，React 自 HostRoot 开始遍历所有 Fiber 节点
 
 
+## Server Components {#server-components}
+
+
 ## React 18 {#react-18}
 
 
