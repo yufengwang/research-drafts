@@ -312,6 +312,10 @@ Js 引擎层面的隐藏属性，决定继承关系，用户侧代码不可直�
 
 ## Class {#class}
 
+```js
+class Rabbit extends Animal {}
+```
+
 {{< figure src="/ox-hugo/animal-rabbit-static.svg" >}}
 
 

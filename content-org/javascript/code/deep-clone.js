@@ -14,9 +14,8 @@ function deepClone(obj) {
   return result;
 }
 
-module.exports = deepClone;
 
-export function klona(val) {
+function klona(val) {
   var k, out, tmp;
 
   if (Array.isArray(val)) {
@@ -45,3 +44,5 @@ export function klona(val) {
 
   return val;
 }
+
+module.exports = deepClone;

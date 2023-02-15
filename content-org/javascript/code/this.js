@@ -4,7 +4,6 @@ const obj = {
         return this.name
     },
     fn1: () => {
-
         console.log(this === globalThis)
     }
 }
