@@ -6,6 +6,11 @@ tags = ["react"]
 draft = false
 +++
 
+## Philosophy {#philosophy}
+
+告诉我你要（展示）什么，剩下的由框架去做
+
+
 ## Concepts {#concepts}
 
 
@@ -558,7 +563,7 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 React18 之前，Suspense 仅可以跟 React.lazy 配合使用做代码分割
 
-> the goal is to extend support for Suspense so that eventually, the same declarative Suspense fallback can handle any asynchronous operation (loading code, data, images, etc)
+> the goal is to extend support for Suspense so that eventually, the same declarative Suspense fallback can handle any asynchronous operation (loading code, data, images, etc)[^fn:3]
 
 
 ### Automatic batching {#automatic-batching}
@@ -567,3 +572,4 @@ React18 之前，Suspense 仅可以跟 React.lazy 配合使用做代码分割
 
 [^fn:1]: [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
 [^fn:2]: [inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react)
+[^fn:3]: [React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)

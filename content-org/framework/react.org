@@ -2,6 +2,10 @@
 #+DATE:<2022-12-13 Tue 11:32>
 #+FILETAGS: react
 
+* Philosophy
+
+告诉我你要（展示）什么，剩下的由框架去做
+
 * Concepts
 
 ** Element
@@ -519,7 +523,7 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 React18 之前，Suspense 仅可以跟 React.lazy 配合使用做代码分割
 
 #+BEGIN_QUOTE
-the goal is to extend support for Suspense so that eventually, the same declarative Suspense fallback can handle any asynchronous operation (loading code, data, images, etc)
+the goal is to extend support for Suspense so that eventually, the same declarative Suspense fallback can handle any asynchronous operation (loading code, data, images, etc)[fn:3]
 #+END_QUOTE
 
 ** Automatic batching
@@ -528,3 +532,4 @@ the goal is to extend support for Suspense so that eventually, the same declarat
 
 [fn:1] [[https://en.wikipedia.org/wiki/Fiber_(computer_science)][Fiber]]
 [fn:2] [[https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react][inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react]]
+[fn:3] [[https://reactjs.org/blog/2022/03/29/react-v18.html][React v18.0]]
