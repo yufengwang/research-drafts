@@ -420,5 +420,8 @@ roots:
 
 ### 引用计数 {#引用计数}
 
+
+### generational garbage collection {#generational-garbage-collection}
+
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)

@@ -1,15 +1,14 @@
-#+TITLE: 性能优化
+#+TITLE: 前端性能优化
 #+DATE:<2023-02-15 Wed 23:28>
 #+FILETAGS: fe
 
 待补充...
-* 性能优化
 
-** webpack 性能优化
+* Webpack 性能优化
 
-** react 性能优化
+* React 性能优化
 
 1. shouldComponentUpdate，不需要更新时，return false，避免 re-render
 2. 使用 React.PureComponent，自动比较 props 和 state
 
-** 其他层面性能优化
+* 其他层面性能优化

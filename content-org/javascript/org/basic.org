@@ -394,5 +394,7 @@ Any other value is considered reachable if it’s reachable from a root by a ref
 
 ** 引用计数
 
+** generational garbage collection
+
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
 [fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]

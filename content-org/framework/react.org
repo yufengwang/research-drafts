@@ -474,11 +474,13 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 ** StrictMode
 
-给开发模式启用额外的行为和 warning ，仅用于其内部子树
+给开发模式启用额外的行为和 warning，仅用于其内部子树
 
 - 开发模式下会渲染两次，找到 impure 的渲染
 - 开发模式下会跑两次 effect
 - 对弃用的 api 使用做检测
+
+** ErrorBoundary
 
 * Context
 
