@@ -571,7 +571,27 @@ React18 之前，Suspense 仅可以跟 React.lazy 配合使用做代码分割
 
 ### Automatic batching {#automatic-batching}
 
-自动批处理
+自动批处理，把多次状态更新在一次 rerender 里处理掉，用于提高性能
+
+在没有自动批处理的时候，只有事件监听器里的状态更新会被批处理
+
+```js
+// Before: only React events were batched.
+setTimeout(() => {
+  setCount(c => c + 1);
+  setFlag(f => !f);
+  // React will render twice, once for each state update (no batching)
+}, 1000);
+
+// After: updates inside of timeouts, promises,
+// native event handlers or any other event are batched.
+setTimeout(() => {
+  setCount(c => c + 1);
+  setFlag(f => !f);
+  // React will only re-render once at the end (that's batching!)
+}, 1000);
+
+```
 
 [^fn:1]: [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
 [^fn:2]: [inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react)
