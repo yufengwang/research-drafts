@@ -54,7 +54,7 @@ dom 元素在 z 方向的堆叠顺序问题
 
 z-index:
 
-作用于非 position: static 的元素
+作用于非 position: static 的元素，也就是说值为 relative, absolute, fixed, sticky
 
 在没有 z-index 时，元素的堆叠顺序为：
 
