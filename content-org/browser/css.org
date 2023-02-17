@@ -42,12 +42,24 @@ dom 元素在 z 方向的堆叠顺序问题
 - Root 元素 html
 - position 值非 static， z-index 非 auto 元素
 - opacity 非 1
-- transform 非 none
+- filter, backdrop-filter,perspective, clip-path,mask / mask-image / mask-bordertransform 值非 none
+- flex 容器的子元素，z-index 值非 auto
+- grid 容器的子元素，z-index 值非 auto
 - 其他...
 
 z-index:
 
 作用于非 position: static 的元素
+
+在没有 z-index 时，元素的堆叠顺序为：
+
+1. root 元素的 背景和边框
+2. 元素的没有定位的子元素，按其在 html 中的出现顺序
+3. Floating elements.
+4. Descendant non-positioned inline elements.
+5. 定位的子元素，按其在 html 中的出现顺序
+
+浮动元素层级在非定位元素和定位元素之间
 
 
 
