@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const e = React.createElement;
 const createRoot =ReactDOM.createRoot
@@ -30,31 +30,42 @@ class LikeButton extends React.PureComponent {
   }
 }
 
+// function Counter() {
+//   const [state, setState] = React.useState(1);
+//   return (
+//     <div>
+//       <h1 onClick={() => setState((c) => c + 1)}>
+//         <span>Count:</span>
+//         <b>{state}</b>
+//       </h1>
+//       <h2>hello</h2>
+//     </div>
+//   );
+// }
+
+
 function Counter() {
-  const [state, setState] = React.useState(2);
-  const [str, setString] = React.useState('foo');
-
-
-  function handleClick() {
-    setState(state + 1);
-    setString('bar')
-  }
-
-  return e(
-    "h1",
-    {
-      onClick: handleClick,
-    },
-    "Count is: ",
-    state,
-    " " + str
+  const [state, setState] = React.useState(1);
+  return /*#__PURE__*/ React.createElement(
+    'div',
+    null,
+    /*#__PURE__*/ React.createElement(
+      'h1',
+      {
+        onClick: () => setState((c) => c + 1),
+      },
+      /*#__PURE__*/ React.createElement('span', null, 'Count:'),
+      /*#__PURE__*/ React.createElement('b', null, state)
+    ),
+    /*#__PURE__*/ React.createElement('h2', null, 'hello')
   );
 }
+const element = /*#__PURE__*/ React.createElement(Counter, null);
 
 // const domContainer = document.querySelector("#root");
 const container = document.getElementById("root");
 // const container = document.getElementById('app');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(e(Counter));
+root.render(element);
 // ReactDOM.hydrate(e(Counter), root);
 // ReactDOM.render(e(Counter), root);

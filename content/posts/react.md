@@ -92,6 +92,19 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
     |- scheduler // 调度器
 ```
 
+比较重要的几个函数
+
+```js
+function workLoopConcurrent() {
+    // Perform work until Scheduler asks us to yield
+    while (workInProgress !== null && !shouldYield()) {
+      // $FlowFixMe[incompatible-call] found when upgrading Flow
+      performUnitOfWork(workInProgress);
+    }
+  }
+
+```
+
 
 ## Reconciler {#reconciler}
 
@@ -523,6 +536,8 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 
 ## Lane {#lane}
+
+总共有 31 条车道
 
 
 ## 渲染优化 {#渲染优化}

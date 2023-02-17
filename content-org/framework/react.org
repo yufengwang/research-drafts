@@ -85,6 +85,20 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
     |- scheduler // 调度器
 #+end_src
 
+比较重要的几个函数
+
+#+begin_src js
+function workLoopConcurrent() {
+    // Perform work until Scheduler asks us to yield
+    while (workInProgress !== null && !shouldYield()) {
+      // $FlowFixMe[incompatible-call] found when upgrading Flow
+      performUnitOfWork(workInProgress);
+    }
+  }
+
+#+end_src
+
+
 * Reconciler
 
 Stack 改成 Fiber 本质上是递归改循环, Stack 会占用 Call Stack，阻塞 Main Thread，从而使其他高优先级的任务得不到执行
@@ -485,6 +499,8 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 * Context
 
 * Lane
+
+总共有 31 条车道
 
 * 渲染优化
 
