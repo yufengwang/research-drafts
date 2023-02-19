@@ -78,3 +78,5 @@ WebP 像 JPEG 一样对细节丰富的图片信手拈来，像 PNG 一样支持�
 
 
 ## JavaScript 优化 {#javascript-优化}
+
+-   使用位操作
