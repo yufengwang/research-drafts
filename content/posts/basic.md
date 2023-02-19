@@ -385,6 +385,9 @@ class Rabbit extends Animal {}
 自有可枚举属性
 
 
+### with {#with}
+
+
 ## 常用 API {#常用-api}
 
 
@@ -450,6 +453,11 @@ Universal Module Definition
     语言层面的规范
 
 CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 import 机制则是异步的
+
+
+## 严格模式 {#严格模式}
+
+-   with 不能用
 
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)

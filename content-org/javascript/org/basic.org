@@ -361,6 +361,8 @@ function sameValueZero(x, y) {
 ** Object.keys
 
 自有可枚举属性
+** with
+
 
 * 常用 API
 
@@ -418,7 +420,11 @@ Universal Module Definition
 
   语言层面的规范
 
-
 CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 import 机制则是异步的
+
+* 严格模式
+
+-  with 不能用
+
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
 [fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]
