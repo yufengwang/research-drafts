@@ -6,10 +6,11 @@ tags = ["node"]
 draft = false
 +++
 
-待补充...
-
-
 ## 中间件 {#中间件}
+
+洋葱圈模型
+
+{{< figure src="/ox-hugo/koa.png" >}}
 
 
 ## 异常处理 {#异常处理}

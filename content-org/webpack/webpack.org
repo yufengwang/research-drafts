@@ -12,7 +12,15 @@
 
 * Plugin
 
-SplitChunksPlugin
+- SplitChunksPlugin
+- DllPlugin
+  拆包，用于提高构建速度
+ #+begin_quote
+ The term "DLL" stands for Dynamic-link library which was originally introduced by Microsoft
+ #+end_quote
+
+- DllReferencePlugin
+
 
 * 代码分割
 
