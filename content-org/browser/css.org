@@ -55,8 +55,8 @@ z-index:
 
 1. root 元素的 背景和边框
 2. 元素的没有定位的子元素，按其在 html 中的出现顺序
-3. Floating elements.
-4. Descendant non-positioned inline elements.
+3. 浮动元素
+4. 没定位的内联子元素
 5. 定位的子元素，按其在 html 中的出现顺序
 
 浮动元素层级在非定位元素和定位元素之间
