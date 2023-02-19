@@ -423,5 +423,33 @@ roots:
 
 ### generational garbage collection {#generational-garbage-collection}
 
+
+## 模块化 {#模块化}
+
+-   IIFE
+
+-   AMD
+
+Asynchronous Module Definition
+依赖前置、提前执行
+
+-   CMD
+
+Common Module Definition
+依赖就近、延迟执行
+
+-   UMD
+
+Universal Module Definition
+
+-   CommonJS
+    缩写为 CJS, Node.js 的模块规范
+
+-   ESM
+
+    语言层面的规范
+
+CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 import 机制则是异步的
+
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)

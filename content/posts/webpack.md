@@ -13,6 +13,14 @@ draft = false
 3.  生成 js bundle，清单文件
 
 
+## Loader {#loader}
+
+
+## Plugin {#plugin}
+
+SplitChunksPlugin
+
+
 ## 代码分割 {#代码分割}
 
 基于入口的代码分割

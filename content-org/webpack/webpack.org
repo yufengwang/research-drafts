@@ -8,6 +8,11 @@
 2. 处理依赖图里的所有资源
 3. 生成 js bundle，清单文件
 
+* Loader
+
+* Plugin
+SplitChunksPlugin
+
 * 代码分割
 
 基于入口的代码分割
