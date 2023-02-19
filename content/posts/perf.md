@@ -16,14 +16,25 @@ draft = false
 window.performance， 可编程的性能 api
 
 
-### 指标 {#指标}
+## 以用户为中心的性能指标 {#以用户为中心的性能指标}
 
 -   Load
 -   DCL
 -   FP
+    First Paint 首次绘制
 -   FCP
--   FMP
+    First contentful paint 首次内容绘制
 -   LCP
+    Largest contentful paint 最大内容绘制
+-   FMP
+-   FID
+    First input delay 首次输入延迟
+-   TTI
+    Time to Interactive 可交互时间
+-   TBT
+    Total blocking time 总阻塞时间
+-   CLS
+    Cumulative layout shift 累积布局偏移
 
 
 ## 网络层面优化 {#网络层面优化}
