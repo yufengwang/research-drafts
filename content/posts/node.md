@@ -33,7 +33,7 @@ draft = false
 
     当 Node.js 中没有任务处理时，它就会阻塞在这里，有事件发生后，就会被唤醒继续执行
 
-<./node-arch>
+{{< figure src="/ox-hugo/node-arch.png" >}}
 
 
 ## Event Loop {#event-loop}
