@@ -28,6 +28,7 @@ e.g.
 ADD COLUMN `name` VARCHAR(191) NOT NULL
 #+end_src
 
+
 * Foreign key
 
 在 Relation 的一侧存储.
