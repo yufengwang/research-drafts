@@ -43,3 +43,35 @@ draft = false
 
 
 ## 配置优化 {#配置优化}
+
+
+## 常见资源处理 {#常见资源处理}
+
+-   Typescript
+
+    babel-loader 加上 @babel/preset-typescript 规则集
+
+    缺点： 无类型校验
+    ```js
+    module.exports = {
+      /* ... */
+      module: {
+        rules: [
+          {
+            test: /\.ts$/,
+            use: [
+              {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-typescript'],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+    ```
+
+    -   CSS
+        css-loader 让 Webpack 能够正确理解 CSS 代码、分析资源依赖；style-loader、mini-css-extract-plugin 则通过适当方式将 CSS 插入到页面，对页面样式产生影响
