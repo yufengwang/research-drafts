@@ -9,3 +9,5 @@
 * Shadow dom
 
 * Dom api
+
+- document.querySelectorAll(selectors)

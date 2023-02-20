@@ -20,11 +20,18 @@ draft = false
 
 -   SplitChunksPlugin
 -   DllPlugin
+
     拆包，用于提高构建速度
+
+    创建一个 manifest.json 文件，被 DllReferencePlugin 使用，作于依赖映射
 
     > The term "DLL" stands for Dynamic-link library which was originally introduced by Microsoft
 
 -   DllReferencePlugin
+
+    引用 dll 包， require 预构建的依赖
+
+    DllReferencePlugin and DllPlugin 在不同的 webpack 配置中使用
 
 
 ## 代码分割 {#代码分割}

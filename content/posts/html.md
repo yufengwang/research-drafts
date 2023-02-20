@@ -16,3 +16,5 @@ draft = false
 
 
 ## Dom api {#dom-api}
+
+-   document.querySelectorAll(selectors)
