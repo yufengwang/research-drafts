@@ -56,7 +56,7 @@ providers 的子集，由当前 module 提供，导出给其他 module 使用
 
 * Interceptor
 
-受Aspect Oriented Programming (AOP)启发，有以下作用
+受 Aspect Oriented Programming (AOP) 启发，有以下作用
 
 1. 在方法处理前后执行额外的处理逻辑
 2. 处理函数返回的结果
