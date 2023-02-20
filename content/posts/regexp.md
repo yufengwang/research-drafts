@@ -86,6 +86,8 @@ draft = false
 
     搜索替换，比较强大
 
+    当第一个参数是字符串时，只会替换第一个匹配结果，用正则加 g flag，可以全量替换
+
 -   str.replaceAll(str|regexp, str|func)
 
     全量搜索替换
