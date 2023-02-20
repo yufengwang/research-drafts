@@ -84,7 +84,7 @@ draft = false
 
 -   str.replace(str|regexp, str|func)
 
-    搜索匹配，比较强大
+    搜索替换，比较强大
 
 -   str.replaceAll(str|regexp, str|func)
 
