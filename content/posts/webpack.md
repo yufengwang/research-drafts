@@ -75,3 +75,10 @@ draft = false
 
     -   CSS
         css-loader 让 Webpack 能够正确理解 CSS 代码、分析资源依赖；style-loader、mini-css-extract-plugin 则通过适当方式将 CSS 插入到页面，对页面样式产生影响
+
+
+## external {#external}
+
+Webpack 编译过程会跳过 externals 所声明的库，并假定消费场景已经安装了相关依赖，常用于 NPM 库开发场景；在 Web 应用场景下则常被用于优化性能。
+
+例如，我们可以将 React 声明为外部依赖，并在页面中通过 &lt;script&gt; 标签方式引入 React 库，之后 Webpack 就可以跳过 React 代码，提升编译性能。
