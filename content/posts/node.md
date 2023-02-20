@@ -1,11 +1,47 @@
 +++
 title = "Node.js"
 author = ["wenhu"]
+date = 2023-02-17T15:03:00+08:00
 tags = ["node"]
 draft = false
 +++
 
-\#+DATE<span class="timestamp-wrapper"><span class="timestamp">&lt;2023-02-17 Fri 15:03&gt;</span></span>:
+## Concepts {#concepts}
+
+-   JS 引擎解析和执行 JS 代码，如 v8
+
+-   JS 运行时
+    JS 运行时可以理解为 JS 本身 （下图左侧） + 一些拓展的能力 （下图右侧） 所组成的一个运行环境
+
+-   Libuv
+    跨平台的异步 IO 库
+
+    它主要是封装各个操作系统的一些 API，提供网络还有文件进程这些功能
 
 
 ## Node 架构 {#node-架构}
+
+单线程 + 事件驱动 + 非阻塞 IO
+
+如下图
+
+{{< figure src="/ox-hugo/node.png" >}}
+
+-   事件驱动
+
+    事件驱动是操作系统提供的订阅发布机制，由操作系统的 IO 多路复用模块实现，不同的操作系统中提供的 API 不一样，比如 Linux 的 epoll、MacOs 的 kqueue、windows 的 IOCP
+
+    当 Node.js 中没有任务处理时，它就会阻塞在这里，有事件发生后，就会被唤醒继续执行
+
+<./node-arch>
+
+
+## Event Loop {#event-loop}
+
+Node.js 的任务分为宏任务和微任务，宏任务包括定时器、网络 IO、文件 IO，微任务包括 Promise、process.nextTick。另外，任务还有优先级的属性。具体来说，微任务比宏任务优先级高，每次执行完一个宏任务，就会处理所有的微任务，再执行下一个宏任务
+
+Node.js 虽然是跑在多线程上面的，但是所有的 JS 代码都是跑在单个线程里的
+
+处理过程
+
+{{< figure src="/ox-hugo/evloop.png" >}}
