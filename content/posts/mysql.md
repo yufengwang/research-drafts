@@ -31,7 +31,9 @@ Mysql 表名 数据库名大小写不敏感，在存储和查找时都会被转�
 
 e.g.
 
-ADD COLUMN \`name\` VARCHAR(191) NOT NULL
+```sql
+ADD COLUMN `name` VARCHAR(191) NOT NULL
+```
 
 
 ## Foreign key {#foreign-key}
