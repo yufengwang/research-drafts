@@ -2,7 +2,8 @@
 #+DATE: <2023-02-17 五 15:03>
 #+FILETAGS: node
 
-* Concepts
+* Concepts[fn:1]
+
 - JS 引擎
   解析和执行 JS 代码，如 v8
 
@@ -13,8 +14,6 @@
   跨平台的异步 IO 库
 
   它主要是封装各个操作系统的一些 API，提供网络还有文件进程这些功能
-
-
 
 * Node 架构
 
@@ -44,3 +43,5 @@ Node.js 虽然是跑在多线程上面的，但是所有的 JS 代码都是跑�
 处理过程
 
 [[file:./evloop.png]]
+
+[fn:1][[https://juejin.cn/book/7171733571638738952/section/7174421241225281566][深入剖析 Node.js 底层原理]]

@@ -6,7 +6,7 @@ tags = ["node"]
 draft = false
 +++
 
-## Concepts {#concepts}
+## Concepts[^fn:1] {#concepts}
 
 -   JS 引擎解析和执行 JS 代码，如 v8
 
@@ -45,3 +45,5 @@ Node.js 虽然是跑在多线程上面的，但是所有的 JS 代码都是跑�
 处理过程
 
 {{< figure src="/ox-hugo/evloop.png" >}}
+
+[^fn:1]: [深入剖析 Node.js 底层原理](https://juejin.cn/book/7171733571638738952/section/7174421241225281566)
