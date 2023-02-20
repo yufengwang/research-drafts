@@ -34,7 +34,31 @@ draft = false
 | `?`   | 0或1，{0, 1}            |
 
 
-## API {#api}
+## 创建正则 {#创建正则}
+
+-   new regexp
+-   字面量
 
 
-### exec {#exec}
+## 相关 API {#相关-api}
+
+-   regexp.test(str)
+
+    在字符串里找匹配，返回布尔值
+
+    带 g flag 的话会记住 lastIndex
+    ```js
+      let regexp = /javascript/g;  // (regexp just created: regexp.lastIndex=0)
+
+      alert( regexp.test("javascript") ); // true (regexp.lastIndex=10 now)
+      alert( regexp.test("javascript") ); // false
+    ```
+
+<!--listend-->
+
+-   regexp.exec(str)
+-   str.match(regexp)
+-   str.matchAll(regexp)
+-   str.split(regexp|substr, limit)
+-   str.search(regexp)
+-   str.replace(str|regexp, str|func)

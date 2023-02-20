@@ -366,10 +366,10 @@ function sameValueZero(x, y) {
 
 * 常用 API
 
-** call && apply
+** func.call && func.apply
 #+begin_src js
-func.apply(this, ['eat', 'bananas']) vs. func.call(this, 'eat', 'bananas')
-
+func.apply(this, ['eat', 'bananas'])
+func.call(this, 'eat', 'bananas')
 #+end_src
 
 ** isNaN && Number.isNaN
@@ -427,6 +427,10 @@ CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 impo
 * 严格模式
 
 -  with 不能用
+
+* 操作符
+
+* 常用工具函数
 
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
 [fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]

@@ -391,11 +391,11 @@ class Rabbit extends Animal {}
 ## 常用 API {#常用-api}
 
 
-### call &amp;&amp; apply {#call-and-and-apply}
+### func.call &amp;&amp; func.apply {#func-dot-call-and-and-func-dot-apply}
 
 ```js
-func.apply(this, ['eat', 'bananas']) vs. func.call(this, 'eat', 'bananas')
-
+func.apply(this, ['eat', 'bananas'])
+func.call(this, 'eat', 'bananas')
 ```
 
 
@@ -461,6 +461,12 @@ CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 impo
 ## 严格模式 {#严格模式}
 
 -   with 不能用
+
+
+## 操作符 {#操作符}
+
+
+## 常用工具函数 {#常用工具函数}
 
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)
