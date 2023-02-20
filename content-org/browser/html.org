@@ -7,3 +7,5 @@
 * Web components
 
 * Shadow dom
+
+* Dom api
