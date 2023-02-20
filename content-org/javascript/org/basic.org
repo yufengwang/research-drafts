@@ -366,11 +366,13 @@ function sameValueZero(x, y) {
 
 * 常用 API
 
-** call & apply
+** call && apply
 #+begin_src js
 func.apply(this, ['eat', 'bananas']) vs. func.call(this, 'eat', 'bananas')
 
 #+end_src
+
+** isNaN && Number.isNaN
 
 * 垃圾收集[fn:2]
 

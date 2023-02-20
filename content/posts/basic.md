@@ -391,12 +391,15 @@ class Rabbit extends Animal {}
 ## 常用 API {#常用-api}
 
 
-### call &amp; apply {#call-and-apply}
+### call &amp;&amp; apply {#call-and-and-apply}
 
 ```js
 func.apply(this, ['eat', 'bananas']) vs. func.call(this, 'eat', 'bananas')
 
 ```
+
+
+### isNaN &amp;&amp; Number.isNaN {#isnan-and-and-number-dot-isnan}
 
 
 ## 垃圾收集[^fn:2] {#垃圾收集}

@@ -56,14 +56,33 @@ providers 的子集，由当前 module 提供，导出给其他 module 使用
 
 * Interceptor
 
+受Aspect Oriented Programming (AOP)启发，有以下作用
+
+1. 在方法处理前后执行额外的处理逻辑
+2. 处理函数返回的结果
+3. 处理函数抛出来的异常
+4. 拓展函数基础功能
+5. 覆盖函数的结果，如缓存
+
+
 * Guards
 
-单一职责：控制请求是否会被对应的 route handle 处理
+单一职责：控制请求是否会被对应的 route handle 处理，基于权限，角色等判断
 
 * Middleware
+
+在路由处理器调用前被调的函数，能访问 request, response 对象，和下一个中间件函数 next
 
 缺点： 不知道执行 next() 后调用哪个 handler
 
 * Pipes
 
+两个使用场景
+
+1. 转换：对输入数据的转换，变成应用需要的格式
+
+2. 校验：对输入数据的合法性校验，不符合规则抛异常
+
 * Exception filters
+
+未被应用层处理的异常，会被这一层捕获，并给出对应的响应
