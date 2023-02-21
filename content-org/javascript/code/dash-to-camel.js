@@ -36,7 +36,7 @@ const testData = {
 
 const parseObj = (json) => {
     const toCamel = (str) => {
-        return str.replace(/_(\w)/g, function (match, p1) {
+        return str.replace(/_([a-z])/g, function (match, p1) {
             return p1.toUpperCase()
         })
     }
