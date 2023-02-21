@@ -5,7 +5,7 @@ const assert = function (condition, msg = "") {
 };
 
 // ## 问题2 ================
-// 对象全等
+// 对象深比较
 const foo1 = {
   b: "1",
   a: 1,
@@ -243,13 +243,14 @@ const parseObj = (json) => {
 
 console.log(parseObj(testData), testData)
 
+// 实现 bind
 function customFunction(fn, obj) {
   return function (...args) {
     fn.call(obj, ...args);
   };
 }
 
-const obj = {
+const bar = {
   name: "foo",
 };
 
@@ -258,11 +259,11 @@ function foo() {
   return this.name;
 }
 
-const bindFunction = customFunction(foo, obj);
+const bindFunction = customFunction(foo, bar);
 
 bindFunction();
 
-
+// 实现 Object.create
 function myCreate(proto) {
   const obj = {};
   obj.__proto__ = proto;
@@ -281,7 +282,7 @@ function dashToCamel(str) {
     return str
 }
 
-
+// 数组去重
 const arr = ["1", "1", "2", "3"];
 
 function deDuplicate(arr) {
@@ -291,7 +292,7 @@ function deDuplicate(arr) {
 const res = deDuplicate(arr);
 console.log(res);
 
-
+// JSON 类型对象深 copy
 function deepClone(obj) {
   // Process null
   if (obj === null) {
@@ -381,7 +382,6 @@ for (var i = 0; i < 5; i++) {
 }
 
 // 继承
-
 function Shape() {
   this.x = 0;
   this.y = 0;
@@ -397,12 +397,10 @@ Rectangle.prototype = Object.create(Shape.prototype)
 Rectangle.prototype.constructor = Rectangle
 
 Object.setPrototypeOf(Rectangle, Shape)
-console.log(Rectangle.foo)
-
 
 const instance = new Rectangle(100);
 
-
+// 数组拍平
 function flatten(arr) {
   return arr.reduce(function (acc, cur) {
     return acc.concat(Array.isArray(cur) ? flatten(cur) : cur);
@@ -440,7 +438,8 @@ function formatNumber(number) {
   return res;
 }
 
-export const gen = () => {
+// generator
+ const gen = () => {
   let val = 0;
   return {
     next: () => {
@@ -456,6 +455,8 @@ console.log(g.next());
 console.log(g.next());
 console.log(g.next());
 console.log(g.next());
+
+// 实现 instanceof
 function myInstanceOf(obj, proto) {
   let proto1 = obj.__proto__;
   const proto2 = proto.prototype;
@@ -523,6 +524,7 @@ const obj2 = { a: 10, b: { x: 100, y: 200 } };
 console.log(isEqual(obj1, obj2));
 console.log(isEqual(NaN, NaN));
 
+// 实现 new
 function myNew(func, ...args) {
   const obj = {};
   obj.__proto__ = func.prototype;
@@ -564,6 +566,7 @@ function sumBigNumber(a, b) {
   return res.replace(/^0+/, "");
 }
 
+// 实现模板渲染引擎
 let template = "我是{{name}}，年龄{{age}}，性别{{sex}}";
 let data = {
   name: "姓名",
@@ -584,7 +587,7 @@ function render(template, data) {
   }
   return template;
 }
-
+// 节流
 function throttle(fn, time) {
   let timer;
   return function () {
@@ -598,7 +601,7 @@ function throttle(fn, time) {
     timer = setTimeout(func, time);
   };
 }
-
+// 防抖
 function debounce(fn, time) {
   let timeout;
   return function () {
@@ -607,7 +610,7 @@ function debounce(fn, time) {
     timeout = setTimeout(func, time);
   };
 }
-
+// 交通信号灯
 class TrafficLight {
   constructor() {
     this.states = [
