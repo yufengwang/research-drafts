@@ -2,40 +2,6 @@ function isObject(obj) {
   return typeof obj === "object" && obj !== null;
 }
 
-function isNaN1(obj) {
-  return typeof obj === "number" && isNaN(obj);
-}
-
-function isEqual(obj1, obj2) {
-  // NaN 跟 NaN 是相等的 虽然 NaN === NaN return false
-  if (isNaN1(obj1) && isNaN1(obj2)) {
-    return true;
-  }
-  // 任意一个参数为值类型则直接用 === 比较
-  if (!isObject(obj1) || !isObject(obj2)) {
-    // 值类型
-    return obj1 === obj2;
-  }
-  // 两个都是对象或数组，而且不相等
-  const obj1key = Object.keys(obj1);
-  const obj2key = Object.keys(obj2);
-
-  // 对象属性长度不一致，直接return false
-  if (obj1key.length !== obj2key.length) {
-    return false;
-  }
-
-  // 遍历对象1，判断对象2跟对象1的某个key的值是否有不等的，有则return出false。
-  for (let key of obj1key) {
-    const res = isEqual(obj1[key], obj2[key]);
-    if (!res) {
-      return false;
-    }
-  }
-  // 遍历结束，没有找到值不等的属性，则俩对象相等。
-  return true;
-}
-
 const foo1 = {
   b: "1",
   a: 1,
@@ -73,8 +39,34 @@ const foo2 = {
 const obj1 = { a: 10, b: { x: 100, y: 200 } };
 const obj2 = { a: 10, b: { x: 100, y: 200 } };
 
-console.log(isEqual(foo1, foo2));
-console.log(isEqual(obj1, obj2));
-console.log(isEqual(NaN, NaN));
+const isObj = (x) => typeof x === 'object' && x !== null
 
-module.exports = isEqual;
+// 判断对象全等
+// false first
+const deepEqual = (foo, bar) => {
+  if (foo === bar) {
+    return true
+  } else if (isObj(foo) && isObj(bar)) {
+    // key 数量是否一致
+    if (Object.keys(foo).length !== Object.keys(bar).length) {
+      return false
+    }
+    for (const key of Object.keys(foo)) {
+      if (Object.hasOwn(bar, key)) {
+        return deepEqual(foo[key], bar[key])
+      } else {
+        return false
+      }
+    }
+  } else {
+    // 处理其他场景
+    // 当 foo, bar 均为 NaN 时，返回 true，其他所有情况返回 false
+    // true if both NaN, false otherwise
+    return foo !== foo && bar !== bar
+  }
+}
+
+
+
+
+export default {}

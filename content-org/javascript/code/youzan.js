@@ -268,3 +268,43 @@ const parseObj = (json) => {
 
 }
 
+function timeBitmapToRanges(bitmap) {
+  const ranges = []
+  let i = 0;
+  while (i < bitmap.length) {
+      // 找 0 
+      if (bitmap[i] === '0') {
+          i++;
+          continue
+      }
+      let range = { start: i, end: i };
+      // 找 1
+      while (bitmap[i] === '1') {
+          range.end = i;
+          i++;
+      }
+      ranges.push(range)
+  }
+  /**
+  * 0 => 00:00 ~ 00:30
+  * 1 => 00:30 ~ 01:00
+  * 2 => 01:00 ~ 01:30
+  * 3 => 01:30 ~ 02:00
+  * 4 => 02:00 ~ 02:30
+  * 找规律，通过数字格式化成字符串
+  */
+  const format = (range) => {
+      const { start, end } = range
+      const isOdd = num => num % 2 === 1
+      const hour = Math.floor(start / 2)
+      const endHour = Math.ceil(end / 2)
+      const time = `${hour < 10 ? '0' : ''}${hour}` + ':' + `${isOdd(hour) ? '30' : '00'}`
+      const time1 = `${endHour < 10 ? '0' : ''}${endHour}` + ':' + `${isOdd(endHour) ? '00' : '30'}`
+      // console.log(time, time1)
+      return `${time}~${time1}`
+  }
+  const res = ranges.map(el => format(el))
+  console.log(ranges, res)
+  return res
+}
+export default  {}

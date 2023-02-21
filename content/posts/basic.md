@@ -370,12 +370,21 @@ class Rabbit extends Animal {}
 ## JS 语句 {#js-语句}
 
 
-### for..in {#for-dot-dot-in}
+### for...in {#for-dot-dot-dot-in}
 
-可枚举属性，包括原型链上的继承属性
+可枚举属性，不包括 symbol 属性，包括原型链上的继承属性
+
+```js
+for (const prop in obj) {
+  if (Object.hasOwn(obj, prop)) {
+    // 自有可枚举属性
+    console.log(`obj.${prop} = ${obj[prop]}`);
+  }
+}
+```
 
 
-### for..of {#for-dot-dot-of}
+### for...of {#for-dot-dot-dot-of}
 
 枚举 iterable
 
@@ -410,6 +419,9 @@ isNaN：
 Number.isNaN:
 
 参数不会转换，当参数为 Number，且为 NaN 时返回 true
+
+
+### Object.hasOwn(obj, prop) {#object-dot-hasown--obj-prop}
 
 
 ## 垃圾收集[^fn:2] {#垃圾收集}
@@ -477,6 +489,11 @@ CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 impo
 
 
 ## 常用工具函数 {#常用工具函数}
+
+
+## 相等性和值比较 {#相等性和值比较}
+
+当且仅当 x 为 NaN 时， x !== x 成立
 
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)

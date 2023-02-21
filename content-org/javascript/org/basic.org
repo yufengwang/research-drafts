@@ -350,17 +350,29 @@ function sameValueZero(x, y) {
 
 * JS 语句
 
-** for..in
+** for...in
 
-可枚举属性，包括原型链上的继承属性
 
-** for..of
+可枚举属性，不包括 symbol 属性，包括原型链上的继承属性
+
+#+begin_src js
+for (const prop in obj) {
+  if (Object.hasOwn(obj, prop)) {
+    // 自有可枚举属性
+    console.log(`obj.${prop} = ${obj[prop]}`);
+  }
+}
+#+end_src
+
+
+** for...of
 
 枚举 iterable
 
 ** Object.keys
 
 自有可枚举属性
+
 ** with
 
 
@@ -384,6 +396,7 @@ Number.isNaN:
 
 参数不会转换，当参数为 Number，且为 NaN 时返回 true
 
+** Object.hasOwn(obj, prop)
 
 
 * 垃圾收集[fn:2]
@@ -443,6 +456,10 @@ CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 impo
 * 操作符
 
 * 常用工具函数
+
+* 相等性和值比较
+
+当且仅当 x 为 NaN 时， x !== x 成立
 
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
 [fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]
