@@ -139,9 +139,8 @@ function getString(startIdx) {
   const start =
     startIdx % 2 === 0
       ? `${startIdx >= 20 ? startIdx / 2 : "0" + startIdx / 2}:00`
-      : `${
-          startIdx - 1 >= 20 ? (startIdx - 1) / 2 : "0" + (startIdx - 1) / 2
-        }:30`;
+      : `${startIdx - 1 >= 20 ? (startIdx - 1) / 2 : "0" + (startIdx - 1) / 2
+      }:30`;
   return start;
 }
 
@@ -150,3 +149,112 @@ console.log(
 );
 
 // console.log(timeBitmapToRanges('110001010101001010000011110000111111111111111111'))
+
+
+/**
+ * ## 问题1
+ * 解析url中的queryString
+ *
+ * 输入：https://www.youzan.com?name=coder&age=20&callback=https%3A%2F%2Fyouzan.com%3Fname%3Dtest&list[]=a&list[]=b&json=%7B%22str%22%3A%22abc%22,%22num%22%3A123%7D
+ * 输出：
+ * {
+ *  name: "coder",
+ *  age: "20",
+ *  callback: "https://youzan.com?name=test",
+ *  list: ["a", "b"],
+ *  json: {
+ *      str: 'abc',
+ *      num: 123
+ *  }
+ * }
+ */
+
+const parseQs = (str) => {
+  // 最终返回的对象
+  const res = {}
+  // 拆原字符串
+  const arr = str.split('?')[1].split('&')
+  // 遍历数组
+  for (let ele of arr) {
+    let arr1 = ele.split('=')
+    // decode 下
+    let val = decodeURIComponent(arr1[1])
+    // 处理值
+    try {
+      val = JSON.parse(val)
+    } catch { }
+    // 处理key
+    if (/\[\]$/.test(arr1[0])) {
+      let key = arr1[0].match(/\w+/)[0]
+
+      if (res[key]) {
+        res[key].push(val)
+      } else {
+        res[key] = [val]
+      }
+
+    } else {
+      res[arr1[0]] = val
+    }
+
+  }
+  return res
+
+}
+let str = 'https://www.youzan.com?name=coder&age=20&callback=https%3A%2F%2Fyouzan.com%3Fname%3Dtest&list[]=a&list[]=b&json=%7B%22str%22%3A%22abc%22,%22num%22%3A123%7D'
+console.log(parseQs(str))
+
+/**
+   * 问题 2
+   * 将一个json数据的所有key从下划线改为驼峰
+   *
+   * @param {object | array} value 待处理对象或数组
+   * @returns {object | array} 处理后的对象或数组
+   */
+
+const testData = {
+  a_bbb: 123,
+  a_g: [1, 2, 3, 4],
+  a_d: {
+    s: 2,
+    s_d: 3,
+  },
+  a_f: [
+    1,
+    2,
+    3,
+    {
+      a_g: 5,
+    },
+  ],
+  a_d_s: 1,
+};
+
+
+const parseObj = (json) => {
+  const toCamel = (str) => {
+    return str.replace(/_(\w)/g, function (match, p1) {
+      return p1.toUpperCase()
+    })
+  }
+  const isPrimtive = (val) => {
+    return typeof val !== 'object'
+  }
+
+  const parse = (obj) => {
+    let res = Array.isArray(obj) ? [] : {}
+    for (let [key, val] of Object.entries(obj)) {
+      if (/_/.test(key)) {
+        res[toCamel(key)] = isPrimtive(val) ? val : parse(val)
+      } else {
+        res[key] = isPrimtive(val) ? val : parse(val)
+      }
+    }
+    return res
+  }
+
+  return parse(json)
+
+}
+
+console.log(parseObj(testData), testData)
