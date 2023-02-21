@@ -13,3 +13,8 @@ draft = false
 
 
 ## Shadow dom {#shadow-dom}
+
+
+## Dom api {#dom-api}
+
+-   document.querySelectorAll(selectors)

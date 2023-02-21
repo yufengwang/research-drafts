@@ -7,3 +7,7 @@
 * Web components
 
 * Shadow dom
+
+* Dom api
+
+- document.querySelectorAll(selectors)

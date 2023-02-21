@@ -57,8 +57,37 @@ draft = false
 <!--listend-->
 
 -   regexp.exec(str)
+
+    不带 g flag, 返回第一个匹配的结果
+
+    带 g flag，返回第一个匹配，然后记录 lastIndex
+
 -   str.match(regexp)
+
+    不带 g flag，返回第一个匹配结果
+
+    带 g flag，返回所有匹配结果
+
+    没有匹配，返回 null
+
 -   str.matchAll(regexp)
+
+    新添加的 api，有兼容性问题
+
 -   str.split(regexp|substr, limit)
+
+    基于正则或子串，拆分字符串
+
 -   str.search(regexp)
+
+    返回第一个匹配的位置索引或 -1
+
 -   str.replace(str|regexp, str|func)
+
+    搜索替换，比较强大
+
+    当第一个参数是字符串时，只会替换第一个匹配结果，用正则加 g flag，可以全量替换
+
+-   str.replaceAll(str|regexp, str|func)
+
+    全量搜索替换

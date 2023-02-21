@@ -6,6 +6,11 @@ tags = ["css"]
 draft = false
 +++
 
+## Cascading {#cascading}
+
+什么是级联？
+
+
 ## BFC {#bfc}
 
 Block Formatting Context&nbsp;[^fn:1]
@@ -80,6 +85,13 @@ display: flex 容器内没有重叠
 
 
 ## 居中 {#居中}
+
+
+## postcss {#postcss}
+
+与 Less/Sass/Stylus 这一类预处理器类似，PostCSS 也能在原生 CSS 基础上增加更多表达力、可维护性、可读性更强的语言特性。两者主要区别在于预处理器通常定义了一套 CSS 之上的超集语言；PostCSS 并没有定义一门新的语言，而是与 @babel/core 类似，只是实现了一套将 CSS 源码解析为 AST 结构，并传入 PostCSS 插件做处理的流程框架，具体功能都由插件实现
+
+> 预处理器之于 CSS，就像 TypeScript 与 JavaScript 的关系；而 PostCSS 之于 CSS，则更像 Babel 与 JavaScript。
 
 [^fn:1]: [Intro_to_formatting_contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
 [^fn:2]: [The_stacking_context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
