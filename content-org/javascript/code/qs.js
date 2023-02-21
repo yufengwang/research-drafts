@@ -64,7 +64,7 @@ console.log(result1);
 
 
 /**
- * ## 问题1
+ * ## 有赞 问题1
  * 解析url中的queryString
  *
  * 输入：https://www.youzan.com?name=coder&age=20&callback=https%3A%2F%2Fyouzan.com%3Fname%3Dtest&list[]=a&list[]=b&json=%7B%22str%22%3A%22abc%22,%22num%22%3A123%7D

@@ -1,4 +1,3 @@
-const s1 = "get-element-by-id"; // getElementById
 function dashToCamel(str) {
     const reg = /-([a-z]{1})/i
     let result
@@ -9,12 +8,8 @@ function dashToCamel(str) {
     return str
 }
 
-const result = dashToCamel(s1)
-
-console.log(result)
-
 /**
-   * 问题 2
+   * 有赞 问题 2
    * 将一个json数据的所有key从下划线改为驼峰
    *
    * @param {object | array} value 待处理对象或数组
