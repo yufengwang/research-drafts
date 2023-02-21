@@ -401,6 +401,16 @@ func.call(this, 'eat', 'bananas')
 
 ### isNaN &amp;&amp; Number.isNaN {#isnan-and-and-number-dot-isnan}
 
+Number.isNaN 比 isNaN 更健壮
+
+isNaN：
+
+参数转换成 Number，转换后为 NaN 时, 返回 true
+
+Number.isNaN:
+
+参数不会转换，当参数为 Number，且为 NaN 时返回 true
+
 
 ## 垃圾收集[^fn:2] {#垃圾收集}
 
