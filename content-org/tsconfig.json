@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["ES2016", "DOM"],
+    "lib": ["ES2016", "DOM", "ES2017"],
     "jsx": "react",
     "noEmit": true,
     "target": "es6",

@@ -1,24 +1,8 @@
-// ## 问题 1 ==============
-// 大数加法
-// 注意js里整型会溢出
-function add(str1, str2) {
-  const res = (Number(str1) + Number(str2)).toString();
-  return res;
-}
-
 const assert = function (condition, msg = "") {
   if (!condition) {
     console.log(msg);
   }
 };
-
-assert(add("123", "321") === "444", "use case 1 fail");
-assert(add("11", "99") === "110", "use case 2 fail");
-assert(add("1233345", "321") === "1233666", "use case 3 fail");
-assert(
-  add("9977788965454533", "32177777777") === "9977821143232310",
-  "use case 4 fail"
-);
 
 // ## 问题2 ================
 // 对象全等
@@ -258,3 +242,414 @@ const parseObj = (json) => {
 }
 
 console.log(parseObj(testData), testData)
+
+function customFunction(fn, obj) {
+  return function (...args) {
+    fn.call(obj, ...args);
+  };
+}
+
+const obj = {
+  name: "foo",
+};
+
+function foo() {
+  console.log(this.name);
+  return this.name;
+}
+
+const bindFunction = customFunction(foo, obj);
+
+bindFunction();
+
+
+function myCreate(proto) {
+  const obj = {};
+  obj.__proto__ = proto;
+  return obj;
+}
+
+const s1 = "get-element-by-id"; // getElementById
+
+function dashToCamel(str) {
+    const reg = /-([a-z]{1})/i
+    let result
+    while(result = reg.exec(str)) {
+        str = str.replace(result[0],  result[1].toUpperCase())
+        console.log(result, str)
+    }
+    return str
+}
+
+
+const arr = ["1", "1", "2", "3"];
+
+function deDuplicate(arr) {
+  return [...new Set(arr)];
+}
+
+const res = deDuplicate(arr);
+console.log(res);
+
+
+function deepClone(obj) {
+  // Process null
+  if (obj === null) {
+    return obj;
+  }
+  const result = Array.isArray(obj) ? [] : {};
+  for (let prop of Object.keys(obj)) {
+    if (obj[prop] !== null && typeof obj[prop] === "object") {
+      result[prop] = deepClone(obj[prop]);
+    } else {
+      result[prop] = obj[prop];
+    }
+  }
+  return result;
+}
+
+// JSON 类型的深 copy
+function klona(val) {
+  var k, out, tmp;
+
+  if (Array.isArray(val)) {
+    out = Array((k = val.length));
+    while (k--)
+      out[k] = (tmp = val[k]) && typeof tmp === "object" ? klona(tmp) : tmp;
+    return out;
+  }
+
+  if (Object.prototype.toString.call(val) === "[object Object]") {
+    out = {}; // null
+    for (k in val) {
+      if (k === "__proto__") {
+        Object.defineProperty(out, k, {
+          value: klona(val[k]),
+          configurable: true,
+          enumerable: true,
+          writable: true,
+        });
+      } else {
+        out[k] = (tmp = val[k]) && typeof tmp === "object" ? klona(tmp) : tmp;
+      }
+    }
+    return out;
+  }
+
+  return val;
+}
+
+/**
+ * 2. 简单实现一个事件订阅机制，具有监听on和触发emit方法
+ * 示例：
+ * const event = new EventEmitter();
+ * event.on('someEvent', (...args) => {
+ *     console.log('some_event triggered', ...args);
+ * });
+ * event.emit('someEvent', 'abc', '123');
+ */
+class EventEmitter {
+  constructor() {
+    this.handler = {};
+  }
+  /* 功能实现 */
+  on(event, fn) {
+    if (!this.handler[event]) {
+      this.handler[event] = [];
+    }
+    this.handler[event].push(fn);
+  }
+  emit(event, ...args) {
+    if (this.handler[event]) {
+      this.handler[event].forEach((handler) => handler.call(null, ...args));
+    }
+  }
+}
+
+const event = new EventEmitter();
+event.on("someEvent", (...args) => {
+  console.log("some_event triggered", ...args);
+});
+event.emit("someEvent", "abc", "123");
+
+
+// i 控制台打印什么?
+for (var i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 0);
+}
+
+// 继承
+
+function Shape() {
+  this.x = 0;
+  this.y = 0;
+}
+Shape.foo = 'foo'
+
+function Rectangle(params) {
+  Shape.call(this);
+  this.z = params;
+}
+
+Rectangle.prototype = Object.create(Shape.prototype)
+Rectangle.prototype.constructor = Rectangle
+
+Object.setPrototypeOf(Rectangle, Shape)
+console.log(Rectangle.foo)
+
+
+const instance = new Rectangle(100);
+
+
+function flatten(arr) {
+  return arr.reduce(function (acc, cur) {
+    return acc.concat(Array.isArray(cur) ? flatten(cur) : cur);
+  }, []);
+}
+
+function flatten2(input) {
+  // make a shallow copy
+  const stack = [...input];
+  const res = [];
+  while (stack.length) {
+    // pop value from stack
+    const next = stack.pop();
+    if (Array.isArray(next)) {
+      // push back array items, won't modify the original input
+      stack.push(...next);
+    } else {
+      res.push(next);
+    }
+  }
+  //reverse to restore input order
+  return res.reverse();
+}
+
+// 保留三位小数
+formatNumber(1234.56); // return '1,234.56'
+formatNumber(123456789); // return '123,456,789'
+formatNumber(1087654.321); // return '1,087,654.321'
+
+function formatNumber(number) {
+  let [interger, decimal] = number.toString().split(".");
+  interger = interger.replace(/\d(?=(\d{3})+$)/g, "$&,");
+  const res = decimal ? `${interger}.${decimal}` : interger;
+  console.log(res);
+  return res;
+}
+
+export const gen = () => {
+  let val = 0;
+  return {
+    next: () => {
+      return { value: val === 3 ? 3 : val++, done: val === 3 ? true : false };
+    },
+  };
+};
+
+const g = gen();
+
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+console.log(g.next());
+function myInstanceOf(obj, proto) {
+  let proto1 = obj.__proto__;
+  const proto2 = proto.prototype;
+  if (proto1 === proto2) {
+    return true;
+  }
+  while (proto1 = proto1.__proto__) {
+    if (proto2 === proto1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function A () {}
+function B () {}
+
+A.prototype  = new B
+const a = new A
+
+console.log(myInstanceOf(a, B))
+
+// console.log(a instanceof null)
+function isObject(obj) {
+  return typeof obj === "object" && obj !== null;
+}
+
+function isNaN1(obj) {
+  return typeof obj === "number" && isNaN(obj);
+}
+
+function isEqual(obj1, obj2) {
+  // NaN 跟 NaN 是相等的 虽然 NaN === NaN return false
+  if (isNaN1(obj1) && isNaN1(obj2)) {
+    return true;
+  }
+  // 任意一个参数为值类型则直接用 === 比较
+  if (!isObject(obj1) || !isObject(obj2)) {
+    // 值类型
+    return obj1 === obj2;
+  }
+  // 两个都是对象或数组，而且不相等
+  const obj1key = Object.keys(obj1);
+  const obj2key = Object.keys(obj2);
+
+  // 对象属性长度不一致，直接return false
+  if (obj1key.length !== obj2key.length) {
+    return false;
+  }
+
+  // 遍历对象1，判断对象2跟对象1的某个key的值是否有不等的，有则return出false。
+  for (let key of obj1key) {
+    const res = isEqual(obj1[key], obj2[key]);
+    if (!res) {
+      return false;
+    }
+  }
+  // 遍历结束，没有找到值不等的属性，则俩对象相等。
+  return true;
+}
+
+const obj1 = { a: 10, b: { x: 100, y: 200 } };
+const obj2 = { a: 10, b: { x: 100, y: 200 } };
+
+console.log(isEqual(obj1, obj2));
+console.log(isEqual(NaN, NaN));
+
+function myNew(func, ...args) {
+  const obj = {};
+  obj.__proto__ = func.prototype;
+  const res = func.call(obj, ...args);
+  return res ? res : obj;
+}
+
+function A(a) {
+  this.a = a;
+}
+const obj = myNew(A, "foo");
+
+console.log(obj, obj instanceof A);
+
+
+/**
+ * js 大数相加
+ * 字符串拼接，用加法法则计算
+ * @param { string } a
+ * @param { string } b
+ * @returns string
+ */
+function sumBigNumber(a, b) {
+  let res = "",
+    temp = 0;
+
+  /** @type {string[]} */
+  const arrA = a.split("");
+  /** @type {string[]} */
+  const arrB = b.split("");
+
+  while (arrA.length || arrB.length || temp) {
+    // ~~ 将操作数转换成 int, ~ bitwise not operator
+    temp += ~~arrA.pop() + ~~arrB.pop();
+    res = (temp % 10) + res;
+    temp = temp > 9 ? 1 : 0;
+  }
+
+  return res.replace(/^0+/, "");
+}
+
+let template = "我是{{name}}，年龄{{age}}，性别{{sex}}";
+let data = {
+  name: "姓名",
+  age: 18,
+};
+const result = render(template, data); // 我是姓名，年龄18，性别undefined
+console.log(result);
+
+/**
+ * @param {string} template
+ */
+function render(template, data) {
+  const reg = /\{\{(\w+)\}\}/;
+  let result;
+  while ((result = reg.exec(template))) {
+    // 注意，此处template被修改了，reg不能有g flag。不然reg的lastIndex跟template会对不上
+    template = template.replace(result[0], data[result[1]]);
+  }
+  return template;
+}
+
+function throttle(fn, time) {
+  let timer;
+  return function () {
+    if (timer) {
+      return;
+    }
+    let func = () => {
+      fn.apply(this, arguments);
+      timer = null;
+    };
+    timer = setTimeout(func, time);
+  };
+}
+
+function debounce(fn, time) {
+  let timeout;
+  return function () {
+    const func = () => fn.apply(this, arguments);
+    clearTimeout(timeout);
+    timeout = setTimeout(func, time);
+  };
+}
+
+class TrafficLight {
+  constructor() {
+    this.states = [
+      new Light("green", "GO"),
+      new Light("red", "STOP"),
+      new Light("yellow", "STEADY"),
+    ];
+    this.current = this.states[0];
+  }
+  sign() {
+    return this.current.sign();
+  }
+  change() {
+    const totalStates = this.states.length;
+    const currentIdx = this.states.findIndex((light) => light === this.current);
+    if (currentIdx < totalStates - 1) {
+      this.current = this.states[currentIdx + 1];
+    } else {
+      this.current = this.states[0];
+    }
+  }
+}
+
+class Light {
+  constructor(color, type) {
+    this.color = color;
+    this.type = type;
+  }
+  sign() {
+    console.log(this.type);
+    return this.type;
+  }
+}
+
+const trafficLight = new TrafficLight();
+
+trafficLight.sign();
+trafficLight.change();
+trafficLight.sign();
+trafficLight.change();
+trafficLight.sign();
+trafficLight.change();
+trafficLight.sign();
+
+export default {}
