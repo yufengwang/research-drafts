@@ -681,4 +681,5 @@ new Promise(function (resolve) {
   console.log('promise2');
 });
 console.log('script end');
+
 export default {}
