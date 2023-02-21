@@ -1,6 +1,17 @@
 #+TITLE: HTTP
 #+DATE: <2022-06-01 Wed 00:03>
-#+FILETAGS: network cache
+#+FILETAGS: network
+
 * HTTP 1.1
+
+缺点：
+
+队首阻塞、浏览器并发请求数限制
+
+即使是为了请求一个非常少的数据，也可能需要完整经历：建立 TCP 连接 => 发送 HTTP 请求 => 服务端处理 => 返回响应数据整个过程
+
 * HTTP 2.0
+
+TCP 多路复用
+
 * HTTPS
