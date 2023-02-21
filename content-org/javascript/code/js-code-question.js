@@ -273,13 +273,13 @@ function myCreate(proto) {
 const s1 = "get-element-by-id"; // getElementById
 
 function dashToCamel(str) {
-    const reg = /-([a-z]{1})/i
-    let result
-    while(result = reg.exec(str)) {
-        str = str.replace(result[0],  result[1].toUpperCase())
-        console.log(result, str)
-    }
-    return str
+  const reg = /-([a-z]{1})/i
+  let result
+  while (result = reg.exec(str)) {
+    str = str.replace(result[0], result[1].toUpperCase())
+    console.log(result, str)
+  }
+  return str
 }
 
 // 数组去重
@@ -439,7 +439,7 @@ function formatNumber(number) {
 }
 
 // generator
- const gen = () => {
+const gen = () => {
   let val = 0;
   return {
     next: () => {
@@ -471,10 +471,10 @@ function myInstanceOf(obj, proto) {
   return false;
 }
 
-function A () {}
-function B () {}
+function A() { }
+function B() { }
 
-A.prototype  = new B
+A.prototype = new B
 const a = new A
 
 console.log(myInstanceOf(a, B))
@@ -655,4 +655,30 @@ trafficLight.sign();
 trafficLight.change();
 trafficLight.sign();
 
+
+// eventloop
+async function async1() {
+  console.log('async1 start');
+  await async2();
+  console.log('async1 end');
+}
+async function async2() {
+  console.log('async2');
+}
+
+console.log('script start');
+
+setTimeout(function () {
+  console.log('setTimeout');
+}, 0)
+
+async1();
+
+new Promise(function (resolve) {
+  console.log('promise1');
+  resolve();
+}).then(function () {
+  console.log('promise2');
+});
+console.log('script end');
 export default {}
