@@ -342,9 +342,27 @@ function timeBitmapToRanges(bitmap) {
  * 
  * set(object, path, value)
  */
-//const object = { 'a': [{ 'b': { 'c': 3 } }] };
-// set(object, 'a[0].b.c', 4);
-// console.log(object.a[0].b.c); // => 4
+const object = { 'a': [{ 'b': { 'c': 3 } }] };
+console.log(object.a[0].b.c); // => 4
+const format = (str) => {
+  return str.replace(/\[(\d)\]/g, function (match, p) {
+      return `.${p}`
+  }).replace(/^\./, '')
+}
+const deepSet = (obj, path, val) => {
+  // 处理path, 移除[],改成 用 . 分割的格式
+  const str = format(path)
+  const arr = str.split('.');
+  console.log('arr',str, arr)
+  let target = obj, key = arr[arr.length - 1]
+  for (let i = 0; i < arr.length - 1; i++) {
+      target = target[ arr[i] ]
+  }
+  console.log('target', target, key)
+  target[key] = val
+}
+deepSet(object, 'a[0].b.c', 4);
+
 /**
  * 2、实现一个方法memoize 来缓存函数执行结果
  * 要求: 相同输入的情况下避免重复执行
