@@ -300,18 +300,18 @@ function timeBitmapToRanges(bitmap) {
   const ranges = []
   let i = 0;
   while (i < bitmap.length) {
-      // 找 0 
-      if (bitmap[i] === '0') {
-          i++;
-          continue
-      }
-      let range = { start: i, end: i };
-      // 找 1
-      while (bitmap[i] === '1') {
-          range.end = i;
-          i++;
-      }
-      ranges.push(range)
+    // 找 0 
+    if (bitmap[i] === '0') {
+      i++;
+      continue
+    }
+    let range = { start: i, end: i };
+    // 找 1
+    while (bitmap[i] === '1') {
+      range.end = i;
+      i++;
+    }
+    ranges.push(range)
   }
   /**
   * 0 => 00:00 ~ 00:30
@@ -322,14 +322,14 @@ function timeBitmapToRanges(bitmap) {
   * 找规律，通过数字格式化成字符串
   */
   const format = (range) => {
-      const { start, end } = range
-      const isOdd = num => num % 2 === 1
-      const hour = Math.floor(start / 2)
-      const endHour = Math.ceil(end / 2)
-      const time = `${hour < 10 ? '0' : ''}${hour}` + ':' + `${isOdd(hour) ? '30' : '00'}`
-      const time1 = `${endHour < 10 ? '0' : ''}${endHour}` + ':' + `${isOdd(endHour) ? '00' : '30'}`
-      // console.log(time, time1)
-      return `${time}~${time1}`
+    const { start, end } = range
+    const isOdd = num => num % 2 === 1
+    const hour = Math.floor(start / 2)
+    const endHour = Math.ceil(end / 2)
+    const time = `${hour < 10 ? '0' : ''}${hour}` + ':' + `${isOdd(hour) ? '30' : '00'}`
+    const time1 = `${endHour < 10 ? '0' : ''}${endHour}` + ':' + `${isOdd(endHour) ? '00' : '30'}`
+    // console.log(time, time1)
+    return `${time}~${time1}`
   }
   const res = ranges.map(el => format(el))
   console.log(ranges, res)
@@ -354,17 +354,14 @@ function timeBitmapToRanges(bitmap) {
 
 //数组去重，含对象、NaN、symbol
 //1. 数组扁平化
+
 //2. 实现一个函数,大致的意思是，根据路径输出对象或数组当中的值
-/*const obj = {a:[{b:{c:3}}]},path1 
+const obj = { a: [{ b: { c: 3 } }] }, path1 = 'a[0].b.c'
+const arr = [{ a: { b: [{ c: 1 }] } }], path2 = '[0].a.b[0].c'
+const deepGet = (obj, path) => { }
 
-
-
-
-
-'a[0].b.c'
-const arr = [a:{b:[{c:1}]}],path2 = '[0].a.b[0].c'
-fn(obj,path1)//输出3
-fn(arr,path2)//输出1 */
+deepGet(obj, path1)//输出3
+deepGet(arr, path2)//输出1 */
 
 /*const array = [1.1,1.2,2.3,2.2,3.1]
 const groupBy = (array, fn)
@@ -403,4 +400,4 @@ console.log(unique([1, "1", 1]));
 console.log(unique([{ a: 1 }, { b: 1 }, { a: 1 }]));
 console.log(unique([{ a: 1, b: 2 }, { b: 1 }, { a: 1, b: 2 }]));
 console.log(unique([[1, { a: 1 }], [2], [3], [1, { a: 1 }]]));
-export default  {}
+export default {}
