@@ -20,12 +20,14 @@ window.performance， 可编程的性能 api
 - FCP
 
   First contentful paint 首次内容绘制
+
+- FMP
+
+  First Meaningful Paint，在 lighthouse 6.0 中已经被废弃，考虑用 LCP
+
 - LCP
 
   Largest contentful paint 最大内容绘制
-- FMP
-
-  First Meaningful Paint，在 lighthouse 6.0 中已经被废弃
 - FID
 
   First input delay 首次输入延迟
