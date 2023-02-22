@@ -194,6 +194,11 @@ O(n)，n 为 element tree 的节点数
 -   element 的 child 有唯一 key
 
 
+### Key {#key}
+
+为什么不能用 index 做 key
+
+
 ## Fiber {#fiber}
 
 在计算机科学里，Fiber 称之为纤程，即轻量级的执行线程[^fn:1]
@@ -469,8 +474,15 @@ function TabContainer() {
   }
   // ...
 }
-
 ```
+
+
+### useContext {#usecontext}
+
+
+### 常见问题 {#常见问题}
+
+-   为什么不能在 if, for 等语句中用 hook
 
 
 ## Events {#events}

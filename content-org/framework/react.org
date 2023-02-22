@@ -34,7 +34,6 @@
 
   即所谓的 virtual dom
 
-
 ** JSX
 
 UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
@@ -184,6 +183,10 @@ O(n)，n 为 element tree 的节点数
 
 - 不同的 element type, render 不同的树
 - element 的 child 有唯一 key
+
+** Key
+
+为什么不能用 index 做 key
 
 * Fiber
 
@@ -443,8 +446,14 @@ function TabContainer() {
   }
   // ...
 }
-
 #+end_src
+
+** useContext
+
+**  常见问题
+
+- 为什么不能在 if, for 等语句中用 hook
+
 
 * Events
 
@@ -532,8 +541,6 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 - 后台预渲染
 - <Offscreen />
 
-
-
 ** Suspense
 
 在某些(Next.js, Remix)框架中，可以用 suspense 做数据获取
@@ -569,6 +576,7 @@ setTimeout(() => {
 #+end_src
 
 * Scheduler
+
 
 [fn:1] [[https://en.wikipedia.org/wiki/Fiber_(computer_science)][Fiber]]
 [fn:2] [[https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react][inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react]]
