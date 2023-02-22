@@ -126,8 +126,8 @@
 
   缺点： 无类型校验
 
- #+begin_src js
-module.exports = {
+  #+begin_src js
+  module.exports = {
   /* ... */
   module: {
     rules: [
@@ -149,7 +149,7 @@ module.exports = {
 
 - CSS
 
-   css-loader 让 Webpack 能够正确理解 CSS 代码、分析资源依赖；style-loader、mini-css-extract-plugin 则通过适当方式将 CSS 插入到页面，对页面样式产生影响
+  css-loader 让 Webpack 能够正确理解 CSS 代码、分析资源依赖；style-loader、mini-css-extract-plugin 则通过适当方式将 CSS 插入到页面，对页面样式产生影响
 
 - 图片处理
 
