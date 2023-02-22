@@ -147,10 +147,11 @@ module.exports = {
 };
  #+end_src
 
- - CSS
+- CSS
+
    css-loader 让 Webpack 能够正确理解 CSS 代码、分析资源依赖；style-loader、mini-css-extract-plugin 则通过适当方式将 CSS 插入到页面，对页面样式产生影响
 
- - 图片处理
+- 图片处理
 
    file-loader: 原始图片会被重命名并复制到产物文件夹，同时在代码中插入图片 URL 地址
 

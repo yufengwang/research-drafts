@@ -568,7 +568,7 @@ setTimeout(() => {
 
 #+end_src
 
-
+* Scheduler
 
 [fn:1] [[https://en.wikipedia.org/wiki/Fiber_(computer_science)][Fiber]]
 [fn:2] [[https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react][inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react]]

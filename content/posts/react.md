@@ -608,6 +608,9 @@ setTimeout(() => {
 
 ```
 
+
+## Scheduler {#scheduler}
+
 [^fn:1]: [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
 [^fn:2]: [inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react)
 [^fn:3]: [React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)
