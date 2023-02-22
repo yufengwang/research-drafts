@@ -31,6 +31,34 @@ function sumBigNumber(a, b) {
 }
 
 
+const isObj = (x) => typeof x === 'object' && x !== null
+
+// 判断对象全等
+// false first
+const deepEqual = (foo, bar) => {
+  if (foo === bar) {
+    return true
+  } else if (isObj(foo) && isObj(bar)) {
+    // key 数量是否一致
+    if (Object.keys(foo).length !== Object.keys(bar).length) {
+      return false
+    }
+    for (const key of Object.keys(foo)) {
+      if (Object.hasOwn(bar, key)) {
+        return deepEqual(foo[key], bar[key])
+      } else {
+        return false
+      }
+    }
+  } else {
+    // 处理其他场景
+    // 当 foo, bar 均为 NaN 时，返回 true，其他所有情况返回 false
+    // true if both NaN, false otherwise
+    return foo !== foo && bar !== bar
+  }
+}
+
+
 // ## 问题2 ================
 // 对象深比较
 const foo1 = {
@@ -244,7 +272,7 @@ const testData = {
 
 const parseObj = (json) => {
   const toCamel = (str) => {
-    return str.replace(/_(\w)/g, function (match, p1) {
+    return str.replace(/_([a-z])/g, function (match, p1) {
       return p1.toUpperCase()
     })
   }
@@ -307,4 +335,72 @@ function timeBitmapToRanges(bitmap) {
   console.log(ranges, res)
   return res
 }
+
+/**
+ * 1、实现一个set函数来更新对象中任意路径的值
+ * 
+ * set(object, path, value)
+ */
+//const object = { 'a': [{ 'b': { 'c': 3 } }] };
+// set(object, 'a[0].b.c', 4);
+// console.log(object.a[0].b.c); // => 4
+/**
+ * 2、实现一个方法memoize 来缓存函数执行结果
+ * 要求: 相同输入的情况下避免重复执行
+ */
+// const values = _.memoize(()=>{xxx})
+// values(object); => valuea
+// values(arg1, arg2); => valueb
+
+//数组去重，含对象、NaN、symbol
+//1. 数组扁平化
+//2. 实现一个函数,大致的意思是，根据路径输出对象或数组当中的值
+/*const obj = {a:[{b:{c:3}}]},path1 
+
+
+
+
+
+'a[0].b.c'
+const arr = [a:{b:[{c:1}]}],path2 = '[0].a.b[0].c'
+fn(obj,path1)//输出3
+fn(arr,path2)//输出1 */
+
+/*const array = [1.1,1.2,2.3,2.2,3.1]
+const groupBy = (array, fn)
+// test: groupBy(array, Math.floor) => { 1: [1.1, 1.2], 2: [2.3, 2.2], 3: [3.1] } */
+
+// ******************** 题目 3 ********************
+/**
+ * 数组去重
+ *
+ * @example
+ * [1,'1',1]                            -> [1,'1']
+ * [{a: 1}, {b: 1}, {a: 1}]             -> [{a: 1}, {b: 1}]
+ * [{a: 1, b: 2}, {b: 1}, {b: 2, a: 1}] -> [{a: 1, b: 2}, {b: 1}]
+ * [[1, {a: 1}], [2], [3], [1, {a: 1}]] -> [[1, {a: 1}], [2], [3]]
+ */
+function unique(arr) {
+  let res = [],
+    objVal = {};
+  arr.forEach((ele) => {
+    if (typeof ele === "string" || typeof ele === "number") {
+      if (!res.includes(ele)) {
+        res.push(ele);
+      }
+    } else if (ele instanceof Object) {
+      if (!objVal[JSON.stringify(ele)]) {
+        res.push(ele);
+        objVal[JSON.stringify(ele)] = ele;
+      }
+    } else if (Array.isArray(ele)) {
+      unique(ele);
+    }
+  });
+  return res;
+}
+console.log(unique([1, "1", 1]));
+console.log(unique([{ a: 1 }, { b: 1 }, { a: 1 }]));
+console.log(unique([{ a: 1, b: 2 }, { b: 1 }, { a: 1, b: 2 }]));
+console.log(unique([[1, { a: 1 }], [2], [3], [1, { a: 1 }]]));
 export default  {}
