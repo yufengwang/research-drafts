@@ -51,3 +51,25 @@ TCP 多路复用
 
 
 ## HTTPS {#https}
+
+
+## 浏览器网络请求 {#浏览器网络请求}
+
+
+### fetch {#fetch}
+
+选项参数
+
+-   mode
+
+    cors:
+
+    no-cors: only allows a limited set of headers in the request
+
+    Accept
+    Accept-Language
+    Content-Language
+    Content-Type with a value of application/x-www-form-urlencoded, multipart/form-data, or text/plain
+
+
+### XMLHttpRequest {#xmlhttprequest}

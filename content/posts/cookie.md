@@ -31,6 +31,11 @@ draft = false
 跨域的 xhr 请求只有带上 withCredentials:true 时，xhr 响应才能写 cookie ，否则会被忽略
 
 
+### fetch 跨域 {#fetch-跨域}
+
+参数带上 credentials: include
+
+
 ## Cookie 参数 {#cookie-参数}
 
 例如:
