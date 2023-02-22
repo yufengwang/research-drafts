@@ -100,6 +100,7 @@ function isObject(obj) {
 }
 
 // object array NaN null
+// 这个实现有点问题
 function isEqual(target1, target2) {
   // console.log('foo', NaN === NaN)
   if (isNaN(target2) && isNaN(target1)) {
