@@ -21,19 +21,28 @@ window.performance， 可编程的性能 api
 -   Load
 -   DCL
 -   FP
+
     First Paint 首次绘制
 -   FCP
+
     First contentful paint 首次内容绘制
 -   LCP
+
     Largest contentful paint 最大内容绘制
 -   FMP
+
+    First Meaningful Paint，在 lighthouse 6.0 中已经被废弃
 -   FID
+
     First input delay 首次输入延迟
 -   TTI
+
     Time to Interactive 可交互时间
 -   TBT
+
     Total blocking time 总阻塞时间
 -   CLS
+
     Cumulative layout shift 累积布局偏移
 
 
