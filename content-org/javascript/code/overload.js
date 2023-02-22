@@ -13,4 +13,4 @@ funcONE(5);
 // prints 5, not 30
 funcONE(5, 6);
 
-module.exports = a;
+export default {}

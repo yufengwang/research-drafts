@@ -36,7 +36,8 @@ draft = false
 
 ## 创建正则 {#创建正则}
 
--   new regexp
+-   new RegExp
+
 -   字面量
 
 

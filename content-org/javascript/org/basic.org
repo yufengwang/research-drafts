@@ -303,13 +303,14 @@ class Rabbit extends Animal {}
 
 * 值比较
 
-- ===
+- =====
 
   isStrictlyEqual 算法
 
-  不会做类型转换,
+  不会做类型转换
 
 - ==
+
   isLooselyEqual 算法
 
   比较值时会做类型转换
@@ -318,7 +319,7 @@ class Rabbit extends Animal {}
 
 - SameValue 算法
 
-  判断两个值是否一样，跟 === 一致，除了(NaN, +0, -0) 的比较
+  判断两个值是否一样，跟 ===== 一致，除了(NaN, +0, -0) 的比较
  #+begin_src js
 console.log(Object.is('1', 1));
 // Expected output: false
@@ -408,6 +409,7 @@ Reachability:
 当对象有指向其的引用，当前对象是不是能垃圾回收的
 
 roots:
+
 - 当前正在执行的函数，其局部变量和参数
 - 当前调用链上的其他函数
 - 全局变量
@@ -433,13 +435,13 @@ Any other value is considered reachable if it’s reachable from a root by a ref
 
   Asynchronous Module Definition
 
-  依赖前置、提前执行
+  依赖前置、提前执行, require.js
 
-- CMD
+- CMD[fn:3]
 
   Common Module Definition
 
-  依赖就近、延迟执行
+  依赖就近、延迟执行, sea.js
 
 - UMD
 
@@ -469,3 +471,4 @@ CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 impo
 
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
 [fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]
+[fn:3] [[https://github.com/cmdjs/specification/blob/master/draft/module.md][CMD]]

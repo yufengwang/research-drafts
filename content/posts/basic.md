@@ -321,13 +321,14 @@ class Rabbit extends Animal {}
 
 ## 值比较 {#值比较}
 
--   `=`
+-   `===`
 
     isStrictlyEqual 算法
 
-    不会做类型转换,
+    不会做类型转换
 
 -   ==
+
     isLooselyEqual 算法
 
     比较值时会做类型转换
@@ -336,7 +337,7 @@ class Rabbit extends Animal {}
 
 -   SameValue 算法
 
-    判断两个值是否一样，跟 `=` 一致，除了(NaN, +0, -0) 的比较
+    判断两个值是否一样，跟 `===` 一致，除了(NaN, +0, -0) 的比较
     ```js
     console.log(Object.is('1', 1));
     // Expected output: false
@@ -460,13 +461,13 @@ roots:
 
     Asynchronous Module Definition
 
-    依赖前置、提前执行
+    依赖前置、提前执行, require.js
 
--   CMD
+-   CMD[^fn:3]
 
     Common Module Definition
 
-    依赖就近、延迟执行
+    依赖就近、延迟执行, sea.js
 
 -   UMD
 
@@ -500,3 +501,4 @@ CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 impo
 
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)
+[^fn:3]: [CMD](https://github.com/cmdjs/specification/blob/master/draft/module.md)
