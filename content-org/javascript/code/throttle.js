@@ -13,12 +13,17 @@ function throttle(fn, time) {
     timer = setTimeout(func, time);
   };
 }
-// 例子：用户在 input 框输入，一段时间没有输入后，再发起网络请求
+
+// 防抖，例子：用户在 input 框输入，一段时间没有输入后，再发起网络请求
 function debounce(fn, time) {
   let timeout;
   return function () {
     const func = () => fn.apply(this, arguments);
-    clearTimeout(timeout);
+    
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
     timeout = setTimeout(func, time);
   };
 }

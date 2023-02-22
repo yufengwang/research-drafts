@@ -7,4 +7,4 @@ function deDuplicate(arr) {
 const res = deDuplicate(arr);
 console.log(res);
 
-module.exports = deDuplicate;
+export default {}

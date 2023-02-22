@@ -458,19 +458,22 @@ roots:
 
 -   AMD
 
-Asynchronous Module Definition
-依赖前置、提前执行
+    Asynchronous Module Definition
+
+    依赖前置、提前执行
 
 -   CMD
 
-Common Module Definition
-依赖就近、延迟执行
+    Common Module Definition
+
+    依赖就近、延迟执行
 
 -   UMD
 
-Universal Module Definition
+    Universal Module Definition
 
 -   CommonJS
+
     缩写为 CJS, Node.js 的模块规范
 
 -   ESM
