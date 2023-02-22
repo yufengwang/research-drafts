@@ -401,4 +401,37 @@ console.log(unique([1, "1", 1]));
 console.log(unique([{ a: 1 }, { b: 1 }, { a: 1 }]));
 console.log(unique([{ a: 1, b: 2 }, { b: 1 }, { a: 1, b: 2 }]));
 console.log(unique([[1, { a: 1 }], [2], [3], [1, { a: 1 }]]));
+
+/**
+ * 对象属性深取值
+ * const object = { 'a': [{ 'b': { 'c': 3 } }] };
+  const array = [{ "a": { b: [1] } }];
+  getValue(object, 'a[0].b.c') // 输出 3
+  getValue(array, '[0].a.b[0]') // 输出 1
+ */
+
+const getValue = (obj, path) => {
+
+  const format = (str) => {
+    return str.replace(/\[(\d)\]/g, function (match, p) {
+      return `.${p}`
+    }).replace(/^\./, '')
+  }
+  // 处理path, 移除[],改成 用 . 分割的格式
+  const str = format(path)
+  console.log(str)
+  const arr = str.split('.')
+  let res = obj;
+
+  // 遍历下依次取属性获取最终解
+  arr.forEach((ele) => {
+    res = res[ele]
+  })
+
+  console.log('res', res)
+
+  return res;
+}
+
+
 export default {}
