@@ -59,9 +59,9 @@ window.performance， 可编程的性能 api
 
   js 会阻塞 dom 树的构建，所以要放在底部，等 dom 树构建完加载并执行 js，某些 js 也可以加上 async defer 属性
 
-  async: 谁先加载完谁先执行, 独立第三方脚本，广告等。执行顺序无关联的脚本
+  async: 谁先加载完谁先执行, 不阻塞 render tree 的构建， 独立第三方脚本，广告等。执行顺序无关联的脚本
 
-  defer: 谁的位置靠前谁先执行,  依赖 dom 的脚本，依赖执行顺序的脚本
+  defer: 异步并行加载，不阻塞 render tree 构建，全加载完成后， 谁的位置靠前谁先执行，在 DOMContentLoaded 之前执行完
 
 - 使用字体图标 iconfont 代替图片图标，压缩字体文件
 
