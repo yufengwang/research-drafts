@@ -2,7 +2,7 @@
 title = "JavaScript 常见题"
 author = ["wenhu"]
 date = 2022-11-29T09:50:00+08:00
-tags = ["coding-question"]
+tags = ["code-question"]
 draft = false
 +++
 

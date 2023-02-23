@@ -1,6 +1,6 @@
 #+TITLE: lc-146
 #+DATE: <2022-05-31 Tue 23:50>
-#+FILETAGS: leetcode
+#+FILETAGS: code-question
 
 * Least recently used cache
 

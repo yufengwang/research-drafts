@@ -1,6 +1,6 @@
 #+TITLE: JavaScript 常见题
 #+DATE:<2022-11-29 Tue 09:50>
-#+FILETAGS: coding-question
+#+FILETAGS: code-question
 
 * 大数相加
 
