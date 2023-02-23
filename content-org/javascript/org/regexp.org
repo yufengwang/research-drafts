@@ -1,6 +1,6 @@
 #+TITLE: 正则表达式
 #+DATE:<2022-06-03 Fri 16:23>
-#+FILETAGS: regexp @js
+#+FILETAGS: @js
 
 * Character Class
 

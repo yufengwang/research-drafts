@@ -1,7 +1,7 @@
 +++
 title = "RSA 加密算法"
 author = ["wenhu"]
-tags = ["cryptography"]
+tags = ["security"]
 draft = false
 +++
 
