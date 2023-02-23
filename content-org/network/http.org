@@ -45,6 +45,8 @@ TCP 多路复用
 
 * HTTPS
 
+[[file:./https.png]]
+
 * 浏览器网络请求
 
 ** fetch

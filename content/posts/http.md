@@ -52,6 +52,8 @@ TCP 多路复用
 
 ## HTTPS {#https}
 
+{{< figure src="/ox-hugo/https.png" >}}
+
 
 ## 浏览器网络请求 {#浏览器网络请求}
 
