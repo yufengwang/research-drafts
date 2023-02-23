@@ -220,7 +220,7 @@ function reconcileChildren(wipFiber, elements) {
     let newFiber = null;
 
     const sameType = oldFiber && element && element.type == oldFiber.type;
-
+   // 同一索引位置，有旧 Fiber，也有新元素，且类型一样时，打上更新的标签
     if (sameType) {
       newFiber = {
         type: oldFiber.type,
@@ -231,6 +231,7 @@ function reconcileChildren(wipFiber, elements) {
         effectTag: 'UPDATE',
       };
     }
+    // 有新元素，跟旧的类型不一样，打上新建的标签
     if (element && !sameType) {
       newFiber = {
         type: element.type,
@@ -241,11 +242,12 @@ function reconcileChildren(wipFiber, elements) {
         effectTag: 'PLACEMENT',
       };
     }
+    // 有旧，跟新的类型不一样，旧的删掉
     if (oldFiber && !sameType) {
       oldFiber.effectTag = 'DELETION';
       deletions.push(oldFiber);
     }
-
+   // 旧的指向下一个
     if (oldFiber) {
       oldFiber = oldFiber.sibling;
     }
@@ -255,7 +257,7 @@ function reconcileChildren(wipFiber, elements) {
     } else if (element) {
       prevSibling.sibling = newFiber;
     }
-
+   
     prevSibling = newFiber;
     index++;
   }

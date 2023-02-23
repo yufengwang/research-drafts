@@ -79,8 +79,6 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
     }
 ```
 
-什么是阻塞:
-
 
 ## React 源码 {#react-源码}
 
@@ -289,16 +287,12 @@ React 内部维护了一个线性链表，将所有有副作用的 Fiber 节点�
 
 ### Render Phase {#render-phase}
 
-The result of the phase is a tree of fiber nodes marked with side-effects
-
-It’s important to understand that the work during the first render phase can be performed asynchronously
+异步, 渲染结果为一棵 Fiber 树，其上对应的 Fiber 节点会被打上对应的副作用标签，
 
 
 ### Commit Phase {#commit-phase}
 
-commit phase is always synchronous, React needs to do them in a single pass
-
-This is because the work performed during this stage leads to changes visible to the user, e.g. DOM updates.
+同步，更新页面，避免造成视觉结果不一致, single pass
 
 
 ### Work Loop {#work-loop}
@@ -564,13 +558,56 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 4.  组件接收的 props 要尽可能的精简，尽量接收独立的值，而不是一个大对象
 
 
-## 运行机制 {#运行机制}
+## 运行机制[^fn:3] {#运行机制}
 
-状态更新：
+
+### 首次渲染 {#首次渲染}
+
+拿到一棵 Element Tree，渲染到 container 中
+
+从 container 新建 wipRoot Fiber 对象, nextUnitOfWork 指向当前 wipRoot, 由 workLoop 驱动开始渲染
+
+```js
+  wipRoot = {
+    dom: container,
+    props: {
+      children: [element],
+    },
+    alternate: currentRoot,
+  };
+```
+
+渲染做的事情:
+
+1.  针对Fiber类型，更新对应的组件
+2.  Reconcile children，按顺序从上往下 diff，从每个 Children 的 Element 元素创建对应的 Fiber 节点，并用指针串起来
+3.  依据遍历逻辑， 返回下一个 Fiber 节点, 重复所做的事情
+
+渲染完毕会得到一棵 Fiber 树，记在 currentRoot 指针上, wipRoot 置为 null
+
+
+### 状态更新 {#状态更新}
+
+更新时，新建 wipRoot Fiber 节点，某些属性指向 currentRoot 相关属性
+
+```js
+ wipRoot = {
+      dom: currentRoot.dom,
+      props: currentRoot.props,
+      alternate: currentRoot,
+ };
+```
 
 当有状态更新时，会将状态更新挂在 Fiber 节点的 updateQueue 属性上
 
 在 workLoop 的作用下，React 自 HostRoot 开始遍历所有 Fiber 节点
+
+
+### 提交变更 {#提交变更}
+
+提交变更后，currentRoot 指向 wipRoot, wipRoot 指向 null
+
+currentRoot, wipRoot 均为 Fiber 对象
 
 
 ## Server Components {#server-components}
@@ -595,7 +632,7 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 React18 之前，Suspense 仅可以跟 React.lazy 配合使用做代码分割
 
-> the goal is to extend support for Suspense so that eventually, the same declarative Suspense fallback can handle any asynchronous operation (loading code, data, images, etc)[^fn:3]
+> the goal is to extend support for Suspense so that eventually, the same declarative Suspense fallback can handle any asynchronous operation (loading code, data, images, etc)[^fn:4]
 
 
 ### Automatic batching {#automatic-batching}
@@ -633,4 +670,5 @@ setTimeout(() => {
 
 [^fn:1]: [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
 [^fn:2]: [inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react)
-[^fn:3]: [React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)
+[^fn:3]: [build-your-own-react](https://pomb.us/build-your-own-react/)
+[^fn:4]: [React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)
