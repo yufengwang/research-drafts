@@ -2,7 +2,7 @@
 title = "Webpack"
 author = ["wenhu"]
 date = 2022-05-28T21:52:00+08:00
-tags = ["webpack"]
+tags = ["frontend"]
 draft = false
 +++
 

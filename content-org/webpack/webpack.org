@@ -1,6 +1,6 @@
 #+TITLE: Webpack
 #+DATE: <2022-05-28 Sat 21:52>
-#+FILETAGS: webpack
+#+FILETAGS: frontend
 
 * 配置[fn:1]
 
