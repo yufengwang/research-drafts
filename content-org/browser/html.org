@@ -1,6 +1,6 @@
 #+TITLE: HTML
 #+DATE:<2023-02-17 Fri 11:04>
-#+FILETAGS: html
+#+FILETAGS: browser
 
 待补充...
 

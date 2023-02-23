@@ -2,7 +2,7 @@
 title = "HTML"
 author = ["wenhu"]
 date = 2023-02-17T11:04:00+08:00
-tags = ["html"]
+tags = ["browser"]
 draft = false
 +++
 
