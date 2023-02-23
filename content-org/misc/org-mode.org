@@ -1,6 +1,6 @@
 #+TITLE:  orgmode 语法
 #+DATE:<2022-06-29 Wed 16:35>
-#+FILETAGS: orgmode
+#+FILETAGS: emacs
 
 #+LATEX_COMPILER: xelatex
 #+LATEX_HEADER: \usepackage[UTF8]{ctex}

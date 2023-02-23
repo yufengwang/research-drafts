@@ -1,6 +1,6 @@
 #+TITLE: 数论
 #+DATE: <2022-05-28 Sat 20:36>
-#+FILETAGS: number-theory @math
+#+FILETAGS: @math
 
 * 整除
 

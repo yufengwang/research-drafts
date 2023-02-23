@@ -2,7 +2,7 @@
 title = "orgmode 语法"
 author = ["wenhu"]
 date = 2022-06-29T16:35:00+08:00
-tags = ["orgmode"]
+tags = ["emacs"]
 draft = false
 +++
 

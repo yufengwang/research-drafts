@@ -2,7 +2,6 @@
 title = "计数问题"
 author = ["wenhu"]
 date = 2022-06-05T13:38:00+08:00
-tags = ["counting"]
 categories = ["math"]
 draft = false
 +++

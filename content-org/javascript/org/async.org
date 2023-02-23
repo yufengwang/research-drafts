@@ -1,6 +1,6 @@
 #+TITLE: 异步
 #+DATE:<2022-06-03 Fri 15:45>
-#+FILETAGS: async @js
+#+FILETAGS: @js
 
 * Reactor Pattern
 

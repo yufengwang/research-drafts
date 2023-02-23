@@ -1,6 +1,6 @@
 #+TITLE: 计数问题
 #+DATE: <2022-06-05 Sun 13:38>
-#+FILETAGS: counting @math
+#+FILETAGS: @math
 
 * 计数法则
 
