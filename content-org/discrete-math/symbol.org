@@ -1,6 +1,6 @@
 #+TITLE: 常用数学符号
 #+DATE: <2022-06-03 Fri 15:24>
-#+FILETAGS: symbol @math
+#+FILETAGS: @math
 
 * SETS
 

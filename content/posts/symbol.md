@@ -2,7 +2,6 @@
 title = "常用数学符号"
 author = ["wenhu"]
 date = 2022-06-03T15:24:00+08:00
-tags = ["symbol"]
 categories = ["math"]
 draft = false
 +++

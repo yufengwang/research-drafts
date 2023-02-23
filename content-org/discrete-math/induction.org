@@ -1,6 +1,6 @@
 #+TITLE: 归纳和递归
 #+DATE: <2022-06-01 Wed 23:38>
-#+FILETAGS: induction recursion @math
+#+FILETAGS: @math
 
 * 数学归纳和递归
 
