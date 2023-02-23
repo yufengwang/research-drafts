@@ -2,7 +2,7 @@
 title = "Mysql"
 author = ["wenhu"]
 date = 2022-06-03T23:58:00+08:00
-tags = ["mysql"]
+tags = ["database"]
 draft = false
 +++
 

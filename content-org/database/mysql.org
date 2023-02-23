@@ -1,6 +1,6 @@
 #+TITLE: Mysql
 #+DATE:<2022-06-03 Fri 23:58>
-#+FILETAGS: mysql
+#+FILETAGS: database
 
 * KEY, INDEX
 

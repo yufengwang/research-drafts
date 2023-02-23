@@ -2,7 +2,7 @@
 title = "哈希表"
 author = ["wenhu"]
 date = 2022-05-28T21:47:00+08:00
-tags = ["hash-table"]
+tags = ["data-structure"]
 draft = false
 +++
 

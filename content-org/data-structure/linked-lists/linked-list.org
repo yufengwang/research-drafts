@@ -1,6 +1,6 @@
 #+TITLE: 链表
 #+DATE: <2022-05-28 Sat 21:43>
-#+FILETAGS: linked-lists
+#+FILETAGS: data-structure
 
 ** Singly linked list
 
