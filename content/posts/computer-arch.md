@@ -2,7 +2,7 @@
 title = "计算机架构"
 author = ["wenhu"]
 date = 2022-06-10T16:14:00+08:00
-tags = ["archi"]
+tags = ["arch"]
 draft = false
 +++
 

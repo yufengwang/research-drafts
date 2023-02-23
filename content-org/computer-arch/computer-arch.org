@@ -1,6 +1,6 @@
 #+TITLE: 计算机架构
 #+DATE:<2022-06-10 Fri 16:14>
-#+FILETAGS: archi
+#+FILETAGS: arch
 
 * 硬件设计理念
 
