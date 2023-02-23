@@ -36,9 +36,9 @@ Component:
 
 class or function, 接收 props，返回 Element Tree
 
-Element Tree:
+Virtual Dom:
 
-即所谓的 virtual dom
+真实 dom 对象的轻量表示
 
 
 ### JSX {#jsx}
@@ -197,6 +197,8 @@ O(n)，n 为 element tree 的节点数
 ### Key {#key}
 
 为什么不能用 index 做 key
+
+-   性能问题，造成不必要的重渲染
 
 
 ## Fiber {#fiber}
