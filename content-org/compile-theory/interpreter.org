@@ -1,6 +1,6 @@
 #+TITLE: Interpreter
 #+DATE:<2022-12-12 Mon 14:19>
-#+FILETAGS:  interpreter
+#+FILETAGS: plt
 
 * Overview
 

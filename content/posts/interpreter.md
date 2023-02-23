@@ -2,7 +2,7 @@
 title = "Interpreter"
 author = ["wenhu"]
 date = 2022-12-12T14:19:00+08:00
-tags = ["interpreter"]
+tags = ["plt"]
 draft = false
 +++
 
