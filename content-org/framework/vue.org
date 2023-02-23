@@ -1,6 +1,6 @@
 #+TITLE: Vue
 #+DATE: <2023-02-15 Wed 11:38>
-#+FILETAGS: vue
+#+FILETAGS: frontend
 
 待补充...
 * Vue

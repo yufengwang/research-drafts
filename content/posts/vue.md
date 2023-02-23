@@ -2,7 +2,7 @@
 title = "Vue"
 author = ["wenhu"]
 date = 2023-02-15T11:38:00+08:00
-tags = ["vue"]
+tags = ["frontend"]
 draft = false
 +++
 
