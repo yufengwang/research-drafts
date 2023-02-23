@@ -2,7 +2,7 @@
 title = "docker"
 author = ["wenhu"]
 date = 2022-10-20T10:47:00+08:00
-tags = ["docker"]
+tags = ["devops"]
 draft = false
 +++
 

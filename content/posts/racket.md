@@ -2,7 +2,7 @@
 title = "Racket"
 author = ["wenhu"]
 date = 2022-07-06T14:49:00+08:00
-tags = ["racket"]
+tags = ["plt"]
 draft = false
 +++
 

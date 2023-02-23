@@ -2,7 +2,7 @@
 title = "堆"
 author = ["wenhu"]
 date = 2022-06-14T23:06:00+08:00
-tags = ["heap"]
+tags = ["data-structure"]
 draft = false
 +++
 

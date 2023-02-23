@@ -1,6 +1,6 @@
 #+TITLE: docker
-#+FILETAGS: docker
 #+DATE:<2022-10-20 Thu 10:47>
+#+FILETAGS: devops
 
 * exec
 

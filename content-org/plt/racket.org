@@ -1,6 +1,6 @@
 #+TITLE: Racket
 #+DATE: <2022-07-06 Wed 14:49>
-#+FILETAGS: racket
+#+FILETAGS: plt
 
 * Interned
 
