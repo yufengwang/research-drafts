@@ -194,9 +194,17 @@ O(n)，n 为 element tree 的节点数
 
 ### Key {#key}
 
+没有 key 时，假设在列表前面插入一条数据，react 会将整个列表都 rerender 一遍
+
 为什么不能用 index 做 key
 
 -   性能问题，造成不必要的重渲染
+
+使用 index 作为 key 的话，非受控组件的状态会串掉
+
+如果元素不会被重新排序，用 index 做 key 也可以，适用于静态列表
+
+使用 key 时, key 一致，会复用旧的 Fiber 节点的状态，避免 dom 节点的重新创建
 
 
 ## Fiber {#fiber}
@@ -559,6 +567,8 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 
 ## 运行机制[^fn:3] {#运行机制}
+
+注意这里是 Didact 的实现，用于辅助理解 React 的逻辑
 
 
 ### 首次渲染 {#首次渲染}
