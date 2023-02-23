@@ -2,7 +2,7 @@
 title = "前端性能优化"
 author = ["wenhu"]
 date = 2023-02-15T23:28:00+08:00
-tags = ["fe"]
+tags = ["frontend"]
 draft = false
 +++
 

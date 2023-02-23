@@ -1,6 +1,6 @@
 #+TITLE: 微前端
 #+DATE:<2023-02-15 Wed 23:31>
-#+FILETAGS: fe
+#+FILETAGS: frontend
 
 待补充...
 

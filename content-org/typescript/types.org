@@ -1,6 +1,6 @@
 #+TITLE: 类型系统
 #+DATE:<2022-12-24 Sat 22:47>
-#+FILETAGS: ts
+#+FILETAGS: typescript
 
 * Union type
 

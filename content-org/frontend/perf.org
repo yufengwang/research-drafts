@@ -1,6 +1,6 @@
 #+TITLE: 前端性能优化
 #+DATE:<2023-02-15 Wed 23:28>
-#+FILETAGS: fe
+#+FILETAGS: frontend
 
 待补充...
 

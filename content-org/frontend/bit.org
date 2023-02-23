@@ -1,6 +1,6 @@
 #+TITLE: 组件化
 #+DATE:<2022-07-17 日 22:04>
-#+FILETAGS: fe
+#+FILETAGS: frontend
 
 * 什么是组件
 

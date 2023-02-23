@@ -2,7 +2,7 @@
 title = "组件化"
 author = ["wenhu"]
 date = 2022-07-17T22:04:00+08:00
-tags = ["fe"]
+tags = ["frontend"]
 draft = false
 +++
 
