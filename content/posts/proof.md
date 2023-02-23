@@ -2,7 +2,6 @@
 title = "如何证明"
 author = ["wenhu"]
 date = 2022-06-01T00:06:00+08:00
-tags = ["proof"]
 categories = ["math"]
 draft = false
 +++
@@ -22,7 +21,7 @@ draft = false
 公理： 假定为 true 的语句 (statements)
 
 
-### lemma {#lemma}
+### Lemma {#lemma}
 
 引理，辅助定理
 

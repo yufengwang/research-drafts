@@ -2,7 +2,6 @@
 title = "命题逻辑"
 author = ["wenhu"]
 date = 2022-06-01T00:05:00+08:00
-tags = ["logic"]
 categories = ["math"]
 draft = false
 +++

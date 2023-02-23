@@ -2,7 +2,7 @@
 title = "缓存"
 author = ["wenhu"]
 date = 2022-06-01T00:03:00+08:00
-tags = ["network", "cache"]
+tags = ["network"]
 draft = false
 +++
 

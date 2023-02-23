@@ -1,6 +1,6 @@
 #+TITLE: 如何证明
 #+DATE: <2022-06-01 Wed 00:06>
-#+FILETAGS: proof @math
+#+FILETAGS: @math
 
 * Proof method
 

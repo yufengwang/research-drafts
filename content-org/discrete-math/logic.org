@@ -1,6 +1,6 @@
 #+TITLE: 命题逻辑
 #+DATE: <2022-06-01 Wed 00:05>
-#+FILETAGS: logic @math
+#+FILETAGS: @math
 
 * Proposition Logic
 
