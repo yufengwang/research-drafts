@@ -1,17 +1,169 @@
 +++
-title = "css"
+title = "CSS"
 author = ["wenhu"]
 date = 2023-01-02T20:13:00+08:00
 tags = ["css"]
 draft = false
 +++
 
+## 加载方式 {#加载方式}
+
+@import
+
+从其他样式表里加载 css 到当前位置
+
+```css
+@import "custom.css";
+@import url("chrome://communicator/skin/");
+
+```
+
+
+## @属性 {#属性}
+
+-   @charset
+
+声明当前样式表的字符集编码
+
+当在 css 属性中使用非 ascii 编码时有用，例如 content 属性
+
+
 ## Cascading {#cascading}
 
-什么是级联？
+级联：当多个 style 块给同一个元素设置了同一个属性，但是值不一样，值生效的规则
+
+取决于以下三点
+
+1.  Source order
+
+    规则的来源顺序
+
+2.  Specificity
+
+    规则的特异性
+
+3.  Importance
+
+    规则的重要性
 
 
-## BFC {#bfc}
+## 特异性 {#特异性}
+
+
+### Normal Style {#normal-style}
+
+选择器的权重，权重越大，优先级越高，权重相同，后出现的优先级更高
+
+特异性仅在同一级联源和级联层中相关
+
+当同一级联层中，选择器的特异性相等时，后出现的优先级更高
+
+三列比较 ID - CLASS - TYPE
+
+ID 大，则优先级更高，ID 一致，比较 Class ，值大优先级高，同理 type
+
+-   ID 列
+
+    id 选择器
+
+-   CLASS 列
+
+    类选择器，属性选择器 e.g. [type='radio']，伪类
+
+-   TYPE 列
+
+    类型选择器 e.g. p,h1, 伪元素, e.g. ::placeholder
+
+<!--listend-->
+
+```css
+#myElement {
+  color: green; /* 1-0-0  - WINS!! */
+}
+.bodyClass .sectionClass .parentClass [id="myElement"] {
+  color: yellow; /* 0-4-0 */
+}
+
+#myElement {
+  color: yellow; /* 1-0-0 */
+}
+#myApp [id="myElement"] {
+  color: green; /* 1-1-0  - WINS!! */
+}
+:root input {
+  color: green; /* 0-1-1 - WINS because CLASS column is greater */
+}
+html body main input {
+  color: yellow; /* 0-0-4 */
+}
+
+input.myClass {
+  color: yellow; /* 0-1-1 */
+}
+:root input {
+  color: green; /* 0-1-1 WINS because it comes later */
+}
+
+```
+
+
+### Inline Style {#inline-style}
+
+```html
+ <div style="font-weight:bold"> </div>
+```
+
+比 normal style 特异性都要高，可理解为 1-0-0-0
+
+可通过 !important 去覆盖 inline-style
+
+
+### !important {#important}
+
+在 same origin and cascade layer，!important 的优先级最高，尽量少用，用了要加注释
+
+多个规则都有 !important时，谁的 specificity 更高，最终用哪个
+
+
+## 浮动 {#浮动}
+
+clear 属性，将元素移动到其前面的 float 元素的下面
+
+
+## Formatting Context {#formatting-context}
+
+页面上的所有元素都在某个格式化上下文中，格式化上下文决定了元素在该上下文中的布局, 排列方式
+
+脱离文档流的三种情况:
+
+1.  浮动元素
+2.  position: absolute fixed
+3.  root element
+
+元素脱离文档流会创建一个新的 BFC
+
+
+### IFC {#ifc}
+
+inline formatting contexts
+
+元素在水平方向排列
+
+
+### FFC {#ffc}
+
+元素按弹性模式布局
+
+flex formatting contexts
+
+
+### BFC {#bfc}
+
+元素按块方式布局
+
+盒模型之间，margin,border 等交互的方式
+
+元素独占一行
 
 Block Formatting Context&nbsp;[^fn:1]
 
@@ -19,12 +171,17 @@ A mini-layout inside our layout，一个小的块级格式化布局上下文
 
 不同的 Formatting context 会影响其内部子元素的表现形式
 
+&lt;html/&gt; 为初始 BFC
+
 如何创建 BFC:
 
--   display: inline-block
 -   设置 float
 -   position 为 absolute 或 fixed
--   display: flow-root
+-   display: inline-block
+-   display: table-ceil
+-   overflow 不为 visible
+-   display: flow-root (包围内部浮动元素)
+-   flex items, grid items
 
 BFC 的表现：
 
@@ -57,7 +214,8 @@ dom 元素在 z 方向的堆叠顺序问题
 -   grid 容器的子元素，z-index 值非 auto
 -   其他...
 
-z-index:
+
+### z-index: {#z-index}
 
 作用于非 position: static 的元素，也就是说值为 relative, absolute, fixed, sticky
 
@@ -92,6 +250,90 @@ display: flex 容器内没有重叠
 与 Less/Sass/Stylus 这一类预处理器类似，PostCSS 也能在原生 CSS 基础上增加更多表达力、可维护性、可读性更强的语言特性。两者主要区别在于预处理器通常定义了一套 CSS 之上的超集语言；PostCSS 并没有定义一门新的语言，而是与 @babel/core 类似，只是实现了一套将 CSS 源码解析为 AST 结构，并传入 PostCSS 插件做处理的流程框架，具体功能都由插件实现
 
 > 预处理器之于 CSS，就像 TypeScript 与 JavaScript 的关系；而 PostCSS 之于 CSS，则更像 Babel 与 JavaScript。
+
+
+## 伪元素，伪类 {#伪元素-伪类}
+
+
+### 伪类 {#伪类}
+
+选择器，选择特定状态下的元素，例如，:hover, :first-child, :last-child
+
+
+### 伪元素 {#伪元素}
+
+::before, 老代码里用单冒号，例如, ：before, 两种都是支持的
+
+::first-line
+
+```css
+article p:first-child::first-line {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+```
+
+::before, ::after 跟 content 属性结合,向文档中插入内容（插入文字对读屏器不友好，通常插入 icon)
+
+> The use of the ::before and ::after pseudo-elements along with the content property is referred to as "Generated Content" in CSS
+
+
+## 加载方式 {#加载方式}
+
+
+## 属性继承 {#属性继承}
+
+font-family, font-size, color, cursor, text-align, visibility, list-style 等
+
+
+## 盒模型 {#盒模型}
+
+
+## CSS 单位 {#css-单位}
+
+-   px
+-   em
+-   rem
+-   vw
+
+
+## 响应式 {#响应式}
+
+
+## inline-block {#inline-block}
+
+
+## 定位 {#定位}
+
+
+## 移动端 {#移动端}
+
+
+## Flex {#flex}
+
+
+## 字体图标 {#字体图标}
+
+
+## 媒体查询 {#媒体查询}
+
+
+## 常见问题 {#常见问题}
+
+-   href vs src
+    ```html
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+    ```
+    href: 声明关联(引用）资源地址，通过 rel 声明其类型和关系
+    src: 声明外部资源的地址
+
+-   link vs @import
+
+    优先使用 link
+
+    @import 阻塞并行下载，需要等 @import 的下载完再下载其他内容，变成了串行下载，不利于性能
 
 [^fn:1]: [Intro_to_formatting_contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
 [^fn:2]: [The_stacking_context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
