@@ -2,7 +2,7 @@
 title = "树"
 author = ["wenhu"]
 date = 2022-06-01T00:08:00+08:00
-tags = ["tree"]
+tags = ["data-structure"]
 draft = false
 +++
 

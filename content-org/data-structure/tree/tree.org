@@ -1,6 +1,6 @@
 #+TITLE: 树
 #+DATE: <2022-06-01 Wed 00:08>
-#+FILETAGS: tree
+#+FILETAGS: data-structure
 
 * 定义
 

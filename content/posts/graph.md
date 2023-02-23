@@ -2,7 +2,7 @@
 title = "图"
 author = ["wenhu"]
 date = 2022-05-28T21:47:00+08:00
-tags = ["graph"]
+tags = ["data-structure"]
 draft = false
 +++
 

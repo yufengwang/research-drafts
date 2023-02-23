@@ -1,6 +1,6 @@
 #+TITLE: 图
 #+DATE: <2022-05-28 Sat 21:47>
-#+FILETAGS: graph
+#+FILETAGS: data-structure
 
 * 定义
 
