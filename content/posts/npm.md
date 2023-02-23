@@ -2,7 +2,7 @@
 title = "npm"
 author = ["wenhu"]
 date = 2022-07-17T16:00:00+08:00
-tags = ["npm"]
+tags = ["node"]
 draft = false
 +++
 

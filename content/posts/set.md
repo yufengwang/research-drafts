@@ -2,7 +2,6 @@
 title = "集合"
 author = ["wenhu"]
 date = 2022-06-13T14:28:00+08:00
-tags = ["set"]
 categories = ["math"]
 draft = false
 +++
@@ -44,6 +43,8 @@ A - B = {x: \\(x \in A \\) and \\( x \not\in B \\) }
 
 
 ## 子集 {#子集}
+
+
 ## Cardinality {#cardinality}
 
 集的势 (size)，集合里元素的数量,表示为 |S|

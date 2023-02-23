@@ -1,6 +1,6 @@
 #+TITLE: npm
 #+DATE: <2022-07-17 Sun 16:00>
-#+FILETAGS: npm
+#+FILETAGS: node
 
 * Peer dependency
 
