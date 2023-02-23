@@ -1,6 +1,6 @@
 #+TITLE: Git
 #+DATA:<2022-09-13 Tue 13:08>
-#+FILETAGS: git
+#+FILETAGS: misc
 
 * Git 原理
 

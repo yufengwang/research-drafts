@@ -2,7 +2,7 @@
 title = "C 预处理器"
 author = ["wenhu"]
 date = 2022-06-05T20:34:00+08:00
-tags = ["c/cpp"]
+tags = ["backend"]
 draft = false
 +++
 

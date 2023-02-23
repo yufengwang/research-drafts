@@ -1,7 +1,7 @@
 +++
 title = "Git"
 author = ["wenhu"]
-tags = ["git"]
+tags = ["misc"]
 draft = false
 +++
 
