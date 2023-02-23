@@ -1,6 +1,6 @@
 #+TITLE: 设计模式
 #+DATE:<2022-08-25 Thu 14:48>
-#+FILETAGS: frontend
+#+FILETAGS: @js
 
 * Structural Design Patterns
 
