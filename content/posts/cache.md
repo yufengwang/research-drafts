@@ -53,7 +53,7 @@ http 的设计是能缓存尽量缓存，http 客户端根据 http 响应头自�
 
 ### Cache-Control {#cache-control}
 
-缓存控制响应头, HTTP/1.1 引入，服务端返回
+缓存控制响应头, HTTP/1.1 引入
 
 -   max-age
 
