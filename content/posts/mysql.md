@@ -6,6 +6,9 @@ tags = ["database"]
 draft = false
 +++
 
+## 表设计 {#表设计}
+
+
 ## KEY, INDEX {#key-index}
 
 KEY, INDEX，是同义词，避免全表扫描，提高数据检索速度

@@ -189,11 +189,11 @@ Webpack 编译过程会跳过 externals 所声明的库，并假定消费场景�
 
 ## 分包 {#分包}
 
-Initial Chunk：entry 模块及相应子模块打包成 Initial Chunk；
+-   Initial Chunk：entry 模块及相应子模块打包成 Initial Chunk；
 
-Async Chunk：通过 import('./xx') 等语句导入的异步模块及相应子模块组成的 Async Chunk；
+-   Async Chunk：通过 import('./xx') 等语句导入的异步模块及相应子模块组成的 Async Chunk；
 
-Runtime Chunk：运行时代码抽离成 Runtime Chunk，可通过 entry.runtime 配置项实现
+-   Runtime Chunk：运行时代码抽离成 Runtime Chunk，可通过 entry.runtime 配置项实现
 
 
 ## source-map {#source-map}

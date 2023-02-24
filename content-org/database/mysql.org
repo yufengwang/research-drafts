@@ -2,6 +2,8 @@
 #+DATE:<2022-06-03 Fri 23:58>
 #+FILETAGS: database
 
+* 表设计
+
 * KEY, INDEX
 
 KEY, INDEX，是同义词，避免全表扫描，提高数据检索速度
