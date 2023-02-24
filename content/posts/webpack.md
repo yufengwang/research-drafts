@@ -27,6 +27,51 @@ draft = false
 将任意类型文件转译为 JavaScript 代码
 
 
+### 常见资源处理 {#常见资源处理}
+
+-   Typescript
+
+    babel-loader 加上 @babel/preset-typescript 规则集
+
+    缺点： 无类型校验
+    ```js
+      module.exports = {
+      /* ... */
+      module: {
+        rules: [
+          {
+            test: /\.ts$/,
+            use: [
+              {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['@babel/preset-typescript'],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+    ```
+
+-   CSS
+
+    css-loader 让 Webpack 能够正确理解 CSS 代码、分析资源依赖；style-loader、mini-css-extract-plugin 则通过适当方式将 CSS 插入到页面，对页面样式产生影响
+
+-   图片处理
+
+    file-loader: 原始图片会被重命名并复制到产物文件夹，同时在代码中插入图片 URL 地址
+
+    url-loader: 对于小于阈值 limit 的图像直接转化为 base64 编码；大于阈值的图像则调用 file-loader 进行加载
+
+    raw-loader: 不做任何转译，只是简单将文件内容复制到产物中，适用于 SVG 场景，例如如下配置：
+
+    image-webpack-loader: 图像压缩
+
+    responsive-loader : 响应式图片
+
+
 ## Plugin {#plugin}
 
 -   SplitChunksPlugin
@@ -124,51 +169,6 @@ draft = false
 -   TerserWebpackPlugin
 
     支持多进程方式执行代码压缩、uglify 功能
-
-
-## 常见资源处理 {#常见资源处理}
-
--   Typescript
-
-    babel-loader 加上 @babel/preset-typescript 规则集
-
-    缺点： 无类型校验
-    ```js
-      module.exports = {
-      /* ... */
-      module: {
-        rules: [
-          {
-            test: /\.ts$/,
-            use: [
-              {
-                loader: 'babel-loader',
-                options: {
-                  presets: ['@babel/preset-typescript'],
-                },
-              },
-            ],
-          },
-        ],
-      },
-    };
-    ```
-
--   CSS
-
-    css-loader 让 Webpack 能够正确理解 CSS 代码、分析资源依赖；style-loader、mini-css-extract-plugin 则通过适当方式将 CSS 插入到页面，对页面样式产生影响
-
--   图片处理
-
-    file-loader: 原始图片会被重命名并复制到产物文件夹，同时在代码中插入图片 URL 地址
-
-    url-loader: 对于小于阈值 limit 的图像直接转化为 base64 编码；大于阈值的图像则调用 file-loader 进行加载
-
-    raw-loader: 不做任何转译，只是简单将文件内容复制到产物中，适用于 SVG 场景，例如如下配置：
-
-    image-webpack-loader: 图像压缩
-
-    responsive-loader : 响应式图片
 
 
 ## external {#external}
