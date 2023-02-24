@@ -570,6 +570,7 @@ CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 impo
 
 当且仅当 x 为 NaN 时， x !== x 成立
 
+
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
 [fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]
 [fn:3] [[https://github.com/cmdjs/specification/blob/master/draft/module.md][CMD]]
