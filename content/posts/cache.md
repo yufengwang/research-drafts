@@ -34,11 +34,11 @@ draft = false
 
 -   Proxy cache
 
-代理缓存
+    代理缓存
 
 -   Managed cache
 
-reverse proxy, cdn
+    reverse proxy, cdn
 
 
 ## Heuristic cache {#heuristic-cache}
