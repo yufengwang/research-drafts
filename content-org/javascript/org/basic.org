@@ -404,6 +404,8 @@ console.log(tp.calculate()); // 'tp.calculate is not a function'
 
 * 值比较
 
+当且仅当 x 为 NaN 时， x !== x 成立
+
 - =====
 
   isStrictlyEqual 算法
@@ -566,9 +568,6 @@ Any other value is considered reachable if it’s reachable from a root by a ref
 
 * 常用工具函数
 
-* 相等性和值比较
-
-当且仅当 x 为 NaN 时， x !== x 成立
 
 
 [fn:1] [[https://javascript.info/closure][lexical-environment]]

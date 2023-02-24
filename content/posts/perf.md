@@ -48,17 +48,6 @@ window.performance， 可编程的性能 api
     Cumulative layout shift 累积布局偏移
 
 
-## 网络层面优化 {#网络层面优化}
-
-1.  减少请求次数，减少请求体积
-2.  使用 HTTP2
-3.  静态资源使用 CDN, 减少客户端到服务器之间的物理链路长度，提升传输效率
-4.  Gzip 压缩
-
-
-## Webpack 性能优化 {#webpack-性能优化}
-
-
 ## HTML 优化 {#html-优化}
 
 -   将 CSS 放在文件头部，JavaScript 文件放在底部
@@ -72,6 +61,17 @@ window.performance， 可编程的性能 api
     defer: 异步并行加载，不阻塞 render tree 构建，全加载完成后， 谁的位置靠前谁先执行，在 DOMContentLoaded 之前执行完
 
 -   使用字体图标 iconfont 代替图片图标，压缩字体文件
+
+
+## 网络层面优化 {#网络层面优化}
+
+1.  减少请求次数，减少请求体积
+2.  使用 HTTP2
+3.  静态资源使用 CDN, 减少客户端到服务器之间的物理链路长度，提升传输效率
+4.  Gzip 压缩
+
+
+## Webpack 性能优化 {#webpack-性能优化}
 
 
 ## React 性能优化 {#react-性能优化}

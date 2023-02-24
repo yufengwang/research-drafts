@@ -419,6 +419,8 @@ console.log(tp.calculate()); // 'tp.calculate is not a function'
 
 ## 值比较 {#值比较}
 
+当且仅当 x 为 NaN 时， x !== x 成立
+
 -   `===`
 
     isStrictlyEqual 算法
@@ -591,11 +593,6 @@ roots:
 
 
 ## 常用工具函数 {#常用工具函数}
-
-
-## 相等性和值比较 {#相等性和值比较}
-
-当且仅当 x 为 NaN 时， x !== x 成立
 
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)
