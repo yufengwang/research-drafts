@@ -252,7 +252,7 @@ const newFiber = {
   nextEffect: Fiber // 下一个副作用执行的Fiber
   hooks: [],
   tag: '',
-  updateQueue: '', // 当前 Fiber 待更新的状态队列
+  updateQueue: '', // 当前 Fiber 待更新的状态队列， effect 队列
   memoizedState: ''// 当前屏幕上对应的状态
   memoizedProps: '' //Props of the fiber that were used to create the output during the previous render
   pendingProps: '' //Props that have been updated from new data in React elements and need to be applied to child components or DOM elements
@@ -456,6 +456,8 @@ function TabContainer() {
 **  常见问题
 
 - 为什么不能在 if, for 等语句中用 hook
+
+  hook 对象挂在 Fiber 节点的 memoizedState 属性上，按出现在函数体中的先后顺序，用 next 串起来，如过某个 hook 在 if 条件中没有执行，后面的 hook 拿到的状态就为其前一个 hook 的状态，那么状态就串了
 
 
 * Events
