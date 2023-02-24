@@ -292,10 +292,26 @@ let a = function () {}
 
 ### 箭头函数 {#箭头函数}
 
-this 为外层词法环境的 this，不能被 new，没有 arguments, 没有 super
+-   this 为外层词法环境的 this，没有 arguments, 没有 super，不能作为对象的方法，没有 prototype 属性
+    ```js
+    "use strict";
+    const obj = {
+      i: 10,
+      b: () => console.log(this.i, this),
+      c() {
+        console.log(this.i, this);
+      },
+    };
+
+    obj.b(); // logs undefined, Window { /* … */ } (or the global object)
+    obj.c(); // logs 10, Object { /* … */ }
+    ```
+
+-   不能用作 constructor, 不能被 new，不能访问 new.targe
+-   不能在函数体内使用 yield，不能作为 generator 函数
 
 
-## Prototype {#prototype}
+## PROTOTYPE {#prototype}
 
 
 ### [ [Prototype] ] {#prototype}
