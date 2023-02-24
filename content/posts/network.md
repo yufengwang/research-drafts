@@ -6,17 +6,14 @@ tags = ["network"]
 draft = false
 +++
 
-## 计算机网络基础 {#计算机网络基础}
-
-
-### 三次握手 {#三次握手}
+## 三次握手 {#三次握手}
 
 1.  client 发送 syn（Synchronize Sequence Number）到 server，表示想要建立 tcp 连接
 2.  Server 发送(syn+ ack)
 3.  client 发送 ack 给 server，连接建立
 
 
-### 四次挥手 {#四次挥手}
+## 四次挥手 {#四次挥手}
 
 1.  client 发送 FIN
 2.  server 接收到 FIN，发送 ack
@@ -24,10 +21,10 @@ draft = false
 4.  client 发送 ack
 
 
-### 网络分层 {#网络分层}
+## 网络分层 {#网络分层}
 
 
-#### TCP/IP 模型 {#tcp-ip-模型}
+### TCP/IP 模型 {#tcp-ip-模型}
 
 1.  应用层
 2.  传输层
@@ -35,7 +32,7 @@ draft = false
 4.  链路层
 
 
-#### OSI 模型 {#osi-模型}
+### OSI 模型 {#osi-模型}
 
 1.  应用层
 2.  展示层
