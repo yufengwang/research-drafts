@@ -145,22 +145,26 @@ dns.lookup() 在 libuv 线程池里执行
 
 v8 术语，由引擎管理的任务队列
 
+当前宏任务执行完后，引擎会清空微任务队列，再去执行下一个宏任务
+
 
 ### 通用 {#通用}
 
-queueMicrotask
+-   queueMicrotask
 
-ecma-262 标准方法，用于注册微任务
+    ecma-262 标准方法，用于注册微任务
+
+-   .then/.catch/.finally
 
 
 ### 浏览器 {#浏览器}
 
-.then/.catch/.finally,  queueMicrotask 注册的均为微任务
-
-当前宏任务执行完后，引擎会清空微任务队列，再去执行下一个宏任务
+-   MutationObserver
 
 
 ### Node {#node}
+
+-   process.nextTick
 
 
 ## 宏任务 {#宏任务}
@@ -176,12 +180,14 @@ v8 术语
 
 ### 浏览器 {#浏览器}
 
-例如：脚本加载事件，页面交互事件
+事件监听函数，例如：脚本加载事件，页面交互事件
 
 执行宏任务时，浏览器不会渲染
 
 
 ### Node {#node}
+
+-   setImmediate
 
 
 ## Node架构 {#node架构}
