@@ -35,7 +35,10 @@ Other microtasks can execute before the async function resumes
 
 await literally suspends the function execution until the promise settles, and then resumes it with the promise result. That doesn’t cost any CPU resources, because the JavaScript engine can do other jobs in the meantime: execute other scripts, handle events, etc
 
+* Coroutine
+
 * Observable
+
 
 * IO
 
@@ -68,6 +71,7 @@ node 环境跟 browser 环境的 event loop 表现不一致
 [[file:eventloop.svg]]
 
 ** Node event loop[fn:2]
+
 多阶段，每阶段一个队列
 
 使用 libuv 来实现

@@ -45,6 +45,9 @@ Other microtasks can execute before the async function resumes
 await literally suspends the function execution until the promise settles, and then resumes it with the promise result. That doesn’t cost any CPU resources, because the JavaScript engine can do other jobs in the meantime: execute other scripts, handle events, etc
 
 
+## Coroutine {#coroutine}
+
+
 ## Observable {#observable}
 
 
