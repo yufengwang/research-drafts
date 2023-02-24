@@ -311,7 +311,7 @@ Object.defineProperty(obj, "b", {
 
 - 不能用作 constructor, 不能被 new，不能访问 new.targe
 
-  因为，对于 constructor 而言，函数对象必须要有 [ [ Construct ]  内部方法，而箭头函数没有
+  因为，对于 constructor 而言，函数对象必须要有 [ [ Construct ] ] 内部方法，而箭头函数没有
 
 - 不能在函数体内使用 yield，不能作为 generator 函数
 
