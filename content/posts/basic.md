@@ -579,7 +579,7 @@ roots:
 
     语言层面的规范
 
-CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 import 机制则是异步的
+    CommonJS 的 require() 机制是完全同步的，而 ECMAScript module 的 import 机制则是异步的
 
 
 ## 严格模式 {#严格模式}
