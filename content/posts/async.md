@@ -31,7 +31,90 @@ function * h()
 ```
 
 
-## Promise {#promise}
+## Promise[^fn:1] {#promise}
+
+Promise 对象表示异步操作的最终完成结果以及其值（或异常）
+
+{{< figure src="/ox-hugo/promises.png" >}}
+
+
+### 状态 {#状态}
+
+-   pending
+
+    挂起，初始态
+-   fulfilled
+
+    完成
+-   rejected
+
+    失败
+
+
+### 术语 {#术语}
+
+-   settled
+
+    Promise fulfilled 或 rejected
+-   thenable
+
+    在 Promise 规范化之前，有很多 Promise 的实现，所有的类 Promise 对象都实现了 Thenable 接口
+
+    Thenable 实现了 then 方法
+
+    Promise 也是 thenable
+
+
+### 实例方法 {#实例方法}
+
+挂在 Promise.prototype 上的方法，均 return promise, 可被链式调用
+
+-   then()
+    返回新创建的 promise 对象，可被用来链式调用
+
+    第一个参数处理 fulfilled 态，第二个参数（可选）处理 rejected 态
+-   catch()
+
+    没有处理 fulfilled 态 callback 的 then 方法
+
+    如过不需要立刻处理异常，可以在链式调用的最后放 catch
+
+-   finally()
+
+    Promise settled 后调用，返回 promise
+
+
+### 静态方法 {#静态方法}
+
+-   Promise.reject()
+-   Promise.resolve()
+    不仅 resolve promise，也 resolve thenable
+
+    处理异步任务并发的 4 个 api， 接收内容为 thenable 的 iterable 对象，返回新的 promise
+-   Promise.all()
+
+    全 fulfill ，则 fulfill，任一 reject, 则 reject，并发执行
+-   Promise.allSettled()
+
+    当所有的 promise fulfill 或 rejected 时 fulfill
+-   Promise.any()
+
+    任一 fulfill，则 fulfill，全部 reject，则 reject
+-   Promise.race()
+
+    任一 fulfill 则 fulfill，任一 reject 则 reject
+
+
+### 异常处理 {#异常处理}
+
+如果 promise 的 rejection 事件没有被任何 handler 处理，那么将会冒泡到调用栈的顶层，并触发两个事件
+
+-   unhandledrejection
+
+    promise 被 reject，但是没有 reject handler
+-   rejectionhandled
+
+    触发 unhandledrejection 事件的 promise rejection 被添加了 handler
 
 
 ## Async/Await {#async-await}
@@ -90,7 +173,7 @@ node 环境跟 browser 环境的 event loop 表现不一致
 {{< figure src="/ox-hugo/eventloop.svg" >}}
 
 
-### Node event loop[^fn:1] {#node-event-loop}
+### Node event loop[^fn:2] {#node-event-loop}
 
 多阶段，每阶段一个队列
 
@@ -109,7 +192,7 @@ Node 11.0.0 修复了微任务的 bug
 
 中间的俩任务队列:
 
--   process.nextTick[^fn:2]
+-   process.nextTick[^fn:3]
 
     任务队列，被 node 管理，仅在 node 环境支持
 
@@ -197,5 +280,6 @@ v8 术语
 
 {{< figure src="/ox-hugo/node-arch.png" >}}
 
-[^fn:1]: [nodejs-event-loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810)
-[^fn:2]: [process-nexttick-and-queuemicrotask](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
+[^fn:1]: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+[^fn:2]: [nodejs-event-loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810)
+[^fn:3]: [process-nexttick-and-queuemicrotask](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
