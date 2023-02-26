@@ -552,6 +552,12 @@ memo 了一下， props 不变，则直接从缓存里拿 element tree(我猜的
 ### ErrorBoundary {#errorboundary}
 
 
+## LEGACY REACT APIS {#legacy-react-apis}
+
+
+### PureComponent {#purecomponent}
+
+
 ## Context {#context}
 
 

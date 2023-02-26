@@ -515,6 +515,11 @@ memo 了一下， props 不变，则直接从缓存里拿 element tree(我猜的
 
 ** ErrorBoundary
 
+*  LEGACY REACT APIS
+
+** PureComponent
+
+
 * Context
 
 * Lane
