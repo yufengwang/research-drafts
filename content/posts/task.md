@@ -14,7 +14,9 @@ draft = false
 
 优先级比  requestIdleCallback 高
 
-requestAnimationFrame is a tool for us web-devs to hook in this update the rendering sub-process, allowing us to draw things only when the rendering will happen, but it also has the side effect of marking the web page as animated, and thus forces browser to execute the full update the rendering steps even though it might not have been needed
+requestAnimationFrame is a tool for us web-devs to hook in this update the rendering[^fn:1] sub-process, allowing us to draw things only when the rendering will happen, but it also has the side effect of marking the web page as animated, and thus forces browser to execute the full update the rendering steps even though it might not have been needed
+
+在渲染前，执行回调
 
 
 ## requestIdleCallback {#requestidlecallback}
@@ -56,3 +58,5 @@ Task
 指定时间间隔后，任务进到 task queue，而不是 main thread
 
 每次调用开始计时，而不是调用结束后计时，函数两次调用的间隔 (StartB - endA) 并不是严格的 delay 时间
+
+[^fn:1]: [update-the-rendering](https://html.spec.whatwg.org/multipage/webappapis.html#update-the-rendering)
