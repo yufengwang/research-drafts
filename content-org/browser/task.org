@@ -21,6 +21,9 @@
 
 对于 UI 渲染任务来说，在不阻塞主线程的情况下，需要尽可能的利用浏览器的空闲时间，所以 React 重新实现了自己的调度器
 
+等 event-loop 没其他任务要处理的时候，才会被调用
+
+
 * setTimeout
 
 if we call the setTimeout() which is a Web API, the renderer process asks another process (perhaps the browser process) to start the timer, and when the specified time has passed, the browser process queues the callback we sent setTimeout() so that it can run on the main thread of the renderer process
@@ -32,6 +35,9 @@ zero delay, setTimeout(func, 0), func 在当前正在执行的脚本执行完成
 对浏览器而言，嵌套的定时器，出于历史原因:
 
 after five nested timers, the interval is forced to be at least 4 milliseconds
+
+在目前 chrome 的实现里， setTimeout 有 1ms 的最低延迟，优先级比 MessageEvents 低
+
 
 * setInterval
 

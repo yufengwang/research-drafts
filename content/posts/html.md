@@ -6,9 +6,6 @@ tags = ["browser"]
 draft = false
 +++
 
-待补充...
-
-
 ## Web components {#web-components}
 
 
