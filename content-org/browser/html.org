@@ -12,4 +12,6 @@
 
 - document.querySelectorAll(selectors)
 
-*  动画
+* 动画
+
+* MessageChannel
