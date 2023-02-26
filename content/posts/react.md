@@ -506,7 +506,11 @@ SyntheticEvent: 为了抹平浏览器差异，提供一致的表现
 
 ### memo {#memo}
 
-用 memo 把组件包一层后，当 props 变了时，组件才会重渲染。如果不用 memo 包一层的话，父组件 rerender，子组件接收到的 props 不变，子组件也会重渲染。
+用 memo 把组件包一层后，当 props 变了时，组件才会重渲染。
+
+如果不用 memo 包一层的话，父组件 rerender，子组件接收到的 props 不变，子组件也会重渲染(因为要拿到子组件return出来的 Element Tree)。
+
+memo 了一下， props 不变，则直接从缓存里拿 element tree(我猜的，待验证)
 
 通常结合 useMemo，useCallback 使用
 
