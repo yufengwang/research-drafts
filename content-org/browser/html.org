@@ -11,3 +11,5 @@
 * Dom api
 
 - document.querySelectorAll(selectors)
+
+*  动画
