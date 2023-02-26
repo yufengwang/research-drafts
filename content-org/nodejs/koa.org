@@ -10,7 +10,7 @@ Koa Request 是 Node 原始 request 对象的抽象，提供额外的功能用�
 api 有：
 
 - request.method
-- equest.query
+- request.query
   ...
 
 ** Response
