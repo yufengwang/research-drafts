@@ -220,7 +220,7 @@ v8 术语，由引擎管理的任务队列
 
 * 宏任务
 
-v8 术语，又称为 Task
+v8 术语，又称为 Task，'macrotask' 这个术语并不规范，仅口语上称之为 宏任务，在 html 规范里，并没有 macrotask 的定义[fn:6]
 
 WHATWG 并没有定义任务优先级应该怎么实现，只定义了不同的任务源
 
@@ -276,3 +276,4 @@ This task source is used for features that trigger in response to network activi
 [fn:3] [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise][Promise]]
 [fn:4] [[https://github.com/WICG/scheduling-apis][Prioritized Task Scheduling]]
 [fn:5] [[https://html.spec.whatwg.org/multipage/webappapis.html#generic-task-sources:task-source][generic-task-sources]]
+[fn:6] [[https://html.spec.whatwg.org/multipage/webappapis.html#concept-task][concept-task]]

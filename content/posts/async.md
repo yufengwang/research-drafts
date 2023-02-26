@@ -255,11 +255,11 @@ v8 术语，由引擎管理的任务队列
 
 ## 宏任务 {#宏任务}
 
-v8 术语，又称为 Task
+v8 术语，又称为 Task，'macrotask' 这个术语并不规范，仅口语上称之为 宏任务，在 html 规范里，并没有 macrotask 的定义[^fn:4]
 
 WHATWG 并没有定义任务优先级应该怎么实现，只定义了不同的任务源
 
-任务调度 API 草案[^fn:4]提供了定义任务优先级的能力, 有三个优先级，"user-blocking", "user-visible" and "background"
+任务调度 API 草案[^fn:5]提供了定义任务优先级的能力, 有三个优先级，"user-blocking", "user-visible" and "background"
 
 不同的浏览器对宏任务的实现，没有完全一样的表现形式，例如:
 
@@ -314,4 +314,5 @@ This task source is used for features that trigger in response to network activi
 [^fn:1]: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 [^fn:2]: [nodejs-event-loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810)
 [^fn:3]: [process-nexttick-and-queuemicrotask](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
-[^fn:4]: [Prioritized Task Scheduling](https://github.com/WICG/scheduling-apis)
+[^fn:4]: [concept-task](https://html.spec.whatwg.org/multipage/webappapis.html#concept-task)
+[^fn:5]: [Prioritized Task Scheduling](https://github.com/WICG/scheduling-apis)

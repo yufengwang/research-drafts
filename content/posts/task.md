@@ -10,6 +10,8 @@ draft = false
 
 用于执行动画帧
 
+既不是微任务，也不是宏任务
+
 
 ## requestIdleCallback {#requestidlecallback}
 
