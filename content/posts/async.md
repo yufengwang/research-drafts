@@ -255,7 +255,38 @@ v8 术语，由引擎管理的任务队列
 
 ## 宏任务 {#宏任务}
 
-v8 术语
+v8 术语，又称为 Task
+
+WHATWG 并没有定义任务优先级应该怎么实现，只定义了不同的任务源
+
+任务调度 API 草案[^fn:4]提供了定义任务优先级的能力, 有三个优先级，"user-blocking", "user-visible" and "background"
+
+不同的浏览器对宏任务的实现，没有完全一样的表现形式，例如:
+
+-   在 chrome 里，每个 task queue 都有饥饿保护，防止 task queue 过度占用 eventloop ，从而让低优先级的队列有机会执行任务
+-   在 chrome 里， setTimeout 仍然有最小的 1ms 延时
+
+每个任务，都来自一个特定的任务源，每个任务源的 task 都有其对应的任务队列
+
+每个 eventloop 都有一个或多个 task queue，每个 queue 里的任务都是按其入队顺序被处理
+
+常用的 task source
+
+-   The DOM manipulation task source
+
+This task source is used for features that react to DOM manipulations, such as things that happen in a non-blocking fashion when an element is inserted into the document.
+
+-The user interaction task source
+
+This task source is used for features that react to user interaction, for example keyboard or mouse input.
+
+Events sent in response to user input (e.g. click events) must be fired using tasks queued with the user interaction task source. [UIEVENTS]
+
+-   The networking task source
+
+This task source is used for features that trigger in response to network activity.
+
+-   The navigation and traversal task source
 
 
 ### 通用 {#通用}
@@ -283,3 +314,4 @@ v8 术语
 [^fn:1]: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 [^fn:2]: [nodejs-event-loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810)
 [^fn:3]: [process-nexttick-and-queuemicrotask](https://stackoverflow.com/questions/55467033/difference-between-process-nexttick-and-queuemicrotask)
+[^fn:4]: [Prioritized Task Scheduling](https://github.com/WICG/scheduling-apis)

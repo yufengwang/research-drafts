@@ -24,3 +24,8 @@ draft = false
 
 
 ## MessageChannel {#messagechannel}
+
+
+## 事件 {#事件}
+
+-   DOMContentLoaded
