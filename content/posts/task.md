@@ -12,6 +12,10 @@ draft = false
 
 既不是微任务，也不是宏任务
 
+优先级比  requestIdleCallback 高
+
+requestAnimationFrame is a tool for us web-devs to hook in this update the rendering sub-process, allowing us to draw things only when the rendering will happen, but it also has the side effect of marking the web page as animated, and thus forces browser to execute the full update the rendering steps even though it might not have been needed
+
 
 ## requestIdleCallback {#requestidlecallback}
 
@@ -30,6 +34,8 @@ draft = false
 
 ## setTimeout {#settimeout}
 
+Task
+
 if we call the setTimeout() which is a Web API, the renderer process asks another process (perhaps the browser process) to start the timer, and when the specified time has passed, the browser process queues the callback we sent setTimeout() so that it can run on the main thread of the renderer process
 
 指定时间间隔后，任务进到 task queue，而不是 main thread
@@ -44,6 +50,8 @@ after five nested timers, the interval is forced to be at least 4 milliseconds
 
 
 ## setInterval {#setinterval}
+
+Task
 
 指定时间间隔后，任务进到 task queue，而不是 main thread
 

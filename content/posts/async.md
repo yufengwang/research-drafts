@@ -172,6 +172,28 @@ node 环境跟 browser 环境的 event loop 表现不一致
 
 {{< figure src="/ox-hugo/eventloop.svg" >}}
 
+伪代码表示
+
+```js
+while (true) {
+    var nextTask;
+
+    // The browser notifies the Event Loop
+    // when it's time to render a frame
+    if (shouldRenderFrame()) {
+        nextTask = getRenderStepsTask();
+    } else {
+        // If it's not ready for a frame,
+        // the Event Loop should run the
+        // next Task.
+        nextTask = taskQueue.next();
+    }
+
+    // Run Task to completion
+    runOnMainThread(nextTask);
+}
+```
+
 
 ### Node event loop[^fn:2] {#node-event-loop}
 

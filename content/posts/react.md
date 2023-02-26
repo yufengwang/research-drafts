@@ -79,6 +79,8 @@ UI 的声明式描述，可被 Babel 转为标准的 JavaScript 语法
     }
 ```
 
+double-buffering
+
 
 ## React 源码 {#react-源码}
 
@@ -669,6 +671,11 @@ setTimeout(() => {
 
 
 ## Scheduler {#scheduler}
+
+Scheduler periodically yields in case there is other work on the main
+thread, like user events. By default, it yields multiple times per frame.
+It does not attempt to align with frame boundaries, since most tasks don't
+need to be frame aligned; for those that do, use requestAnimationFrame.
 
 
 ## 状态管理 {#状态管理}
