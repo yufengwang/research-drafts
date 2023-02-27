@@ -33,3 +33,69 @@ any 类型值上允许任何操作，为所欲为
 ** void
 
 函数无明确返回值类型
+
+* Type && Interface
+
+- interface 可以通过 extends 关键字实现继承, type 通过 & 实现继承
+ #+begin_src typescript
+interface Animal {
+  name: string
+}
+
+interface Bear extends Animal {
+  honey: boolean
+}
+
+const bear = getBear()
+bear.name
+bear.honey
+
+ #+end_src
+
+ #+begin_src typescript
+type Animal = {
+  name: string
+}
+
+type Bear = Animal & {
+  honey: boolean
+}
+
+const bear = getBear();
+bear.name;
+bear.honey;
+
+ #+end_src
+
+- interface 可被重复声明，用于添加新属性, type 创建后不能再重复声明
+
+  也就是说 type alias 不能用于声明合并
+
+ #+begin_src typescript
+interface Window {
+  title: string
+}
+
+interface Window {
+  ts: TypeScriptAPI
+}
+
+const src = 'const a = "Hello World"';
+window.ts.transpileModule(src, {});
+
+ #+end_src
+
+
+ #+begin_src typescript
+type Window = {
+  title: string
+}
+
+type Window = {
+  ts: TypeScriptAPI
+}
+
+ // Error: Duplicate identifier 'Window'.
+ #+end_src
+
+ - interface 只能用于描述对象，type 可以用来表示任何类型

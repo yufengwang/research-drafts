@@ -525,6 +525,23 @@ Number.isNaN:
 ### Object.hasOwn(obj, prop) {#object-dot-hasown--obj-prop}
 
 
+### Array.prototype.reduce() {#array-dot-prototype-dot-reduce}
+
+```js
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+
+```
+
+
 ## 垃圾收集[^fn:2] {#垃圾收集}
 
 
