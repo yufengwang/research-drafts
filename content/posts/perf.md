@@ -6,9 +6,6 @@ tags = ["frontend"]
 draft = false
 +++
 
-待补充...
-
-
 ## 性能监测 {#性能监测}
 
 监测方式: devtool performance tab, lighthouse 插件
