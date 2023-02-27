@@ -1,5 +1,5 @@
 +++
-title = "csrf"
+title = "CSRF"
 author = ["wenhu"]
 date = 2022-06-22T15:47:00+08:00
 tags = ["security"]
