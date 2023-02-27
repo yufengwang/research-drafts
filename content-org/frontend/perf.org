@@ -17,28 +17,25 @@ window.performance， 可编程的性能 api
   First Paint 首次绘制
 - FCP
 
-  First contentful paint 首次内容绘制
+  First Contentful Paint 首次内容绘制
+- LCP
 
+  Largest Contentful Paint 最大内容绘制
+- FID
+
+  First Input Delay 首次输入延迟
+- TTI
+
+  Time To Interactive 可交互时间
+- TBT
+
+  Total Blocking Time 总阻塞时间
+- CLS
+
+  Cumulative Layout Shift 累积布局偏移
 - FMP
 
   First Meaningful Paint，在 lighthouse 6.0 中已经被废弃，考虑用 LCP
-
-- LCP
-
-  Largest contentful paint 最大内容绘制
-- FID
-
-  First input delay 首次输入延迟
-- TTI
-
-  Time to Interactive 可交互时间
-- TBT
-
-  Total blocking time 总阻塞时间
-- CLS
-
-  Cumulative layout shift 累积布局偏移
-
 * HTML 优化
 
 - 将 CSS 放在文件头部，JavaScript 文件放在底部
