@@ -25,3 +25,20 @@
 * Dev dependency
 
 开发依赖，不会打到最终的包里
+
+* 依赖管理
+** 锁不锁版本[fn:1]
+
+理想的 semver 是 break.feat.bugfix，现实的 semver 是 break.break.break
+
+- 不锁
+  根据 semver 自动升级，可能被投毒或引入有 bug 的代码，造成故障
+
+  我本地都是好的，测试也测过，怎么发上去就挂了？
+
+  出问题了，责任算谁的？
+- 锁
+
+  不能及时跟进安全修复，时间久了就是技术债，怎么升也升不动了
+
+[fn:1] [[https://mp.weixin.qq.com/s?__biz=MjM5NDgyODI4MQ==&mid=2247484466&idx=1&sn=7ace1e9c2fb321b1af57546e3e00d8ee&chksm=a6809ea491f717b24a9eb7f7f26fd90c98aa45157b4334042a09a5edaf0cf0ed27078784c1ab&cur_album_id=2199691505051729920&scene=189#wechat_redirect][锁不锁依赖]]

@@ -57,13 +57,16 @@ window.performance， 可编程的性能 api
 
 -   使用字体图标 iconfont 代替图片图标，压缩字体文件
 
+-   prefetch preload
+-   DNS 预解析
+
 
 ## 网络层面优化 {#网络层面优化}
 
-1.  减少请求次数，减少请求体积
-2.  使用 HTTP2
-3.  静态资源使用 CDN, 减少客户端到服务器之间的物理链路长度，提升传输效率
-4.  Gzip 压缩
+-   减少请求次数，减少请求体积
+-   使用 HTTP2
+-   静态资源使用 CDN, 减少客户端到服务器之间的物理链路长度，提升传输效率
+-   Gzip 压缩
 
 
 ## Webpack 性能优化 {#webpack-性能优化}
@@ -71,8 +74,8 @@ window.performance， 可编程的性能 api
 
 ## React 性能优化 {#react-性能优化}
 
-1.  shouldComponentUpdate，不需要更新时，return false，避免 re-render
-2.  使用 React.PureComponent，自动比较 props 和 state
+-   shouldComponentUpdate，不需要更新时，return false，避免 re-render
+-   使用 React.PureComponent，自动比较 props 和 state
 
 
 ## 图片优化 {#图片优化}
