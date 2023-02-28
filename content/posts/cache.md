@@ -30,15 +30,7 @@ draft = false
 
 ### Shared cache {#shared-cache}
 
-可被共享的缓存
-
--   Proxy cache
-
-    代理缓存
-
--   Managed cache
-
-    reverse proxy, cdn
+源站和客户端之间的缓存，proxy cdn 等
 
 
 ## Heuristic cache {#heuristic-cache}
