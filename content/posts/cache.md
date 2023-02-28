@@ -149,6 +149,6 @@ If-None-Match: x234dff
 
 ## 强缓存与协商缓存 {#强缓存与协商缓存}
 
-强缓存: cache-control 设置一个较长的过期时间，max-age, expire，浏览器在一段时间内直接用，不需要跟服务器通信
+强缓存: cache-control 设置一个较长的 max-age, 浏览器在一段时间内直接用，不需要跟服务器通信
 
 协商缓存: cache-control:no-cache 浏览器需要发请求给服务器，让服务器判断缓存是否有效
