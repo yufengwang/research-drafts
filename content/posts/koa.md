@@ -63,5 +63,18 @@ app.use(async ctx => {
 
 {{< figure src="/ox-hugo/koa.png" >}}
 
+```js
+app.use(async (ctx, next) => {
+  const start = Date.now();
+  await next();
+  const ms = Date.now() - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+});
+
+app.use(async (ctx, next) => {
+  ctx.body = 'hello'
+});
+```
+
 
 ## 异常处理 {#异常处理}
