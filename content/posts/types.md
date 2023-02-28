@@ -45,7 +45,7 @@ any 类型值上允许任何操作，为所欲为
 函数无明确返回值类型
 
 
-## Type &amp;&amp; Interface {#type-and-and-interface}
+## Type 和 Interface {#type-和-interface}
 
 -   interface 可以通过 extends 关键字实现继承, type 通过 &amp; 实现继承
     ```typescript
