@@ -6,6 +6,10 @@
 
 ** MFSU
 
+Module Federation Speed Up
+
+Umi 3.5+ 后支持, Umi4 默认支持，Umi3 在 config.ts 中添加 mfsu:{} 开启
+
 基于 webpack 5 Module Federation 特性的提速方案
 
 启动快、热更快、页面打开也快、 CI & CD 流程也快
