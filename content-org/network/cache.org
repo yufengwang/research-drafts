@@ -50,6 +50,10 @@ http 的设计是能缓存尽量缓存，http 客户端根据 http 响应头自�
 
   能存活多久(单位秒), 例： max-age=3153000
 
+- s-maxage
+
+  跟 max-age 类似，作用于共享缓存，当这个存在时会忽略 max-age
+
 - private
 
   仅允许端(浏览器)缓存，私有缓存
@@ -128,3 +132,9 @@ Mon, 03 Jan 2011 17:45:57 GMT
 If-None-Match: x234dff
 
 浏览器端发送 ，检查此值是否跟 server 端的 ETag 值匹配
+
+* 强缓存与协商缓存
+
+强缓存: cache-control 设置一个较长的过期时间，max-age, expire，浏览器在一段时间内直接用，不需要跟服务器通信
+
+协商缓存: cache-control:no-cache 浏览器需要发请求给服务器，让服务器判断缓存是否有效
