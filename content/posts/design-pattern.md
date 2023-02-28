@@ -10,3 +10,13 @@ draft = false
 
 
 ### Adapter pattern {#adapter-pattern}
+
+
+### 发布订阅 {#发布订阅}
+
+{{< figure src="/ox-hugo/pub-sub.png" >}}
+
+
+### 观察者模式 {#观察者模式}
+
+{{< figure src="/ox-hugo/observer.png" >}}

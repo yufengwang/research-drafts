@@ -5,3 +5,10 @@
 * Structural Design Patterns
 
 ** Adapter pattern
+
+** 发布订阅
+
+[[file:./pub-sub.png]]
+
+** 观察者模式
+[[file:./observer.png]]
