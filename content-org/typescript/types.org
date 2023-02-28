@@ -71,29 +71,28 @@ bear.honey;
 
   也就是说 type alias 不能用于声明合并
 
+  #+begin_src typescript
+   interface Window {
+     title: string
+   }
+
+   interface Window {
+    ts: TypeScriptAPI
+   }
+
+   const src = 'const a = "Hello World"';
+   window.ts.transpileModule(src, {});
+  #+end_src
+
+
  #+begin_src typescript
-interface Window {
-  title: string
-}
+  type Window = {
+    title: string
+  }
 
-interface Window {
-  ts: TypeScriptAPI
-}
-
-const src = 'const a = "Hello World"';
-window.ts.transpileModule(src, {});
-
- #+end_src
-
-
- #+begin_src typescript
-type Window = {
-  title: string
-}
-
-type Window = {
-  ts: TypeScriptAPI
-}
+  type Window = {
+    ts: TypeScriptAPI
+  }
 
  // Error: Duplicate identifier 'Window'.
  #+end_src

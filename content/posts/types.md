@@ -82,29 +82,28 @@ any 类型值上允许任何操作，为所欲为
 
     也就是说 type alias 不能用于声明合并
     ```typescript
-    interface Window {
-      title: string
-    }
+       interface Window {
+         title: string
+       }
 
-    interface Window {
-      ts: TypeScriptAPI
-    }
+       interface Window {
+        ts: TypeScriptAPI
+       }
 
-    const src = 'const a = "Hello World"';
-    window.ts.transpileModule(src, {});
-
+       const src = 'const a = "Hello World"';
+       window.ts.transpileModule(src, {});
     ```
 
 <!--listend-->
 
 ```typescript
-type Window = {
-  title: string
-}
+  type Window = {
+    title: string
+  }
 
-type Window = {
-  ts: TypeScriptAPI
-}
+  type Window = {
+    ts: TypeScriptAPI
+  }
 
  // Error: Duplicate identifier 'Window'.
 ```
