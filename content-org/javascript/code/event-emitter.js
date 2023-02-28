@@ -54,6 +54,7 @@ class EventEmitter1 {
     // 检查目标事件是否有监听函数队列
     if (this.handlers[eventName]) {
       // 这里需要对 this.handlers[eventName] 做一次浅拷贝，主要目的是为了避免通过 once 安装的监听器在移除的过程中出现顺序问题
+      // 创建副本，如果回调函数内继续注册相同事件，会造成死循环
       const handlers = this.handlers[eventName].slice();
       // 如果有，则逐个调用队列里的回调函数
       handlers.forEach((callback) => {
