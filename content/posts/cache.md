@@ -89,8 +89,6 @@ HTTP/1.0 没法处理 no-cache 指令，用 max-age=0, must-revalidate 代替
 
 既可以当请求头(e.g. 浏览器 reload, force reload)，也可以当响应头
 
-用于请求头时，表示跳过缓存的响应，直接请求源站
-
 
 ### Expires {#expires}
 
