@@ -6,10 +6,19 @@ tags = ["frontend"]
 draft = false
 +++
 
-待补充...
-
-
 ## 架构 {#架构}
+
+{{< figure src="/ox-hugo/miniapp.png" >}}
+
+渲染层的界面使用 webview 进行渲染；逻辑层采用 JSCore运行JavaScript代码
+
+无论是线程之间的通讯、数据的传递、网络请求都由Native层做转发
+
+
+## 框架 {#框架}
+
+
+### Taro {#taro}
 
 
 ## 跨端 {#跨端}

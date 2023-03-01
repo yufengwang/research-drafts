@@ -2,6 +2,16 @@
 #+DATE:<2023-02-26 Sun 13:43>
 #+FILETAGS: frontend
 
-待补充...
 * 架构
+
+[[file:./miniapp.png]]
+
+渲染层的界面使用 webview 进行渲染；逻辑层采用 JSCore运行JavaScript代码
+
+无论是线程之间的通讯、数据的传递、网络请求都由Native层做转发
+
+* 框架
+
+** Taro
+
 * 跨端
