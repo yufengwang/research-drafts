@@ -82,6 +82,9 @@ window.performance， 可编程的性能 api
 
 ## Webpack 性能优化 {#webpack-性能优化}
 
+-   Tree-Shaking
+-   按需加载
+
 
 ## 图片优化 {#图片优化}
 
