@@ -17,6 +17,8 @@ draft = false
 
 通过 http 请求头及 http 响应头来控制
 
+{{< figure src="/ox-hugo/cache.png" >}}
+
 
 ## 缓存类型 {#缓存类型}
 
@@ -141,6 +143,6 @@ If-None-Match: x234dff
 
 ## 强缓存与协商缓存 {#强缓存与协商缓存}
 
-强缓存: cache-control 设置一个较长的 max-age, 浏览器在一段时间内直接用，不需要跟服务器通信
+强缓存: 设置 expires 或者 cache-control 设置一个较长的 max-age, 浏览器在一段时间内直接用，不需要跟服务器通信
 
 协商缓存: cache-control:no-cache 浏览器需要发请求给服务器，让服务器判断缓存是否有效

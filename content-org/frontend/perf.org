@@ -36,13 +36,14 @@ window.performance， 可编程的性能 api
 - FMP
 
   First Meaningful Paint，在 lighthouse 6.0 中已经被废弃，考虑用 LCP
+
 * HTML 优化
 
 - 将 CSS 放在文件头部，JavaScript 文件放在底部
 
   css 的加载不会影响 dom 树的构建，但会影响最终的 render tree 的构建，所以放头部优先加载，如果放底部的话，加载就慢了，要早点下载下来用于构建 cssom
 
-  js 会阻塞 dom 树的构建，所以要放在底部，等 dom 树构建完加载并执行 js，某些 js 也可以加上 async defer 属性
+  JS 引擎是独立于渲染引擎存在的,  js 的加载和执行会阻塞渲染, 所以要放在底部，等 dom 树构建完加载并执行 js，某些 js 也可以加上 async defer 属性
 
   async: 谁先加载完谁先执行, 不阻塞 render tree 的构建， 独立第三方脚本，广告等。执行顺序无关联的脚本
 
@@ -51,7 +52,16 @@ window.performance， 可编程的性能 api
 - 使用字体图标 iconfont 代替图片图标，压缩字体文件
 
 - prefetch preload
+
 - DNS 预解析
+
+- 服务端渲染
+
+  针对移动端，首屏体验要求高，需要 SEO 的场景
+
+* CSS 优化
+
+- 尽量避免使用 @import
 
 * 网络层面优化
 
@@ -59,13 +69,10 @@ window.performance， 可编程的性能 api
 - 使用 HTTP2
 - 静态资源使用 CDN, 减少客户端到服务器之间的物理链路长度，提升传输效率
 - Gzip 压缩
+- 合理的使用缓存，文件 hash
 
 * Webpack 性能优化
 
-* React 性能优化
-
-- shouldComponentUpdate，不需要更新时，return false，避免 re-render
-- 使用 React.PureComponent，自动比较 props 和 state
 
 * 图片优化
 
@@ -97,3 +104,10 @@ window.performance， 可编程的性能 api
 * JavaScript 优化
 
 - 使用位操作
+
+* React 性能优化
+
+- shouldComponentUpdate，不需要更新时，return false，避免 re-render
+- 使用 React.PureComponent，自动比较 props 和 state
+
+* 离线化
