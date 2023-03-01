@@ -346,17 +346,17 @@ const object = { 'a': [{ 'b': { 'c': 3 } }] };
 console.log(object.a[0].b.c); // => 4
 const format = (str) => {
   return str.replace(/\[(\d)\]/g, function (match, p) {
-      return `.${p}`
+    return `.${p}`
   }).replace(/^\./, '')
 }
 const deepSet = (obj, path, val) => {
   // 处理path, 移除[],改成 用 . 分割的格式
   const str = format(path)
   const arr = str.split('.');
-  console.log('arr',str, arr)
+  console.log('arr', str, arr)
   let target = obj, key = arr[arr.length - 1]
   for (let i = 0; i < arr.length - 1; i++) {
-      target = target[ arr[i] ]
+    target = target[arr[i]]
   }
   console.log('target', target, key)
   target[key] = val
@@ -451,5 +451,79 @@ const getValue = (obj, path) => {
   return res;
 }
 
+/**
+* coding 2
+* 实现reduce方法
+*/
+function reduce(arr, callback, initVal) {
 
+}
+console.log(reduce([1, 2, 3, 4, 5], (prev, cur) => prev + cur, 0));
+
+// /**
+//  * 定义表单项，包含：
+//  * 表单项的值：value，类型可传入
+//  * onChange方法
+//  */
+// interface IFieldModel {}
+
+/**
+* coding 1
+* 改变树状结构title的值，在前面加入父级的title以 / 分隔
+*
+* @param {*} tree
+*/
+function treeTitle(tree) { }
+
+const testData = [
+  { id: 1, title: "1" },
+  {
+    id: 2,
+    title: "2",
+    children: [
+      {
+        id: 21, title: "21", children: [
+          {
+            id: 211, title: "211", children: [
+              { id: 2111, title: "2111" }
+            ]
+          },
+          { id: 212, title: "212" }
+        ],
+      }
+    ],
+  },
+];
+const res = treeTitle(testData);
+console.log(res);
+// [
+//   { id: 1, title: "1" },
+//   {
+//     id: 2,
+//     title: "2",
+//     children: [
+//       { 
+//         id: 21, 
+//         title: "2/21",
+//         children: [
+//           { id: 211, title: "2/21/211", },
+//           { id: 212, title: "2/21/212", }
+//         ], }
+//     ],
+//   },
+// ];
+function treeTitle(tree) {
+
+  const addTitle = (ele) => {
+      if (ele.title && ele.children && ele.children.length > 0) {
+          ele.children.forEach(el => {
+              if (el.title) {
+                  el.title = `${ele.title}/${el.title}`
+              }
+          })
+          ele.children.forEach(addTitle)
+      }
+  }
+  tree.forEach(addTitle)
+}
 export default {}
