@@ -6,6 +6,33 @@ tags = ["css"]
 draft = false
 +++
 
+## Web 布局[^fn:1] {#web-布局}
+
+-   无布局模式
+-   表格布局模式
+-   浮动、定位和框架( CSS Frameworks )布局模式
+
+    浮动的初衷是用于排版的，只不过在那个年代，Web 开发者利用其特性来构建 Web 的布局，而且运用于 Web 布局很多年
+
+    其中要属“圣杯 ”和“双飞翼 ”两者最为经典。这两种方法实现的都是以三列布局为主，而且两边的宽度是固定的，中间列是自适应，它们实现的效果是一样的，只是实现的思路不同
+
+    定位布局的局限性:
+
+    1.  需要明确指定元素的大小
+    2.  需要明确计算元素位置坐标
+    3.  难于维护
+
+    css框架，如 bootstrap
+-   响应式布局
+-   Intrinsic Web Design
+
+    不是内容以设计为导向（Content Design-Driven），而是只专注于让设计受内容驱动（Design Content-Driven）
+
+-   组件驱动式 Web 设计（CDWD）
+
+-   Flex &amp;&amp; Grid
+
+
 ## 加载方式 {#加载方式}
 
 @import
@@ -165,7 +192,7 @@ flex formatting contexts
 
 元素独占一行
 
-Block Formatting Context&nbsp;[^fn:1]
+Block Formatting Context&nbsp;[^fn:2]
 
 A mini-layout inside our layout，一个小的块级格式化布局上下文
 
@@ -196,7 +223,7 @@ BFC 的表现：
 
 定位的元素层级比没有定位的元素层级高
 
-层叠上下文[^fn:2]
+层叠上下文[^fn:3]
 
 dom 元素在 z 方向的堆叠顺序问题
 
@@ -232,7 +259,7 @@ dom 元素在 z 方向的堆叠顺序问题
 
 ## Margin collapse {#margin-collapse}
 
-外边距重叠[^fn:3]
+外边距重叠[^fn:4]
 
 top, bottom 属性重叠，值为相对最大值，仅限垂直方向
 
@@ -335,6 +362,7 @@ font-family, font-size, color, cursor, text-align, visibility, list-style 等
 
     @import 阻塞并行下载，需要等 @import 的下载完再下载其他内容，变成了串行下载，不利于性能
 
-[^fn:1]: [Intro_to_formatting_contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
-[^fn:2]: [The_stacking_context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
-[^fn:3]: [Mastering_margin_collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+[^fn:1]: [CSS小册](https://juejin.cn/book/7161370789680250917/section/7161370789768347685)
+[^fn:2]: [Intro_to_formatting_contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
+[^fn:3]: [The_stacking_context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+[^fn:4]: [Mastering_margin_collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
