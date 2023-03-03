@@ -113,3 +113,22 @@ function onMessage(e) {
 ## 事件 {#事件}
 
 -   DOMContentLoaded
+
+
+## Performance {#performance}
+
+-   performance.now()
+
+    返回 DOMHighResTimeStamp, 单位毫秒(milliseconds)
+
+    represents the time elapsed since the time origin.
+
+    If the current Document is the first one loaded in the Window, the time origin is the time at which the browser context was created
+    ```js
+    const t0 = performance.now();
+    // 239313.40000000596
+    doSomething();
+    const t1 = performance.now();
+    // 256432.29999998212
+    console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
+    ```
