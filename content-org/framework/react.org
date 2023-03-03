@@ -535,9 +535,9 @@ memo 了一下， props 不变，则直接从缓存里拿 element tree(我猜的
 3. React.memo, useMemo, useCallback
 4. 组件接收的 props 要尽可能的精简，尽量接收独立的值，而不是一个大对象
 
-* 运行机制[fn:4]
+* 运行机制
 
-注意这里是 Didact 的实现，用于辅助理解 React 的逻辑
+注意这里是 Didact[fn:4] 的实现，用于辅助理解 React 的逻辑
 
 ** 首次渲染
 
