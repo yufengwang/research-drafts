@@ -54,6 +54,21 @@ TCP 多路复用
 
 {{< figure src="/ox-hugo/https.png" >}}
 
+TLS 握手过程:
+
+-   Client hello，发过去 TLS 版本，cipher suites, 随机数，加密方法
+-   Server Ack
+-   Server hello,返回随机数，跟 Client 一样支持的 TLS 版本号，cipher suites,加密方法
+-   Server 返回证书，server 的公钥
+-   Server hello 结束
+-   Client Ack
+-   Client 校验 server 的证书，生成 pre-master sercret，并发给服务端
+-   Server 用私钥获取 pre-master secret
+-   Server 利用 pre-master secret 和 随机数 计算 master secret,
+-   Client 跟服务端一样计算 master secret
+
+    后续所有的消息通信都是用 master sercret 进行加密
+
 
 ## 浏览器网络请求 {#浏览器网络请求}
 
