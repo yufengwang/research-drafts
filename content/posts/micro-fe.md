@@ -55,6 +55,32 @@ html 作为资源入口，通过加载远程 html，解析其DOM结构从而获�
 
 缺点： 接入成本高
 
+主子应用通信：
+
+```js
+import { initGlobalState, MicroAppStateActions } from 'qiankun';
+
+// 主应用初始化 state
+const actions: MicroAppStateActions = initGlobalState(state);
+
+actions.onGlobalStateChange((state, prev) => {
+  // state: 变更后的状态; prev 变更前的状态
+  console.log(state, prev);
+});
+actions.setGlobalState(state);
+actions.offGlobalStateChange();
+
+// 子应用从生命周期 mount 中获取通信方法，使用方式和 master 一致
+export function mount(props) {
+  props.onGlobalStateChange((state, prev) => {
+    // state: 变更后的状态; prev 变更前的状态
+    console.log(state, prev);
+  });
+
+  props.setGlobalState(state);
+}
+```
+
 
 ### micro app {#micro-app}
 
