@@ -18,8 +18,6 @@ draft = false
 
 React Element:
 
-An element is a plain object describing a component instance or DOM node and its desired properties
-
 js 对象，描述需要被渲染的元素，包括其类型及属性；比真实的 Dom element 更轻量
 
 有 class and functional components, host components (DOM nodes), portals 这些类型
@@ -550,6 +548,56 @@ memo 了一下， props 不变，则直接从缓存里拿 element tree(我猜的
 
 
 ### ErrorBoundary {#errorboundary}
+
+用于捕获子树的异常，提供 fallback 的 ui，避免 crash 掉整个应用
+
+下面这些异常不能被捕获
+
+-   事件处理函数
+-   异步代码(setTimeout or requestAnimationFrame)
+-   服务端渲染
+-   error boundaries 自己抛出来的异常
+
+实现了 static getDerivedStateFromError() or componentDidCatch()  的类组件可作为 error boundary
+
+```js
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    logErrorToMyService(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+
+<ErrorBoundary>
+  <MyWidget />
+</ErrorBoundary>
+
+```
+
+可以理解为针对组件的 catch()， 只有类组件可以作为 error boundaries
+
+自 React 16 后， 没有被 error boundaries 捕获到的异常，会导致整个组件树被卸载
+
+> We debated this decision, but in our experience it is worse to leave corrupted UI in place than to completely remove it. For example, in a product like Messenger leaving the broken UI visible could lead to somebody sending a message to the wrong person. Similarly, it is worse for a payments app to display a wrong amount than to render nothing
 
 
 ## LEGACY REACT APIS {#legacy-react-apis}

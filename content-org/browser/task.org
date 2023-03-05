@@ -6,12 +6,11 @@
 
 用于执行动画帧
 
-既不是微任务，也不是宏任务
+既不是微任务，也不是宏任务，只是一个回调
 
 优先级比  requestIdleCallback 高
 
 requestAnimationFrame is a tool for us web-devs to hook in this update the rendering[fn:1] sub-process, allowing us to draw things only when the rendering will happen, but it also has the side effect of marking the web page as animated, and thus forces browser to execute the full update the rendering steps even though it might not have been needed
-
 
 在渲染前，执行回调
 

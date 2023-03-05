@@ -10,7 +10,7 @@ draft = false
 
 用于执行动画帧
 
-既不是微任务，也不是宏任务
+既不是微任务，也不是宏任务，只是一个回调
 
 优先级比  requestIdleCallback 高
 
