@@ -8,7 +8,7 @@ draft = false
 
 ## 性能监测 {#性能监测}
 
-监测方式: devtool performance tab, lighthouse 插件
+监测方式: devtool performance tab, lighthouse(lab data) 插件
 
 window.performance， 可编程的性能 api
 
@@ -60,6 +60,8 @@ window.performance， 可编程的性能 api
 
     用来衡量 visual stability. pages should maintain a CLS of 0.1. or less
 
+    当元素初次渲染到 dom 后又移位了，会发生 CLS
+
 -   TTI
 
     Time To Interactive 可交互时间
@@ -110,8 +112,17 @@ window.performance， 可编程的性能 api
 
 ## Webpack 性能优化 {#webpack-性能优化}
 
--   Tree-Shaking
--   按需加载
+
+### 合理拆包 {#合理拆包}
+
+-   动态加载
+
+    ES2020 dynamic \`import()\`
+
+-   SplitChunkPlugin
+
+
+### Tree-Shaking {#tree-shaking}
 
 
 ## 图片优化 {#图片优化}

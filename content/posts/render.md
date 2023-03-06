@@ -146,17 +146,24 @@ Each node typically references a DOM node and a Computed Style
 任务队列，主线程繁忙时，task 进入到这里
 
 
-## CSR {#csr}
+## Pre-rendering {#pre-rendering}
 
-Client Side Render
+预渲染, 包括 SSG 和 SSR
 
 
-## SSR {#ssr}
+### SSG {#ssg}
+
+static site generation
+
+
+### SSR {#ssr}
 
 Server Side Render
 
 
-### Hydration {#hydration}
+## CSR {#csr}
+
+Client Side Render
 
 
 ## ISR {#isr}
