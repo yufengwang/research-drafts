@@ -43,3 +43,35 @@ semver
 * 消费者
 
 消费并使用组件，依赖方
+
+* Bit
+
+component-driven architecture
+
+** Apps
+
+可被部署的组件，可作为独立的后端或前端应用，或作为运行时，微服务，微前端，serverless function 等被其他 app 消费
+
+apps 为独立的，包含其所有构建，部署等所需要的信息
+
+** Aspect
+
+Service，使用 Aspect environment
+
+用来拓展 bit 功能的组件,也可用来构建用户的可组合应用
+
+** Workspaces
+
+一系列的文件和目录，提供组件组合和版本控制的必要上下文
+
+组件打了版本并导出到 scope 后，会跟 workspace 解耦
+
+** Scope
+
+组件协作的 server， 从本地 workspace 导出组件，远端存储，然后跟其他人写作，类似 git
+
+组件从 scope export 和 import
+
+** Env
+
+开发环境, 工具，生产者及其配置，用于组件开发，包括组件文档，编译，测试，构建等
