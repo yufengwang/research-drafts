@@ -84,6 +84,36 @@ customElements.define('show-hello', class extends HTMLElement {
 
 Shadow Dom 有自己的样式，不会被外部 dom 的样式影响到
 
+** <template />
+
+用于封装 dom 片段
+
+内部可编写任何语法正确的 html 片段
+
+浏览器会校验其内部的 html 语法，但允许使用任何顶级 html 标签
+
+当被插入到 document 中，其内部的标签会开始解析并执行
+
+#+begin_src html
+<template id="tmpl">
+  <style> p { font-weight: bold; } </style>
+  <p id="message"></p>
+</template>
+
+<div id="elem">Click me</div>
+
+<script>
+  elem.onclick = function() {
+    elem.attachShadow({mode: 'open'});
+
+    elem.shadowRoot.append(tmpl.content.cloneNode(true)); // (*)
+
+    elem.shadowRoot.getElementById('message').innerHTML = "Hello from the shadows!";
+  };
+</script>
+#+end_src
+
+
 * Dom api
 
 - document.querySelectorAll(selectors)
