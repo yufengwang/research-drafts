@@ -153,12 +153,12 @@ Each node typically references a DOM node and a Computed Style
 
 ### SSG {#ssg}
 
-static site generation
+static site generation，构建时生成 html，适用于静态页场景
 
 
 ### SSR {#ssr}
 
-Server Side Render
+Server Side Render，在 http 请求时生成 html
 
 
 ## CSR {#csr}
