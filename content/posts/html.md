@@ -9,7 +9,93 @@ draft = false
 ## Web components {#web-components}
 
 
-## Shadow dom {#shadow-dom}
+### custom element {#custom-element}
+
+名字里必须要有 hyphen -
+
+-   Autonomous custom elements – “all-new” elements, extending the abstract HTMLElement class.
+
+<!--listend-->
+
+```js
+class MyElement extends HTMLElement {
+  constructor() {
+    super();
+    // element created
+  }
+
+  connectedCallback() {
+    // browser calls this method when the element is added to the document
+    // (can be called many times if an element is repeatedly added/removed)
+  }
+
+  disconnectedCallback() {
+    // browser calls this method when the element is removed from the document
+    // (can be called many times if an element is repeatedly added/removed)
+  }
+
+  static get observedAttributes() {
+    return [/* array of attribute names to monitor for changes */];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    // called when one of attributes listed above is modified
+  }
+
+  adoptedCallback() {
+    // called when the element is moved to a new document
+    // (happens in document.adoptNode, very rarely used)
+  }
+
+  // there can be other element methods and properties
+}
+
+// let the browser know that <my-element> is served by our new class
+customElements.define("my-element", MyElement);
+
+// document.createElement('my-element')
+```
+
+-   Customized built-in elements – extending built-in elements, like a customized button, based on HTMLButtonElement etc
+
+<!--listend-->
+
+```js
+class MyButton extends HTMLButtonElement { /*...*/ }
+customElements.define('my-button', MyElement, {extends: 'button'});
+/* <button is="my-button"> */
+
+```
+
+
+### Shadow dom {#shadow-dom}
+
+用于创建组件级的 Dom，有自己的 id 空间，不会被外部的 querySelector 访问到
+
+A DOM element can have two types of DOM subtrees
+
+-   Light tree – a regular DOM subtree, made of HTML children. All subtrees that we’ve seen in previous chapters were “light”.
+-   Shadow tree – a hidden DOM subtree, not reflected in HTML, hidden from prying eyes.
+
+<!--listend-->
+
+```html
+<script>
+customElements.define('show-hello', class extends HTMLElement {
+  connectedCallback() {
+    const shadow = this.attachShadow({mode: 'open'});
+    shadow.innerHTML = `<p>
+      Hello, ${this.getAttribute('name')}
+    </p>`;
+  }
+});
+</script>
+
+<show-hello name="John"></show-hello>
+
+```
+
+Shadow Dom 有自己的样式，不会被外部 dom 的样式影响到
 
 
 ## Dom api {#dom-api}

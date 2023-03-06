@@ -40,6 +40,49 @@ draft = false
 -   字面量
 
 
+## lookahead-lookbehind {#lookahead-lookbehind}
+
+
+### Lookahead {#lookahead}
+
+The syntax is: X(?=Y), it means "look for X, but match only if followed by Y". There may be any pattern instead of X and Y.
+
+```js
+et str = "1 turkey costs 30€";
+
+console.log( str.match(/\d+(?=€)/) ); // 30, the number 1 is ignored, as it's not followed by €
+```
+
+
+### Negative lookahead {#negative-lookahead}
+
+The syntax is: X(?!Y), it means "search X, but only if not followed by Y"
+
+```js
+let str = "2 turkeys cost 60€";
+
+console.log( str.match(/\d+\b(?!€)/g) ); // 2 (the price is not matched)
+```
+
+支持 capture group
+
+```js
+let str = "1 turkey costs 30€";
+let regexp = /\d+(?=(€|kr))/; // extra parentheses around €|kr
+
+alert( str.match(regexp) ); // 30, €
+```
+
+
+### Lookbehind {#lookbehind}
+
+> Please Note: Lookbehind is not supported in non-V8 browsers, such as Safari, Internet Explorer.
+
+Positive lookbehind: (?&lt;=Y)X, matches X, but only if there’s Y before it.
+
+Negative lookbehind: (?&lt;!Y)X, matches X, but only if there’s no Y before it
+
+
 ## 相关 API {#相关-api}
 
 -   regexp.test(str)
