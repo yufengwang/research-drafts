@@ -8,31 +8,59 @@
 
 window.performance， 可编程的性能 api
 
-* 以用户为中心的性能指标
+* 性能指标
 
-- Load
-- DCL
+分类:
+
+- In the field
+  用户实际体验到的指标
+
+- In the lab
+  利用工具去跑性能指标数据
+
+常用指标：
+
 - FP
 
   First Paint 首次绘制
 - FCP
 
   First Contentful Paint 首次内容绘制
+
+- TTFB
+
+  Time to First Byte
+
 - LCP
 
+  Core Web Vital
+
   Largest Contentful Paint 最大内容绘制
+
+  用来衡量页面的加载性能，2.5s 以内最佳
+
 - FID
 
+  Core Web Vital
+
   First Input Delay 首次输入延迟
+
+  用来衡量可交互性， 100ms 以内为佳
+
+- CLS
+
+  Core Web Vital
+
+  Cumulative Layout Shift 累积布局偏移
+
+  用来衡量 visual stability. pages should maintain a CLS of 0.1. or less
+
 - TTI
 
   Time To Interactive 可交互时间
 - TBT
 
   Total Blocking Time 总阻塞时间
-- CLS
-
-  Cumulative Layout Shift 累积布局偏移
 - FMP
 
   First Meaningful Paint，在 lighthouse 6.0 中已经被废弃，考虑用 LCP
@@ -113,3 +141,5 @@ window.performance， 可编程的性能 api
 - 使用 React.PureComponent，自动比较 props 和 state
 
 * 离线化
+
+[fn:1] [[https://web.dev/user-centric-performance-metrics/][user-centric-performance-metrics]]
