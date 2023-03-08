@@ -5,3 +5,8 @@
 待补充...
 
 * Dom 事件
+
+
+# Local Variables:
+# eval: (org-hugo-auto-export-mode -1)
+# End:

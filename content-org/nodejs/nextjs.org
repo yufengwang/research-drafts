@@ -3,3 +3,8 @@
 #+FILETAGS: node
 
 * Fast refresh
+
+
+# Local Variables:
+# eval: (org-hugo-auto-export-mode -1)
+# End:

@@ -3,3 +3,8 @@
 #+FILETAGS: frontend
 
 * SWR
+
+
+# Local Variables:
+# eval: (org-hugo-auto-export-mode -1)
+# End:
