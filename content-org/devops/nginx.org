@@ -3,3 +3,7 @@
 #+FILETAGS: devops
 
 待补充...
+
+# Local Variables:
+# eval: (org-hugo-auto-export-mode -1)
+# End:
