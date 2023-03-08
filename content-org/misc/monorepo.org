@@ -9,3 +9,8 @@
 * 特性
 
 * 比较
+
+
+# Local Variables:
+# eval: (org-hugo-auto-export-mode -1)
+# End:
