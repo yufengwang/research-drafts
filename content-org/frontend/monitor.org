@@ -2,4 +2,9 @@
 #+DATE:<2023-02-16 Thu 10:31>
 #+FILETAGS: frontend
 
-待补充...
+待补充....
+
+
+# Local Variables:
+# eval: (org-hugo-auto-export-mode -1)
+# End:
