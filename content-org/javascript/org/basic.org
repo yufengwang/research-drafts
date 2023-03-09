@@ -545,6 +545,9 @@ Any other value is considered reachable if it’s reachable from a root by a ref
 
 ** generational garbage collection
 
+** V8 垃圾收集[fn:4]
+
+
 * 模块化
 
 - IIFE
@@ -588,3 +591,4 @@ Any other value is considered reachable if it’s reachable from a root by a ref
 [fn:1] [[https://javascript.info/closure][lexical-environment]]
 [fn:2] [[https://javascript.info/garbage-collection][garbage-collection]]
 [fn:3] [[https://github.com/cmdjs/specification/blob/master/draft/module.md][CMD]]
+[fn:4] [[https://v8.dev/blog/trash-talk][trash-talk]]

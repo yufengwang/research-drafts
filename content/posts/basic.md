@@ -570,6 +570,9 @@ roots:
 ### generational garbage collection {#generational-garbage-collection}
 
 
+### V8 垃圾收集[^fn:3] {#v8-垃圾收集}
+
+
 ## 模块化 {#模块化}
 
 -   IIFE
@@ -580,7 +583,7 @@ roots:
 
     依赖前置、提前执行, require.js
 
--   CMD[^fn:3]
+-   CMD[^fn:4]
 
     Common Module Definition
 
@@ -613,4 +616,5 @@ roots:
 
 [^fn:1]: [lexical-environment](https://javascript.info/closure)
 [^fn:2]: [garbage-collection](https://javascript.info/garbage-collection)
-[^fn:3]: [CMD](https://github.com/cmdjs/specification/blob/master/draft/module.md)
+[^fn:3]: [trash-talk](https://v8.dev/blog/trash-talk)
+[^fn:4]: [CMD](https://github.com/cmdjs/specification/blob/master/draft/module.md)
