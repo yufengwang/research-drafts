@@ -328,6 +328,37 @@ Js 引擎层面的隐藏属性，决定继承关系，用户侧代码不可直�
 
 建议使用这俩： Object.getPrototypeOf/Object.setPrototypeOf
 
+** ES5 的继承
+#+begin_src js
+// 定义一个父类
+function Animal(name) {
+  this.name = name;
+}
+Animal.prototype.sayName = function() {
+  console.log('My name is ' + this.name);
+};
+
+// 定义一个子类
+function Dog(name, breed) {
+  Animal.call(this, name); // 调用父类构造函数
+  this.breed = breed;
+}
+
+// 子类的原型对象为父类原型的实例
+Dog.prototype = Object.create(Animal.prototype); // 继承父类的原型
+Dog.prototype.constructor = Dog; // 修正子类构造函数
+
+// 在子类上添加自己的方法
+Dog.prototype.sayBreed = function() {
+  console.log('My breed is ' + this.breed);
+};
+
+// 创建一个实例并调用方法
+var dog = new Dog('Tom', 'Husky');
+dog.sayName(); // 输出 'My name is Tom'
+dog.sayBreed(); // 输出 'My breed is Husky'
+#+end_src
+
 * Class
 
 类字段定义在实例上，而不是原型对象上，对于函数字段而言，类的每个实例的创建都会新建一个函数，然后创建一个闭包，保存此函数绑定的变量，比较耗内存
