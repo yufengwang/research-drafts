@@ -186,6 +186,8 @@ flex formatting contexts
 
 ### BFC {#bfc}
 
+可以看做一个独立的渲染区域
+
 元素按块方式布局
 
 盒模型之间，margin,border 等交互的方式
