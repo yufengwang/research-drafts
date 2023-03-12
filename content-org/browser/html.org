@@ -221,7 +221,7 @@ function onMessage(e) {
    If the current Document is the first one loaded in the Window, the time origin is the time at which the browser context was created
 
   #+begin_src js
-const t0 = performance.now();
+ const t0 = performance.now();
 // 239313.40000000596
 doSomething();
 const t1 = performance.now();

@@ -12,7 +12,7 @@
 
 requestAnimationFrame is a tool for us web-devs to hook in this update the rendering[fn:1] sub-process, allowing us to draw things only when the rendering will happen, but it also has the side effect of marking the web page as animated, and thus forces browser to execute the full update the rendering steps even though it might not have been needed
 
-在渲染前，执行回调
+在下一帧渲染前（layout前），执行回调
 
 * requestIdleCallback
 
@@ -27,7 +27,6 @@ requestAnimationFrame is a tool for us web-devs to hook in this update the rende
 对于 UI 渲染任务来说，在不阻塞主线程的情况下，需要尽可能的利用浏览器的空闲时间，所以 React 重新实现了自己的调度器
 
 等 event-loop 没其他任务要处理的时候，才会被调用
-
 
 * setTimeout
 
