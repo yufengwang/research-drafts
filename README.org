@@ -1,6 +1,6 @@
-* My drafts
+* My research drafts
 
- My personal notes and wiki, please see [[https://yfw.wiki][yfw.wiki]]
+ My personal tech research drafts, please see [[https://yufengwang.top][yufengwang.top]]
 
  Note: This site content is generated from content-org folder and hosted by Cloudflare Pages.
 
@@ -8,8 +8,8 @@
 
 With my huge thanks to hugo and hugo-book theme, also ox-hugo.
 
+* Dev
 
 git submodule update --init --recursive
 
-* Dev
 hugo server -D --navigateToChanged
