@@ -1,21 +1,30 @@
 // @ts-nocheck
 function Counter() {
-    const [state, setState] = React.useState(1);
+    const [num, setNum] = React.useState(1);
+
     const [data, setData] = React.useState([
         { id: 1, name: 'a' },
         { id: 2, name: 'b' },
     ]);
+
+    const handleClick = () => {
+        setNum((c) => c + 1)
+        setNum(10)
+        setNum(c => c + 2)
+    }
+
     React.useEffect(() => {
-        console.log('state');
-    }, [state]);
+        console.log('num',num);
+    }, [num]);
+
     return React.createElement(
         'div',
         null,
         React.createElement(
             'h1',
-            { onClick: () => setState((c) => c + 1) },
+            { onClick: handleClick },
             React.createElement('span', null, 'Count:'),
-            React.createElement('b', null, state)
+            React.createElement('b', null, num)
         ),
         React.createElement('h2', null, 'hello'),
         React.createElement(

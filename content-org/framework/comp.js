@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use strict';
 
 const e = React.createElement;
@@ -54,20 +55,31 @@ class LikeButton extends React.PureComponent {
 } */
 
 function Counter() {
+
   const [state, setState] = React.useState(1);
+
   const [data, setData] = React.useState([
     { id: 1, name: 'a' },
     { id: 2, name: 'b' },
   ]);
+
   React.useEffect(() => {
     console.log('state');
   }, [state]);
+
+  const handleClick = () => {
+    setState((c) => c + 1)
+    setState(10)
+    setState(c => c + 2)
+
+  }
+
   return React.createElement(
     'div',
     null,
     React.createElement(
       'h1',
-      { onClick: () => setState((c) => c + 1) },
+      { onClick: handleClick },
       React.createElement('span', null, 'Count:'),
       React.createElement('b', null, state)
     ),
@@ -92,7 +104,7 @@ const container = document.getElementById("root");
 // const root = createRoot(container); // createRoot(container!) if you use TypeScript
 // root.render(element);
 
-render(element, container)
+ReactDOM.render(element, container)
 
 // ReactDOM.hydrate(e(Counter), root);
 // ReactDOM.render(e(Counter), root);
