@@ -10,3 +10,6 @@ With my huge thanks to hugo and hugo-book theme, also ox-hugo.
 
 
 git submodule update --init --recursive
+
+* Dev
+hugo server -D --navigateToChanged
