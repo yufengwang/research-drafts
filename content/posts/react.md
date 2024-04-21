@@ -537,6 +537,8 @@ memo 了一下， props 不变，则直接从缓存里拿 element tree(我猜的
 
 目前仅适用于跟 React.lazy 结合，实现组件懒加载
 
+IO 密集型任务
+
 
 ### StrictMode {#strictmode}
 
@@ -735,11 +737,18 @@ thread, like user events. By default, it yields multiple times per frame.
 It does not attempt to align with frame boundaries, since most tasks don't
 need to be frame aligned; for those that do, use requestAnimationFrame.
 
+为啥需要调度器
+
+浏览器里 js 的执行是单线程的，所以需要调度器去调度任务，使其不能长时间的执行去阻塞主线程，从而导致页面卡顿
+
 
 ## 状态管理 {#状态管理}
 
 
 ### Redux {#redux}
+
+
+## Q &amp; A {#q-and-a}
 
 [^fn:1]: [Fiber](https://en.wikipedia.org/wiki/Fiber_(computer_science))
 [^fn:2]: [inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react](https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react)
